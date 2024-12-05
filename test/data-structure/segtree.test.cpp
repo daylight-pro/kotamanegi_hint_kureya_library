@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/static_range_sum"
+#define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
 
 #include "test/template.hpp"
 #include "src/data-structure/segtree.hpp"

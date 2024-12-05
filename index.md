@@ -19,6 +19,12 @@ data:
       path: src/data-structure/FastSet.hpp
       title: "\u9AD8\u901F bitset (64 \u5206\u6728)"
     - icon: ':heavy_check_mark:'
+      path: src/data-structure/lazy_segtree.hpp
+      title: src/data-structure/lazy_segtree.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/lazy_segtree_bsearch.hpp
+      title: src/data-structure/lazy_segtree_bsearch.hpp
+    - icon: ':heavy_check_mark:'
       path: src/data-structure/segtree.hpp
       title: src/data-structure/segtree.hpp
     - icon: ':warning:'
@@ -94,6 +100,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/FastSet.test.cpp
       title: test/data-structure/FastSet.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/lazy_segtree.test.2.cpp
+      title: test/data-structure/lazy_segtree.test.2.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/lazy_segtree.test.cpp
+      title: test/data-structure/lazy_segtree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data-structure/segtree.test.2.cpp
       title: test/data-structure/segtree.test.2.cpp

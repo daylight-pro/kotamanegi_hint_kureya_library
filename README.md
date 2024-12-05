@@ -1,12 +1,7 @@
 # ICPC_notebook
 
-[![Actions Status](https://github.com/daylight-pro/kotamanegi_hint_kureya_library/workflows/verify/badge.svg)](https://github.com/daylight-pro/kotamanegi_hint_kureya_library/actions) [![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=document+&color=brightgreen&logo=github)](https://daylight-pro.github.io/kotamanegi_hint_kureya_library/)
-
 - CSS 組版で、ファイルを置くだけで PDF が簡単に作れる、ICPC 用ライブラリのすごいテンプレート
 - かつ、みんなでつくる最強の ICPC 用ライブラリ (予定)
-- [ライブラリのドキュメント](https://daylight-pro.github.io/kotamanegi_hint_kureya_library/)
-- [ライブラリをまとめたページ](https://daylight-pro.github.io/kotamanegi_hint_kureya_library/notebook.html)
-- [ライブラリをまとめた PDF](https://tatyam-prime.github.io/ICPC_notebook/notebook.pdf)
 
 ## 内容を変更するには
 

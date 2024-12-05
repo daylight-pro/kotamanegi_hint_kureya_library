@@ -27,6 +27,8 @@ int main() {
    seg.apply(2, 10, 3);
    assert(seg.prod(0, 10) == 1);
    seg.apply(5, 7, 10);
+   seg.apply(7, 10, 5);
    assert(min_left(seg, 10, [](ll x) { return x >= 2; }) == 1);
+   assert(max_right(seg, 5, [](ll x) { return x > 5; }) == 7);
    cout << "Hello World" << endl;
 }

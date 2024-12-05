@@ -39,6 +39,7 @@
     <ol>
     <li><a href="#BinaryGCD.hpp">BinaryGCD.hpp</a></li>
     <li><a href="#ExtGCD.hpp">ExtGCD.hpp</a></li>
+    <li><a href="#floor_sum.hpp">floor_sum.hpp</a></li>
     </ol>
     <li><a class="section" href="#modint">modint</a></li>
     <ol>
@@ -259,6 +260,26 @@ ll <span class="token function">extgcd</span><span class="token punctuation">(</
    ll d <span class="token operator">=</span> <span class="token function">extgcd</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> a <span class="token operator">%</span> b<span class="token punctuation">,</span> y<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
    y <span class="token operator">-=</span> a <span class="token operator">/</span> b <span class="token operator">*</span> x<span class="token punctuation">;</span>
    <span class="token keyword">return</span> d<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</div>
+
+    <div class="filename">
+        <h2 id="floor_sum.hpp">floor_sum.hpp</h2>
+        md5: 0f7242
+
+    </div>
+    <div class="content content-hpp">
+    <pre><code>ll <span class="token function">floor_sum</span><span class="token punctuation">(</span><span class="token keyword">const</span> ll<span class="token operator">&amp;</span> n<span class="token punctuation">,</span> <span class="token keyword">const</span> ll<span class="token operator">&amp;</span> m<span class="token punctuation">,</span> ll a<span class="token punctuation">,</span> ll b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   ll ret <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+   <span class="token keyword">if</span><span class="token punctuation">(</span>a <span class="token operator">>=</span> m<span class="token punctuation">)</span> ret <span class="token operator">+=</span> <span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> n <span class="token operator">*</span> <span class="token punctuation">(</span>a <span class="token operator">/</span> m<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span> a <span class="token operator">%=</span> m<span class="token punctuation">;</span>
+   <span class="token keyword">if</span><span class="token punctuation">(</span>b <span class="token operator">>=</span> m<span class="token punctuation">)</span> ret <span class="token operator">+=</span> n <span class="token operator">*</span> <span class="token punctuation">(</span>b <span class="token operator">/</span> m<span class="token punctuation">)</span><span class="token punctuation">,</span> b <span class="token operator">%=</span> m<span class="token punctuation">;</span>
+   ll y <span class="token operator">=</span> <span class="token punctuation">(</span>a <span class="token operator">*</span> n <span class="token operator">+</span> b<span class="token punctuation">)</span> <span class="token operator">/</span> m<span class="token punctuation">;</span>
+   <span class="token keyword">if</span><span class="token punctuation">(</span>y <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> ret<span class="token punctuation">;</span>
+   ll x <span class="token operator">=</span> y <span class="token operator">*</span> m <span class="token operator">-</span> b<span class="token punctuation">;</span>
+   ret <span class="token operator">+=</span> <span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token punctuation">(</span>x <span class="token operator">+</span> a <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> a<span class="token punctuation">)</span> <span class="token operator">*</span> y<span class="token punctuation">;</span>
+   ret <span class="token operator">+=</span> <span class="token function">floor_sum</span><span class="token punctuation">(</span>y<span class="token punctuation">,</span> a<span class="token punctuation">,</span> m<span class="token punctuation">,</span> <span class="token punctuation">(</span>a <span class="token operator">-</span> x <span class="token operator">%</span> a<span class="token punctuation">)</span> <span class="token operator">%</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">return</span> ret<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
 </div>

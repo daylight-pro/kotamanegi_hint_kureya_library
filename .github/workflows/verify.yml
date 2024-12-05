@@ -37,6 +37,7 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    if: success() && github.ref == 'refs/heads/main'
     needs: [verify]
     steps:
       - uses: actions/checkout@v4

@@ -65,7 +65,7 @@ jobs:
         run: make build
       
       - name: commit PDF
-        run: git add . && git commit -m "[skip actions] build PDF" && git push
+        run: git pull && git add . && git commit -m "[skip actions] build PDF" && git push
 
       - name: copy to gh-pages
         run: |

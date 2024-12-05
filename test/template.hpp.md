@@ -22,6 +22,9 @@ data:
     path: test/math/ExtGCD.test.cpp
     title: test/math/ExtGCD.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/math/floor_sum.test.cpp
+    title: test/math/floor_sum.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/modint/BarrettReduction.test.cpp
     title: test/modint/BarrettReduction.test.cpp
   - icon: ':heavy_check_mark:'
@@ -103,6 +106,7 @@ data:
   - test/modint/modint.test.cpp
   - test/modint/BarrettReduction.test.cpp
   - test/math/ExtGCD.test.cpp
+  - test/math/floor_sum.test.cpp
   - test/math/BinaryGCD.test.cpp
   - test/data-structure/FastSet.test.cpp
   - test/data-structure/BIT.test.cpp

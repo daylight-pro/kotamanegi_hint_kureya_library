@@ -33,6 +33,9 @@ data:
       path: src/math/ExtGCD.hpp
       title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5\
         \ (Extended Euclidean algorithm)"
+    - icon: ':heavy_check_mark:'
+      path: src/math/floor_sum.hpp
+      title: src/math/floor_sum.hpp
   - name: src/modint
     pages:
     - icon: ':heavy_check_mark:'
@@ -93,6 +96,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/ExtGCD.test.cpp
       title: test/math/ExtGCD.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/floor_sum.test.cpp
+      title: test/math/floor_sum.test.cpp
   - name: test/modint
     pages:
     - icon: ':heavy_check_mark:'

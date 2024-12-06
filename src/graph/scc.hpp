@@ -24,6 +24,8 @@ struct scc_graph {
       return v;
    }
 
+   vector<int> get_comp() { return comp; }  // bdafc0
+
    vector<vector<int>> dag() {
       vector<vector<int>> res(comp_size);
       rep(i, 0, n) for(auto j : G[i]) {

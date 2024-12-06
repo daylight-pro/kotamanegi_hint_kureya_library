@@ -1,4 +1,4 @@
-// base: 5ff9ca
+// base: 89e8d1
 template<class Cap> struct mf_graph {
    public:
    mf_graph() : _n(0) {}
@@ -18,9 +18,7 @@ template<class Cap> struct mf_graph {
       return m;
    }
 
-   Cap flow(int s, int t) { return flow(s, t, numeric_limits<Cap>::max()); }
-
-   Cap flow(int s, int t, Cap flow_limit) {
+   Cap flow(int s, int t, Cap flow_limit = numeric_limits<Cap>::max()) {
       // assert(0 <= s && s < _n);
       // assert(0 <= t && t < _n);
       // assert(s != t);

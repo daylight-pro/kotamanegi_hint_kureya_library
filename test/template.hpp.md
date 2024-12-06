@@ -25,6 +25,9 @@ data:
     path: test/data-structure/segtree.test.2.cpp
     title: test/data-structure/segtree.test.2.cpp
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/segtree.test.3.cpp
+    title: test/data-structure/segtree.test.3.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/segtree.test.cpp
     title: test/data-structure/segtree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -121,6 +124,7 @@ data:
   - test/math/floor_sum.test.cpp
   - test/math/BinaryGCD.test.cpp
   - test/data-structure/segtree.test.cpp
+  - test/data-structure/segtree.test.3.cpp
   - test/data-structure/lazy_segtree.test.2.cpp
   - test/data-structure/FastSet.test.cpp
   - test/data-structure/segtree.test.2.cpp

@@ -14,18 +14,18 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/staticrmq
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A
     links:
-    - https://judge.yosupo.jp/problem/staticrmq
-  bundledCode: "#line 1 \"test/data-structure/segtree.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#line 1 \"test/template.hpp\"\
-    \n#include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\nconst\
-    \ ll INF = LLONG_MAX / 4;\n#define rep(i, a, b) for(ll i = a; i < (b); i++)\n\
-    #define all(a) begin(a), end(a)\n#define sz(a) ssize(a)\nbool chmin(auto& a, auto\
-    \ b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto& a, auto b) { return a\
-    \ < b ? a = b, 1 : 0; }\n#line 1 \"src/data-structure/segtree.hpp\"\n// base:\
-    \ bafcf8\nunsigned int bit_ceil(unsigned int n) {\n   unsigned int x = 1;\n  \
-    \ while(x < (unsigned int)(n)) x *= 2;\n   return x;\n}\nint countr_zero(unsigned\
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A
+  bundledCode: "#line 1 \"test/data-structure/segtree.test.3.cpp\"\n#define PROBLEM\
+    \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\n\n#line\
+    \ 1 \"test/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace std;\nusing\
+    \ ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define rep(i, a, b) for(ll\
+    \ i = a; i < (b); i++)\n#define all(a) begin(a), end(a)\n#define sz(a) ssize(a)\n\
+    bool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
+    \ a, auto b) { return a < b ? a = b, 1 : 0; }\n#line 1 \"src/data-structure/segtree.hpp\"\
+    \n// base: bafcf8\nunsigned int bit_ceil(unsigned int n) {\n   unsigned int x\
+    \ = 1;\n   while(x < (unsigned int)(n)) x *= 2;\n   return x;\n}\nint countr_zero(unsigned\
     \ int n) { return __builtin_ctz(n); }\nconstexpr int countr_zero_constexpr(unsigned\
     \ int n) {\n   int x = 0;\n   while(!(n & (1 << x))) x++;\n   return x;\n}\ntemplate<class\
     \ S, S (*op)(S, S), S (*e)()> struct segtree {\n   public:\n   segtree() : segtree(0)\
@@ -59,31 +59,39 @@ data:
     \ 1 - size;\n         }\n         sm = op(d[r], sm);\n      } while((r & -r) !=\
     \ r);\n      return 0;\n   }  // efa466\n\n   private:\n   int _n, size, log;\n\
     \   vector<S> d;\n\n   void update(int k) { d[k] = op(d[2 * k], d[2 * k + 1]);\
-    \ }\n};\n#line 5 \"test/data-structure/segtree.test.cpp\"\n\nll op(ll a, ll b)\
-    \ { return min(a, b); }\nll e() { return 1e9 + 100; }\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
-    \n   int N, Q;\n   cin >> N >> Q;\n   vector<ll> A(N);\n   for(auto&& a : A) cin\
-    \ >> a;\n   segtree<ll, op, e> seg(A);\n   while(Q--) {\n      int L, R;\n   \
-    \   cin >> L >> R;\n      cout << seg.prod(L, R) << '\\n';\n   }\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include\
-    \ \"test/template.hpp\"\n#include \"src/data-structure/segtree.hpp\"\n\nll op(ll\
-    \ a, ll b) { return min(a, b); }\nll e() { return 1e9 + 100; }\nint main() {\n\
-    \   cin.tie(0)->sync_with_stdio(0);\n\n   int N, Q;\n   cin >> N >> Q;\n   vector<ll>\
-    \ A(N);\n   for(auto&& a : A) cin >> a;\n   segtree<ll, op, e> seg(A);\n   while(Q--)\
-    \ {\n      int L, R;\n      cin >> L >> R;\n      cout << seg.prod(L, R) << '\\\
-    n';\n   }\n}"
+    \ }\n};\n#line 5 \"test/data-structure/segtree.test.3.cpp\"\n\nll op(ll a, ll\
+    \ b) { return min(a, b); }\nll e() { return 1e9 + 100; }\n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
+    \   vector<ll> A{3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5};\n   segtree<ll, op, e> seg(A);\n\
+    \   assert(seg.prod(0, 11) == 1);\n   assert(seg.min_left(11, [](ll x) { return\
+    \ x >= 2; }) == 4);\n   assert(seg.max_right(0, [](ll x) { return x > 0; }) ==\
+    \ 11);\n   seg.set(3, 0);\n   assert(seg.min_left(11, [](ll x) { return x >= 2;\
+    \ }) == 4);\n   assert(seg.max_right(0, [](ll x) { return x >= 0; }) == 11);\n\
+    \   assert(seg.max_right(0, [](ll x) { return x > 0; }) == 3);\n   cout << \"\
+    Hello World\" << endl;\n   return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
+    \n\n#include \"test/template.hpp\"\n#include \"src/data-structure/segtree.hpp\"\
+    \n\nll op(ll a, ll b) { return min(a, b); }\nll e() { return 1e9 + 100; }\n\n\
+    int main() {\n   cin.tie(0)->sync_with_stdio(0);\n   vector<ll> A{3, 1, 4, 1,\
+    \ 5, 9, 2, 6, 5, 3, 5};\n   segtree<ll, op, e> seg(A);\n   assert(seg.prod(0,\
+    \ 11) == 1);\n   assert(seg.min_left(11, [](ll x) { return x >= 2; }) == 4);\n\
+    \   assert(seg.max_right(0, [](ll x) { return x > 0; }) == 11);\n   seg.set(3,\
+    \ 0);\n   assert(seg.min_left(11, [](ll x) { return x >= 2; }) == 4);\n   assert(seg.max_right(0,\
+    \ [](ll x) { return x >= 0; }) == 11);\n   assert(seg.max_right(0, [](ll x) {\
+    \ return x > 0; }) == 3);\n   cout << \"Hello World\" << endl;\n   return 0;\n\
+    }"
   dependsOn:
   - test/template.hpp
   - src/data-structure/segtree.hpp
   isVerificationFile: true
-  path: test/data-structure/segtree.test.cpp
+  path: test/data-structure/segtree.test.3.cpp
   requiredBy: []
   timestamp: '2024-12-06 14:52:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/data-structure/segtree.test.cpp
+documentation_of: test/data-structure/segtree.test.3.cpp
 layout: document
 redirect_from:
-- /verify/test/data-structure/segtree.test.cpp
-- /verify/test/data-structure/segtree.test.cpp.html
-title: test/data-structure/segtree.test.cpp
+- /verify/test/data-structure/segtree.test.3.cpp
+- /verify/test/data-structure/segtree.test.3.cpp.html
+title: test/data-structure/segtree.test.3.cpp
 ---

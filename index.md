@@ -22,14 +22,8 @@ data:
       path: src/data-structure/lazy_segtree.hpp
       title: src/data-structure/lazy_segtree.hpp
     - icon: ':heavy_check_mark:'
-      path: src/data-structure/lazy_segtree_bsearch.hpp
-      title: src/data-structure/lazy_segtree_bsearch.hpp
-    - icon: ':heavy_check_mark:'
       path: src/data-structure/segtree.hpp
       title: src/data-structure/segtree.hpp
-    - icon: ':warning:'
-      path: src/data-structure/segtree_bsearch.hpp
-      title: src/data-structure/segtree_bsearch.hpp
   - name: src/extra
     pages:
     - icon: ':heavy_check_mark:'
@@ -109,6 +103,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/segtree.test.2.cpp
       title: test/data-structure/segtree.test.2.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/segtree.test.3.cpp
+      title: test/data-structure/segtree.test.3.cpp
     - icon: ':heavy_check_mark:'
       path: test/data-structure/segtree.test.cpp
       title: test/data-structure/segtree.test.cpp

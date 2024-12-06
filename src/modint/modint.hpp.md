@@ -7,9 +7,6 @@ data:
     path: test/FPS/FFT.test.cpp
     title: test/FPS/FFT.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/lazy_segtree.test.2.cpp
-    title: test/data-structure/lazy_segtree.test.2.cpp
-  - icon: ':heavy_check_mark:'
     path: test/data-structure/lazy_segtree.test.cpp
     title: test/data-structure/lazy_segtree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -57,7 +54,6 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/modint/modint.test.cpp
-  - test/data-structure/lazy_segtree.test.2.cpp
   - test/data-structure/segtree.test.2.cpp
   - test/data-structure/lazy_segtree.test.cpp
   - test/FPS/FFT.test.cpp

@@ -6,7 +6,7 @@ class HLDcomposition {
    int root;
    void build_stsize(int u, int p) {
       stsize[u] = 1, parent[u] = p;
-      for(auto& v : G[u]) {
+      for(auto&& v : G[u]) {
          if(v == p) {
             if(v == G[u].back()) break;
             else swap(v, G[u].back());
@@ -62,19 +62,17 @@ class HLDcomposition {
       int pf = pathtop[from], pt = pathtop[to];
       using T = tuple<int, int, bool>;
       deque<T> front, back;
-      while(pathtop[from] != pathtop[to]) {
+      while(pf != pt) {
          if(in[pf] > in[pt]) {
-            front.push_front({in[pf], in[from] + 1, true});
-            from = parent[pf];
-            pf = pathtop[from];
+            front.push_back({in[pf], in[from] + 1, true});
+            from = parent[pf], pf = pathtop[from];
          } else {
-            back.push_back({in[pt], in[to] + 1, false});
-            to = parent[pt];
-            pt = pathtop[to];
+            back.push_front({in[pt], in[to] + 1, false});
+            to = parent[pt], pt = pathtop[to];
          }
       }
       if(in[from] > in[to]) front.push_back({in[to], in[from] + 1, true});
-      else back.push_front({in[from], in[to] + 1, false});
+      else front.push_back({in[from], in[to] + 1, false});
       vector<T> ret;
       while(!front.empty()) {
          ret.push_back(front.front());

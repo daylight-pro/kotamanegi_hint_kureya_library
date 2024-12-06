@@ -41,6 +41,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/graph/min_cost_flow.hpp
       title: src/graph/min_cost_flow.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/graph/scc.hpp
+      title: src/graph/scc.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/graph/two_sat.hpp
+      title: src/graph/two_sat.hpp
   - name: src/math
     pages:
     - icon: ':heavy_check_mark:'
@@ -140,6 +146,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/min_cost_flow.test.cpp
       title: test/graph/min_cost_flow.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/scc.test.2.cpp
+      title: test/graph/scc.test.2.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/scc.test.cpp
+      title: test/graph/scc.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/two_sat.test.cpp
+      title: test/graph/two_sat.test.cpp
   - name: test/math
     pages:
     - icon: ':heavy_check_mark:'

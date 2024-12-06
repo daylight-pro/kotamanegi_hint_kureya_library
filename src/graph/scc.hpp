@@ -1,7 +1,7 @@
-// base: ff7930
+// base: 1e9c3f
 struct scc_graph {
    public:
-   explicit scc_graph(int n = 0) : n(n), G(n), rG(n), comp(n, -1), visited(n, 0) {}
+   explicit scc_graph(int _n = 0) : n(_n), G(_n), rG(_n), comp(_n, -1), visited(_n, 0) {}
 
    void add_edge(int from, int to) {
       // assert(0 <= from && from < n);

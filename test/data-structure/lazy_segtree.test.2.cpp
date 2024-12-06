@@ -1,9 +1,7 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A"
 
 #include "test/template.hpp"
-#include "src/modint/modint.hpp"
 #include "src/data-structure/lazy_segtree.hpp"
-#include "src/data-structure/lazy_segtree_bsearch.hpp"
 
 using S = ll;
 using F = ll;
@@ -28,7 +26,8 @@ int main() {
    assert(seg.prod(0, 10) == 1);
    seg.apply(5, 7, 10);
    seg.apply(7, 10, 5);
-   assert(min_left(seg, 10, [](ll x) { return x >= 2; }) == 1);
-   assert(max_right(seg, 5, [](ll x) { return x > 5; }) == 7);
+   assert(seg.min_left(10, [](ll x) { return x >= 2; }) == 1);
+   assert(seg.max_right(5, [](ll x) { return x > 5; }) == 7);
    cout << "Hello World" << endl;
+   return 0;
 }

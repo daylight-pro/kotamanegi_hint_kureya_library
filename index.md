@@ -38,6 +38,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/graph/max_flow.hpp
       title: src/graph/max_flow.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/graph/min_cost_flow.hpp
+      title: src/graph/min_cost_flow.hpp
   - name: src/math
     pages:
     - icon: ':heavy_check_mark:'
@@ -134,6 +137,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/max_flow.test.cpp
       title: test/graph/max_flow.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/min_cost_flow.test.cpp
+      title: test/graph/min_cost_flow.test.cpp
   - name: test/math
     pages:
     - icon: ':heavy_check_mark:'

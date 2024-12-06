@@ -37,6 +37,15 @@ data:
     path: test/data-structure/segtree.test.cpp
     title: test/data-structure/segtree.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/max_flow.test.2.cpp
+    title: test/graph/max_flow.test.2.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/max_flow.test.3.cpp
+    title: test/graph/max_flow.test.3.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/max_flow.test.cpp
+    title: test/graph/max_flow.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/BinaryGCD.test.cpp
     title: test/math/BinaryGCD.test.cpp
   - icon: ':heavy_check_mark:'
@@ -147,6 +156,9 @@ data:
   - test/string/Manacher.test.cpp
   - test/string/KMP.test.cpp
   - test/string/LCP.test.cpp
+  - test/graph/max_flow.test.cpp
+  - test/graph/max_flow.test.2.cpp
+  - test/graph/max_flow.test.3.cpp
 documentation_of: test/template.hpp
 layout: document
 redirect_from:

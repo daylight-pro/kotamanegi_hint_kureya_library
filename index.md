@@ -33,6 +33,11 @@ data:
       path: src/extra/modint_fast.hpp
       title: "32 bit \u3067\u52A0\u6E1B\u7B97\u3092\u3061\u3083\u3093\u3068\u66F8\u3044\
         \u305F Modint"
+  - name: src/graph
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/graph/max_flow.hpp
+      title: src/graph/max_flow.hpp
   - name: src/math
     pages:
     - icon: ':heavy_check_mark:'
@@ -118,6 +123,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/segtree.test.cpp
       title: test/data-structure/segtree.test.cpp
+  - name: test/graph
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/graph/max_flow.test.2.cpp
+      title: test/graph/max_flow.test.2.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/max_flow.test.3.cpp
+      title: test/graph/max_flow.test.3.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/max_flow.test.cpp
+      title: test/graph/max_flow.test.cpp
   - name: test/math
     pages:
     - icon: ':heavy_check_mark:'

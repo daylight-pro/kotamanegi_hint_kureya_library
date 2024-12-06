@@ -1,3 +1,4 @@
+// base: 918715
 unsigned int bit_ceil(unsigned int n) {
    unsigned int x = 1;
    while(x < (unsigned int)(n)) x *= 2;
@@ -90,9 +91,62 @@ struct lazy_segtree {
       }
    }
 
+   template<class G> int max_right(int l, G g) {
+      // assert(0 <= l && l <= _n);
+      // assert(g(e()));
+      if(l == _n) return _n;
+      l += size;
+      for(int i = log; i >= 1; i--) push(l >> i);
+      S sm = e();
+      do {
+         while(l % 2 == 0) l >>= 1;
+         if(!g(op(sm, d[l]))) {
+            while(l < size) {
+               push(l);
+               l = (2 * l);
+               if(g(op(sm, d[l]))) {
+                  sm = op(sm, d[l]);
+                  l++;
+               }
+            }
+            return l - size;
+         }
+         sm = op(sm, d[l]);
+         l++;
+      } while((l & -l) != l);
+      return _n;
+   }  // d93691
+
+   template<class G> int min_left(int r, G g) {
+      // assert(0 <= r && r <= _n);
+      // assert(g(e()));
+      if(r == 0) return 0;
+      r += size;
+      for(int i = log; i >= 1; i--) push((r - 1) >> i);
+      S sm = e();
+      do {
+         r--;
+         while(r > 1 && (r % 2)) r >>= 1;
+         if(!g(op(d[r], sm))) {
+            while(r < size) {
+               push(r);
+               r = (2 * r + 1);
+               if(g(op(d[r], sm))) {
+                  sm = op(d[r], sm);
+                  r--;
+               }
+            }
+            return r + 1 - size;
+         }
+         sm = op(d[r], sm);
+      } while((r & -r) != r);
+      return 0;
+   }  // c9a7eb
+
+   private:
    int _n, size, log;
-   std::vector<S> d;
-   std::vector<F> lz;
+   vector<S> d;
+   vector<F> lz;
 
    void update(int k) { d[k] = op(d[2 * k], d[2 * k + 1]); }
    void all_apply(int k, F f) {

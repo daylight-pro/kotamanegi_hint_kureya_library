@@ -1,3 +1,4 @@
+// base: bafcf8
 unsigned int bit_ceil(unsigned int n) {
    unsigned int x = 1;
    while(x < (unsigned int)(n)) x *= 2;
@@ -50,6 +51,55 @@ template<class S, S (*op)(S, S), S (*e)()> struct segtree {
 
    S all_prod() const { return d[1]; }
 
+   template<class F> int max_right(int l, F f) {
+      // assert(0 <= l && l <= _n);
+      // assert(f(e()));
+      if(l == _n) return _n;
+      l += size;
+      S sm = e();
+      do {
+         while(l % 2 == 0) l >>= 1;
+         if(!f(op(sm, d[l]))) {
+            while(l < size) {
+               l = (2 * l);
+               if(f(op(sm, d[l]))) {
+                  sm = op(sm, d[l]);
+                  l++;
+               }
+            }
+            return l - size;
+         }
+         sm = op(sm, d[l]);
+         l++;
+      } while((l & -l) != l);
+      return _n;
+   }  // faa03f
+
+   template<class F> int min_left(int r, F f) {
+      // assert(0 <= r && r <= _n);
+      // assert(f(e()));
+      if(r == 0) return 0;
+      r += size;
+      S sm = e();
+      do {
+         r--;
+         while(r > 1 && (r % 2)) r >>= 1;
+         if(!f(op(d[r], sm))) {
+            while(r < size) {
+               r = (2 * r + 1);
+               if(f(op(d[r], sm))) {
+                  sm = op(d[r], sm);
+                  r--;
+               }
+            }
+            return r + 1 - size;
+         }
+         sm = op(d[r], sm);
+      } while((r & -r) != r);
+      return 0;
+   }  // efa466
+
+   private:
    int _n, size, log;
    vector<S> d;
 

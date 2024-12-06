@@ -1,4 +1,4 @@
-// base: 4df545
+// base: 4756c7
 template<class Cap, class Cost> struct mcf_graph {
    public:
    mcf_graph() {}
@@ -17,10 +17,10 @@ template<class Cap, class Cost> struct mcf_graph {
       return m;
    }
 
-   pair<Cap, Cost> flow(int s, int t) { return flow(s, t, numeric_limits<Cap>::max()); }
-   pair<Cap, Cost> flow(int s, int t, Cap flow_limit) { return slope(s, t, flow_limit).back(); }
-   vector<pair<Cap, Cost>> slope(int s, int t) { return slope(s, t, numeric_limits<Cap>::max()); }
-   vector<pair<Cap, Cost>> slope(int s, int t, Cap flow_limit) {
+   pair<Cap, Cost> flow(int s, int t, Cap flow_limit = numeric_limits<Cap>::max()) {
+      return slope(s, t, flow_limit).back();
+   }
+   vector<pair<Cap, Cost>> slope(int s, int t, Cap flow_limit = numeric_limits<Cap>::max()) {
       // assert(0 <= s && s < _n);
       // assert(0 <= t && t < _n);
       // assert(s != t);

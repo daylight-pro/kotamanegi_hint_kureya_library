@@ -1,4 +1,4 @@
-// 二分探索なし: bafcf8, max_right: faa03f, min_left: efa466
+// base: bafcf8
 unsigned int bit_ceil(unsigned int n) {
    unsigned int x = 1;
    while(x < (unsigned int)(n)) x *= 2;
@@ -73,7 +73,7 @@ template<class S, S (*op)(S, S), S (*e)()> struct segtree {
          l++;
       } while((l & -l) != l);
       return _n;
-   }
+   }  // faa03f
 
    template<class F> int min_left(int r, F f) {
       // assert(0 <= r && r <= _n);
@@ -97,7 +97,7 @@ template<class S, S (*op)(S, S), S (*e)()> struct segtree {
          sm = op(d[r], sm);
       } while((r & -r) != r);
       return 0;
-   }
+   }  // efa466
 
    private:
    int _n, size, log;

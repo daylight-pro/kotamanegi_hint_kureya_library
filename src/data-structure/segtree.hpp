@@ -1,3 +1,4 @@
+// 二分探索なし: bafcf8, max_right: faa03f, min_left: efa466
 unsigned int bit_ceil(unsigned int n) {
    unsigned int x = 1;
    while(x < (unsigned int)(n)) x *= 2;

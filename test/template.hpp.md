@@ -16,6 +16,12 @@ data:
     path: test/data-structure/FastSet.test.cpp
     title: test/data-structure/FastSet.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/dsu.test.2.cpp
+    title: test/data-structure/dsu.test.2.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/dsu.test.cpp
+    title: test/data-structure/dsu.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/lazy_segtree.test.2.cpp
     title: test/data-structure/lazy_segtree.test.2.cpp
   - icon: ':heavy_check_mark:'
@@ -125,6 +131,8 @@ data:
   - test/math/BinaryGCD.test.cpp
   - test/data-structure/segtree.test.cpp
   - test/data-structure/segtree.test.3.cpp
+  - test/data-structure/dsu.test.2.cpp
+  - test/data-structure/dsu.test.cpp
   - test/data-structure/lazy_segtree.test.2.cpp
   - test/data-structure/FastSet.test.cpp
   - test/data-structure/segtree.test.2.cpp

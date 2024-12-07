@@ -77,4 +77,6 @@ template<typename T, int MAX_LOG = 32> struct BinaryTrie {
       }
       return nodes[cur].common;
    }  // 2a3342
+
+   int size() { return nodes[0].common; }  // 5f9f13
 };

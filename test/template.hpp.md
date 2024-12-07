@@ -16,6 +16,15 @@ data:
     path: test/data-structure/FastSet.test.cpp
     title: test/data-structure/FastSet.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/binary_trie.test.2.cpp
+    title: test/data-structure/binary_trie.test.2.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/binary_trie.test.3.cpp
+    title: test/data-structure/binary_trie.test.3.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/binary_trie.test.cpp
+    title: test/data-structure/binary_trie.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/dsu.test.2.cpp
     title: test/data-structure/dsu.test.2.cpp
   - icon: ':heavy_check_mark:'
@@ -163,11 +172,14 @@ data:
   - test/data-structure/segtree.test.3.cpp
   - test/data-structure/dsu.test.2.cpp
   - test/data-structure/dsu.test.cpp
+  - test/data-structure/binary_trie.test.3.cpp
   - test/data-structure/lazy_segtree.test.2.cpp
   - test/data-structure/FastSet.test.cpp
+  - test/data-structure/binary_trie.test.cpp
   - test/data-structure/segtree.test.2.cpp
   - test/data-structure/lazy_segtree.test.cpp
   - test/data-structure/BIT.test.cpp
+  - test/data-structure/binary_trie.test.2.cpp
   - test/template.test.cpp
   - test/FPS/FFT.test.cpp
   - test/FPS/FFT_fast.test.cpp

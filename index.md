@@ -47,6 +47,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/graph/two_sat.hpp
       title: src/graph/two_sat.hpp
+  - name: src/graph/tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/graph/tree/hld.hpp
+      title: src/graph/tree/hld.hpp
   - name: src/math
     pages:
     - icon: ':heavy_check_mark:'
@@ -155,6 +160,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/two_sat.test.cpp
       title: test/graph/two_sat.test.cpp
+  - name: test/graph/tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/graph/tree/hld.test.2.cpp
+      title: test/graph/tree/hld.test.2.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/tree/hld.test.3.cpp
+      title: test/graph/tree/hld.test.3.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/tree/hld.test.cpp
+      title: test/graph/tree/hld.test.cpp
   - name: test/math
     pages:
     - icon: ':heavy_check_mark:'

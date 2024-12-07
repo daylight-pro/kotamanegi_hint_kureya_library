@@ -55,6 +55,15 @@ data:
     path: test/graph/scc.test.cpp
     title: test/graph/scc.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/tree/hld.test.2.cpp
+    title: test/graph/tree/hld.test.2.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/tree/hld.test.3.cpp
+    title: test/graph/tree/hld.test.3.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/tree/hld.test.cpp
+    title: test/graph/tree/hld.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/two_sat.test.cpp
     title: test/graph/two_sat.test.cpp
   - icon: ':heavy_check_mark:'
@@ -173,6 +182,9 @@ data:
   - test/graph/min_cost_flow.test.cpp
   - test/graph/two_sat.test.cpp
   - test/graph/max_flow.test.2.cpp
+  - test/graph/tree/hld.test.3.cpp
+  - test/graph/tree/hld.test.cpp
+  - test/graph/tree/hld.test.2.cpp
   - test/graph/max_flow.test.3.cpp
   - test/graph/scc.test.cpp
 documentation_of: test/template.hpp

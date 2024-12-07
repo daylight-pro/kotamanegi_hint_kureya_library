@@ -6,6 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data-structure/BIT.test.cpp
     title: test/data-structure/BIT.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/tree/hld.test.3.cpp
+    title: test/graph/tree/hld.test.3.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/tree/hld.test.cpp
+    title: test/graph/tree/hld.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -31,6 +37,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data-structure/BIT.test.cpp
+  - test/graph/tree/hld.test.3.cpp
+  - test/graph/tree/hld.test.cpp
 documentation_of: src/data-structure/BIT.hpp
 layout: document
 title: BIT (Fenwick Tree)

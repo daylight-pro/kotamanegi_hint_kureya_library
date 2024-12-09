@@ -10,6 +10,15 @@ data:
     path: test/FPS/FFT_fast.test.cpp
     title: test/FPS/FFT_fast.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/algorithm/doubling.test.2.cpp
+    title: test/algorithm/doubling.test.2.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/algorithm/doubling.test.3.cpp
+    title: test/algorithm/doubling.test.3.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/algorithm/doubling.test.cpp
+    title: test/algorithm/doubling.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/BIT.test.cpp
     title: test/data-structure/BIT.test.cpp
   - icon: ':heavy_check_mark:'
@@ -207,6 +216,9 @@ data:
   - test/string/KMP.test.cpp
   - test/string/aho_corasick.test.cpp
   - test/string/LCP.test.cpp
+  - test/algorithm/doubling.test.2.cpp
+  - test/algorithm/doubling.test.cpp
+  - test/algorithm/doubling.test.3.cpp
   - test/graph/max_flow.test.cpp
   - test/graph/scc.test.2.cpp
   - test/graph/low_link.test.cpp

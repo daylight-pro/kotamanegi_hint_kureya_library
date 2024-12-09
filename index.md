@@ -10,6 +10,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/FPS/FFT_fast.hpp
       title: FFT (bit reversal ver.)
+  - name: src/algorithm
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/algorithm/doubling.hpp
+      title: src/algorithm/doubling.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/algorithm/doubling_monoid.hpp
+      title: src/algorithm/doubling_monoid.hpp
   - name: src/data-structure
     pages:
     - icon: ':heavy_check_mark:'
@@ -120,6 +128,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/FPS/FFT_fast.test.cpp
       title: test/FPS/FFT_fast.test.cpp
+  - name: test/algorithm
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/algorithm/doubling.test.2.cpp
+      title: test/algorithm/doubling.test.2.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/algorithm/doubling.test.3.cpp
+      title: test/algorithm/doubling.test.3.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/algorithm/doubling.test.cpp
+      title: test/algorithm/doubling.test.cpp
   - name: test/data-structure
     pages:
     - icon: ':heavy_check_mark:'

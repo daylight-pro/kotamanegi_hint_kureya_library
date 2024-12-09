@@ -33,6 +33,7 @@ jobs:
     - run: oj-verify all
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        YUKICODER_TOKEN: ${{ secrets.YUKICODER_TOKEN }}
         GH_PAT: this_token_is_never_used_but_oj_verify_requires_this
 
   build:

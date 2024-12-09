@@ -39,6 +39,9 @@ data:
   - name: src/graph
     pages:
     - icon: ':heavy_check_mark:'
+      path: src/graph/low_link.hpp
+      title: src/graph/low_link.hpp
+    - icon: ':heavy_check_mark:'
       path: src/graph/max_flow.hpp
       title: src/graph/max_flow.hpp
     - icon: ':heavy_check_mark:'
@@ -151,6 +154,12 @@ data:
       title: test/data-structure/segtree.test.cpp
   - name: test/graph
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/graph/low_link.test.2.cpp
+      title: test/graph/low_link.test.2.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/low_link.test.cpp
+      title: test/graph/low_link.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/graph/max_flow.test.2.cpp
       title: test/graph/max_flow.test.2.cpp

@@ -46,6 +46,12 @@ data:
     path: test/data-structure/segtree.test.cpp
     title: test/data-structure/segtree.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/low_link.test.2.cpp
+    title: test/graph/low_link.test.2.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/low_link.test.cpp
+    title: test/graph/low_link.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/max_flow.test.2.cpp
     title: test/graph/max_flow.test.2.cpp
   - icon: ':heavy_check_mark:'
@@ -191,12 +197,14 @@ data:
   - test/string/LCP.test.cpp
   - test/graph/max_flow.test.cpp
   - test/graph/scc.test.2.cpp
+  - test/graph/low_link.test.cpp
   - test/graph/min_cost_flow.test.cpp
   - test/graph/two_sat.test.cpp
   - test/graph/max_flow.test.2.cpp
   - test/graph/tree/hld.test.3.cpp
   - test/graph/tree/hld.test.cpp
   - test/graph/tree/hld.test.2.cpp
+  - test/graph/low_link.test.2.cpp
   - test/graph/max_flow.test.3.cpp
   - test/graph/scc.test.cpp
 documentation_of: test/template.hpp

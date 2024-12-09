@@ -54,11 +54,6 @@ int main() {
          y = ny;
          x = nx;
       }
-      rep(i, 0, H) {
-         rep(j, 0, W) {
-            // rep(k, 0, 4) { cout << i << ' ' << j << ' ' << k << ' ' << nxt[i * 4 * W + 4 * j + k] << '\n'; }
-         }
-      }
       Doubling<60> db(nxt);
       int to = db.jump(sy * W * 4 + 4 * sx + sd, L);
       int Y = to / W / 4;

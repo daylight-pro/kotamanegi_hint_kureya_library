@@ -4,15 +4,17 @@ template<int L, class T, auto op, auto e> struct Doubling {
    vector<vector<T>> data;
 
    public:
-   Doubling(const vector<int>& to, const vector<S>& v) {
+   Doubling(const vector<int>& to, const vector<T>& v) {
       int N = size(to);
-      rep(0, i, N) {
+      V = vector<vector<int>>(L, vector<int>(N, -1));
+      data = vector<vector<T>>(L, vector<T>(N, e()));
+      rep(i, 0, N) {
          V[0][i] = to[i];
          data[0][i] = v[i];
       }
 
-      rep(0, i, L - 1) {
-         rep(0, j, N) {
+      rep(i, 0, L - 1) {
+         rep(j, 0, N) {
             if(V[i][j] != -1) {
                V[i + 1][j] = V[i][V[i][j]];
                data[i + 1][j] = op(data[i][j], data[i][V[i][j]]);

@@ -95,6 +95,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/string/Zalgorithm.hpp
       title: Z Algorithm
+    - icon: ':heavy_check_mark:'
+      path: src/string/aho_corasick.hpp
+      title: src/string/aho_corasick.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/string/trie.hpp
+      title: src/string/trie.hpp
   - name: src/template
     pages:
     - icon: ':warning:'
@@ -231,6 +237,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/string/Zalgorithm.test.cpp
       title: test/string/Zalgorithm.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/string/aho_corasick.test.2.cpp
+      title: test/string/aho_corasick.test.2.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/string/aho_corasick.test.3.cpp
+      title: test/string/aho_corasick.test.3.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/string/aho_corasick.test.cpp
+      title: test/string/aho_corasick.test.cpp
   - name: test
     pages:
     - icon: ':heavy_check_mark:'

@@ -115,6 +115,15 @@ data:
     path: test/string/Zalgorithm.test.cpp
     title: test/string/Zalgorithm.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/string/aho_corasick.test.2.cpp
+    title: test/string/aho_corasick.test.2.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/string/aho_corasick.test.3.cpp
+    title: test/string/aho_corasick.test.3.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/string/aho_corasick.test.cpp
+    title: test/string/aho_corasick.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/template.test.cpp
     title: test/template.test.cpp
   _isVerificationFailed: false
@@ -189,11 +198,14 @@ data:
   - test/template.test.cpp
   - test/FPS/FFT.test.cpp
   - test/FPS/FFT_fast.test.cpp
+  - test/string/aho_corasick.test.2.cpp
+  - test/string/aho_corasick.test.3.cpp
   - test/string/RollingHash.test.cpp
   - test/string/SuffixArray.test.cpp
   - test/string/Zalgorithm.test.cpp
   - test/string/Manacher.test.cpp
   - test/string/KMP.test.cpp
+  - test/string/aho_corasick.test.cpp
   - test/string/LCP.test.cpp
   - test/graph/max_flow.test.cpp
   - test/graph/scc.test.2.cpp

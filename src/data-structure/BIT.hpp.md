@@ -19,12 +19,13 @@ data:
     links: []
   bundledCode: "#line 1 \"src/data-structure/BIT.hpp\"\nstruct BIT {\n   vector<ll>\
     \ a;\n   BIT(ll n) : a(n + 1) {}\n   void add(ll i, ll x) {  // A[i] += x\n  \
-    \    i++;\n      while(i < sz(a)) {\n         a[i] += x;\n         i += i & -i;\n\
-    \      }\n   }\n   ll sum(ll r) {\n      ll s = 0;\n      while(r) {\n       \
-    \  s += a[r];\n         r -= r & -r;\n      }\n      return s;\n   }\n   ll sum(ll\
-    \ l, ll r) {  // sum of A[l, r)\n      return sum(r) - sum(l);\n   }\n};\n"
+    \    i++;\n      while(i < size(a)) {\n         a[i] += x;\n         i += i &\
+    \ -i;\n      }\n   }\n   ll sum(ll r) {\n      ll s = 0;\n      while(r) {\n \
+    \        s += a[r];\n         r -= r & -r;\n      }\n      return s;\n   }\n \
+    \  ll sum(ll l, ll r) {  // sum of A[l, r)\n      return sum(r) - sum(l);\n  \
+    \ }\n};\n"
   code: "struct BIT {\n   vector<ll> a;\n   BIT(ll n) : a(n + 1) {}\n   void add(ll\
-    \ i, ll x) {  // A[i] += x\n      i++;\n      while(i < sz(a)) {\n         a[i]\
+    \ i, ll x) {  // A[i] += x\n      i++;\n      while(i < size(a)) {\n         a[i]\
     \ += x;\n         i += i & -i;\n      }\n   }\n   ll sum(ll r) {\n      ll s =\
     \ 0;\n      while(r) {\n         s += a[r];\n         r -= r & -r;\n      }\n\
     \      return s;\n   }\n   ll sum(ll l, ll r) {  // sum of A[l, r)\n      return\
@@ -33,7 +34,7 @@ data:
   isVerificationFile: false
   path: src/data-structure/BIT.hpp
   requiredBy: []
-  timestamp: '2024-02-23 08:47:21+09:00'
+  timestamp: '2024-12-10 18:11:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data-structure/BIT.test.cpp

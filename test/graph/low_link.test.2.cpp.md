@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/graph/low_link.hpp
     title: src/graph/low_link.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: test/template.hpp
     title: test/template.hpp
   _extendedRequiredBy: []
@@ -19,9 +19,8 @@ data:
     - https://onlinejudge.u-aizu.ac.jp/problems/GRL_3_B
   bundledCode: "#line 1 \"test/graph/low_link.test.2.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/GRL_3_B\"\
     \n\n#line 1 \"test/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace std;\n\
-    using ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define rep(i, a, b) for(ll\
-    \ i = a; i < (b); i++)\n#define all(a) begin(a), end(a)\n#define sz(a) ssize(a)\n\
-    bool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
+    using ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define all(a) begin(a),\
+    \ end(a)\nbool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
     \ a, auto b) { return a < b ? a = b, 1 : 0; }\n#line 1 \"src/graph/low_link.hpp\"\
     \nstruct LowLink {\n   public:\n   vector<vector<int>> g;\n   vector<int> ord,\
     \ low;\n   vector<int> articulation;\n   vector<bool> visited;\n   vector<pair<int,\
@@ -42,27 +41,27 @@ data:
     \ { return bridge; }\n   vector<int>& getOrd() { return ord; }\n   vector<int>&\
     \ getLowlink() { return low; }\n};\n#line 5 \"test/graph/low_link.test.2.cpp\"\
     \n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n   int N, M;\n   cin >>\
-    \ N >> M;\n   vector<vector<int>> G(N);\n   rep(i, 0, M) {\n      int u, v;\n\
-    \      cin >> u >> v;\n      G[u].push_back(v);\n      G[v].push_back(u);\n  \
-    \ }\n   LowLink lowlink(G);\n   auto bridge = lowlink.getBridges();\n   for(auto&&\
+    \ N >> M;\n   vector<vector<int>> G(N);\n   for(int i = 0; i < M; i++) {\n   \
+    \   int u, v;\n      cin >> u >> v;\n      G[u].push_back(v);\n      G[v].push_back(u);\n\
+    \   }\n   LowLink lowlink(G);\n   auto bridge = lowlink.getBridges();\n   for(auto&&\
     \ [u, v] : bridge) {\n      if(u > v) swap(u, v);\n   }\n   sort(all(bridge));\n\
     \   for(auto& [u, v] : bridge) cout << u << ' ' << v << '\\n';\n   return 0;\n\
     }\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/GRL_3_B\"\n\n\
     #include \"test/template.hpp\"\n#include \"src/graph/low_link.hpp\"\n\nint main()\
     \ {\n   cin.tie(0)->sync_with_stdio(0);\n   int N, M;\n   cin >> N >> M;\n   vector<vector<int>>\
-    \ G(N);\n   rep(i, 0, M) {\n      int u, v;\n      cin >> u >> v;\n      G[u].push_back(v);\n\
-    \      G[v].push_back(u);\n   }\n   LowLink lowlink(G);\n   auto bridge = lowlink.getBridges();\n\
-    \   for(auto&& [u, v] : bridge) {\n      if(u > v) swap(u, v);\n   }\n   sort(all(bridge));\n\
-    \   for(auto& [u, v] : bridge) cout << u << ' ' << v << '\\n';\n   return 0;\n\
-    }"
+    \ G(N);\n   for(int i = 0; i < M; i++) {\n      int u, v;\n      cin >> u >> v;\n\
+    \      G[u].push_back(v);\n      G[v].push_back(u);\n   }\n   LowLink lowlink(G);\n\
+    \   auto bridge = lowlink.getBridges();\n   for(auto&& [u, v] : bridge) {\n  \
+    \    if(u > v) swap(u, v);\n   }\n   sort(all(bridge));\n   for(auto& [u, v] :\
+    \ bridge) cout << u << ' ' << v << '\\n';\n   return 0;\n}"
   dependsOn:
   - test/template.hpp
   - src/graph/low_link.hpp
   isVerificationFile: true
   path: test/graph/low_link.test.2.cpp
   requiredBy: []
-  timestamp: '2024-12-09 17:00:29+09:00'
+  timestamp: '2024-12-10 19:12:43+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/low_link.test.2.cpp

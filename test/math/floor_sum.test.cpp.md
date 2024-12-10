@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/math/floor_sum.hpp
     title: src/math/floor_sum.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: test/template.hpp
     title: test/template.hpp
   _extendedRequiredBy: []
@@ -19,9 +19,8 @@ data:
     - https://judge.yosupo.jp/problem/sum_of_floor_of_linear
   bundledCode: "#line 1 \"test/math/floor_sum.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/sum_of_floor_of_linear\"\
     \n#line 1 \"test/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace std;\n\
-    using ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define rep(i, a, b) for(ll\
-    \ i = a; i < (b); i++)\n#define all(a) begin(a), end(a)\n#define sz(a) ssize(a)\n\
-    bool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
+    using ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define all(a) begin(a),\
+    \ end(a)\nbool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
     \ a, auto b) { return a < b ? a = b, 1 : 0; }\n#line 1 \"src/math/floor_sum.hpp\"\
     \nll floor_sum(const ll& n, const ll& m, ll a, ll b) {\n   ll ret = 0;\n   if(a\
     \ >= m) ret += (n - 1) * n * (a / m) / 2, a %= m;\n   if(b >= m) ret += n * (b\
@@ -42,7 +41,7 @@ data:
   isVerificationFile: true
   path: test/math/floor_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-12-05 15:57:25+09:00'
+  timestamp: '2024-12-10 18:11:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/floor_sum.test.cpp

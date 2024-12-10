@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/graph/tree/hld.hpp
     title: src/graph/tree/hld.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: test/template.hpp
     title: test/template.hpp
   _extendedRequiredBy: []
@@ -22,9 +22,8 @@ data:
     - https://judge.yosupo.jp/problem/vertex_add_subtree_sum
   bundledCode: "#line 1 \"test/graph/tree/hld.test.3.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_add_subtree_sum\"\
     \n\n#line 1 \"test/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace std;\n\
-    using ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define rep(i, a, b) for(ll\
-    \ i = a; i < (b); i++)\n#define all(a) begin(a), end(a)\n#define sz(a) ssize(a)\n\
-    bool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
+    using ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define all(a) begin(a),\
+    \ end(a)\nbool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
     \ a, auto b) { return a < b ? a = b, 1 : 0; }\n#line 1 \"src/graph/tree/hld.hpp\"\
     \nclass HLDcomposition {\n   private:\n   int V;\n   vector<vector<int>> G;\n\
     \   vector<int> stsize, parent, pathtop, in, out;\n   int root;\n   void build_stsize(int\
@@ -60,29 +59,30 @@ data:
     \ stsize(V, 0), parent(V, -1), pathtop(V, -1), in(V, -1), out(V, -1) {}\n};\n\
     #line 1 \"src/data-structure/BIT.hpp\"\nstruct BIT {\n   vector<ll> a;\n   BIT(ll\
     \ n) : a(n + 1) {}\n   void add(ll i, ll x) {  // A[i] += x\n      i++;\n    \
-    \  while(i < sz(a)) {\n         a[i] += x;\n         i += i & -i;\n      }\n \
-    \  }\n   ll sum(ll r) {\n      ll s = 0;\n      while(r) {\n         s += a[r];\n\
+    \  while(i < size(a)) {\n         a[i] += x;\n         i += i & -i;\n      }\n\
+    \   }\n   ll sum(ll r) {\n      ll s = 0;\n      while(r) {\n         s += a[r];\n\
     \         r -= r & -r;\n      }\n      return s;\n   }\n   ll sum(ll l, ll r)\
     \ {  // sum of A[l, r)\n      return sum(r) - sum(l);\n   }\n};\n#line 6 \"test/graph/tree/hld.test.3.cpp\"\
     \n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\n   int N, Q;\n   cin >>\
-    \ N >> Q;\n\n   vector<int> A(N);\n   rep(i, 0, N) cin >> A[i];\n\n   HLDcomposition\
-    \ hld(N);\n   rep(i, 1, N) {\n      int p;\n      cin >> p;\n      hld.add_edge(p,\
-    \ i);\n   }\n   hld.build();\n\n   BIT bit(N);\n   rep(i, 0, N) { bit.add(hld.index(i),\
-    \ A[i]); }\n   while(Q--) {\n      int t;\n      cin >> t;\n      if(t == 0) {\n\
-    \         int u, x;\n         cin >> u >> x;\n         bit.add(hld.index(u), x);\n\
-    \      } else {\n         int u;\n         cin >> u;\n         auto [l, r] = hld.subtree_query(u);\n\
+    \ N >> Q;\n\n   vector<int> A(N);\n   for(int i = 0; i < N; i++) cin >> A[i];\n\
+    \n   HLDcomposition hld(N);\n   for(int i = 1; i < N; i++) {\n      int p;\n \
+    \     cin >> p;\n      hld.add_edge(p, i);\n   }\n   hld.build();\n\n   BIT bit(N);\n\
+    \   for(int i = 0; i < N; i++) { bit.add(hld.index(i), A[i]); }\n   while(Q--)\
+    \ {\n      int t;\n      cin >> t;\n      if(t == 0) {\n         int u, x;\n \
+    \        cin >> u >> x;\n         bit.add(hld.index(u), x);\n      } else {\n\
+    \         int u;\n         cin >> u;\n         auto [l, r] = hld.subtree_query(u);\n\
     \         cout << bit.sum(l, r) << '\\n';\n      }\n   }\n   return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_add_subtree_sum\"\
     \n\n#include \"test/template.hpp\"\n#include \"src/graph/tree/hld.hpp\"\n#include\
     \ \"src/data-structure/BIT.hpp\"\n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
-    \n   int N, Q;\n   cin >> N >> Q;\n\n   vector<int> A(N);\n   rep(i, 0, N) cin\
-    \ >> A[i];\n\n   HLDcomposition hld(N);\n   rep(i, 1, N) {\n      int p;\n   \
-    \   cin >> p;\n      hld.add_edge(p, i);\n   }\n   hld.build();\n\n   BIT bit(N);\n\
-    \   rep(i, 0, N) { bit.add(hld.index(i), A[i]); }\n   while(Q--) {\n      int\
-    \ t;\n      cin >> t;\n      if(t == 0) {\n         int u, x;\n         cin >>\
-    \ u >> x;\n         bit.add(hld.index(u), x);\n      } else {\n         int u;\n\
-    \         cin >> u;\n         auto [l, r] = hld.subtree_query(u);\n         cout\
-    \ << bit.sum(l, r) << '\\n';\n      }\n   }\n   return 0;\n}"
+    \n   int N, Q;\n   cin >> N >> Q;\n\n   vector<int> A(N);\n   for(int i = 0; i\
+    \ < N; i++) cin >> A[i];\n\n   HLDcomposition hld(N);\n   for(int i = 1; i < N;\
+    \ i++) {\n      int p;\n      cin >> p;\n      hld.add_edge(p, i);\n   }\n   hld.build();\n\
+    \n   BIT bit(N);\n   for(int i = 0; i < N; i++) { bit.add(hld.index(i), A[i]);\
+    \ }\n   while(Q--) {\n      int t;\n      cin >> t;\n      if(t == 0) {\n    \
+    \     int u, x;\n         cin >> u >> x;\n         bit.add(hld.index(u), x);\n\
+    \      } else {\n         int u;\n         cin >> u;\n         auto [l, r] = hld.subtree_query(u);\n\
+    \         cout << bit.sum(l, r) << '\\n';\n      }\n   }\n   return 0;\n}"
   dependsOn:
   - test/template.hpp
   - src/graph/tree/hld.hpp
@@ -90,7 +90,7 @@ data:
   isVerificationFile: true
   path: test/graph/tree/hld.test.3.cpp
   requiredBy: []
-  timestamp: '2024-12-08 01:27:48+09:00'
+  timestamp: '2024-12-10 18:11:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/tree/hld.test.3.cpp

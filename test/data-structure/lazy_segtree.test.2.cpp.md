@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/data-structure/lazy_segtree.hpp
     title: src/data-structure/lazy_segtree.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: test/template.hpp
     title: test/template.hpp
   _extendedRequiredBy: []
@@ -20,8 +20,7 @@ data:
   bundledCode: "#line 1 \"test/data-structure/lazy_segtree.test.2.cpp\"\n#define PROBLEM\
     \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\n\n#line\
     \ 1 \"test/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace std;\nusing\
-    \ ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define rep(i, a, b) for(ll\
-    \ i = a; i < (b); i++)\n#define all(a) begin(a), end(a)\n#define sz(a) ssize(a)\n\
+    \ ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define all(a) begin(a), end(a)\n\
     bool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
     \ a, auto b) { return a < b ? a = b, 1 : 0; }\n#line 1 \"src/data-structure/lazy_segtree.hpp\"\
     \n// base: 918715\nunsigned int bit_ceil(unsigned int n) {\n   unsigned int x\
@@ -107,7 +106,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/lazy_segtree.test.2.cpp
   requiredBy: []
-  timestamp: '2024-12-06 14:52:23+09:00'
+  timestamp: '2024-12-10 18:11:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/lazy_segtree.test.2.cpp

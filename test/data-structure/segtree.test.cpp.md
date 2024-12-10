@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/data-structure/segtree.hpp
     title: src/data-structure/segtree.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: test/template.hpp
     title: test/template.hpp
   _extendedRequiredBy: []
@@ -20,10 +20,9 @@ data:
   bundledCode: "#line 1 \"test/data-structure/segtree.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#line 1 \"test/template.hpp\"\
     \n#include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\nconst\
-    \ ll INF = LLONG_MAX / 4;\n#define rep(i, a, b) for(ll i = a; i < (b); i++)\n\
-    #define all(a) begin(a), end(a)\n#define sz(a) ssize(a)\nbool chmin(auto& a, auto\
-    \ b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto& a, auto b) { return a\
-    \ < b ? a = b, 1 : 0; }\n#line 1 \"src/data-structure/segtree.hpp\"\n// base:\
+    \ ll INF = LLONG_MAX / 4;\n#define all(a) begin(a), end(a)\nbool chmin(auto& a,\
+    \ auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto& a, auto b) { return\
+    \ a < b ? a = b, 1 : 0; }\n#line 1 \"src/data-structure/segtree.hpp\"\n// base:\
     \ bafcf8\nunsigned int bit_ceil(unsigned int n) {\n   unsigned int x = 1;\n  \
     \ while(x < (unsigned int)(n)) x *= 2;\n   return x;\n}\nint countr_zero(unsigned\
     \ int n) { return __builtin_ctz(n); }\nconstexpr int countr_zero_constexpr(unsigned\
@@ -77,7 +76,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/segtree.test.cpp
   requiredBy: []
-  timestamp: '2024-12-06 14:52:23+09:00'
+  timestamp: '2024-12-10 18:11:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/segtree.test.cpp

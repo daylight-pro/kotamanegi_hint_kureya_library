@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/modint/modint.hpp
     title: Modint
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: test/template.hpp
     title: test/template.hpp
   _extendedRequiredBy: []
@@ -23,8 +23,7 @@ data:
   bundledCode: "#line 1 \"test/data-structure/segtree.test.2.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/point_set_range_composite\"\n\n#line 1 \"\
     test/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace std;\nusing ll\
-    \ = long long;\nconst ll INF = LLONG_MAX / 4;\n#define rep(i, a, b) for(ll i =\
-    \ a; i < (b); i++)\n#define all(a) begin(a), end(a)\n#define sz(a) ssize(a)\n\
+    \ = long long;\nconst ll INF = LLONG_MAX / 4;\n#define all(a) begin(a), end(a)\n\
     bool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
     \ a, auto b) { return a < b ? a = b, 1 : 0; }\n#line 1 \"src/modint/modint.hpp\"\
     \nconst ll mod = 998244353;\nstruct mm {\n   ll x;\n   mm(ll x_ = 0) : x(x_ %\
@@ -78,25 +77,25 @@ data:
     \ 6 \"test/data-structure/segtree.test.2.cpp\"\n\nstruct Data {\n   mm c, d;\n\
     };\n\nData op(Data a, Data b) { return {a.c * b.c, b.c * a.d + b.d}; }\n\nData\
     \ e() { return {1, 0}; }\n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
-    \n   int N, Q;\n   cin >> N >> Q;\n   vector<Data> V(N);\n   rep(i, 0, N) {\n\
-    \      int a, b;\n      cin >> a >> b;\n      V[i] = {mm(a), mm(b)};\n   }\n \
-    \  segtree<Data, op, e> seg(V);\n   while(Q--) {\n      int k;\n      cin >> k;\n\
-    \      if(k == 0) {\n         int p, c, d;\n         cin >> p >> c >> d;\n   \
-    \      seg.set(p, {c, d});\n      } else {\n         int l, r, x;\n         cin\
-    \ >> l >> r >> x;\n         auto [c, d] = seg.prod(l, r);\n         cout << (c\
-    \ * x + d).x << endl;\n      }\n   }\n}\n"
+    \n   int N, Q;\n   cin >> N >> Q;\n   vector<Data> V(N);\n   for(int i = 0; i\
+    \ < N; i++) {\n      int a, b;\n      cin >> a >> b;\n      V[i] = {mm(a), mm(b)};\n\
+    \   }\n   segtree<Data, op, e> seg(V);\n   while(Q--) {\n      int k;\n      cin\
+    \ >> k;\n      if(k == 0) {\n         int p, c, d;\n         cin >> p >> c >>\
+    \ d;\n         seg.set(p, {c, d});\n      } else {\n         int l, r, x;\n  \
+    \       cin >> l >> r >> x;\n         auto [c, d] = seg.prod(l, r);\n        \
+    \ cout << (c * x + d).x << endl;\n      }\n   }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_composite\"\
     \n\n#include \"test/template.hpp\"\n#include \"src/modint/modint.hpp\"\n#include\
     \ \"src/data-structure/segtree.hpp\"\n\nstruct Data {\n   mm c, d;\n};\n\nData\
     \ op(Data a, Data b) { return {a.c * b.c, b.c * a.d + b.d}; }\n\nData e() { return\
     \ {1, 0}; }\n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\n   int N, Q;\n\
-    \   cin >> N >> Q;\n   vector<Data> V(N);\n   rep(i, 0, N) {\n      int a, b;\n\
-    \      cin >> a >> b;\n      V[i] = {mm(a), mm(b)};\n   }\n   segtree<Data, op,\
-    \ e> seg(V);\n   while(Q--) {\n      int k;\n      cin >> k;\n      if(k == 0)\
-    \ {\n         int p, c, d;\n         cin >> p >> c >> d;\n         seg.set(p,\
-    \ {c, d});\n      } else {\n         int l, r, x;\n         cin >> l >> r >> x;\n\
-    \         auto [c, d] = seg.prod(l, r);\n         cout << (c * x + d).x << endl;\n\
-    \      }\n   }\n}"
+    \   cin >> N >> Q;\n   vector<Data> V(N);\n   for(int i = 0; i < N; i++) {\n \
+    \     int a, b;\n      cin >> a >> b;\n      V[i] = {mm(a), mm(b)};\n   }\n  \
+    \ segtree<Data, op, e> seg(V);\n   while(Q--) {\n      int k;\n      cin >> k;\n\
+    \      if(k == 0) {\n         int p, c, d;\n         cin >> p >> c >> d;\n   \
+    \      seg.set(p, {c, d});\n      } else {\n         int l, r, x;\n         cin\
+    \ >> l >> r >> x;\n         auto [c, d] = seg.prod(l, r);\n         cout << (c\
+    \ * x + d).x << endl;\n      }\n   }\n}"
   dependsOn:
   - test/template.hpp
   - src/modint/modint.hpp
@@ -104,7 +103,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/segtree.test.2.cpp
   requiredBy: []
-  timestamp: '2024-12-06 14:52:23+09:00'
+  timestamp: '2024-12-10 19:12:43+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/segtree.test.2.cpp

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/data-structure/dsu.hpp
     title: src/data-structure/dsu.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: test/template.hpp
     title: test/template.hpp
   _extendedRequiredBy: []
@@ -19,9 +19,8 @@ data:
     - https://judge.yosupo.jp/problem/unionfind
   bundledCode: "#line 1 \"test/data-structure/dsu.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\
     \n\n#line 1 \"test/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace std;\n\
-    using ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define rep(i, a, b) for(ll\
-    \ i = a; i < (b); i++)\n#define all(a) begin(a), end(a)\n#define sz(a) ssize(a)\n\
-    bool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
+    using ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define all(a) begin(a),\
+    \ end(a)\nbool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
     \ a, auto b) { return a < b ? a = b, 1 : 0; }\n#line 1 \"src/data-structure/dsu.hpp\"\
     \n// base: c45937\nstruct dsu {\n   private:\n   int _n;\n   vector<int> parent_or_size;\n\
     \n   public:\n   dsu() : _n(0) {}\n   explicit dsu(int n) : _n(n), parent_or_size(n,\
@@ -38,11 +37,12 @@ data:
     \ t;\n      }\n      return x;\n   }\n\n   int size(int a) {\n      // assert(0\
     \ <= a && a < _n);\n      return -parent_or_size[leader(a)];\n   }  // 1ff997\n\
     \n   vector<vector<int>> groups() {\n      vector<int> leader_buf(_n), group_size(_n);\n\
-    \      rep(i, 0, _n) {\n         leader_buf[i] = leader(i);\n         group_size[leader_buf[i]]++;\n\
-    \      }\n      vector<vector<int>> result(_n);\n      rep(i, 0, _n) result[i].reserve(group_size[i]);\n\
-    \      rep(i, 0, _n) result[leader_buf[i]].push_back(i);\n      result.erase(remove_if(result.begin(),\
+    \      for(int i = 0; i < _n; i++) {\n         leader_buf[i] = leader(i);\n  \
+    \       group_size[leader_buf[i]]++;\n      }\n      vector<vector<int>> result(_n);\n\
+    \      for(int i = 0; i < _n; i++) result[i].reserve(group_size[i]);\n      for(int\
+    \ i = 0; i < _n; i++) result[leader_buf[i]].push_back(i);\n      result.erase(remove_if(result.begin(),\
     \ result.end(), [&](const vector<int>& v) { return v.empty(); }),\n          \
-    \         result.end());\n      return result;\n   }  // 45ebf9\n};\n#line 5 \"\
+    \         result.end());\n      return result;\n   }  // bf3a1e\n};\n#line 5 \"\
     test/data-structure/dsu.test.cpp\"\n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
     \n   int n, q;\n   cin >> n >> q;\n   dsu uf(n);\n   while(q--) {\n      int t,\
     \ u, v;\n      cin >> t >> u >> v;\n      if(t == 0) uf.merge(u, v);\n      else\
@@ -59,7 +59,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/dsu.test.cpp
   requiredBy: []
-  timestamp: '2024-12-06 16:53:29+09:00'
+  timestamp: '2024-12-10 19:12:43+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/dsu.test.cpp

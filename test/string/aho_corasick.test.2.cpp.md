@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/string/aho_corasick.hpp
     title: src/string/aho_corasick.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/string/trie.hpp
     title: src/string/trie.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: test/template.hpp
     title: test/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/430
@@ -23,19 +23,18 @@ data:
   bundledCode: "#line 1 \"test/string/aho_corasick.test.2.cpp\"\n#define PROBLEM \"\
     https://yukicoder.me/problems/no/430\"\n\n#line 1 \"test/template.hpp\"\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\nconst ll INF =\
-    \ LLONG_MAX / 4;\n#define rep(i, a, b) for(ll i = a; i < (b); i++)\n#define all(a)\
-    \ begin(a), end(a)\n#define sz(a) ssize(a)\nbool chmin(auto& a, auto b) { return\
-    \ a > b ? a = b, 1 : 0; }\nbool chmax(auto& a, auto b) { return a < b ? a = b,\
-    \ 1 : 0; }\n#line 1 \"src/string/trie.hpp\"\ntemplate<int char_size> struct TrieNode\
-    \ {\n   int nxt[char_size];\n   int exist;\n   vector<int> accept;\n\n   TrieNode()\
-    \ : exist(0) { memset(nxt, -1, sizeof(nxt)); }\n};\n\ntemplate<int char_size,\
-    \ int margin> struct Trie {\n   using Node = TrieNode<char_size>;\n\n   vector<Node>\
-    \ nodes;\n   int root;\n   Trie() : root(0) { nodes.push_back(Node()); }\n\n \
-    \  void update_direct(int node, int id) { nodes[node].accept.push_back(id); }\n\
-    \n   void update_child(int node, int child, int id) { ++nodes[node].exist; }\n\
-    \n   void add(const string& str, int str_index, int node_index, int id) {\n  \
-    \    if(str_index == size(str)) {\n         update_direct(node_index, id);\n \
-    \     } else {\n         const int c = str[str_index] - margin;\n         if(nodes[node_index].nxt[c]\
+    \ LLONG_MAX / 4;\n#define all(a) begin(a), end(a)\nbool chmin(auto& a, auto b)\
+    \ { return a > b ? a = b, 1 : 0; }\nbool chmax(auto& a, auto b) { return a < b\
+    \ ? a = b, 1 : 0; }\n#line 1 \"src/string/trie.hpp\"\ntemplate<int char_size>\
+    \ struct TrieNode {\n   int nxt[char_size];\n   int exist;\n   vector<int> accept;\n\
+    \n   TrieNode() : exist(0) { memset(nxt, -1, sizeof(nxt)); }\n};\n\ntemplate<int\
+    \ char_size, int margin> struct Trie {\n   using Node = TrieNode<char_size>;\n\
+    \n   vector<Node> nodes;\n   int root;\n   Trie() : root(0) { nodes.push_back(Node());\
+    \ }\n\n   void update_direct(int node, int id) { nodes[node].accept.push_back(id);\
+    \ }\n\n   void update_child(int node, int child, int id) { ++nodes[node].exist;\
+    \ }\n\n   void add(const string& str, int str_index, int node_index, int id) {\n\
+    \      if(str_index == size(str)) {\n         update_direct(node_index, id);\n\
+    \      } else {\n         const int c = str[str_index] - margin;\n         if(nodes[node_index].nxt[c]\
     \ == -1) {\n            nodes[node_index].nxt[c] = size(nodes);\n            nodes.push_back(Node());\n\
     \         }\n         add(str, str_index + 1, nodes[node_index].nxt[c], id);\n\
     \         update_child(node_index, nodes[node_index].nxt[c], id);\n      }\n \
@@ -80,16 +79,17 @@ data:
     \  auto [cnt, nxt] = move(c, now);\n         res += cnt;\n         now = nxt;\n\
     \      }\n      return {res, now};\n   }  // b1949a\n};\n#line 6 \"test/string/aho_corasick.test.2.cpp\"\
     \n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n   string S;\n   cin >>\
-    \ S;\n   int M;\n   cin >> M;\n   AhoCorasick<26, 'A'> aho;\n   rep(i, 0, M) {\n\
-    \      string s;\n      cin >> s;\n      aho.add(s);\n   }\n   aho.build();\n\
-    \   auto result = aho.match(S);\n   ll ans = 0;\n   for(auto& [id, cnt] : result)\
-    \ { ans += cnt; }\n   cout << ans << endl;\n   return 0;\n}\n"
+    \ S;\n   int M;\n   cin >> M;\n   AhoCorasick<26, 'A'> aho;\n   for(int i = 0;\
+    \ i < M; i++) {\n      string s;\n      cin >> s;\n      aho.add(s);\n   }\n \
+    \  aho.build();\n   auto result = aho.match(S);\n   ll ans = 0;\n   for(auto&\
+    \ [id, cnt] : result) { ans += cnt; }\n   cout << ans << endl;\n   return 0;\n\
+    }\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/430\"\n\n#include \"test/template.hpp\"\
     \n#include \"src/string/trie.hpp\"\n#include \"src/string/aho_corasick.hpp\"\n\
     \nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n   string S;\n   cin >> S;\n\
-    \   int M;\n   cin >> M;\n   AhoCorasick<26, 'A'> aho;\n   rep(i, 0, M) {\n  \
-    \    string s;\n      cin >> s;\n      aho.add(s);\n   }\n   aho.build();\n  \
-    \ auto result = aho.match(S);\n   ll ans = 0;\n   for(auto& [id, cnt] : result)\
+    \   int M;\n   cin >> M;\n   AhoCorasick<26, 'A'> aho;\n   for(int i = 0; i <\
+    \ M; i++) {\n      string s;\n      cin >> s;\n      aho.add(s);\n   }\n   aho.build();\n\
+    \   auto result = aho.match(S);\n   ll ans = 0;\n   for(auto& [id, cnt] : result)\
     \ { ans += cnt; }\n   cout << ans << endl;\n   return 0;\n}\n"
   dependsOn:
   - test/template.hpp
@@ -98,8 +98,8 @@ data:
   isVerificationFile: true
   path: test/string/aho_corasick.test.2.cpp
   requiredBy: []
-  timestamp: '2024-12-09 18:22:18+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-12-10 19:12:43+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/string/aho_corasick.test.2.cpp
 layout: document

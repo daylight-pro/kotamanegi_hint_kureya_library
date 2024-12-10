@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/data-structure/dsu.hpp
     title: src/data-structure/dsu.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: test/template.hpp
     title: test/template.hpp
   _extendedRequiredBy: []
@@ -20,8 +20,7 @@ data:
   bundledCode: "#line 1 \"test/data-structure/dsu.test.2.cpp\"\n#define PROBLEM \"\
     https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\n\n#line\
     \ 1 \"test/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace std;\nusing\
-    \ ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define rep(i, a, b) for(ll\
-    \ i = a; i < (b); i++)\n#define all(a) begin(a), end(a)\n#define sz(a) ssize(a)\n\
+    \ ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define all(a) begin(a), end(a)\n\
     bool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
     \ a, auto b) { return a < b ? a = b, 1 : 0; }\n#line 1 \"src/data-structure/dsu.hpp\"\
     \n// base: c45937\nstruct dsu {\n   private:\n   int _n;\n   vector<int> parent_or_size;\n\
@@ -39,14 +38,15 @@ data:
     \ t;\n      }\n      return x;\n   }\n\n   int size(int a) {\n      // assert(0\
     \ <= a && a < _n);\n      return -parent_or_size[leader(a)];\n   }  // 1ff997\n\
     \n   vector<vector<int>> groups() {\n      vector<int> leader_buf(_n), group_size(_n);\n\
-    \      rep(i, 0, _n) {\n         leader_buf[i] = leader(i);\n         group_size[leader_buf[i]]++;\n\
-    \      }\n      vector<vector<int>> result(_n);\n      rep(i, 0, _n) result[i].reserve(group_size[i]);\n\
-    \      rep(i, 0, _n) result[leader_buf[i]].push_back(i);\n      result.erase(remove_if(result.begin(),\
+    \      for(int i = 0; i < _n; i++) {\n         leader_buf[i] = leader(i);\n  \
+    \       group_size[leader_buf[i]]++;\n      }\n      vector<vector<int>> result(_n);\n\
+    \      for(int i = 0; i < _n; i++) result[i].reserve(group_size[i]);\n      for(int\
+    \ i = 0; i < _n; i++) result[leader_buf[i]].push_back(i);\n      result.erase(remove_if(result.begin(),\
     \ result.end(), [&](const vector<int>& v) { return v.empty(); }),\n          \
-    \         result.end());\n      return result;\n   }  // 45ebf9\n};\n#line 5 \"\
+    \         result.end());\n      return result;\n   }  // bf3a1e\n};\n#line 5 \"\
     test/data-structure/dsu.test.2.cpp\"\n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
     \n   dsu d(10);\n   d.merge(3, 5);\n   d.merge(5, 7);\n   d.merge(2, 3);\n   d.merge(8,\
-    \ 9);\n   d.merge(0, 1);\n   d.merge(2, 7);\n   assert(d.size(7) == 4);\n   assert(sz(d.groups())\
+    \ 9);\n   d.merge(0, 1);\n   d.merge(2, 7);\n   assert(d.size(7) == 4);\n   assert(size(d.groups())\
     \ == 5);\n   set<set<int>> s;\n   s.insert({0, 1});\n   s.insert({2, 3, 5, 7});\n\
     \   s.insert({4});\n   s.insert({6});\n   s.insert({8, 9});\n   for(auto i : d.groups())\
     \ {\n      set<int> t(all(i));\n      assert(s.count(t));\n   }\n   cout << \"\
@@ -55,7 +55,7 @@ data:
     \n\n#include \"test/template.hpp\"\n#include \"src/data-structure/dsu.hpp\"\n\n\
     int main() {\n   cin.tie(0)->sync_with_stdio(0);\n\n   dsu d(10);\n   d.merge(3,\
     \ 5);\n   d.merge(5, 7);\n   d.merge(2, 3);\n   d.merge(8, 9);\n   d.merge(0,\
-    \ 1);\n   d.merge(2, 7);\n   assert(d.size(7) == 4);\n   assert(sz(d.groups())\
+    \ 1);\n   d.merge(2, 7);\n   assert(d.size(7) == 4);\n   assert(size(d.groups())\
     \ == 5);\n   set<set<int>> s;\n   s.insert({0, 1});\n   s.insert({2, 3, 5, 7});\n\
     \   s.insert({4});\n   s.insert({6});\n   s.insert({8, 9});\n   for(auto i : d.groups())\
     \ {\n      set<int> t(all(i));\n      assert(s.count(t));\n   }\n   cout << \"\
@@ -66,7 +66,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/dsu.test.2.cpp
   requiredBy: []
-  timestamp: '2024-12-06 17:18:33+09:00'
+  timestamp: '2024-12-10 19:12:43+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/dsu.test.2.cpp

@@ -16,23 +16,23 @@ data:
     \ mod;\n   return a;\n}\nu64 mul(u64 a, u64 b) {\n   auto c = (__uint128_t)a *\
     \ b;\n   return add(c >> 61, c & mod);\n}\nrandom_device rnd;\nconst u64 r = ((u64)rnd()\
     \ << 32 | rnd()) % mod;\nstruct RH {\n   ll n;\n   vector<u64> hs, pw;\n   RH(string\
-    \ s) : n(sz(s)), hs(n + 1), pw(n + 1, 1) {\n      rep(i, 0, n) {\n         pw[i\
-    \ + 1] = mul(pw[i], r);\n         hs[i + 1] = add(mul(hs[i], r), s[i]);\n    \
-    \  }\n   }\n   u64 get(ll l, ll r) const { return add(hs[r], mod - mul(hs[l],\
-    \ pw[r - l])); }\n};\n"
+    \ s) : n(size(s)), hs(n + 1), pw(n + 1, 1) {\n      for(int i = 0; i < n; i++)\
+    \ {\n         pw[i + 1] = mul(pw[i], r);\n         hs[i + 1] = add(mul(hs[i],\
+    \ r), s[i]);\n      }\n   }\n   u64 get(ll l, ll r) const { return add(hs[r],\
+    \ mod - mul(hs[l], pw[r - l])); }\n};\n"
   code: "// using u64 = uint64_t;\nconst u64 mod = INF;\nu64 add(u64 a, u64 b) {\n\
     \   a += b;\n   if(a >= mod) a -= mod;\n   return a;\n}\nu64 mul(u64 a, u64 b)\
     \ {\n   auto c = (__uint128_t)a * b;\n   return add(c >> 61, c & mod);\n}\nrandom_device\
     \ rnd;\nconst u64 r = ((u64)rnd() << 32 | rnd()) % mod;\nstruct RH {\n   ll n;\n\
-    \   vector<u64> hs, pw;\n   RH(string s) : n(sz(s)), hs(n + 1), pw(n + 1, 1) {\n\
-    \      rep(i, 0, n) {\n         pw[i + 1] = mul(pw[i], r);\n         hs[i + 1]\
-    \ = add(mul(hs[i], r), s[i]);\n      }\n   }\n   u64 get(ll l, ll r) const { return\
-    \ add(hs[r], mod - mul(hs[l], pw[r - l])); }\n};\n"
+    \   vector<u64> hs, pw;\n   RH(string s) : n(size(s)), hs(n + 1), pw(n + 1, 1)\
+    \ {\n      for(int i = 0; i < n; i++) {\n         pw[i + 1] = mul(pw[i], r);\n\
+    \         hs[i + 1] = add(mul(hs[i], r), s[i]);\n      }\n   }\n   u64 get(ll\
+    \ l, ll r) const { return add(hs[r], mod - mul(hs[l], pw[r - l])); }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: src/string/RollingHash.hpp
   requiredBy: []
-  timestamp: '2024-05-31 19:00:40+09:00'
+  timestamp: '2024-12-10 18:11:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/string/RollingHash.test.cpp

@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/modint/modint.hpp
     title: Modint
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: test/template.hpp
     title: test/template.hpp
   _extendedRequiredBy: []
@@ -25,9 +25,8 @@ data:
     - https://judge.yosupo.jp/problem/vertex_set_path_composite
   bundledCode: "#line 1 \"test/graph/tree/hld.test.2.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_set_path_composite\"\
     \n\n#line 1 \"test/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace std;\n\
-    using ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define rep(i, a, b) for(ll\
-    \ i = a; i < (b); i++)\n#define all(a) begin(a), end(a)\n#define sz(a) ssize(a)\n\
-    bool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
+    using ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define all(a) begin(a),\
+    \ end(a)\nbool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
     \ a, auto b) { return a < b ? a = b, 1 : 0; }\n#line 1 \"src/graph/tree/hld.hpp\"\
     \nclass HLDcomposition {\n   private:\n   int V;\n   vector<vector<int>> G;\n\
     \   vector<int> stsize, parent, pathtop, in, out;\n   int root;\n   void build_stsize(int\
@@ -114,19 +113,20 @@ data:
     \ * b.first + b.second}; }\nP op2(P a, P b) { return {a.first * b.first, a.first\
     \ * b.second + a.second}; }\n\nP e() { return {1, 0}; }\n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
     \   int N, Q;\n   cin >> N >> Q;\n   HLDcomposition hld(N);\n   vector<int> A(N),\
-    \ B(N);\n   rep(i, 0, N) { cin >> A[i] >> B[i]; }\n   rep(i, 0, N - 1) {\n   \
-    \   int u, v;\n      cin >> u >> v;\n      hld.add_edge(u, v);\n   }\n   hld.build();\n\
-    \   segtree<P, op, e> seg(N);\n   segtree<P, op2, e> seg2(N);\n   rep(i, 0, N)\
-    \ {\n      seg.set(hld.index(i), {A[i], B[i]});\n      seg2.set(hld.index(i),\
-    \ {A[i], B[i]});\n   }\n   while(Q--) {\n      int k;\n      cin >> k;\n     \
-    \ if(k == 0) {\n         int p, c, d;\n         cin >> p >> c >> d;\n        \
-    \ seg.set(hld.index(p), {c, d});\n         seg2.set(hld.index(p), {c, d});\n \
-    \     } else {\n         int u, v;\n         cin >> u >> v;\n         int y;\n\
-    \         cin >> y;\n         mm x(y);\n         for(auto [l, r, f] : hld.path_query(u,\
-    \ v)) {\n            if(f) {\n               auto [c, d] = seg2.prod(l, r);\n\
-    \               x = c * x + d;\n            } else {\n               auto [a,\
-    \ b] = seg.prod(l, r);\n               x = a * x + b;\n            }\n       \
-    \  }\n         cout << x.x << endl;\n      }\n   }\n   return 0;\n}\n"
+    \ B(N);\n   for(int i = 0; i < N; i++) { cin >> A[i] >> B[i]; }\n   for(int i\
+    \ = 0; i < N - 1; i++) {\n      int u, v;\n      cin >> u >> v;\n      hld.add_edge(u,\
+    \ v);\n   }\n   hld.build();\n   segtree<P, op, e> seg(N);\n   segtree<P, op2,\
+    \ e> seg2(N);\n   for(int i = 0; i < N; i++) {\n      seg.set(hld.index(i), {A[i],\
+    \ B[i]});\n      seg2.set(hld.index(i), {A[i], B[i]});\n   }\n   while(Q--) {\n\
+    \      int k;\n      cin >> k;\n      if(k == 0) {\n         int p, c, d;\n  \
+    \       cin >> p >> c >> d;\n         seg.set(hld.index(p), {c, d});\n       \
+    \  seg2.set(hld.index(p), {c, d});\n      } else {\n         int u, v;\n     \
+    \    cin >> u >> v;\n         int y;\n         cin >> y;\n         mm x(y);\n\
+    \         for(auto [l, r, f] : hld.path_query(u, v)) {\n            if(f) {\n\
+    \               auto [c, d] = seg2.prod(l, r);\n               x = c * x + d;\n\
+    \            } else {\n               auto [a, b] = seg.prod(l, r);\n        \
+    \       x = a * x + b;\n            }\n         }\n         cout << x.x << endl;\n\
+    \      }\n   }\n   return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_set_path_composite\"\
     \n\n#include \"test/template.hpp\"\n#include \"src/graph/tree/hld.hpp\"\n#include\
     \ \"src/data-structure/segtree.hpp\"\n#include \"src/modint/modint.hpp\"\n\nusing\
@@ -134,19 +134,20 @@ data:
     \ + b.second}; }\nP op2(P a, P b) { return {a.first * b.first, a.first * b.second\
     \ + a.second}; }\n\nP e() { return {1, 0}; }\n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
     \   int N, Q;\n   cin >> N >> Q;\n   HLDcomposition hld(N);\n   vector<int> A(N),\
-    \ B(N);\n   rep(i, 0, N) { cin >> A[i] >> B[i]; }\n   rep(i, 0, N - 1) {\n   \
-    \   int u, v;\n      cin >> u >> v;\n      hld.add_edge(u, v);\n   }\n   hld.build();\n\
-    \   segtree<P, op, e> seg(N);\n   segtree<P, op2, e> seg2(N);\n   rep(i, 0, N)\
-    \ {\n      seg.set(hld.index(i), {A[i], B[i]});\n      seg2.set(hld.index(i),\
-    \ {A[i], B[i]});\n   }\n   while(Q--) {\n      int k;\n      cin >> k;\n     \
-    \ if(k == 0) {\n         int p, c, d;\n         cin >> p >> c >> d;\n        \
-    \ seg.set(hld.index(p), {c, d});\n         seg2.set(hld.index(p), {c, d});\n \
-    \     } else {\n         int u, v;\n         cin >> u >> v;\n         int y;\n\
-    \         cin >> y;\n         mm x(y);\n         for(auto [l, r, f] : hld.path_query(u,\
-    \ v)) {\n            if(f) {\n               auto [c, d] = seg2.prod(l, r);\n\
-    \               x = c * x + d;\n            } else {\n               auto [a,\
-    \ b] = seg.prod(l, r);\n               x = a * x + b;\n            }\n       \
-    \  }\n         cout << x.x << endl;\n      }\n   }\n   return 0;\n}\n"
+    \ B(N);\n   for(int i = 0; i < N; i++) { cin >> A[i] >> B[i]; }\n   for(int i\
+    \ = 0; i < N - 1; i++) {\n      int u, v;\n      cin >> u >> v;\n      hld.add_edge(u,\
+    \ v);\n   }\n   hld.build();\n   segtree<P, op, e> seg(N);\n   segtree<P, op2,\
+    \ e> seg2(N);\n   for(int i = 0; i < N; i++) {\n      seg.set(hld.index(i), {A[i],\
+    \ B[i]});\n      seg2.set(hld.index(i), {A[i], B[i]});\n   }\n   while(Q--) {\n\
+    \      int k;\n      cin >> k;\n      if(k == 0) {\n         int p, c, d;\n  \
+    \       cin >> p >> c >> d;\n         seg.set(hld.index(p), {c, d});\n       \
+    \  seg2.set(hld.index(p), {c, d});\n      } else {\n         int u, v;\n     \
+    \    cin >> u >> v;\n         int y;\n         cin >> y;\n         mm x(y);\n\
+    \         for(auto [l, r, f] : hld.path_query(u, v)) {\n            if(f) {\n\
+    \               auto [c, d] = seg2.prod(l, r);\n               x = c * x + d;\n\
+    \            } else {\n               auto [a, b] = seg.prod(l, r);\n        \
+    \       x = a * x + b;\n            }\n         }\n         cout << x.x << endl;\n\
+    \      }\n   }\n   return 0;\n}\n"
   dependsOn:
   - test/template.hpp
   - src/graph/tree/hld.hpp
@@ -155,7 +156,7 @@ data:
   isVerificationFile: true
   path: test/graph/tree/hld.test.2.cpp
   requiredBy: []
-  timestamp: '2024-12-07 04:40:17+09:00'
+  timestamp: '2024-12-10 19:12:43+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/tree/hld.test.2.cpp

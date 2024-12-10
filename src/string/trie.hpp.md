@@ -3,18 +3,18 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/string/aho_corasick.test.2.cpp
     title: test/string/aho_corasick.test.2.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/string/aho_corasick.test.3.cpp
     title: test/string/aho_corasick.test.3.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/string/aho_corasick.test.cpp
     title: test/string/aho_corasick.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/string/trie.hpp\"\ntemplate<int char_size> struct TrieNode\
@@ -66,7 +66,7 @@ data:
   path: src/string/trie.hpp
   requiredBy: []
   timestamp: '2024-12-09 18:01:37+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/string/aho_corasick.test.2.cpp
   - test/string/aho_corasick.test.3.cpp

@@ -103,13 +103,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/string/SuffixArray.hpp
       title: Suffix Array
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: src/string/Zalgorithm.hpp
       title: Z Algorithm
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: src/string/aho_corasick.hpp
       title: src/string/aho_corasick.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: src/string/trie.hpp
       title: src/string/trie.hpp
   - name: src/template
@@ -119,7 +119,7 @@ data:
       title: src/template/template.hpp
   - name: test
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: test/template.hpp
       title: test/template.hpp
   verificationCategories:
@@ -262,21 +262,21 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/string/SuffixArray.test.cpp
       title: test/string/SuffixArray.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/string/Zalgorithm.test.cpp
       title: test/string/Zalgorithm.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/string/aho_corasick.test.2.cpp
       title: test/string/aho_corasick.test.2.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/string/aho_corasick.test.3.cpp
       title: test/string/aho_corasick.test.3.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/string/aho_corasick.test.cpp
       title: test/string/aho_corasick.test.cpp
   - name: test
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/template.test.cpp
       title: test/template.test.cpp
 layout: toppage

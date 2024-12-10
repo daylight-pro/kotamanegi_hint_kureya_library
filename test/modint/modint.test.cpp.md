@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/modint/modint.hpp
     title: Modint
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: test/template.hpp
     title: test/template.hpp
   _extendedRequiredBy: []
@@ -19,9 +19,8 @@ data:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A
   bundledCode: "#line 1 \"test/modint/modint.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
     \n#line 1 \"test/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace std;\n\
-    using ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define rep(i, a, b) for(ll\
-    \ i = a; i < (b); i++)\n#define all(a) begin(a), end(a)\n#define sz(a) ssize(a)\n\
-    bool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
+    using ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define all(a) begin(a),\
+    \ end(a)\nbool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
     \ a, auto b) { return a < b ? a = b, 1 : 0; }\n#line 1 \"src/modint/modint.hpp\"\
     \nconst ll mod = 998244353;\nstruct mm {\n   ll x;\n   mm(ll x_ = 0) : x(x_ %\
     \ mod) {\n      if(x < 0) x += mod;\n   }\n   friend mm operator+(mm a, mm b)\
@@ -36,31 +35,31 @@ data:
     \ const {\n      mm a = *this, c = 1;\n      while(b) {\n         if(b & 1) c\
     \ *= a;\n         a *= a;\n         b >>= 1;\n      }\n      return c;\n   }\n\
     };\n#line 4 \"test/modint/modint.test.cpp\"\n\nmt19937 rnd(random_device{}());\n\
-    int main() {\n   rep(i, 0, 1e5) {\n      const ll a = rnd() % mod, b = rnd() %\
-    \ mod;\n      mm A = a, B = b, C = A * B;\n      assert((A + B).x == (a + b) %\
-    \ mod);\n      assert((A - B).x == (a - b + mod) % mod);\n      assert(C.x ==\
-    \ (a * b) % mod);\n      assert((A / B.inv()).x == C.x);\n      A = a;\n     \
-    \ assert((A += B).x == (a + b) % mod);\n      A = a;\n      assert((A -= B).x\
+    int main() {\n   for(int i = 0; i < 1e5; i++) {\n      const ll a = rnd() % mod,\
+    \ b = rnd() % mod;\n      mm A = a, B = b, C = A * B;\n      assert((A + B).x\
+    \ == (a + b) % mod);\n      assert((A - B).x == (a - b + mod) % mod);\n      assert(C.x\
+    \ == (a * b) % mod);\n      assert((A / B.inv()).x == C.x);\n      A = a;\n  \
+    \    assert((A += B).x == (a + b) % mod);\n      A = a;\n      assert((A -= B).x\
     \ == (a - b + mod) % mod);\n      A = a;\n      assert((A *= B).x == (a * b) %\
     \ mod);\n      A = a;\n      assert((A /= B.inv()).x == C.x);\n   }\n   puts(\"\
     Hello World\");\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
     \n#include \"test/template.hpp\"\n#include \"src/modint/modint.hpp\"\n\nmt19937\
-    \ rnd(random_device{}());\nint main() {\n   rep(i, 0, 1e5) {\n      const ll a\
-    \ = rnd() % mod, b = rnd() % mod;\n      mm A = a, B = b, C = A * B;\n      assert((A\
-    \ + B).x == (a + b) % mod);\n      assert((A - B).x == (a - b + mod) % mod);\n\
-    \      assert(C.x == (a * b) % mod);\n      assert((A / B.inv()).x == C.x);\n\
-    \      A = a;\n      assert((A += B).x == (a + b) % mod);\n      A = a;\n    \
-    \  assert((A -= B).x == (a - b + mod) % mod);\n      A = a;\n      assert((A *=\
-    \ B).x == (a * b) % mod);\n      A = a;\n      assert((A /= B.inv()).x == C.x);\n\
-    \   }\n   puts(\"Hello World\");\n}\n"
+    \ rnd(random_device{}());\nint main() {\n   for(int i = 0; i < 1e5; i++) {\n \
+    \     const ll a = rnd() % mod, b = rnd() % mod;\n      mm A = a, B = b, C = A\
+    \ * B;\n      assert((A + B).x == (a + b) % mod);\n      assert((A - B).x == (a\
+    \ - b + mod) % mod);\n      assert(C.x == (a * b) % mod);\n      assert((A / B.inv()).x\
+    \ == C.x);\n      A = a;\n      assert((A += B).x == (a + b) % mod);\n      A\
+    \ = a;\n      assert((A -= B).x == (a - b + mod) % mod);\n      A = a;\n     \
+    \ assert((A *= B).x == (a * b) % mod);\n      A = a;\n      assert((A /= B.inv()).x\
+    \ == C.x);\n   }\n   puts(\"Hello World\");\n}\n"
   dependsOn:
   - test/template.hpp
   - src/modint/modint.hpp
   isVerificationFile: true
   path: test/modint/modint.test.cpp
   requiredBy: []
-  timestamp: '2024-05-31 19:00:40+09:00'
+  timestamp: '2024-12-10 19:12:43+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/modint/modint.test.cpp

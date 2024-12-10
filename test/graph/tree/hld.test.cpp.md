@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/graph/tree/hld.hpp
     title: src/graph/tree/hld.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: test/template.hpp
     title: test/template.hpp
   _extendedRequiredBy: []
@@ -22,16 +22,15 @@ data:
     - https://judge.yosupo.jp/problem/vertex_add_path_sum
   bundledCode: "#line 1 \"test/graph/tree/hld.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_add_path_sum\"\
     \n\n#line 1 \"test/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace std;\n\
-    using ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define rep(i, a, b) for(ll\
-    \ i = a; i < (b); i++)\n#define all(a) begin(a), end(a)\n#define sz(a) ssize(a)\n\
-    bool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
+    using ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define all(a) begin(a),\
+    \ end(a)\nbool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
     \ a, auto b) { return a < b ? a = b, 1 : 0; }\n#line 1 \"src/data-structure/BIT.hpp\"\
     \nstruct BIT {\n   vector<ll> a;\n   BIT(ll n) : a(n + 1) {}\n   void add(ll i,\
-    \ ll x) {  // A[i] += x\n      i++;\n      while(i < sz(a)) {\n         a[i] +=\
-    \ x;\n         i += i & -i;\n      }\n   }\n   ll sum(ll r) {\n      ll s = 0;\n\
-    \      while(r) {\n         s += a[r];\n         r -= r & -r;\n      }\n     \
-    \ return s;\n   }\n   ll sum(ll l, ll r) {  // sum of A[l, r)\n      return sum(r)\
-    \ - sum(l);\n   }\n};\n#line 1 \"src/graph/tree/hld.hpp\"\nclass HLDcomposition\
+    \ ll x) {  // A[i] += x\n      i++;\n      while(i < size(a)) {\n         a[i]\
+    \ += x;\n         i += i & -i;\n      }\n   }\n   ll sum(ll r) {\n      ll s =\
+    \ 0;\n      while(r) {\n         s += a[r];\n         r -= r & -r;\n      }\n\
+    \      return s;\n   }\n   ll sum(ll l, ll r) {  // sum of A[l, r)\n      return\
+    \ sum(r) - sum(l);\n   }\n};\n#line 1 \"src/graph/tree/hld.hpp\"\nclass HLDcomposition\
     \ {\n   private:\n   int V;\n   vector<vector<int>> G;\n   vector<int> stsize,\
     \ parent, pathtop, in, out;\n   int root;\n   void build_stsize(int u, int p)\
     \ {\n      stsize[u] = 1, parent[u] = p;\n      for(auto&& v : G[u]) {\n     \
@@ -66,26 +65,26 @@ data:
     \ -1), in(V, -1), out(V, -1) {}\n};\n#line 6 \"test/graph/tree/hld.test.cpp\"\n\
     \nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n   int N, Q;\n   cin >> N\
     \ >> Q;\n   vector<ll> A(N);\n   for(auto&& a : A) cin >> a;\n   HLDcomposition\
-    \ hld(N);\n   rep(i, 0, N - 1) {\n      int u, v;\n      cin >> u >> v;\n    \
-    \  hld.add_edge(u, v);\n   }\n   hld.build();\n   auto fw = BIT(N);\n   rep(i,\
-    \ 0, N) fw.add(hld.index(i), A[i]);\n   while(Q--) {\n      int k;\n      cin\
-    \ >> k;\n      if(k == 0) {\n         int p, x;\n         cin >> p >> x;\n   \
-    \      fw.add(hld.index(p), x);\n      } else {\n         int u, v;\n        \
-    \ cin >> u >> v;\n         ll ans = 0;\n         for(auto [l, r, f] : hld.path_query(u,\
-    \ v)) ans += fw.sum(l, r);\n         cout << ans << endl;\n      }\n   }\n   return\
-    \ 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_add_path_sum\"\n\
-    \n#include \"test/template.hpp\"\n#include \"src/data-structure/BIT.hpp\"\n#include\
-    \ \"src/graph/tree/hld.hpp\"\n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
-    \   int N, Q;\n   cin >> N >> Q;\n   vector<ll> A(N);\n   for(auto&& a : A) cin\
-    \ >> a;\n   HLDcomposition hld(N);\n   rep(i, 0, N - 1) {\n      int u, v;\n \
-    \     cin >> u >> v;\n      hld.add_edge(u, v);\n   }\n   hld.build();\n   auto\
-    \ fw = BIT(N);\n   rep(i, 0, N) fw.add(hld.index(i), A[i]);\n   while(Q--) {\n\
+    \ hld(N);\n   for(int i = 0; i < N - 1; i++) {\n      int u, v;\n      cin >>\
+    \ u >> v;\n      hld.add_edge(u, v);\n   }\n   hld.build();\n   auto fw = BIT(N);\n\
+    \   for(int i = 0; i < N; i++) fw.add(hld.index(i), A[i]);\n   while(Q--) {\n\
     \      int k;\n      cin >> k;\n      if(k == 0) {\n         int p, x;\n     \
     \    cin >> p >> x;\n         fw.add(hld.index(p), x);\n      } else {\n     \
     \    int u, v;\n         cin >> u >> v;\n         ll ans = 0;\n         for(auto\
     \ [l, r, f] : hld.path_query(u, v)) ans += fw.sum(l, r);\n         cout << ans\
     \ << endl;\n      }\n   }\n   return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_add_path_sum\"\n\
+    \n#include \"test/template.hpp\"\n#include \"src/data-structure/BIT.hpp\"\n#include\
+    \ \"src/graph/tree/hld.hpp\"\n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
+    \   int N, Q;\n   cin >> N >> Q;\n   vector<ll> A(N);\n   for(auto&& a : A) cin\
+    \ >> a;\n   HLDcomposition hld(N);\n   for(int i = 0; i < N - 1; i++) {\n    \
+    \  int u, v;\n      cin >> u >> v;\n      hld.add_edge(u, v);\n   }\n   hld.build();\n\
+    \   auto fw = BIT(N);\n   for(int i = 0; i < N; i++) fw.add(hld.index(i), A[i]);\n\
+    \   while(Q--) {\n      int k;\n      cin >> k;\n      if(k == 0) {\n        \
+    \ int p, x;\n         cin >> p >> x;\n         fw.add(hld.index(p), x);\n    \
+    \  } else {\n         int u, v;\n         cin >> u >> v;\n         ll ans = 0;\n\
+    \         for(auto [l, r, f] : hld.path_query(u, v)) ans += fw.sum(l, r);\n  \
+    \       cout << ans << endl;\n      }\n   }\n   return 0;\n}\n"
   dependsOn:
   - test/template.hpp
   - src/data-structure/BIT.hpp
@@ -93,7 +92,7 @@ data:
   isVerificationFile: true
   path: test/graph/tree/hld.test.cpp
   requiredBy: []
-  timestamp: '2024-12-07 04:40:17+09:00'
+  timestamp: '2024-12-10 18:11:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/tree/hld.test.cpp

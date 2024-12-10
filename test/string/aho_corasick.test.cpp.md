@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/string/aho_corasick.hpp
     title: src/string/aho_corasick.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/string/trie.hpp
     title: src/string/trie.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: test/template.hpp
     title: test/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/2863
@@ -23,10 +23,9 @@ data:
   bundledCode: "#line 1 \"test/string/aho_corasick.test.cpp\"\n#define PROBLEM \"\
     https://onlinejudge.u-aizu.ac.jp/problems/2863\"\n\n#line 1 \"test/template.hpp\"\
     \n#include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\nconst\
-    \ ll INF = LLONG_MAX / 4;\n#define rep(i, a, b) for(ll i = a; i < (b); i++)\n\
-    #define all(a) begin(a), end(a)\n#define sz(a) ssize(a)\nbool chmin(auto& a, auto\
-    \ b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto& a, auto b) { return a\
-    \ < b ? a = b, 1 : 0; }\n#line 1 \"src/string/trie.hpp\"\ntemplate<int char_size>\
+    \ ll INF = LLONG_MAX / 4;\n#define all(a) begin(a), end(a)\nbool chmin(auto& a,\
+    \ auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto& a, auto b) { return\
+    \ a < b ? a = b, 1 : 0; }\n#line 1 \"src/string/trie.hpp\"\ntemplate<int char_size>\
     \ struct TrieNode {\n   int nxt[char_size];\n   int exist;\n   vector<int> accept;\n\
     \n   TrieNode() : exist(0) { memset(nxt, -1, sizeof(nxt)); }\n};\n\ntemplate<int\
     \ char_size, int margin> struct Trie {\n   using Node = TrieNode<char_size>;\n\
@@ -92,13 +91,14 @@ data:
     \ const {\n      mm a = *this, c = 1;\n      while(b) {\n         if(b & 1) c\
     \ *= a;\n         a *= a;\n         b >>= 1;\n      }\n      return c;\n   }\n\
     };\n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n   int N;\n   cin >> N;\n\
-    \   AhoCorasick<26, 'a'> aho;\n   vector<int> len(N);\n   rep(i, 0, N) {\n   \
-    \   string s;\n      cin >> s;\n      aho.add(s);\n      len[i] = size(s);\n \
-    \  }\n   aho.build();\n   string T;\n   cin >> T;\n   int now = 0;\n   int n =\
-    \ size(T);\n   vector<mm> dp(n + 1);\n   dp[0] = 1;\n   rep(i, 0, n) {\n     \
-    \ auto [res, nxt] = aho.move(T[i], now);\n      auto match = aho.match(T[i], now);\n\
-    \      now = nxt;\n      for(auto v : match) { dp[i + 1] += dp[i + 1 - len[v]];\
-    \ }\n   }\n   cout << dp[n].x << '\\n';\n   return 0;\n}\n"
+    \   AhoCorasick<26, 'a'> aho;\n   vector<int> len(N);\n   for(int i = 0; i < N;\
+    \ i++) {\n      string s;\n      cin >> s;\n      aho.add(s);\n      len[i] =\
+    \ size(s);\n   }\n   aho.build();\n   string T;\n   cin >> T;\n   int now = 0;\n\
+    \   int n = size(T);\n   vector<mm> dp(n + 1);\n   dp[0] = 1;\n   for(int i =\
+    \ 0; i < n; i++) {\n      auto [res, nxt] = aho.move(T[i], now);\n      auto match\
+    \ = aho.match(T[i], now);\n      now = nxt;\n      for(auto v : match) { dp[i\
+    \ + 1] += dp[i + 1 - len[v]]; }\n   }\n   cout << dp[n].x << '\\n';\n   return\
+    \ 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/2863\"\n\n#include\
     \ \"test/template.hpp\"\n#include \"src/string/trie.hpp\"\n#include \"src/string/aho_corasick.hpp\"\
     \n\nconst ll mod = 1000000007;\nstruct mm {\n   ll x;\n   mm(ll x_ = 0) : x(x_\
@@ -114,13 +114,14 @@ data:
     \ const {\n      mm a = *this, c = 1;\n      while(b) {\n         if(b & 1) c\
     \ *= a;\n         a *= a;\n         b >>= 1;\n      }\n      return c;\n   }\n\
     };\n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n   int N;\n   cin >> N;\n\
-    \   AhoCorasick<26, 'a'> aho;\n   vector<int> len(N);\n   rep(i, 0, N) {\n   \
-    \   string s;\n      cin >> s;\n      aho.add(s);\n      len[i] = size(s);\n \
-    \  }\n   aho.build();\n   string T;\n   cin >> T;\n   int now = 0;\n   int n =\
-    \ size(T);\n   vector<mm> dp(n + 1);\n   dp[0] = 1;\n   rep(i, 0, n) {\n     \
-    \ auto [res, nxt] = aho.move(T[i], now);\n      auto match = aho.match(T[i], now);\n\
-    \      now = nxt;\n      for(auto v : match) { dp[i + 1] += dp[i + 1 - len[v]];\
-    \ }\n   }\n   cout << dp[n].x << '\\n';\n   return 0;\n}\n"
+    \   AhoCorasick<26, 'a'> aho;\n   vector<int> len(N);\n   for(int i = 0; i < N;\
+    \ i++) {\n      string s;\n      cin >> s;\n      aho.add(s);\n      len[i] =\
+    \ size(s);\n   }\n   aho.build();\n   string T;\n   cin >> T;\n   int now = 0;\n\
+    \   int n = size(T);\n   vector<mm> dp(n + 1);\n   dp[0] = 1;\n   for(int i =\
+    \ 0; i < n; i++) {\n      auto [res, nxt] = aho.move(T[i], now);\n      auto match\
+    \ = aho.match(T[i], now);\n      now = nxt;\n      for(auto v : match) { dp[i\
+    \ + 1] += dp[i + 1 - len[v]]; }\n   }\n   cout << dp[n].x << '\\n';\n   return\
+    \ 0;\n}\n"
   dependsOn:
   - test/template.hpp
   - src/string/trie.hpp
@@ -128,8 +129,8 @@ data:
   isVerificationFile: true
   path: test/string/aho_corasick.test.cpp
   requiredBy: []
-  timestamp: '2024-12-09 18:01:37+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-12-10 19:12:43+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/string/aho_corasick.test.cpp
 layout: document

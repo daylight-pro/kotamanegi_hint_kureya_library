@@ -126,24 +126,24 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/string/SuffixArray.test.cpp
     title: test/string/SuffixArray.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/string/Zalgorithm.test.cpp
     title: test/string/Zalgorithm.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/string/aho_corasick.test.2.cpp
     title: test/string/aho_corasick.test.2.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/string/aho_corasick.test.3.cpp
     title: test/string/aho_corasick.test.3.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/string/aho_corasick.test.cpp
     title: test/string/aho_corasick.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/template.test.cpp
     title: test/template.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#line 1 "test/template.hpp"
@@ -156,11 +156,7 @@ data:
 
     const ll INF = LLONG_MAX / 4;
 
-    #define rep(i, a, b) for(ll i = a; i < (b); i++)
-
     #define all(a) begin(a), end(a)
-
-    #define sz(a) ssize(a)
 
     bool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }
 
@@ -175,11 +171,7 @@ data:
 
     const ll INF = LLONG_MAX / 4;
 
-    #define rep(i, a, b) for(ll i = a; i < (b); i++)
-
     #define all(a) begin(a), end(a)
-
-    #define sz(a) ssize(a)
 
     bool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }
 
@@ -190,8 +182,8 @@ data:
   isVerificationFile: false
   path: test/template.hpp
   requiredBy: []
-  timestamp: '2024-05-31 19:00:40+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-12-10 18:11:50+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/modint/modint.test.cpp
   - test/modint/BarrettReduction.test.cpp

@@ -13,35 +13,36 @@ data:
     links: []
   bundledCode: "#line 1 \"src/FPS/FFT.hpp\"\n// {998244353, 3}, {1811939329, 13},\
     \ {2013265921, 31}\nmm g = 3;  // \u539F\u59CB\u6839\nvoid fft(vector<mm>& a)\
-    \ {\n   ll n = sz(a), lg = __lg(n);\n   assert((1 << lg) == n);\n   vector<mm>\
-    \ b(n);\n   rep(l, 1, lg + 1) {\n      ll w = n >> l;\n      mm s = 1, r = g.pow(mod\
-    \ >> l);\n      for(ll u = 0; u < n / 2; u += w) {\n         rep(d, 0, w) {\n\
-    \            mm x = a[u << 1 | d], y = a[u << 1 | w | d] * s;\n            b[u\
-    \ | d] = x + y;\n            b[n >> 1 | u | d] = x - y;\n         }\n        \
-    \ s *= r;\n      }\n      swap(a, b);\n   }\n}\nvector<mm> conv(vector<mm> a,\
-    \ vector<mm> b) {\n   if(a.empty() || b.empty()) return {};\n   size_t s = sz(a)\
-    \ + sz(b) - 1, n = bit_ceil(s);\n   // if(min(sz(a), sz(b)) <= 60) \u611A\u76F4\
-    \u306B\u639B\u3051\u7B97\n   a.resize(n);\n   b.resize(n);\n   fft(a);\n   fft(b);\n\
-    \   mm inv = mm(n).inv();\n   rep(i, 0, n) a[i] *= b[i] * inv;\n   reverse(1 +\
-    \ all(a));\n   fft(a);\n   a.resize(s);\n   return a;\n}\n"
-  code: "// {998244353, 3}, {1811939329, 13}, {2013265921, 31}\nmm g = 3;  // \u539F\
-    \u59CB\u6839\nvoid fft(vector<mm>& a) {\n   ll n = sz(a), lg = __lg(n);\n   assert((1\
-    \ << lg) == n);\n   vector<mm> b(n);\n   rep(l, 1, lg + 1) {\n      ll w = n >>\
-    \ l;\n      mm s = 1, r = g.pow(mod >> l);\n      for(ll u = 0; u < n / 2; u +=\
-    \ w) {\n         rep(d, 0, w) {\n            mm x = a[u << 1 | d], y = a[u <<\
-    \ 1 | w | d] * s;\n            b[u | d] = x + y;\n            b[n >> 1 | u | d]\
+    \ {\n   ll n = size(a), lg = __lg(n);\n   assert((1 << lg) == n);\n   vector<mm>\
+    \ b(n);\n   for(int l = 1; l <= lg; l++) {\n      ll w = n >> l;\n      mm s =\
+    \ 1, r = g.pow(mod >> l);\n      for(ll u = 0; u < n / 2; u += w) {\n        \
+    \ for(int d = 0; d < w; d++) {\n            mm x = a[u << 1 | d], y = a[u << 1\
+    \ | w | d] * s;\n            b[u | d] = x + y;\n            b[n >> 1 | u | d]\
     \ = x - y;\n         }\n         s *= r;\n      }\n      swap(a, b);\n   }\n}\n\
     vector<mm> conv(vector<mm> a, vector<mm> b) {\n   if(a.empty() || b.empty()) return\
-    \ {};\n   size_t s = sz(a) + sz(b) - 1, n = bit_ceil(s);\n   // if(min(sz(a),\
+    \ {};\n   size_t s = size(a) + size(b) - 1, n = bit_ceil(s);\n   // if(min(sz(a),\
     \ sz(b)) <= 60) \u611A\u76F4\u306B\u639B\u3051\u7B97\n   a.resize(n);\n   b.resize(n);\n\
-    \   fft(a);\n   fft(b);\n   mm inv = mm(n).inv();\n   rep(i, 0, n) a[i] *= b[i]\
-    \ * inv;\n   reverse(1 + all(a));\n   fft(a);\n   a.resize(s);\n   return a;\n\
-    }\n"
+    \   fft(a);\n   fft(b);\n   mm inv = mm(n).inv();\n   for(int i = 0; i < n; i++)\
+    \ a[i] *= b[i] * inv;\n   reverse(1 + all(a));\n   fft(a);\n   a.resize(s);\n\
+    \   return a;\n}\n"
+  code: "// {998244353, 3}, {1811939329, 13}, {2013265921, 31}\nmm g = 3;  // \u539F\
+    \u59CB\u6839\nvoid fft(vector<mm>& a) {\n   ll n = size(a), lg = __lg(n);\n  \
+    \ assert((1 << lg) == n);\n   vector<mm> b(n);\n   for(int l = 1; l <= lg; l++)\
+    \ {\n      ll w = n >> l;\n      mm s = 1, r = g.pow(mod >> l);\n      for(ll\
+    \ u = 0; u < n / 2; u += w) {\n         for(int d = 0; d < w; d++) {\n       \
+    \     mm x = a[u << 1 | d], y = a[u << 1 | w | d] * s;\n            b[u | d] =\
+    \ x + y;\n            b[n >> 1 | u | d] = x - y;\n         }\n         s *= r;\n\
+    \      }\n      swap(a, b);\n   }\n}\nvector<mm> conv(vector<mm> a, vector<mm>\
+    \ b) {\n   if(a.empty() || b.empty()) return {};\n   size_t s = size(a) + size(b)\
+    \ - 1, n = bit_ceil(s);\n   // if(min(sz(a), sz(b)) <= 60) \u611A\u76F4\u306B\u639B\
+    \u3051\u7B97\n   a.resize(n);\n   b.resize(n);\n   fft(a);\n   fft(b);\n   mm\
+    \ inv = mm(n).inv();\n   for(int i = 0; i < n; i++) a[i] *= b[i] * inv;\n   reverse(1\
+    \ + all(a));\n   fft(a);\n   a.resize(s);\n   return a;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: src/FPS/FFT.hpp
   requiredBy: []
-  timestamp: '2024-05-31 19:00:40+09:00'
+  timestamp: '2024-12-10 18:11:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/FPS/FFT.test.cpp

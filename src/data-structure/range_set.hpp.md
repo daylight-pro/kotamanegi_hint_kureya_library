@@ -27,8 +27,8 @@ data:
     \ < l) ++itl;\n      if(itl == itr) return;\n      int tl = min(l, itl->first),\
     \ tr = max(r, prev(itr)->second);\n      erase(itl, itr);\n      if(tl < l) (*this)[tl]\
     \ = l - 1;\n      if(r < tr) (*this)[r + 1] = tr;\n   }\n\n   bool same(ll p,\
-    \ ll q) {\n        auto it = get(p);\n        return it != end() && it->first\
-    \ <= q && q <= it->second;\n   }\n};\n"
+    \ ll q) {\n      auto it = get(p);\n      return it != end() && it->first <= q\
+    \ && q <= it->second;\n   }\n};\n"
   code: "template<bool margeAdjacent = true> struct range_set : public map<ll, ll>\
     \ {\n   auto get(ll p) const {\n      auto it = upper_bound(p);\n      if(it ==\
     \ begin() || (--it)->second < p) return end();\n      return it;\n   }\n\n   void\
@@ -41,13 +41,13 @@ data:
     \     if((--itl)->second < l) ++itl;\n      if(itl == itr) return;\n      int\
     \ tl = min(l, itl->first), tr = max(r, prev(itr)->second);\n      erase(itl, itr);\n\
     \      if(tl < l) (*this)[tl] = l - 1;\n      if(r < tr) (*this)[r + 1] = tr;\n\
-    \   }\n\n   bool same(ll p, ll q) {\n        auto it = get(p);\n        return\
-    \ it != end() && it->first <= q && q <= it->second;\n   }\n};"
+    \   }\n\n   bool same(ll p, ll q) {\n      auto it = get(p);\n      return it\
+    \ != end() && it->first <= q && q <= it->second;\n   }\n};"
   dependsOn: []
   isVerificationFile: false
   path: src/data-structure/range_set.hpp
   requiredBy: []
-  timestamp: '2024-12-10 15:56:32+09:00'
+  timestamp: '2024-12-10 07:23:07+00:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data-structure/range_set.test.cpp

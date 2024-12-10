@@ -29,12 +29,13 @@ data:
     \         parent_or_size[a] = x;\n         a = t;\n      }\n      return x;\n\
     \   }\n\n   int size(int a) {\n      // assert(0 <= a && a < _n);\n      return\
     \ -parent_or_size[leader(a)];\n   }  // 1ff997\n\n   vector<vector<int>> groups()\
-    \ {\n      vector<int> leader_buf(_n), group_size(_n);\n      rep(i, 0, _n) {\n\
-    \         leader_buf[i] = leader(i);\n         group_size[leader_buf[i]]++;\n\
-    \      }\n      vector<vector<int>> result(_n);\n      rep(i, 0, _n) result[i].reserve(group_size[i]);\n\
-    \      rep(i, 0, _n) result[leader_buf[i]].push_back(i);\n      result.erase(remove_if(result.begin(),\
-    \ result.end(), [&](const vector<int>& v) { return v.empty(); }),\n          \
-    \         result.end());\n      return result;\n   }  // 45ebf9\n};\n"
+    \ {\n      vector<int> leader_buf(_n), group_size(_n);\n      for(int i = 0; i\
+    \ < _n; i++) {\n         leader_buf[i] = leader(i);\n         group_size[leader_buf[i]]++;\n\
+    \      }\n      vector<vector<int>> result(_n);\n      for(int i = 0; i < _n;\
+    \ i++) result[i].reserve(group_size[i]);\n      for(int i = 0; i < _n; i++) result[leader_buf[i]].push_back(i);\n\
+    \      result.erase(remove_if(result.begin(), result.end(), [&](const vector<int>&\
+    \ v) { return v.empty(); }),\n                   result.end());\n      return\
+    \ result;\n   }  // bf3a1e\n};\n"
   code: "// base: c45937\nstruct dsu {\n   private:\n   int _n;\n   vector<int> parent_or_size;\n\
     \n   public:\n   dsu() : _n(0) {}\n   explicit dsu(int n) : _n(n), parent_or_size(n,\
     \ -1) {}\n\n   int merge(int a, int b) {\n      // assert(0 <= a && a < _n);\n\
@@ -50,16 +51,17 @@ data:
     \ t;\n      }\n      return x;\n   }\n\n   int size(int a) {\n      // assert(0\
     \ <= a && a < _n);\n      return -parent_or_size[leader(a)];\n   }  // 1ff997\n\
     \n   vector<vector<int>> groups() {\n      vector<int> leader_buf(_n), group_size(_n);\n\
-    \      rep(i, 0, _n) {\n         leader_buf[i] = leader(i);\n         group_size[leader_buf[i]]++;\n\
-    \      }\n      vector<vector<int>> result(_n);\n      rep(i, 0, _n) result[i].reserve(group_size[i]);\n\
-    \      rep(i, 0, _n) result[leader_buf[i]].push_back(i);\n      result.erase(remove_if(result.begin(),\
+    \      for(int i = 0; i < _n; i++) {\n         leader_buf[i] = leader(i);\n  \
+    \       group_size[leader_buf[i]]++;\n      }\n      vector<vector<int>> result(_n);\n\
+    \      for(int i = 0; i < _n; i++) result[i].reserve(group_size[i]);\n      for(int\
+    \ i = 0; i < _n; i++) result[leader_buf[i]].push_back(i);\n      result.erase(remove_if(result.begin(),\
     \ result.end(), [&](const vector<int>& v) { return v.empty(); }),\n          \
-    \         result.end());\n      return result;\n   }  // 45ebf9\n};"
+    \         result.end());\n      return result;\n   }  // bf3a1e\n};"
   dependsOn: []
   isVerificationFile: false
   path: src/data-structure/dsu.hpp
   requiredBy: []
-  timestamp: '2024-12-06 16:53:29+09:00'
+  timestamp: '2024-12-10 19:12:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data-structure/dsu.test.2.cpp

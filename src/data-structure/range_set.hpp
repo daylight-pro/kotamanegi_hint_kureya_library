@@ -30,7 +30,7 @@ template<bool margeAdjacent = true> struct range_set : public map<ll, ll> {
    }
 
    bool same(ll p, ll q) {
-        auto it = get(p);
-        return it != end() && it->first <= q && q <= it->second;
+      auto it = get(p);
+      return it != end() && it->first <= q && q <= it->second;
    }
 };

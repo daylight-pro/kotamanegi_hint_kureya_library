@@ -11,7 +11,7 @@ int main() {
    cin >> T;
 
    BinaryTrie<ll> trie;
-   rep(i, 0, N) {
+   for(int i = 0; i < N; i++) {
       if(T[i] == '1') trie.add(i);
    }
 
@@ -34,7 +34,7 @@ int main() {
          int k;
          cin >> k;
          int cnt = trie.lower_bound_rank(k);
-         if(cnt == trie.size()) {
+         if(cnt == trie.count()) {
             cout << -1 << "\n";
          } else {
             cout << trie.kth_smallest(cnt) << "\n";

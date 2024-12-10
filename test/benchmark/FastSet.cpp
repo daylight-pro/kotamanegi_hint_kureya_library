@@ -20,7 +20,7 @@ int main() {
    const ll MAX = 1 << 30;
    cout << "N = " << N << ", MAX = " << MAX << endl;
    vector<ll> query(N);
-   rep(i, 0, N) query[i] = rnd() >> 2;
+   for(int i = 0; i < N; i++) query[i] = rnd() >> 2;
    shuffle(all(query), rnd);
    {
       std::set<ll> s;
@@ -34,12 +34,10 @@ int main() {
    }
    {
       static bitset<MAX> s;
-      test(
-          query, "std::bitset", [&](ll x) { s[x] = 1; }, [&](ll x) { return s._Find_next(x); });
+      test(query, "std::bitset", [&](ll x) { s[x] = 1; }, [&](ll x) { return s._Find_next(x); });
    }
    {
       FastSet s(MAX);
-      test(
-          query, "FastSet", [&](ll x) { s.set(x); }, [&](ll x) { return s.next(x); });
+      test(query, "FastSet", [&](ll x) { s.set(x); }, [&](ll x) { return s.next(x); });
    }
 }

@@ -8,7 +8,7 @@ int main() {
    cin >> N >> Q;
    BinaryTrie<ll, 62> bt;
    vector<ll> A(N);
-   rep(i, 0, N) {
+   for(int i = 0; i < N; i++) {
       cin >> A[i];
       bt.add(A[i] * N + i);
    }

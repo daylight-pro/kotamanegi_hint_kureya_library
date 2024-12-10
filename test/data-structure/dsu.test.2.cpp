@@ -14,7 +14,7 @@ int main() {
    d.merge(0, 1);
    d.merge(2, 7);
    assert(d.size(7) == 4);
-   assert(sz(d.groups()) == 5);
+   assert(size(d.groups()) == 5);
    set<set<int>> s;
    s.insert({0, 1});
    s.insert({2, 3, 5, 7});

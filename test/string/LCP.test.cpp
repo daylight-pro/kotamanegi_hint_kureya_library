@@ -6,7 +6,7 @@ int main() {
    cin.tie(0)->sync_with_stdio(0);
    string S;
    cin >> S;
-   const ll N = sz(S);
+   const ll N = size(S);
    auto [sa, lcp] = SA(S);
    cout << N * (N + 1) / 2 - accumulate(all(lcp), 0LL) << endl;
 }

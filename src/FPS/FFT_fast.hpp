@@ -1,22 +1,22 @@
 // modint を u32 にして加減算を真面目にやると速い
 mm g = 3;  // 原始根
 void fft(vector<mm>& a) {
-   ll n = sz(a), lg = __lg(n);
+   ll n = size(a), lg = __lg(n);
    static auto z = [] {
       vector<mm> z(30);
       mm s = 1;
-      rep(i, 2, 32) {
+      for(int i = 2; i < 32; i++) {
          z[i - 2] = s * g.pow(mod >> i);
          s *= g.inv().pow(mod >> i);
       }
       return z;
    }();
-   rep(l, 0, lg) {
+   for(int l = 0; l < lg; l++) {
       ll w = 1 << (lg - l - 1);
       mm s = 1;
-      rep(k, 0, 1 << l) {
+      for(int k = 0; k < (1 << l); k++) {
          ll o = k << (lg - l);
-         rep(i, o, o + w) {
+         for(ll i = o; i < o + w; i++) {
             mm x = a[i], y = a[i + w] * s;
             a[i] = x + y;
             a[i + w] = x - y;
@@ -27,11 +27,11 @@ void fft(vector<mm>& a) {
 }
 // コピペ
 void ifft(vector<mm>& a) {
-   ll n = sz(a), lg = __lg(n);
+   ll n = size(a), lg = __lg(n);
    static auto z = [] {
       vector<mm> z(30);
       mm s = 1;
-      rep(i, 2, 32) {  // g を逆数に
+      for(int i = 2; i < 32; i++) {  // g を逆数に
          z[i - 2] = s * g.inv().pow(mod >> i);
          s *= g.pow(mod >> i);
       }
@@ -40,9 +40,9 @@ void ifft(vector<mm>& a) {
    for(ll l = lg; l--;) {  // 逆順に
       ll w = 1 << (lg - l - 1);
       mm s = 1;
-      rep(k, 0, 1 << l) {
+      for(int k = 0; k < (1 << l); k++) {
          ll o = k << (lg - l);
-         rep(i, o, o + w) {
+         for(ll i = o; i < o + w; i++) {
             mm x = a[i], y = a[i + w];  // *s を下に移動
             a[i] = x + y;
             a[i + w] = (x - y) * s;
@@ -53,14 +53,14 @@ void ifft(vector<mm>& a) {
 }
 vector<mm> conv(vector<mm> a, vector<mm> b) {
    if(a.empty() || b.empty()) return {};
-   size_t s = sz(a) + sz(b) - 1, n = bit_ceil(s);
-   // if(min(sz(a), sz(b)) <= 60) 愚直に掛け算
+   size_t s = size(a) + size(b) - 1, n = bit_ceil(s);
+   // if(min(size(a), size(b)) <= 60) 愚直に掛け算
    a.resize(n);
    b.resize(n);
    fft(a);
    fft(b);
    mm inv = mm(n).inv();
-   rep(i, 0, n) a[i] *= b[i] * inv;
+   for(int i = 0; i < n; i++) a[i] *= b[i] * inv;
    ifft(a);
    a.resize(s);
    return a;

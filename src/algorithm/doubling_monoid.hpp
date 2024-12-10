@@ -8,13 +8,13 @@ template<int L, class T, auto op, auto e> struct Doubling {
       int N = size(to);
       V = vector<vector<int>>(L, vector<int>(N, -1));
       data = vector<vector<T>>(L, vector<T>(N, e()));
-      rep(i, 0, N) {
+      for(int i = 0; i < N; i++) {
          V[0][i] = to[i];
          data[0][i] = v[i];
       }
 
-      rep(i, 0, L - 1) {
-         rep(j, 0, N) {
+      for(int i = 0; i < L - 1; i++) {
+         for(int j = 0; j < N; j++) {
             if(V[i][j] != -1) {
                V[i + 1][j] = V[i][V[i][j]];
                data[i + 1][j] = op(data[i][j], data[i][V[i][j]]);

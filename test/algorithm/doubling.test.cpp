@@ -15,8 +15,8 @@ int main() {
       int dx[4] = {1, 0, -1, 0};
       int dy[4] = {0, 1, 0, -1};
       int y, x, dir;
-      rep(i, 0, H) {
-         rep(j, 0, W) {
+      for(int i = 0; i < H; i++) {
+         for(int j = 0; j < W; j++) {
             if(S[i][j] == 'E') {
                y = i;
                x = j;

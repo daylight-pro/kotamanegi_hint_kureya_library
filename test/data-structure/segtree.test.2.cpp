@@ -18,7 +18,7 @@ int main() {
    int N, Q;
    cin >> N >> Q;
    vector<Data> V(N);
-   rep(i, 0, N) {
+   for(int i = 0; i < N; i++) {
       int a, b;
       cin >> a >> b;
       V[i] = {mm(a), mm(b)};

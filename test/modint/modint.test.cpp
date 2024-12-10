@@ -4,7 +4,7 @@
 
 mt19937 rnd(random_device{}());
 int main() {
-   rep(i, 0, 1e5) {
+   for(int i = 0; i < 1e5; i++) {
       const ll a = rnd() % mod, b = rnd() % mod;
       mm A = a, B = b, C = A * B;
       assert((A + B).x == (a + b) % mod);

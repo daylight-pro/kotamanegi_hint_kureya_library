@@ -6,10 +6,11 @@ template<int L> struct Doubling {
    Doubling(const vector<int>& v) {
       int N = size(v);
       V = vector<vector<int>>(L, vector<int>(N));
-      rep(i, 0, N) V[0][i] = v[i];
-      rep(i, 0, L - 1) rep(j, 0, N) {
-         if(V[i][j] != -1) V[i + 1][j] = V[i][V[i][j]];
-      }
+      for(int i = 0; i < N; i++) V[0][i] = v[i];
+      for(int i = 0; i < L - 1; i++)
+         for(int j = 0; j < N; j++) {
+            if(V[i][j] != -1) V[i + 1][j] = V[i][V[i][j]];
+         }
    }
 
    int jump(int from, ll k) {

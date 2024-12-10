@@ -1,4 +1,4 @@
-// base: 296507
+// base: 4e9f1c
 template<class Cap, class Cost> struct mcf_graph {
    public:
    mcf_graph() {}
@@ -58,7 +58,8 @@ template<class Cap, class Cost> struct mcf_graph {
             }
          }
          if(!vis[t]) return false;
-         rep(v, 0, _n) if(vis[v]) dual[v] -= dist[t] - dist[v];
+         for(int v = 0; v < _n; v++)
+            if(vis[v]) dual[v] -= dist[t] - dist[v];
          return true;
       };
       Cap flow = 0;
@@ -100,9 +101,9 @@ template<class Cap, class Cost> struct mcf_graph {
    vector<edge> edges() {
       int m = size(pos);
       vector<edge> result;
-      rep(i, 0, m) result.push_back(get_edge(i));
+      for(int i = 0; i < m; i++) result.push_back(get_edge(i));
       return result;
-   }  // 5c28ba
+   }  // 5948b8
 
    void change_edge(int i, Cap new_cap, Cap new_flow) {
       int m = size(pos);

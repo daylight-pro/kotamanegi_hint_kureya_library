@@ -37,7 +37,7 @@ int main() {
    cin >> N;
    AhoCorasick<26, 'a'> aho;
    vector<int> len(N);
-   rep(i, 0, N) {
+   for(int i = 0; i < N; i++) {
       string s;
       cin >> s;
       aho.add(s);
@@ -50,7 +50,7 @@ int main() {
    int n = size(T);
    vector<mm> dp(n + 1);
    dp[0] = 1;
-   rep(i, 0, n) {
+   for(int i = 0; i < n; i++) {
       auto [res, nxt] = aho.move(T[i], now);
       auto match = aho.match(T[i], now);
       now = nxt;

@@ -11,11 +11,11 @@ int main() {
    int N;
    cin >> N;
    vector<int> P(N);
-   rep(i, 0, N) cin >> P[i];
+   for(int i = 0; i < N; i++) cin >> P[i];
 
    vector<ll> data(N);
 
-   rep(i, 0, N) {
+   for(int i = 0; i < N; i++) {
       P[i] += i;
       data[i] += P[i] / N;
       P[i] %= N;

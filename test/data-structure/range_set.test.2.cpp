@@ -9,13 +9,13 @@ int main() {
    cin >> N >> M >> Q;
    using T = tuple<int, int, int>;
    priority_queue<T, vector<T>, greater<>> update, query;
-   rep(i, 0, M) {
+   for(int i = 0; i < M; i++) {
       int D, A, B;
       cin >> D >> A >> B;
       update.emplace(D, A, B);
    }
    vector<pair<int, int>> q(Q);
-   rep(i, 0, Q) {
+   for(int i = 0; i < Q; i++) {
       int E, S, T;
       cin >> E >> S >> T;
       query.emplace(E, i, -1);

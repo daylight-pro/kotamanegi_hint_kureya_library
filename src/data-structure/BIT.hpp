@@ -3,7 +3,7 @@ struct BIT {
    BIT(ll n) : a(n + 1) {}
    void add(ll i, ll x) {  // A[i] += x
       i++;
-      while(i < sz(a)) {
+      while(i < size(a)) {
          a[i] += x;
          i += i & -i;
       }

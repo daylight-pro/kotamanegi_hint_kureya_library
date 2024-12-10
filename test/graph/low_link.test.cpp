@@ -8,7 +8,7 @@ int main() {
    int N, M;
    cin >> N >> M;
    vector<vector<int>> G(N);
-   rep(i, 0, M) {
+   for(int i = 0; i < M; i++) {
       int u, v;
       cin >> u >> v;
       G[u].push_back(v);

@@ -5,8 +5,8 @@ using u64 = uint64_t;
 
 int main() {
    mt19937_64 rnd;
-   rep(shift, 0, 64) {
-      rep(i, 0, (ll)1e5) {
+   for(int shift = 0; shift < 64; shift++) {
+      for(int i = 0; i < 1e5; i++) {
          u64 a = rnd() >> shift, b = rnd() >> shift;
          assert(gcd(a, b) == binary_gcd(a, b));
       }

@@ -11,10 +11,10 @@ int main() {
    cin >> N >> Q;
 
    vector<int> A(N);
-   rep(i, 0, N) cin >> A[i];
+   for(int i = 0; i < N; i++) cin >> A[i];
 
    HLDcomposition hld(N);
-   rep(i, 1, N) {
+   for(int i = 1; i < N; i++) {
       int p;
       cin >> p;
       hld.add_edge(p, i);
@@ -22,7 +22,7 @@ int main() {
    hld.build();
 
    BIT bit(N);
-   rep(i, 0, N) { bit.add(hld.index(i), A[i]); }
+   for(int i = 0; i < N; i++) { bit.add(hld.index(i), A[i]); }
    while(Q--) {
       int t;
       cin >> t;

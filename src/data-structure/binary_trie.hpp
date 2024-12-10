@@ -1,4 +1,4 @@
-// base: 69a9e9
+// base: b75bb1
 template<typename T, int MAX_LOG = 32> struct BinaryTrie {
    struct Node {
       array<int, 2> next;
@@ -11,7 +11,7 @@ template<typename T, int MAX_LOG = 32> struct BinaryTrie {
    void apply_xor(T val) { nodes[0].lazy ^= val; }
    void push(int cur, int b) {
       if((nodes[cur].lazy >> b) & 1) swap(nodes[cur].next[0], nodes[cur].next[1]);
-      rep(i, 0, 2) {
+      for(int i = 0; i < 2; i++) {
          if(nodes[cur].next[i] == -1) nodes[nodes[cur].next[i]].lazy ^= nodes[cur].lazy;
       }
       nodes[cur].lazy = 0;
@@ -22,7 +22,7 @@ template<typename T, int MAX_LOG = 32> struct BinaryTrie {
       push(cur, b);
       int nxt = (val >> (T)b) & (T)1;
       if(nodes[cur].next[nxt] == -1) {
-         nodes[cur].next[nxt] = sz(nodes);
+         nodes[cur].next[nxt] = size(nodes);
          nodes.push_back(Node());
       }
       add(val, nodes[cur].next[nxt], b - 1);
@@ -78,5 +78,5 @@ template<typename T, int MAX_LOG = 32> struct BinaryTrie {
       return nodes[cur].common;
    }  // 2a3342
 
-   int size() { return nodes[0].common; }  // 5f9f13
+   int count() { return nodes[0].common; }  // 210f0e
 };

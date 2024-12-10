@@ -11,14 +11,14 @@ int main() {
    vector<ll> A(N);
    for(auto&& a : A) cin >> a;
    HLDcomposition hld(N);
-   rep(i, 0, N - 1) {
+   for(int i = 0; i < N - 1; i++) {
       int u, v;
       cin >> u >> v;
       hld.add_edge(u, v);
    }
    hld.build();
    auto fw = BIT(N);
-   rep(i, 0, N) fw.add(hld.index(i), A[i]);
+   for(int i = 0; i < N; i++) fw.add(hld.index(i), A[i]);
    while(Q--) {
       int k;
       cin >> k;

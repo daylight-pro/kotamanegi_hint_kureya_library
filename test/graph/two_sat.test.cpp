@@ -11,7 +11,7 @@ int main() {
    int N, M;
    cin >> N >> M;
    two_sat ts(N);
-   rep(i, 0, M) {
+   for(int i = 0; i < M; i++) {
       int a, b;
       cin >> a >> b >> _;
       bool f, g;
@@ -39,7 +39,7 @@ int main() {
       cout << "s SATISFIABLE" << endl;
       auto ans = ts.answer();
       cout << "v ";
-      rep(i, 0, N) { cout << (ans[i] ? i + 1 : -i - 1) << " "; }
+      for(int i = 0; i < N; i++) { cout << (ans[i] ? i + 1 : -i - 1) << " "; }
    }
    cout << "0" << endl;
    return 0;

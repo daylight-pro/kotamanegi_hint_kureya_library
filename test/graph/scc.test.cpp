@@ -8,7 +8,7 @@ int main() {
    int N, M;
    cin >> N >> M;
    scc_graph g(N);
-   rep(i, 0, M) {
+   for(int i = 0; i < M; i++) {
       int a, b;
       cin >> a >> b;
       g.add_edge(a, b);
@@ -16,7 +16,7 @@ int main() {
    auto scc = g.scc();
    cout << scc.size() << '\n';
    for(auto gr : scc) {
-      cout << sz(gr);
+      cout << size(gr);
       for(auto v : gr) cout << ' ' << v;
       cout << '\n';
    }

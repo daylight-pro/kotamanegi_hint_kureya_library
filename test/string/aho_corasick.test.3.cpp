@@ -11,7 +11,7 @@ int main() {
    int M;
    cin >> M;
    AhoCorasick<26, 'A'> aho;
-   rep(i, 0, M) {
+   for(int i = 0; i < M; i++) {
       string s;
       cin >> s;
       aho.add(s);

@@ -12,5 +12,5 @@ int main() {
    for(mm& b : B) cin >> b.x;
 
    auto C = conv(move(A), move(B));
-   rep(i, 0, sz(C)) cout << C[i].x << " \n"[i + 1 == sz(C)];
+   for(int i = 0; i < size(C); i++) cout << C[i].x << " \n"[i + 1 == size(C)];
 }

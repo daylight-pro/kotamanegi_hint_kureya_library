@@ -6,8 +6,8 @@ using i128 = __int128_t;
 i128 abs(i128 x) { return x < 0 ? -x : x; }
 int main() {
    mt19937_64 rnd;
-   rep(shift, 1, 64) {
-      rep(i, 0, (ll)5e4) {
+   for(int shift = 1; shift < 64; shift++) {
+      for(ll i = 0; i < (ll)5e4; i++) {
          ll a = rnd() >> shift;
          ll b = rnd() >> shift;
          const ll g = gcd(a, b);

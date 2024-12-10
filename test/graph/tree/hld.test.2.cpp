@@ -17,8 +17,8 @@ int main() {
    cin >> N >> Q;
    HLDcomposition hld(N);
    vector<int> A(N), B(N);
-   rep(i, 0, N) { cin >> A[i] >> B[i]; }
-   rep(i, 0, N - 1) {
+   for(int i = 0; i < N; i++) { cin >> A[i] >> B[i]; }
+   for(int i = 0; i < N - 1; i++) {
       int u, v;
       cin >> u >> v;
       hld.add_edge(u, v);
@@ -26,7 +26,7 @@ int main() {
    hld.build();
    segtree<P, op, e> seg(N);
    segtree<P, op2, e> seg2(N);
-   rep(i, 0, N) {
+   for(int i = 0; i < N; i++) {
       seg.set(hld.index(i), {A[i], B[i]});
       seg2.set(hld.index(i), {A[i], B[i]});
    }

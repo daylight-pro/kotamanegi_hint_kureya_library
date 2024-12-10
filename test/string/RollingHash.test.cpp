@@ -8,7 +8,7 @@ int main() {
    string S;
    cin >> S;
    RH rh(S);
-   const ll N = sz(S);
+   const ll N = size(S);
    auto LCP = [&](ll i, ll j) {
       ll ok = 0, ng = N + 1 - j;
       while(ng - ok > 1) {
@@ -17,5 +17,5 @@ int main() {
       }
       return ok;
    };
-   rep(i, 0, N) cout << LCP(0, i) << " \n"[i + 1 == N];
+   for(int i = 0; i < N; i++) cout << LCP(0, i) << " \n"[i + 1 == N];
 }

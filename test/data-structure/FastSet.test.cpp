@@ -10,7 +10,8 @@ int main() {
    string S;
    cin >> S;
    FastSet s(N);
-   rep(i, 0, N) if(S[i] == '1') s.set(i);
+   for(int i = 0; i < N; i++)
+      if(S[i] == '1') s.set(i);
    while(Q--) {
       ll c, k;
       cin >> c >> k;

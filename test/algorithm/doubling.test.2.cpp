@@ -11,11 +11,11 @@ int main() {
    int N, K;
    cin >> N >> K;
    vector<int> P(N);
-   rep(i, 0, N) cin >> P[i];
+   for(int i = 0; i < N; i++) cin >> P[i];
 
    vector<ll> data(N);
 
-   rep(i, 0, N) {
+   for(int i = 0; i < N; i++) {
       P[i] += i;
       if(P[i] >= N) {
          P[i] -= N;
@@ -25,7 +25,7 @@ int main() {
 
    Doubling<64, ll, op, e> doubling(P, data);
 
-   rep(i, 0, N) {
+   for(int i = 0; i < N; i++) {
       auto [pos, cnt] = doubling.jump(i, K);
       cout << pos + 1 + cnt * N << '\n';
    }

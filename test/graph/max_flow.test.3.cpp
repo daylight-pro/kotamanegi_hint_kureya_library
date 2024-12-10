@@ -10,13 +10,13 @@ int main() {
    mf_graph<int> g(x + y + 2);
    int s = x + y;
    int t = s + 1;
-   rep(i, 0, e) {
+   for(int i = 0; i < e; i++) {
       int a, b;
       cin >> a >> b;
       g.add_edge(a, b + x, 1);
    }
-   rep(i, 0, x) g.add_edge(s, i, 1);
-   rep(i, 0, y) g.add_edge(i + x, t, 1);
+   for(int i = 0; i < x; i++) g.add_edge(s, i, 1);
+   for(int i = 0; i < y; i++) g.add_edge(i + x, t, 1);
    cout << g.flow(s, t) << endl;
    return 0;
 }

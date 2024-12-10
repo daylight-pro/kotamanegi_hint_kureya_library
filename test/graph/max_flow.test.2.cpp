@@ -9,7 +9,7 @@ int main() {
    cin >> n >> m;
 
    mf_graph<int> g(n);
-   rep(i, 0, m) {
+   for(int i = 0; i < m; i++) {
       int u, v, c;
       cin >> u >> v >> c;
       g.add_edge(u, v, c);

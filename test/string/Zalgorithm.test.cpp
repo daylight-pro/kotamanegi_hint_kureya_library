@@ -7,5 +7,5 @@ int main() {
    string S;
    cin >> S;
    auto z = Z(S);
-   rep(i, 0, sz(S)) cout << z[i] << " \n"[i + 1 == sz(S)];
+   for(int i = 0; i < size(S); i++) cout << z[i] << " \n"[i + 1 == size(S)];
 }

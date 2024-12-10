@@ -1,4 +1,4 @@
-// base: 4756c7
+// base: 4e9f1c
 template<class Cap, class Cost> struct mcf_graph {
    public:
    mcf_graph() {}
@@ -7,10 +7,10 @@ template<class Cap, class Cost> struct mcf_graph {
    int add_edge(int from, int to, Cap cap, Cost cost) {
       // assert(0 <= from && from < _n);
       // assert(0 <= to && to < _n);
-      int m = sz(pos);
-      pos.push_back({from, sz(g[from])});
-      int from_id = sz(g[from]);
-      int to_id = sz(g[to]);
+      int m = size(pos);
+      pos.push_back({from, size(g[from])});
+      int from_id = size(g[from]);
+      int to_id = size(g[to]);
       if(from == to) to_id++;
       g[from].push_back(_edge{to, to_id, cap, cost});
       g[to].push_back(_edge{from, from_id, 0, -cost});
@@ -46,7 +46,7 @@ template<class Cap, class Cost> struct mcf_graph {
             if(vis[v]) continue;
             vis[v] = true;
             if(v == t) break;
-            rep(i, 0, sz(g[v])) {
+            for(int i = 0; i < size(g[v]); i++) {
                auto e = g[v][i];
                if(vis[e.to] || !e.cap) continue;
                Cost cost = e.cost - dual[e.to] + dual[v];
@@ -58,7 +58,8 @@ template<class Cap, class Cost> struct mcf_graph {
             }
          }
          if(!vis[t]) return false;
-         rep(v, 0, _n) if(vis[v]) dual[v] -= dist[t] - dist[v];
+         for(int v = 0; v < _n; v++)
+            if(vis[v]) dual[v] -= dist[t] - dist[v];
          return true;
       };
       Cap flow = 0;
@@ -90,22 +91,22 @@ template<class Cap, class Cost> struct mcf_graph {
    };  // 9fe107
 
    edge get_edge(int i) {
-      int m = sz(pos);
+      int m = size(pos);
       // assert(0 <= i && i < m);
       auto _e = g[pos[i].first][pos[i].second];
       auto _re = g[_e.to][_e.rev];
       return edge({pos[i].first, _e.to, _e.cap + _re.cap, _re.cap});
-   }  // d8c44b
+   }  // d7bd7e
 
    vector<edge> edges() {
-      int m = sz(pos);
+      int m = size(pos);
       vector<edge> result;
-      rep(i, 0, m) result.push_back(get_edge(i));
+      for(int i = 0; i < m; i++) result.push_back(get_edge(i));
       return result;
-   }  // fa2b7d
+   }  // 5948b8
 
    void change_edge(int i, Cap new_cap, Cap new_flow) {
-      int m = int(pos.size());
+      int m = size(pos);
       // assert(0 <= i && i < m);
       // assert(0 <= new_flow && new_flow <= new_cap);
 
@@ -113,7 +114,7 @@ template<class Cap, class Cost> struct mcf_graph {
       auto& _re = g[_e.to][_e.rev];
       _e.cap = new_cap - new_flow;
       _re.cap = new_flow;
-   }  // 025616
+   }  // 558c35
 
    private:
    int _n;

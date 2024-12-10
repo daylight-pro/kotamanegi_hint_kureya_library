@@ -28,7 +28,7 @@ int main() {
    int N, Q;
    cin >> N >> Q;
    vector<S> A(N);
-   rep(i, 0, N) {
+   for(int i = 0; i < N; i++) {
       int a;
       cin >> a;
       A[i] = {mm(a), 1};

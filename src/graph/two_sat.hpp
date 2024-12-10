@@ -13,7 +13,7 @@ struct two_sat {
    bool satisfiable() {
       scc.scc();
       auto comp = scc.get_comp();
-      rep(i, 0, _n) {
+      for(int i = 0; i < _n; i++) {
          if(comp[2 * i] == comp[2 * i + 1]) return false;
          _answer[i] = comp[2 * i] < comp[2 * i + 1];
       }

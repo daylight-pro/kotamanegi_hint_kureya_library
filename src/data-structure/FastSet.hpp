@@ -22,9 +22,9 @@ struct FastSet {
       }
    }
    ll next(ll i) {  // i を超える最⼩の要素
-      rep(h, 0, sz(a)) {
+      for(int h = 0; h < size(a); h++) {
          i++;
-         if(i / B >= sz(a[h])) break;
+         if(i / B >= size(a[h])) break;
          u64 d = a[h][i / B] >> (i % B);
          if(d) {
             i += countr_zero(d);
@@ -36,7 +36,7 @@ struct FastSet {
       return n;
    }
    ll prev(ll i) {  // i より小さい最⼤の要素
-      rep(h, 0, sz(a)) {
+      for(int h = 0; h < size(a); h++) {
          i--;
          if(i < 0) break;
          u64 d = a[h][i / B] << (~i % B);

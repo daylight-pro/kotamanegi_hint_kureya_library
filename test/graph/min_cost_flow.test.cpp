@@ -8,7 +8,7 @@ int main() {
    int n, e, f;
    cin >> n >> e >> f;
    mcf_graph<int, int> g(n);
-   rep(i, 0, e) {
+   for(int i = 0; i < e; i++) {
       int u, v, c, d;
       cin >> u >> v >> c >> d;
       g.add_edge(u, v, c, d);

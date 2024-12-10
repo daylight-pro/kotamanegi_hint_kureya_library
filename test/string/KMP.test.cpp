@@ -9,7 +9,7 @@ int main() {
    auto s = T + '$' + S;
    auto kmp = KMP(s);
 
-   rep(i, sz(s) - sz(S), sz(s)) {
-      if(kmp[i] == sz(T)) cout << i - sz(T) * 2 << '\n';
+   for(int i = size(s) - size(S); i < size(s); i++) {
+      if(kmp[i] == size(T)) cout << i - size(T) * 2 << '\n';
    }
 }

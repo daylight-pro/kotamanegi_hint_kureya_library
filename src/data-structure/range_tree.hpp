@@ -64,16 +64,17 @@ template<class K, class M> struct range_tree {
 };
 
 /* 使い方
-range_tree<K, S, D, op, e, init, inner_apply, prod> rt;
-K: 座標の型
-S: データ(モノイド)の型
-D: ノードに持たせるデータ構造の型
-S op(S x, S y): S の二項演算
-S e(): S の単位元
-D init(int n): Dを長さnで初期化する関数
-void inner_apply(D& d, int k, const S& v): D のk番目に v を適用する関数
-S prod(D& d, int l, int r): D の[l, r) に対するクエリを行う関数
 
+// モノイド
+struct M {
+   using S = ll;  // データ(モノイド)の型
+   using D = BIT;  // ノードに持たせるデータ構造の型
+   static S op(S a, S b) { return a + b; } // Sの二項演算
+   static S e() { return 0; }  // Sの単位元
+   static D init(int n) { return BIT(n); }  // Dを長さnで初期化する関数
+   static void apply(D& bit, int k, const S& v) { bit.add(k, v); } // D のk番目に v を適用する関数
+   static S prod(D& bit, int l, int r) { return bit.sum(l, r); } // D の[l, r) に対するクエリを行う関数
+};
 
 rt.add(x, y): 座標 (x, y) を追加
 rt.build(): クエリを受け付ける準備をする

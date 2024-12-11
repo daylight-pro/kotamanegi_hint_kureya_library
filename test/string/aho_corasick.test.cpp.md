@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/string/aho_corasick.hpp
     title: src/string/aho_corasick.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/string/trie.hpp
     title: src/string/trie.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: test/template.hpp
     title: test/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/2863
@@ -130,7 +130,7 @@ data:
   path: test/string/aho_corasick.test.cpp
   requiredBy: []
   timestamp: '2024-12-10 19:12:43+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/string/aho_corasick.test.cpp
 layout: document

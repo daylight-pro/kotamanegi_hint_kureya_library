@@ -19,6 +19,9 @@ data:
     path: test/algorithm/doubling.test.cpp
     title: test/algorithm/doubling.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/2dBIT.test.cpp
+    title: test/data-structure/2dBIT.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/BIT.test.cpp
     title: test/data-structure/BIT.test.cpp
   - icon: ':heavy_check_mark:'
@@ -126,24 +129,24 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/string/SuffixArray.test.cpp
     title: test/string/SuffixArray.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/string/Zalgorithm.test.cpp
     title: test/string/Zalgorithm.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/string/aho_corasick.test.2.cpp
     title: test/string/aho_corasick.test.2.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/string/aho_corasick.test.3.cpp
     title: test/string/aho_corasick.test.3.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/string/aho_corasick.test.cpp
     title: test/string/aho_corasick.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/template.test.cpp
     title: test/template.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#line 1 "test/template.hpp"
@@ -183,7 +186,7 @@ data:
   path: test/template.hpp
   requiredBy: []
   timestamp: '2024-12-10 18:11:50+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/modint/modint.test.cpp
   - test/modint/BarrettReduction.test.cpp
@@ -197,6 +200,7 @@ data:
   - test/data-structure/dsu.test.cpp
   - test/data-structure/range_set.test.2.cpp
   - test/data-structure/binary_trie.test.3.cpp
+  - test/data-structure/2dBIT.test.cpp
   - test/data-structure/lazy_segtree.test.2.cpp
   - test/data-structure/FastSet.test.cpp
   - test/data-structure/binary_trie.test.cpp

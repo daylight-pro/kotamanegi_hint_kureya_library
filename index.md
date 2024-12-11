@@ -21,6 +21,9 @@ data:
   - name: src/data-structure
     pages:
     - icon: ':heavy_check_mark:'
+      path: src/data-structure/2dBIT.hpp
+      title: src/data-structure/2dBIT.hpp
+    - icon: ':heavy_check_mark:'
       path: src/data-structure/BIT.hpp
       title: BIT (Fenwick Tree)
     - icon: ':heavy_check_mark:'
@@ -103,13 +106,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/string/SuffixArray.hpp
       title: Suffix Array
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/string/Zalgorithm.hpp
       title: Z Algorithm
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/string/aho_corasick.hpp
       title: src/string/aho_corasick.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/string/trie.hpp
       title: src/string/trie.hpp
   - name: src/template
@@ -119,7 +122,7 @@ data:
       title: src/template/template.hpp
   - name: test
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: test/template.hpp
       title: test/template.hpp
   verificationCategories:
@@ -144,6 +147,9 @@ data:
       title: test/algorithm/doubling.test.cpp
   - name: test/data-structure
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/2dBIT.test.cpp
+      title: test/data-structure/2dBIT.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data-structure/BIT.test.cpp
       title: test/data-structure/BIT.test.cpp
@@ -262,21 +268,21 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/string/SuffixArray.test.cpp
       title: test/string/SuffixArray.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/string/Zalgorithm.test.cpp
       title: test/string/Zalgorithm.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/string/aho_corasick.test.2.cpp
       title: test/string/aho_corasick.test.2.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/string/aho_corasick.test.3.cpp
       title: test/string/aho_corasick.test.3.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/string/aho_corasick.test.cpp
       title: test/string/aho_corasick.test.cpp
   - name: test
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/template.test.cpp
       title: test/template.test.cpp
 layout: toppage

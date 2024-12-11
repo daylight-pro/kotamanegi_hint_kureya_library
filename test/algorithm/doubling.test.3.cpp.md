@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/algorithm/doubling_monoid.hpp
     title: src/algorithm/doubling_monoid.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: test/template.hpp
     title: test/template.hpp
   _extendedRequiredBy: []

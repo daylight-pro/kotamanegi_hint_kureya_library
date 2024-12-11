@@ -7,6 +7,9 @@ data:
     path: test/data-structure/BIT.test.cpp
     title: test/data-structure/BIT.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/range_tree.test.cpp
+    title: test/data-structure/range_tree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/tree/hld.test.3.cpp
     title: test/graph/tree/hld.test.3.cpp
   - icon: ':heavy_check_mark:'
@@ -37,6 +40,7 @@ data:
   timestamp: '2024-12-10 18:11:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/data-structure/range_tree.test.cpp
   - test/data-structure/BIT.test.cpp
   - test/graph/tree/hld.test.3.cpp
   - test/graph/tree/hld.test.cpp

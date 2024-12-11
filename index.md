@@ -42,6 +42,9 @@ data:
       path: src/data-structure/range_set.hpp
       title: src/data-structure/range_set.hpp
     - icon: ':heavy_check_mark:'
+      path: src/data-structure/range_tree.hpp
+      title: src/data-structure/range_tree.hpp
+    - icon: ':heavy_check_mark:'
       path: src/data-structure/segtree.hpp
       title: src/data-structure/segtree.hpp
   - name: src/extra
@@ -183,6 +186,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/range_set.test.cpp
       title: test/data-structure/range_set.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/range_tree.test.cpp
+      title: test/data-structure/range_tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data-structure/segtree.test.2.cpp
       title: test/data-structure/segtree.test.2.cpp

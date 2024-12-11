@@ -55,6 +55,9 @@ data:
     path: test/data-structure/range_set.test.cpp
     title: test/data-structure/range_set.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/range_tree.test.cpp
+    title: test/data-structure/range_tree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/segtree.test.2.cpp
     title: test/data-structure/segtree.test.2.cpp
   - icon: ':heavy_check_mark:'
@@ -198,6 +201,7 @@ data:
   - test/data-structure/dsu.test.2.cpp
   - test/data-structure/range_set.test.cpp
   - test/data-structure/dsu.test.cpp
+  - test/data-structure/range_tree.test.cpp
   - test/data-structure/range_set.test.2.cpp
   - test/data-structure/binary_trie.test.3.cpp
   - test/data-structure/2dBIT.test.cpp

@@ -277,4 +277,12 @@ struct Treap {
       root = rt;
       return t;
    }  // c46ac4 (Common)
+
+   S operator[](int ind) {
+      auto [tt, t3] = split(root, ind + 1);
+      auto [t1, t2] = split(tt, ind);
+      S ret = acc[t2];
+      root = merge(merge(t1, t2), t3);
+      return ret;
+   }  // d2546e (Common)
 };

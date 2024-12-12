@@ -75,6 +75,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/graph/tree/hld.hpp
       title: src/graph/tree/hld.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/graph/tree/rerooting.hpp
+      title: src/graph/tree/rerooting.hpp
   - name: src/math
     pages:
     - icon: ':heavy_check_mark:'
@@ -238,6 +241,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/tree/hld.test.cpp
       title: test/graph/tree/hld.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/tree/rerooting.test.cpp
+      title: test/graph/tree/rerooting.test.cpp
   - name: test/math
     pages:
     - icon: ':heavy_check_mark:'

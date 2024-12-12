@@ -16,6 +16,9 @@ data:
     path: test/graph/tree/hld.test.2.cpp
     title: test/graph/tree/hld.test.2.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/tree/rerooting.test.cpp
+    title: test/graph/tree/rerooting.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/modint/modint.test.cpp
     title: test/modint/modint.test.cpp
   _isVerificationFailed: false
@@ -60,6 +63,7 @@ data:
   - test/data-structure/segtree.test.2.cpp
   - test/data-structure/lazy_segtree.test.cpp
   - test/FPS/FFT.test.cpp
+  - test/graph/tree/rerooting.test.cpp
   - test/graph/tree/hld.test.2.cpp
 documentation_of: src/modint/modint.hpp
 layout: document

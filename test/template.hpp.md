@@ -106,6 +106,9 @@ data:
     path: test/graph/scc.test.cpp
     title: test/graph/scc.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/topological_sort.test.cpp
+    title: test/graph/topological_sort.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/tree/cartesian_tree.test.cpp
     title: test/graph/tree/cartesian_tree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -259,6 +262,7 @@ data:
   - test/graph/min_cost_flow.test.cpp
   - test/graph/two_sat.test.cpp
   - test/graph/max_flow.test.2.cpp
+  - test/graph/topological_sort.test.cpp
   - test/graph/tree/rerooting.test.cpp
   - test/graph/tree/hld.test.3.cpp
   - test/graph/tree/hld.test.cpp

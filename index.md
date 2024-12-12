@@ -76,6 +76,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/graph/scc.hpp
       title: src/graph/scc.hpp
+    - icon: ':warning:'
+      path: src/graph/topological_sort.hpp
+      title: src/graph/topological_sort.hpp
     - icon: ':heavy_check_mark:'
       path: src/graph/two_sat.hpp
       title: src/graph/two_sat.hpp
@@ -254,6 +257,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/scc.test.cpp
       title: test/graph/scc.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/topological_sort.test.cpp
+      title: test/graph/topological_sort.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/graph/two_sat.test.cpp
       title: test/graph/two_sat.test.cpp

@@ -205,6 +205,9 @@ data:
       path: test/data-structure/segtree.test.cpp
       title: test/data-structure/segtree.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/data-structure/undo_dsu.test.2.cpp
+      title: test/data-structure/undo_dsu.test.2.cpp
+    - icon: ':heavy_check_mark:'
       path: test/data-structure/undo_dsu.test.cpp
       title: test/data-structure/undo_dsu.test.cpp
   - name: test/graph

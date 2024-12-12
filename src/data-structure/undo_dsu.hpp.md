@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/undo_dsu.test.2.cpp
+    title: test/data-structure/undo_dsu.test.2.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/undo_dsu.test.cpp
     title: test/data-structure/undo_dsu.test.cpp
   _isVerificationFailed: false
@@ -53,6 +56,7 @@ data:
   timestamp: '2024-12-12 18:01:06+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/data-structure/undo_dsu.test.2.cpp
   - test/data-structure/undo_dsu.test.cpp
 documentation_of: src/data-structure/undo_dsu.hpp
 layout: document

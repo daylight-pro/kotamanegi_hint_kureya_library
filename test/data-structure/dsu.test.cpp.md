@@ -22,20 +22,18 @@ data:
     using ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define all(a) begin(a),\
     \ end(a)\nbool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
     \ a, auto b) { return a < b ? a = b, 1 : 0; }\n#line 1 \"src/data-structure/dsu.hpp\"\
-    \n// base: c45937\nstruct dsu {\n   private:\n   int _n;\n   vector<int> parent_or_size;\n\
-    \n   public:\n   dsu() : _n(0) {}\n   explicit dsu(int n) : _n(n), parent_or_size(n,\
-    \ -1) {}\n\n   int merge(int a, int b) {\n      // assert(0 <= a && a < _n);\n\
-    \      // assert(0 <= b && b < _n);\n      int x = leader(a), y = leader(b);\n\
-    \      if(x == y) return x;\n      if(-parent_or_size[x] < -parent_or_size[y])\
-    \ swap(x, y);\n      parent_or_size[x] += parent_or_size[y];\n      parent_or_size[y]\
+    \n// base: d569f4\nstruct dsu {\n   private:\n   int _n;\n   vector<int> p;\n\n\
+    \   public:\n   dsu() : _n(0) {}\n   explicit dsu(int n) : _n(n), p(n, -1) {}\n\
+    \n   int merge(int a, int b) {\n      // assert(0 <= a && a < _n);\n      // assert(0\
+    \ <= b && b < _n);\n      int x = leader(a), y = leader(b);\n      if(x == y)\
+    \ return x;\n      if(-p[x] < -p[y]) swap(x, y);\n      p[x] += p[y];\n      p[y]\
     \ = x;\n      return x;\n   }\n\n   bool same(int a, int b) {\n      // assert(0\
     \ <= a && a < _n);\n      // assert(0 <= b && b < _n);\n      return leader(a)\
     \ == leader(b);\n   }\n\n   int leader(int a) {\n      // assert(0 <= a && a <\
-    \ _n);\n      if(parent_or_size[a] < 0) return a;\n      int x = a;\n      while(parent_or_size[x]\
-    \ >= 0) x = parent_or_size[x];\n      while(parent_or_size[a] >= 0) {\n      \
-    \   int t = parent_or_size[a];\n         parent_or_size[a] = x;\n         a =\
-    \ t;\n      }\n      return x;\n   }\n\n   int size(int a) {\n      // assert(0\
-    \ <= a && a < _n);\n      return -parent_or_size[leader(a)];\n   }  // 1ff997\n\
+    \ _n);\n      if(p[a] < 0) return a;\n      int x = a;\n      while(p[x] >= 0)\
+    \ x = p[x];\n      while(p[a] >= 0) {\n         int t = p[a];\n         p[a] =\
+    \ x;\n         a = t;\n      }\n      return x;\n   }\n\n   int size(int a) {\n\
+    \      // assert(0 <= a && a < _n);\n      return -p[leader(a)];\n   }  // 818fe7\n\
     \n   vector<vector<int>> groups() {\n      vector<int> leader_buf(_n), group_size(_n);\n\
     \      for(int i = 0; i < _n; i++) {\n         leader_buf[i] = leader(i);\n  \
     \       group_size[leader_buf[i]]++;\n      }\n      vector<vector<int>> result(_n);\n\
@@ -59,7 +57,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/dsu.test.cpp
   requiredBy: []
-  timestamp: '2024-12-10 19:12:43+09:00'
+  timestamp: '2024-12-12 18:01:06+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/dsu.test.cpp

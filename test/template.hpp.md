@@ -67,6 +67,9 @@ data:
     path: test/data-structure/segtree.test.cpp
     title: test/data-structure/segtree.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/undo_dsu.test.cpp
+    title: test/data-structure/undo_dsu.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/low_link.test.2.cpp
     title: test/graph/low_link.test.2.cpp
   - icon: ':heavy_check_mark:'
@@ -214,6 +217,7 @@ data:
   - test/data-structure/segtree.test.2.cpp
   - test/data-structure/lazy_segtree.test.cpp
   - test/data-structure/BIT.test.cpp
+  - test/data-structure/undo_dsu.test.cpp
   - test/data-structure/binary_trie.test.2.cpp
   - test/template.test.cpp
   - test/FPS/FFT.test.cpp

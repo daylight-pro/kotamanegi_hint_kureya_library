@@ -1,21 +1,21 @@
-// base: c45937
+// base: d569f4
 struct dsu {
    private:
    int _n;
-   vector<int> parent_or_size;
+   vector<int> p;
 
    public:
    dsu() : _n(0) {}
-   explicit dsu(int n) : _n(n), parent_or_size(n, -1) {}
+   explicit dsu(int n) : _n(n), p(n, -1) {}
 
    int merge(int a, int b) {
       // assert(0 <= a && a < _n);
       // assert(0 <= b && b < _n);
       int x = leader(a), y = leader(b);
       if(x == y) return x;
-      if(-parent_or_size[x] < -parent_or_size[y]) swap(x, y);
-      parent_or_size[x] += parent_or_size[y];
-      parent_or_size[y] = x;
+      if(-p[x] < -p[y]) swap(x, y);
+      p[x] += p[y];
+      p[y] = x;
       return x;
    }
 
@@ -27,12 +27,12 @@ struct dsu {
 
    int leader(int a) {
       // assert(0 <= a && a < _n);
-      if(parent_or_size[a] < 0) return a;
+      if(p[a] < 0) return a;
       int x = a;
-      while(parent_or_size[x] >= 0) x = parent_or_size[x];
-      while(parent_or_size[a] >= 0) {
-         int t = parent_or_size[a];
-         parent_or_size[a] = x;
+      while(p[x] >= 0) x = p[x];
+      while(p[a] >= 0) {
+         int t = p[a];
+         p[a] = x;
          a = t;
       }
       return x;
@@ -40,8 +40,8 @@ struct dsu {
 
    int size(int a) {
       // assert(0 <= a && a < _n);
-      return -parent_or_size[leader(a)];
-   }  // 1ff997
+      return -p[leader(a)];
+   }  // 818fe7
 
    vector<vector<int>> groups() {
       vector<int> leader_buf(_n), group_size(_n);

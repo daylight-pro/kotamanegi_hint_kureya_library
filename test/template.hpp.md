@@ -37,6 +37,12 @@ data:
     path: test/data-structure/binary_trie.test.cpp
     title: test/data-structure/binary_trie.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/disjoint_sparse_table.test.2.cpp
+    title: test/data-structure/disjoint_sparse_table.test.2.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/disjoint_sparse_table.test.cpp
+    title: test/data-structure/disjoint_sparse_table.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/dsu.test.2.cpp
     title: test/data-structure/dsu.test.2.cpp
   - icon: ':heavy_check_mark:'
@@ -66,6 +72,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data-structure/segtree.test.cpp
     title: test/data-structure/segtree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/sparse_table.test.cpp
+    title: test/data-structure/sparse_table.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/data-structure/undo_dsu.test.2.cpp
     title: test/data-structure/undo_dsu.test.2.cpp
@@ -209,18 +218,21 @@ data:
   - test/math/floor_sum.test.cpp
   - test/math/BinaryGCD.test.cpp
   - test/data-structure/undo_dsu.test.2.cpp
+  - test/data-structure/sparse_table.test.cpp
   - test/data-structure/segtree.test.cpp
   - test/data-structure/segtree.test.3.cpp
   - test/data-structure/dsu.test.2.cpp
   - test/data-structure/range_set.test.cpp
   - test/data-structure/dsu.test.cpp
   - test/data-structure/range_tree.test.cpp
+  - test/data-structure/disjoint_sparse_table.test.2.cpp
   - test/data-structure/range_set.test.2.cpp
   - test/data-structure/binary_trie.test.3.cpp
   - test/data-structure/2dBIT.test.cpp
   - test/data-structure/lazy_segtree.test.2.cpp
   - test/data-structure/FastSet.test.cpp
   - test/data-structure/binary_trie.test.cpp
+  - test/data-structure/disjoint_sparse_table.test.cpp
   - test/data-structure/segtree.test.2.cpp
   - test/data-structure/lazy_segtree.test.cpp
   - test/data-structure/BIT.test.cpp

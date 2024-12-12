@@ -33,6 +33,9 @@ data:
       path: src/data-structure/binary_trie.hpp
       title: src/data-structure/binary_trie.hpp
     - icon: ':heavy_check_mark:'
+      path: src/data-structure/disjoint_sparse_table.hpp
+      title: src/data-structure/disjoint_sparse_table.hpp
+    - icon: ':heavy_check_mark:'
       path: src/data-structure/dsu.hpp
       title: src/data-structure/dsu.hpp
     - icon: ':heavy_check_mark:'
@@ -47,6 +50,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/data-structure/segtree.hpp
       title: src/data-structure/segtree.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/sparse_table.hpp
+      title: src/data-structure/sparse_table.hpp
     - icon: ':heavy_check_mark:'
       path: src/data-structure/undo_dsu.hpp
       title: src/data-structure/undo_dsu.hpp
@@ -178,6 +184,12 @@ data:
       path: test/data-structure/binary_trie.test.cpp
       title: test/data-structure/binary_trie.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/data-structure/disjoint_sparse_table.test.2.cpp
+      title: test/data-structure/disjoint_sparse_table.test.2.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/disjoint_sparse_table.test.cpp
+      title: test/data-structure/disjoint_sparse_table.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/data-structure/dsu.test.2.cpp
       title: test/data-structure/dsu.test.2.cpp
     - icon: ':heavy_check_mark:'
@@ -207,6 +219,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/segtree.test.cpp
       title: test/data-structure/segtree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/sparse_table.test.cpp
+      title: test/data-structure/sparse_table.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data-structure/undo_dsu.test.2.cpp
       title: test/data-structure/undo_dsu.test.2.cpp

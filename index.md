@@ -76,7 +76,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/graph/scc.hpp
       title: src/graph/scc.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/graph/topological_sort.hpp
       title: src/graph/topological_sort.hpp
     - icon: ':heavy_check_mark:'

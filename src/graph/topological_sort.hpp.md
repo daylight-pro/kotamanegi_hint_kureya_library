@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/graph/topological_sort.test.cpp
+    title: test/graph/topological_sort.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/graph/topological_sort.hpp\"\nvector<int> topological_sort(vector<vector<int>>&\
@@ -27,8 +30,9 @@ data:
   path: src/graph/topological_sort.hpp
   requiredBy: []
   timestamp: '2024-12-13 01:39:30+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/graph/topological_sort.test.cpp
 documentation_of: src/graph/topological_sort.hpp
 layout: document
 redirect_from:

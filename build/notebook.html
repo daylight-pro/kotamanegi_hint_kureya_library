@@ -1641,7 +1641,7 @@ vector<span class="token operator">&lt;</span>mm<span class="token operator">></
 
     </div>
     <div class="content content-hpp">
-    <pre><code><span class="token comment">// base: 166a6d</span>
+    <pre><code><span class="token comment">// base: b7fc0f</span>
 <span class="token keyword">template</span><span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token class-name">M</span><span class="token punctuation">,</span> <span class="token keyword">bool</span> calc_contribution <span class="token operator">=</span> <span class="token boolean">false</span><span class="token operator">></span> <span class="token keyword">struct</span> <span class="token class-name">Rerooting</span> <span class="token punctuation">{</span>
    <span class="token keyword">using</span> S <span class="token operator">=</span> <span class="token keyword">typename</span> <span class="token class-name">M</span><span class="token double-colon punctuation">::</span>S<span class="token punctuation">;</span>
    <span class="token keyword">using</span> C <span class="token operator">=</span> <span class="token keyword">typename</span> <span class="token class-name">M</span><span class="token double-colon punctuation">::</span>C<span class="token punctuation">;</span>
@@ -1707,7 +1707,23 @@ vector<span class="token operator">&lt;</span>mm<span class="token operator">></
       <span class="token keyword">if</span><span class="token punctuation">(</span>hash<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span>p <span class="token operator">*</span> N <span class="token operator">+</span> c<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> hash<span class="token punctuation">[</span>p <span class="token operator">*</span> N <span class="token operator">+</span> c<span class="token punctuation">]</span><span class="token punctuation">;</span>
       <span class="token keyword">return</span> <span class="token class-name">M</span><span class="token double-colon punctuation">::</span><span class="token function">e</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
    <span class="token punctuation">}</span>  <span class="token comment">// e6000f</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/*
+
+struct M {
+   using S = pair&lt;mm, int>; // DPの型
+   using C = pair&lt;mm, mm>;  // 辺コストの型
+   static S merge(S a, S b) { return {a.first + b.first, a.second + b.second}; } // DPのマージ
+   static S apply(S a, int from, int to, C b) {  // DPの親への寄与
+      return {(a.first + A[from]) * b.first + b.second * (a.second + 1), a.second + 1};
+   }
+   static S e() { return {0, 0}; } // 単位元
+   static S leaf() { return {0, 0}; } // 葉の値
+};
+
+Rerooting&lt;M> reroot;
+*/</span></code></pre>
 </div>
 
     <h2 class="section" id="flow">flow</h2>

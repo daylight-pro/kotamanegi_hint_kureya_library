@@ -1,4 +1,4 @@
-// base: 166a6d
+// base: b7fc0f
 template<class M, bool calc_contribution = false> struct Rerooting {
    using S = typename M::S;
    using C = typename M::C;
@@ -65,3 +65,19 @@ template<class M, bool calc_contribution = false> struct Rerooting {
       return M::e();
    }  // e6000f
 };
+
+/*
+
+struct M {
+   using S = pair<mm, int>; // DPの型
+   using C = pair<mm, mm>;  // 辺コストの型
+   static S merge(S a, S b) { return {a.first + b.first, a.second + b.second}; } // DPのマージ
+   static S apply(S a, int from, int to, C b) {  // DPの親への寄与
+      return {(a.first + A[from]) * b.first + b.second * (a.second + 1), a.second + 1};
+   }
+   static S e() { return {0, 0}; } // 単位元
+   static S leaf() { return {0, 0}; } // 葉の値
+};
+
+Rerooting<M> reroot;
+*/

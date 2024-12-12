@@ -38,7 +38,7 @@ data:
     \ }\n   mm inv() const { return pow(mod - 2); }\n   mm pow(ll b) const {\n   \
     \   mm a = *this, c = 1;\n      while(b) {\n         if(b & 1) c *= a;\n     \
     \    a *= a;\n         b >>= 1;\n      }\n      return c;\n   }\n};\n#line 1 \"\
-    src/graph/tree/rerooting.hpp\"\n// base: 166a6d\ntemplate<class M, bool calc_contribution\
+    src/graph/tree/rerooting.hpp\"\n// base: b7fc0f\ntemplate<class M, bool calc_contribution\
     \ = false> struct Rerooting {\n   using S = typename M::S;\n   using C = typename\
     \ M::C;\n   vector<S> dp, memo;\n   vector<vector<pair<int, C>>> g;\n   map<ll,\
     \ S> hash;\n   int N;\n\n   Rerooting(int n) : N(n), g(n) {}\n\n   void add_edge(int\
@@ -62,18 +62,26 @@ data:
     \         reroot(to, M::apply(sub, cur, to, c), cur);\n         ind++;\n     \
     \ }\n   }\n\n   public:\n   S get_contribution(int p, int c) {\n      if(hash.count(p\
     \ * N + c)) return hash[p * N + c];\n      return M::e();\n   }  // e6000f\n};\n\
-    #line 6 \"test/graph/tree/rerooting.test.cpp\"\n\nvector<int> A;\nstruct M {\n\
-    \   using S = pair<mm, int>;\n   using C = pair<mm, mm>;\n   static S merge(S\
-    \ a, S b) { return {a.first + b.first, a.second + b.second}; }\n   static S apply(S\
-    \ a, int from, int to, C b) {\n      return {(a.first + A[from]) * b.first + b.second\
-    \ * (a.second + 1), a.second + 1};\n   }\n   static S e() { return {0, 0}; }\n\
-    \   static S leaf() { return {0, 0}; }\n};\n\nint main() {\n   cin.tie(0)->sync_with_stdio(false);\n\
-    \   int N;\n   cin >> N;\n   A.resize(N);\n   for(auto& a : A) cin >> a;\n   Rerooting<M>\
-    \ reroot(N);\n   for(int i = 0; i < N - 1; i++) {\n      int u, v, b, c;\n   \
-    \   cin >> u >> v >> b >> c;\n      reroot.add_edge(u, v, {b, c});\n   }\n   auto\
-    \ v = reroot.build();\n   auto ans = vector<mm>(N);\n   for(int i = 0; i < N;\
-    \ i++) ans[i] = v[i].first + A[i];\n   for(int i = 0; i < N; i++) cout << ans[i].x\
-    \ << \" \\n\"[i == N - 1];\n   return 0;\n}\n"
+    \n/*\n\nstruct M {\n   using S = pair<mm, int>; // DP\u306E\u578B\n   using C\
+    \ = pair<mm, mm>;  // \u8FBA\u30B3\u30B9\u30C8\u306E\u578B\n   static S merge(S\
+    \ a, S b) { return {a.first + b.first, a.second + b.second}; } // DP\u306E\u30DE\
+    \u30FC\u30B8\n   static S apply(S a, int from, int to, C b) {  // DP\u306E\u89AA\
+    \u3078\u306E\u5BC4\u4E0E\n      return {(a.first + A[from]) * b.first + b.second\
+    \ * (a.second + 1), a.second + 1};\n   }\n   static S e() { return {0, 0}; } //\
+    \ \u5358\u4F4D\u5143\n   static S leaf() { return {0, 0}; } // \u8449\u306E\u5024\
+    \n};\n\nRerooting<M> reroot;\n*/\n#line 6 \"test/graph/tree/rerooting.test.cpp\"\
+    \n\nvector<int> A;\nstruct M {\n   using S = pair<mm, int>;\n   using C = pair<mm,\
+    \ mm>;\n   static S merge(S a, S b) { return {a.first + b.first, a.second + b.second};\
+    \ }\n   static S apply(S a, int from, int to, C b) {\n      return {(a.first +\
+    \ A[from]) * b.first + b.second * (a.second + 1), a.second + 1};\n   }\n   static\
+    \ S e() { return {0, 0}; }\n   static S leaf() { return {0, 0}; }\n};\n\nint main()\
+    \ {\n   cin.tie(0)->sync_with_stdio(false);\n   int N;\n   cin >> N;\n   A.resize(N);\n\
+    \   for(auto& a : A) cin >> a;\n   Rerooting<M> reroot(N);\n   for(int i = 0;\
+    \ i < N - 1; i++) {\n      int u, v, b, c;\n      cin >> u >> v >> b >> c;\n \
+    \     reroot.add_edge(u, v, {b, c});\n   }\n   auto v = reroot.build();\n   auto\
+    \ ans = vector<mm>(N);\n   for(int i = 0; i < N; i++) ans[i] = v[i].first + A[i];\n\
+    \   for(int i = 0; i < N; i++) cout << ans[i].x << \" \\n\"[i == N - 1];\n   return\
+    \ 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/tree_path_composite_sum\"\
     \n\n#include \"test/template.hpp\"\n#include \"src/modint/modint.hpp\"\n#include\
     \ \"src/graph/tree/rerooting.hpp\"\n\nvector<int> A;\nstruct M {\n   using S =\
@@ -95,7 +103,7 @@ data:
   isVerificationFile: true
   path: test/graph/tree/rerooting.test.cpp
   requiredBy: []
-  timestamp: '2024-12-12 16:16:14+09:00'
+  timestamp: '2024-12-12 16:30:19+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/tree/rerooting.test.cpp

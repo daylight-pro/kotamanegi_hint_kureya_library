@@ -11,7 +11,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/graph/tree/rerooting.hpp\"\n// base: 166a6d\ntemplate<class\
+  bundledCode: "#line 1 \"src/graph/tree/rerooting.hpp\"\n// base: b7fc0f\ntemplate<class\
     \ M, bool calc_contribution = false> struct Rerooting {\n   using S = typename\
     \ M::S;\n   using C = typename M::C;\n   vector<S> dp, memo;\n   vector<vector<pair<int,\
     \ C>>> g;\n   map<ll, S> hash;\n   int N;\n\n   Rerooting(int n) : N(n), g(n)\
@@ -35,8 +35,15 @@ data:
     \   S sub = M::merge(l[ind], r[ind + 1]);\n         reroot(to, M::apply(sub, cur,\
     \ to, c), cur);\n         ind++;\n      }\n   }\n\n   public:\n   S get_contribution(int\
     \ p, int c) {\n      if(hash.count(p * N + c)) return hash[p * N + c];\n     \
-    \ return M::e();\n   }  // e6000f\n};\n"
-  code: "// base: 166a6d\ntemplate<class M, bool calc_contribution = false> struct\
+    \ return M::e();\n   }  // e6000f\n};\n\n/*\n\nstruct M {\n   using S = pair<mm,\
+    \ int>; // DP\u306E\u578B\n   using C = pair<mm, mm>;  // \u8FBA\u30B3\u30B9\u30C8\
+    \u306E\u578B\n   static S merge(S a, S b) { return {a.first + b.first, a.second\
+    \ + b.second}; } // DP\u306E\u30DE\u30FC\u30B8\n   static S apply(S a, int from,\
+    \ int to, C b) {  // DP\u306E\u89AA\u3078\u306E\u5BC4\u4E0E\n      return {(a.first\
+    \ + A[from]) * b.first + b.second * (a.second + 1), a.second + 1};\n   }\n   static\
+    \ S e() { return {0, 0}; } // \u5358\u4F4D\u5143\n   static S leaf() { return\
+    \ {0, 0}; } // \u8449\u306E\u5024\n};\n\nRerooting<M> reroot;\n*/\n"
+  code: "// base: b7fc0f\ntemplate<class M, bool calc_contribution = false> struct\
     \ Rerooting {\n   using S = typename M::S;\n   using C = typename M::C;\n   vector<S>\
     \ dp, memo;\n   vector<vector<pair<int, C>>> g;\n   map<ll, S> hash;\n   int N;\n\
     \n   Rerooting(int n) : N(n), g(n) {}\n\n   void add_edge(int f, int t, const\
@@ -59,12 +66,20 @@ data:
     \         if(to == pre) continue;\n         S sub = M::merge(l[ind], r[ind + 1]);\n\
     \         reroot(to, M::apply(sub, cur, to, c), cur);\n         ind++;\n     \
     \ }\n   }\n\n   public:\n   S get_contribution(int p, int c) {\n      if(hash.count(p\
-    \ * N + c)) return hash[p * N + c];\n      return M::e();\n   }  // e6000f\n};"
+    \ * N + c)) return hash[p * N + c];\n      return M::e();\n   }  // e6000f\n};\n\
+    \n/*\n\nstruct M {\n   using S = pair<mm, int>; // DP\u306E\u578B\n   using C\
+    \ = pair<mm, mm>;  // \u8FBA\u30B3\u30B9\u30C8\u306E\u578B\n   static S merge(S\
+    \ a, S b) { return {a.first + b.first, a.second + b.second}; } // DP\u306E\u30DE\
+    \u30FC\u30B8\n   static S apply(S a, int from, int to, C b) {  // DP\u306E\u89AA\
+    \u3078\u306E\u5BC4\u4E0E\n      return {(a.first + A[from]) * b.first + b.second\
+    \ * (a.second + 1), a.second + 1};\n   }\n   static S e() { return {0, 0}; } //\
+    \ \u5358\u4F4D\u5143\n   static S leaf() { return {0, 0}; } // \u8449\u306E\u5024\
+    \n};\n\nRerooting<M> reroot;\n*/"
   dependsOn: []
   isVerificationFile: false
   path: src/graph/tree/rerooting.hpp
   requiredBy: []
-  timestamp: '2024-12-12 16:16:14+09:00'
+  timestamp: '2024-12-12 16:30:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/tree/rerooting.test.cpp

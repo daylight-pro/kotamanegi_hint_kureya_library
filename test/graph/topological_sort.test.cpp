@@ -26,5 +26,6 @@ int main() {
 
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A"
 #include "test/template.hpp"
+#include "src/graph/topological_sort.hpp"
 
 int main() { puts("Hello World"); }

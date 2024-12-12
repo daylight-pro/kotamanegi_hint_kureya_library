@@ -76,6 +76,9 @@ data:
   - name: src/graph/tree
     pages:
     - icon: ':heavy_check_mark:'
+      path: src/graph/tree/cartesian_tree.hpp
+      title: src/graph/tree/cartesian_tree.hpp
+    - icon: ':heavy_check_mark:'
       path: src/graph/tree/hld.hpp
       title: src/graph/tree/hld.hpp
     - icon: ':heavy_check_mark:'
@@ -241,6 +244,9 @@ data:
       title: test/graph/two_sat.test.cpp
   - name: test/graph/tree
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/graph/tree/cartesian_tree.test.cpp
+      title: test/graph/tree/cartesian_tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/graph/tree/hld.test.2.cpp
       title: test/graph/tree/hld.test.2.cpp

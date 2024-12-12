@@ -97,6 +97,9 @@ data:
     path: test/graph/scc.test.cpp
     title: test/graph/scc.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/tree/cartesian_tree.test.cpp
+    title: test/graph/tree/cartesian_tree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/tree/hld.test.2.cpp
     title: test/graph/tree/hld.test.2.cpp
   - icon: ':heavy_check_mark:'
@@ -248,6 +251,7 @@ data:
   - test/graph/tree/hld.test.3.cpp
   - test/graph/tree/hld.test.cpp
   - test/graph/tree/hld.test.2.cpp
+  - test/graph/tree/cartesian_tree.test.cpp
   - test/graph/low_link.test.2.cpp
   - test/graph/max_flow.test.3.cpp
   - test/graph/scc.test.cpp

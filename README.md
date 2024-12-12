@@ -1,4 +1,5 @@
 # ICPC_notebook
+[![Actions Status](https://github.com/daylight-pro/kotamanegi_hint_kureya_library/actions/workflows/verify.yml/badge.svg)](https://github.com/daylight-pro/kotamanegi_hint_kureya_library/actions)
 
 - CSS 組版で、ファイルを置くだけで PDF が簡単に作れる、ICPC 用ライブラリのすごいテンプレート
 - かつ、みんなでつくる最強の ICPC 用ライブラリ (予定)

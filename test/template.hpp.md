@@ -97,6 +97,45 @@ data:
     path: test/data-structure/undo_dsu.test.cpp
     title: test/data-structure/undo_dsu.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/geometry/area.test.cpp
+    title: test/geometry/area.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/base.test.cpp
+    title: test/geometry/base.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/ccw.test.cpp
+    title: test/geometry/ccw.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/convex_hull.test.cpp
+    title: test/geometry/convex_hull.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/crosspoint.test.cpp
+    title: test/geometry/crosspoint.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/diameter.test.cpp
+    title: test/geometry/diameter.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/distance.test.cpp
+    title: test/geometry/distance.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/intersect.test.cpp
+    title: test/geometry/intersect.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/is_convex.test.cpp
+    title: test/geometry/is_convex.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/parallel_orthogonal.test.cpp
+    title: test/geometry/parallel_orthogonal.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/polygon_point_containment.test.cpp
+    title: test/geometry/polygon_point_containment.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/projection.test.cpp
+    title: test/geometry/projection.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/reflection.test.cpp
+    title: test/geometry/reflection.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/low_link.test.2.cpp
     title: test/graph/low_link.test.2.cpp
   - icon: ':heavy_check_mark:'
@@ -284,6 +323,19 @@ data:
   - test/template.test.cpp
   - test/FPS/FFT.test.cpp
   - test/FPS/FFT_fast.test.cpp
+  - test/geometry/is_convex.test.cpp
+  - test/geometry/reflection.test.cpp
+  - test/geometry/polygon_point_containment.test.cpp
+  - test/geometry/ccw.test.cpp
+  - test/geometry/crosspoint.test.cpp
+  - test/geometry/convex_hull.test.cpp
+  - test/geometry/projection.test.cpp
+  - test/geometry/area.test.cpp
+  - test/geometry/intersect.test.cpp
+  - test/geometry/base.test.cpp
+  - test/geometry/diameter.test.cpp
+  - test/geometry/parallel_orthogonal.test.cpp
+  - test/geometry/distance.test.cpp
   - test/string/aho_corasick.test.2.cpp
   - test/string/aho_corasick.test.3.cpp
   - test/string/RollingHash.test.cpp

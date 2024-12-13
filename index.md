@@ -68,6 +68,17 @@ data:
       path: src/extra/modint_fast.hpp
       title: "32 bit \u3067\u52A0\u6E1B\u7B97\u3092\u3061\u3083\u3093\u3068\u66F8\u3044\
         \u305F Modint"
+  - name: src/geometry
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/geometry/base.hpp
+      title: src/geometry/base.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/geometry/convex_hull.hpp
+      title: src/geometry/convex_hull.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/geometry/etc.hpp
+      title: src/geometry/etc.hpp
   - name: src/graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -278,6 +289,47 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/undo_dsu.test.cpp
       title: test/data-structure/undo_dsu.test.cpp
+  - name: test/geometry
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/geometry/area.test.cpp
+      title: test/geometry/area.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometry/base.test.cpp
+      title: test/geometry/base.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometry/ccw.test.cpp
+      title: test/geometry/ccw.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometry/convex_hull.test.cpp
+      title: test/geometry/convex_hull.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometry/crosspoint.test.cpp
+      title: test/geometry/crosspoint.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometry/diameter.test.cpp
+      title: test/geometry/diameter.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometry/distance.test.cpp
+      title: test/geometry/distance.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometry/intersect.test.cpp
+      title: test/geometry/intersect.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometry/is_convex.test.cpp
+      title: test/geometry/is_convex.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometry/parallel_orthogonal.test.cpp
+      title: test/geometry/parallel_orthogonal.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometry/polygon_point_containment.test.cpp
+      title: test/geometry/polygon_point_containment.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometry/projection.test.cpp
+      title: test/geometry/projection.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometry/reflection.test.cpp
+      title: test/geometry/reflection.test.cpp
   - name: test/graph
     pages:
     - icon: ':heavy_check_mark:'

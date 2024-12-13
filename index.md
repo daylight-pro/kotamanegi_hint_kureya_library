@@ -108,6 +108,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/math/floor_sum.hpp
       title: src/math/floor_sum.hpp
+  - name: src/memo
+    pages:
+    - icon: ':warning:'
+      path: src/memo/ext.cpp
+      title: src/memo/ext.cpp
   - name: src/modint
     pages:
     - icon: ':heavy_check_mark:'

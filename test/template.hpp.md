@@ -58,6 +58,9 @@ data:
     path: test/data-structure/potential_dsu.test.2.cpp
     title: test/data-structure/potential_dsu.test.2.cpp
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/potential_dsu.test.3.cpp
+    title: test/data-structure/potential_dsu.test.3.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/potential_dsu.test.cpp
     title: test/data-structure/potential_dsu.test.cpp
   - icon: ':heavy_check_mark:'
@@ -139,8 +142,23 @@ data:
     path: test/math/ExtGCD.test.cpp
     title: test/math/ExtGCD.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/math/crt.test.cpp
+    title: test/math/crt.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/eratos.test.cpp
+    title: test/math/eratos.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/factorize.test.cpp
+    title: test/math/factorize.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/floor_sum.test.cpp
     title: test/math/floor_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/primality.test.cpp
+    title: test/math/primality.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/rho.test.cpp
+    title: test/math/rho.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/modint/BarrettReduction.test.cpp
     title: test/modint/BarrettReduction.test.cpp
@@ -224,11 +242,17 @@ data:
   - test/modint/modint.test.cpp
   - test/modint/BarrettReduction.test.cpp
   - test/math/ExtGCD.test.cpp
+  - test/math/crt.test.cpp
+  - test/math/factorize.test.cpp
+  - test/math/rho.test.cpp
+  - test/math/eratos.test.cpp
+  - test/math/primality.test.cpp
   - test/math/floor_sum.test.cpp
   - test/math/BinaryGCD.test.cpp
   - test/data-structure/undo_dsu.test.2.cpp
   - test/data-structure/sparse_table.test.cpp
   - test/data-structure/segtree.test.cpp
+  - test/data-structure/potential_dsu.test.3.cpp
   - test/data-structure/segtree.test.3.cpp
   - test/data-structure/dsu.test.2.cpp
   - test/data-structure/potential_dsu.test.cpp

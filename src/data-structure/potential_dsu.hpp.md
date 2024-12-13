@@ -7,6 +7,9 @@ data:
     path: test/data-structure/potential_dsu.test.2.cpp
     title: test/data-structure/potential_dsu.test.2.cpp
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/potential_dsu.test.3.cpp
+    title: test/data-structure/potential_dsu.test.3.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/potential_dsu.test.cpp
     title: test/data-structure/potential_dsu.test.cpp
   _isVerificationFailed: false
@@ -77,6 +80,7 @@ data:
   timestamp: '2024-12-13 15:27:54+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/data-structure/potential_dsu.test.3.cpp
   - test/data-structure/potential_dsu.test.cpp
   - test/data-structure/potential_dsu.test.2.cpp
 documentation_of: src/data-structure/potential_dsu.hpp

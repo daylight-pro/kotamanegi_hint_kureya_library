@@ -106,8 +106,29 @@ data:
       title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5\
         \ (Extended Euclidean algorithm)"
     - icon: ':heavy_check_mark:'
+      path: src/math/crt.hpp
+      title: src/math/crt.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/math/eratos.hpp
+      title: src/math/eratos.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/math/factorize.hpp
+      title: src/math/factorize.hpp
+    - icon: ':heavy_check_mark:'
       path: src/math/floor_sum.hpp
       title: src/math/floor_sum.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/math/modinv.hpp
+      title: src/math/modinv.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/math/modpow.hpp
+      title: src/math/modpow.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/math/primality.hpp
+      title: src/math/primality.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/math/rho.hpp
+      title: src/math/rho.hpp
   - name: src/memo
     pages:
     - icon: ':warning:'
@@ -216,6 +237,9 @@ data:
       path: test/data-structure/potential_dsu.test.2.cpp
       title: test/data-structure/potential_dsu.test.2.cpp
     - icon: ':heavy_check_mark:'
+      path: test/data-structure/potential_dsu.test.3.cpp
+      title: test/data-structure/potential_dsu.test.3.cpp
+    - icon: ':heavy_check_mark:'
       path: test/data-structure/potential_dsu.test.cpp
       title: test/data-structure/potential_dsu.test.cpp
     - icon: ':heavy_check_mark:'
@@ -303,8 +327,23 @@ data:
       path: test/math/ExtGCD.test.cpp
       title: test/math/ExtGCD.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/math/crt.test.cpp
+      title: test/math/crt.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/eratos.test.cpp
+      title: test/math/eratos.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/factorize.test.cpp
+      title: test/math/factorize.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/math/floor_sum.test.cpp
       title: test/math/floor_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/primality.test.cpp
+      title: test/math/primality.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/rho.test.cpp
+      title: test/math/rho.test.cpp
   - name: test/modint
     pages:
     - icon: ':heavy_check_mark:'

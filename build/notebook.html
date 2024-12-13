@@ -102,6 +102,8 @@
     <li><a class="section" href="#memo">memo</a></li>
     <ol>
     <li><a href="#Primes.md">Primes.md</a></li>
+    <li><a href="#ext.cpp">ext.cpp</a></li>
+    <li><a href="#priority_queue.md">priority_queue.md</a></li>
     </ol>
         </ol>
     </nav>
@@ -2589,6 +2591,130 @@ random_device rnd<span class="token punctuation">;</span>
 <td>3.99e+7</td>
 <td>4.79e+8</td>
 <td>6.23e+9</td>
+</tr>
+</tbody></table>
+</div>
+
+    <div class="filename">
+        <h2 id="ext.cpp">ext.cpp</h2>
+        md5: 64e006
+
+    </div>
+    <div class="content content-cpp">
+    <pre><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ext/pb_ds/assoc_container.hpp></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ext/pb_ds/tree_policy.hpp></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ext/pb_ds/priority_queue.hpp></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ext/rope></span></span>
+
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> __gnu_pbds<span class="token punctuation">;</span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> __gnu_cxx<span class="token punctuation">;</span>  <span class="token comment">// for ext/rope</span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   tree<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> null_type<span class="token punctuation">,</span> less<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">,</span> rb_tree_tag<span class="token punctuation">,</span> tree_order_statistics_node_update<span class="token operator">></span> tree<span class="token punctuation">;</span>
+   tree<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                       <span class="token comment">// 1</span>
+   tree<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                      <span class="token comment">// 1 10</span>
+   tree<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                       <span class="token comment">// 1 6 10</span>
+   tree<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                       <span class="token comment">// 1 6 7 10</span>
+   tree<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                       <span class="token comment">// 1 4 6 7 10</span>
+   tree<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                        <span class="token comment">// 1 4 7 10</span>
+   <span class="token function">assert</span><span class="token punctuation">(</span>tree<span class="token punctuation">.</span><span class="token function">order_of_key</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 5未満の要素数</span>
+   <span class="token function">assert</span><span class="token punctuation">(</span><span class="token operator">*</span>tree<span class="token punctuation">.</span><span class="token function">find_by_order</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 0-indexedで2番目の要素</span>
+
+   gp_hash_table<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">></span> m<span class="token punctuation">;</span>
+   m<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+   m<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+   m<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">7</span><span class="token punctuation">;</span>
+
+   __gnu_pbds<span class="token double-colon punctuation">::</span>priority_queue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> greater<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">,</span> rc_binomial_heap_tag<span class="token operator">></span> pq<span class="token punctuation">;</span>
+   <span class="token keyword">auto</span> it <span class="token operator">=</span> pq<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 1</span>
+   pq<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">// 1 10</span>
+   <span class="token function">assert</span><span class="token punctuation">(</span>pq<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   pq<span class="token punctuation">.</span><span class="token function">modify</span><span class="token punctuation">(</span>it<span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 10 20</span>
+   <span class="token function">assert</span><span class="token punctuation">(</span>pq<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   pq<span class="token punctuation">.</span><span class="token function">erase_if</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> x <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 20</span>
+   <span class="token function">assert</span><span class="token punctuation">(</span>pq<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">assert</span><span class="token punctuation">(</span>pq<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   pq<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// empty</span>
+   <span class="token function">assert</span><span class="token punctuation">(</span>pq<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// access, insert, erase: O(log n)</span>
+   rope<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> v<span class="token punctuation">;</span>
+   v<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 1</span>
+   v<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 2 1</span>
+   v<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 2 3 1</span>
+   v<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 2 3 4 1</span>
+   v<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// 2 1</span>
+   <span class="token function">assert</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">assert</span><span class="token punctuation">(</span>v<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">assert</span><span class="token punctuation">(</span>v<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+</div>
+
+    <div class="filename">
+        <h2 id="priority_queue.md">priority_queue.md</h2>
+    </div>
+    <div class="content content-md"><table>
+<thead>
+<tr>
+<th></th>
+<th>push</th>
+<th>pop</th>
+<th>modify</th>
+<th>erase</th>
+<th>join</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>std::priority_queue</td>
+<td>最悪$\Theta(n)$,償却$\Theta(\log(n))$</td>
+<td>最悪$\Theta(\log(n))$</td>
+<td>最悪$\Theta(n\log(n))$</td>
+<td>$\Theta(n \log(n))$</td>
+<td>$\Theta(n \log (n))$</td>
+</tr>
+<tr>
+<td>priority_queue<pairing_heap_tag></td>
+<td>$O(1)$</td>
+<td>最悪$\Theta(n)$, 償却$\Theta(\log n)$</td>
+<td>最悪$\Theta(n)$, 償却$\Theta(\log(n))$</td>
+<td>最悪$\Theta(n)$, 償却$O(\log(n))$</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>priority_queue<binary_heap_tag></td>
+<td>最悪$\Theta(n)$, 償却$O(\log(n))$</td>
+<td>最悪$\Theta(n)$, 償却$O(\log(n))$</td>
+<td>$\Theta(n)$</td>
+<td>$\Theta(n)$</td>
+<td>$\Theta(n)$</td>
+</tr>
+<tr>
+<td>priority_queue<binomial_heap_tag></td>
+<td>最悪$\Theta(n)$, 償却$O(\log(n))$</td>
+<td>$\Theta(\log (n))$</td>
+<td>$\Theta(\log(n)) $</td>
+<td>$\Theta(\log(n))$</td>
+<td>$\Theta(\log(n))$</td>
+</tr>
+<tr>
+<td>priority_queue<rc_binomial_heap_tag></td>
+<td>$O(1)$</td>
+<td>$\Theta(\log(n))$</td>
+<td>$\Theta(\log(n))$</td>
+<td>$\Theta(\log(n))$</td>
+<td>$\Theta(\log(n))$</td>
+</tr>
+<tr>
+<td>priority_queue<thin_heap_tag></td>
+<td>$O(1)$</td>
+<td>最悪$\Theta(n)$, 償却$O(\log(n))$</td>
+<td>最悪$\Theta(\log(n))$,償却$O(1)$ or 償却$\Theta(\log n)$</td>
+<td>最悪$\Theta(n)$, 償却$O(\log(n))$</td>
+<td>$\Theta(n)$</td>
 </tr>
 </tbody></table>
 </div>

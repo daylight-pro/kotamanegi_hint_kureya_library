@@ -1,7 +1,7 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_3_C"
 #include "test/template.hpp"
 #include "src/geometry/base.hpp"
-#include "src/geometry/polygon_point_containment.hpp"
+#include "src/geometry/etc.hpp"
 
 int main() {
    int N;

@@ -85,6 +85,12 @@ data:
     path: test/data-structure/sparse_table.test.cpp
     title: test/data-structure/sparse_table.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/treap.test.2.cpp
+    title: test/data-structure/treap.test.2.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/treap.test.cpp
+    title: test/data-structure/treap.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/undo_dsu.test.2.cpp
     title: test/data-structure/undo_dsu.test.2.cpp
   - icon: ':heavy_check_mark:'
@@ -251,6 +257,7 @@ data:
   - test/math/BinaryGCD.test.cpp
   - test/data-structure/undo_dsu.test.2.cpp
   - test/data-structure/sparse_table.test.cpp
+  - test/data-structure/treap.test.2.cpp
   - test/data-structure/segtree.test.cpp
   - test/data-structure/potential_dsu.test.3.cpp
   - test/data-structure/segtree.test.3.cpp
@@ -260,6 +267,7 @@ data:
   - test/data-structure/dsu.test.cpp
   - test/data-structure/range_tree.test.cpp
   - test/data-structure/disjoint_sparse_table.test.2.cpp
+  - test/data-structure/treap.test.cpp
   - test/data-structure/range_set.test.2.cpp
   - test/data-structure/binary_trie.test.3.cpp
   - test/data-structure/2dBIT.test.cpp

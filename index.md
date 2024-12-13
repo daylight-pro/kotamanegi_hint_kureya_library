@@ -42,6 +42,9 @@ data:
       path: src/data-structure/lazy_segtree.hpp
       title: src/data-structure/lazy_segtree.hpp
     - icon: ':heavy_check_mark:'
+      path: src/data-structure/potential_dsu.hpp
+      title: src/data-structure/potential_dsu.hpp
+    - icon: ':heavy_check_mark:'
       path: src/data-structure/range_set.hpp
       title: src/data-structure/range_set.hpp
     - icon: ':heavy_check_mark:'
@@ -204,6 +207,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/lazy_segtree.test.cpp
       title: test/data-structure/lazy_segtree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/potential_dsu.test.2.cpp
+      title: test/data-structure/potential_dsu.test.2.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/potential_dsu.test.cpp
+      title: test/data-structure/potential_dsu.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data-structure/range_set.test.2.cpp
       title: test/data-structure/range_set.test.2.cpp

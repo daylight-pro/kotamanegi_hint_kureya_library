@@ -1,9 +1,8 @@
 vector<Point> convex_hull(vector<Point>& ps, bool collinear = false) {
    int n = ps.size();
    if(n <= 1) return ps;
-   const double EPS = 1e-10;
    sort(ps.begin(), ps.end(),
-        [&EPS](const Point& a, const Point& b) { return abs(a.x - b.x) > EPS ? a.x < b.x : a.y < b.y; });
+        [&EPS](const Point& a, const Point& b) { return abs(a.X - b.X) > EPS ? a.X < b.X : a.Y < b.Y; });
    vector<Point> hull(2 * n);
    double th = collinear ? -EPS : EPS;
    int k = 0;

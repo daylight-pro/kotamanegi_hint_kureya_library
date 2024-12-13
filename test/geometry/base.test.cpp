@@ -7,8 +7,8 @@ int main() {
    cin.tie(0)->sync_with_stdio(0);
    Point p(1, 2);
    p *= 3;
-   assert(p.x == 3);
-   assert(p.y == 6);
+   assert(p.X == 3);
+   assert(p.Y == 6);
    puts("Hello World");
    return 0;
 }

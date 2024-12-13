@@ -39,6 +39,7 @@
     <li><a href="#disjoint_sparse_table.hpp">disjoint_sparse_table.hpp</a></li>
     <li><a href="#dsu.hpp">dsu.hpp</a></li>
     <li><a href="#lazy_segtree.hpp">lazy_segtree.hpp</a></li>
+    <li><a href="#potential_dsu.hpp">potential_dsu.hpp</a></li>
     <li><a href="#range_set.hpp">range_set.hpp</a></li>
     <li><a href="#range_tree.hpp">range_tree.hpp</a></li>
     <li><a href="#segtree.hpp">segtree.hpp</a></li>
@@ -649,6 +650,100 @@ setxkbmap <span class="token parameter variable">-option</span> ctrl:nocaps
       lz<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">id</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+</div>
+
+    <div class="filename">
+        <h2 id="potential_dsu.hpp">potential_dsu.hpp</h2>
+        md5: b2e5eb
+
+    </div>
+    <div class="content content-hpp">
+    <pre><code><span class="token comment">// base: 650ffa</span>
+<span class="token keyword">template</span><span class="token operator">&lt;</span><span class="token keyword">typename</span> <span class="token class-name">Abel</span><span class="token operator">></span> <span class="token keyword">struct</span> <span class="token class-name">potential_dsu</span> <span class="token punctuation">{</span>
+   <span class="token keyword">using</span> T <span class="token operator">=</span> <span class="token keyword">typename</span> <span class="token class-name">Abel</span><span class="token double-colon punctuation">::</span>T<span class="token punctuation">;</span>
+   <span class="token keyword">int</span> tCount<span class="token punctuation">;</span>
+   vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> p<span class="token punctuation">,</span> rank<span class="token punctuation">;</span>
+   vector<span class="token operator">&lt;</span>T<span class="token operator">></span> potential<span class="token punctuation">;</span>
+   <span class="token keyword">int</span> N<span class="token punctuation">;</span>
+   <span class="token function">potential_dsu</span><span class="token punctuation">(</span><span class="token keyword">int</span> size<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      N <span class="token operator">=</span> size<span class="token punctuation">;</span>
+      p<span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span>N<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      rank<span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span>N<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      potential<span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span>N<span class="token punctuation">,</span> <span class="token class-name">Abel</span><span class="token double-colon punctuation">::</span><span class="token function">e</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      tCount <span class="token operator">=</span> N<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">bool</span> <span class="token function">same</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token function">leader</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token function">leader</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+   <span class="token comment">// w[y] - w[x] = w</span>
+   <span class="token keyword">void</span> <span class="token function">merge</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">,</span> T w<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      w <span class="token operator">=</span> <span class="token class-name">Abel</span><span class="token double-colon punctuation">::</span><span class="token function">op</span><span class="token punctuation">(</span>w<span class="token punctuation">,</span> <span class="token function">get_potential</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      w <span class="token operator">=</span> <span class="token class-name">Abel</span><span class="token double-colon punctuation">::</span><span class="token function">op</span><span class="token punctuation">(</span>w<span class="token punctuation">,</span> <span class="token class-name">Abel</span><span class="token double-colon punctuation">::</span><span class="token function">inv</span><span class="token punctuation">(</span><span class="token function">get_potential</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">link</span><span class="token punctuation">(</span><span class="token function">leader</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">leader</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">,</span> w<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">int</span> <span class="token function">leader</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>p<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> x<span class="token punctuation">;</span>
+      <span class="token keyword">int</span> l <span class="token operator">=</span> <span class="token function">leader</span><span class="token punctuation">(</span>p<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      potential<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token class-name">Abel</span><span class="token double-colon punctuation">::</span><span class="token function">op</span><span class="token punctuation">(</span>potential<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">,</span> potential<span class="token punctuation">[</span>p<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> p<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> l<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   T <span class="token function">get_potential</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">leader</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> potential<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token comment">// w[y] - w[x]</span>
+   T <span class="token function">diff</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token class-name">Abel</span><span class="token double-colon punctuation">::</span><span class="token function">op</span><span class="token punctuation">(</span><span class="token function">get_potential</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">Abel</span><span class="token double-colon punctuation">::</span><span class="token function">inv</span><span class="token punctuation">(</span><span class="token function">get_potential</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+   <span class="token keyword">int</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> tCount<span class="token punctuation">;</span> <span class="token punctuation">}</span>  <span class="token comment">// 154012</span>
+
+   <span class="token keyword">int</span> <span class="token function">size</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// assert(0 &lt;= a &amp;&amp; a &lt; _n);</span>
+      <span class="token keyword">return</span> <span class="token operator">-</span>p<span class="token punctuation">[</span><span class="token function">leader</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>  <span class="token comment">// 818fe7</span>
+
+   vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> <span class="token function">groups</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">leader_buf</span><span class="token punctuation">(</span>N<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">group_size</span><span class="token punctuation">(</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         leader_buf<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">leader</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         group_size<span class="token punctuation">[</span>leader_buf<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> <span class="token function">result</span><span class="token punctuation">(</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> result<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">reserve</span><span class="token punctuation">(</span>group_size<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> result<span class="token punctuation">[</span>leader_buf<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      result<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span><span class="token function">remove_if</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> result<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token operator">&amp;</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token keyword">const</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> v<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> v<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                   result<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>  <span class="token comment">// 92d7ce</span>
+
+   <span class="token keyword">private</span><span class="token operator">:</span>
+   <span class="token keyword">void</span> <span class="token function">link</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">,</span> T w<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">==</span> y<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+      tCount<span class="token operator">--</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>rank<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">&lt;</span> rank<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token function">swap</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         w <span class="token operator">=</span> <span class="token class-name">Abel</span><span class="token double-colon punctuation">::</span><span class="token function">inv</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      p<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">+=</span> p<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      p<span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> x<span class="token punctuation">;</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>rank<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">==</span> rank<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">)</span> rank<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+      tCount<span class="token operator">--</span><span class="token punctuation">;</span>
+      potential<span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> w<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/*
+struct Abel {
+   using T = int;
+   static T e() { return 0; }
+   static T op(T a, T b) { return a + b; }
+   static T inv(T a) { return -a; }
+};
+
+potential_dsu&lt;Abel> dsu(N);
+*/</span></code></pre>
 </div>
 
     <div class="filename">

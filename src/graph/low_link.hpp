@@ -1,5 +1,4 @@
 struct LowLink {
-   public:
    vector<vector<int>> g;
    vector<int> ord, low;
    vector<int> articulation;
@@ -9,18 +8,19 @@ struct LowLink {
    void dfs(int cur, int pre, int& k) {
       visited[cur] = true;
       ord[cur] = low[cur] = k++;
-      bool isArticulation = false;
+      bool isArticulation = false, beet = false;
       int cnt = 0;
       for(auto to : g[cur]) {
+         if(to == pre && !exchange(beet, true)) continue;
          if(!visited[to]) {
             cnt++;
             dfs(to, cur, k);
             chmin(low[cur], low[to]);
-            if(pre != -1 && ord[cur] <= low[to]) isArticulation = true;
+            isArticulation |= pre != -1 && low[to] >= ord[cur];
             if(ord[cur] < low[to]) bridge.emplace_back(min(cur, to), max(cur, to));
-         } else if(to != pre) chmin(low[cur], ord[to]);
+         } else chmin(low[cur], ord[to]);
       }
-      if(pre == -1 && cnt > 1) isArticulation = true;
+      isArticulation |= pre == -1 && cnt > 1;
       if(isArticulation) articulation.push_back(cur);
    }
 
@@ -34,6 +34,8 @@ struct LowLink {
       for(int i = 0; i < n; i++)
          if(!visited[i]) dfs(i, -1, k);
    }
+
+   public:
    LowLink(const vector<vector<int>>& g) { build(g); }
 
    vector<int>& getArticulations() { return articulation; }

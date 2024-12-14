@@ -82,6 +82,9 @@ data:
   - name: src/graph
     pages:
     - icon: ':heavy_check_mark:'
+      path: src/graph/bi_connected_components.hpp
+      title: src/graph/bi_connected_components.hpp
+    - icon: ':heavy_check_mark:'
       path: src/graph/low_link.hpp
       title: src/graph/low_link.hpp
     - icon: ':heavy_check_mark:'
@@ -335,6 +338,9 @@ data:
       title: test/geometry/reflection.test.cpp
   - name: test/graph
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/graph/bi_connected_components.test.cpp
+      title: test/graph/bi_connected_components.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/graph/low_link.test.2.cpp
       title: test/graph/low_link.test.2.cpp

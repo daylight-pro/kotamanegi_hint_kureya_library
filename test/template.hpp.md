@@ -136,6 +136,9 @@ data:
     path: test/geometry/reflection.test.cpp
     title: test/geometry/reflection.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/bi_connected_components.test.cpp
+    title: test/graph/bi_connected_components.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/low_link.test.2.cpp
     title: test/graph/low_link.test.2.cpp
   - icon: ':heavy_check_mark:'
@@ -357,6 +360,7 @@ data:
   - test/graph/low_link.test.cpp
   - test/graph/min_cost_flow.test.cpp
   - test/graph/two_sat.test.cpp
+  - test/graph/bi_connected_components.test.cpp
   - test/graph/max_flow.test.2.cpp
   - test/graph/topological_sort.test.cpp
   - test/graph/tree/rerooting.test.cpp

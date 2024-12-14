@@ -177,6 +177,9 @@ data:
       path: src/string/aho_corasick.hpp
       title: src/string/aho_corasick.hpp
     - icon: ':heavy_check_mark:'
+      path: src/string/sa_is.hpp
+      title: src/string/sa_is.hpp
+    - icon: ':heavy_check_mark:'
       path: src/string/trie.hpp
       title: src/string/trie.hpp
   - name: src/template
@@ -442,6 +445,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/string/aho_corasick.test.cpp
       title: test/string/aho_corasick.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/string/sa_is.test.cpp
+      title: test/string/sa_is.test.cpp
   - name: test
     pages:
     - icon: ':heavy_check_mark:'

@@ -238,6 +238,9 @@ data:
     path: test/string/aho_corasick.test.cpp
     title: test/string/aho_corasick.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/string/sa_is.test.cpp
+    title: test/string/sa_is.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/template.test.cpp
     title: test/template.test.cpp
   _isVerificationFailed: false
@@ -342,6 +345,7 @@ data:
   - test/string/SuffixArray.test.cpp
   - test/string/Zalgorithm.test.cpp
   - test/string/Manacher.test.cpp
+  - test/string/sa_is.test.cpp
   - test/string/KMP.test.cpp
   - test/string/aho_corasick.test.cpp
   - test/string/LCP.test.cpp

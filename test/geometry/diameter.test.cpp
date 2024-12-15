@@ -15,6 +15,7 @@ int main() {
       cin >> x >> y;
       ps[i] = Point(x, y);
    }
-   cout << fixed << setprecision(10) << diameter(ps) << "\n";
+   auto [d, i, j] = diameter(ps);
+   cout << fixed << setprecision(10) << d << "\n";
    return 0;
 }

@@ -80,7 +80,7 @@ bool is_convex(vector<Point>& ps) {
    return true;
 }  // 52fb34
 
-double diameter(const vector<Point> ps) {
+tuple<double, int, int> diameter(const vector<Point> ps) {
    int n = (int)ps.size();
    int si = 0, sj = 0;
    for(int i = 1; i < n; i++) {
@@ -90,13 +90,17 @@ double diameter(const vector<Point> ps) {
 
    double res = 0;
    int i = si, j = sj;
+   int ri = i, rj = j;
    do {
-      res = max(res, abs(ps[i] - ps[j]));
+      if(chmax(res, abs(ps[i] - ps[j]))) {
+         ri = i;
+         rj = j;
+      }
       if(cross(ps[(i + 1) % n] - ps[i], ps[(j + 1) % n] - ps[j]) < 0) i = (i + 1) % n;
       else j = (j + 1) % n;
    } while(i != si || j != sj);
-   return res;
-}  // ea6b63
+   return {res, min(ri, rj), max(ri, rj)};
+}  // cae9ad
 
 // 2: inside, 1: border, 0: outside
 int contains(const vector<Point>& ps, const Point& p) {
@@ -110,3 +114,57 @@ int contains(const vector<Point>& ps, const Point& p) {
    }
    return in ? 2 : 0;
 }  // fd7e87
+
+tuple<double, int, int> closest_pair(vector<Point> ps) {
+   const double INF = 1e18;
+   int n = (int)ps.size();
+   if(n <= 1) return {INF, -1, -1};
+
+   using P = pair<Point, int>;
+   vector<P> V(n);
+   for(int i = 0; i < n; i++) V[i] = {ps[i], i};
+   sort(begin(V), end(V), [](const P& a, const P& b) {
+      if(fabs(a.first.X - b.first.X) > EPS) return a.first.X < b.first.X;
+      else if(fabs(a.first.Y - b.first.Y) > EPS) return a.first.Y < b.first.Y;
+      return a.second < b.second;
+   });
+
+   auto rec = [&](auto&& self, auto it, int n) -> tuple<double, int, int> {
+      if(n <= 1) return {INF, -1, -1};
+      int m = n / 2;
+      double x = it[m].first.X;
+      auto [d1, a1, b1] = self(self, it, m);
+      auto [d2, a2, b2] = self(self, it + m, n - m);
+      double d;
+      int a, b;
+      if(d1 < d2) {
+         d = d1;
+         a = a1;
+         b = b1;
+      } else {
+         d = d2;
+         a = a2;
+         b = b2;
+      }
+
+      inplace_merge(it, it + m, it + n, [](const P& a, const P& b) { return a.first.Y < b.first.Y; });
+
+      vector<P> vec;
+      for(int i = 0; i < n; i++) {
+         if(fabs(it[i].first.X - x) >= d) continue;
+         for(int j = 0; j < size(vec); j++) {
+            double dx = fabs(it[i].first.X - vec[size(vec) - j - 1].first.X);
+            double dy = fabs(it[i].first.Y - vec[size(vec) - j - 1].first.Y);
+            if(dy >= d) break;
+            if(chmin(d, sqrt(dx * dx + dy * dy))) {
+               a = it[i].second;
+               b = vec[size(vec) - j - 1].second;
+            }
+         }
+         vec.emplace_back(it[i]);
+      }
+      return {d, a, b};
+   };
+   auto [d, a, b] = rec(rec, V.begin(), n);
+   return {d, min(a, b), max(a, b)};
+}  // 12a9dc

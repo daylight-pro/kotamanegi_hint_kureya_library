@@ -16,8 +16,8 @@ int main() {
       g[b].push_back(a);
    }
    BiConnectedComponents bcc(g);
-   cout << bcc.getGroup().size() << "\n";
-   for(auto& bg : bcc.getGroup()) {
+   cout << bcc.group.size() << "\n";
+   for(auto& bg : bcc.group) {
       cout << bg.size();
       for(auto& v : bg) cout << " " << v;
       cout << "\n";

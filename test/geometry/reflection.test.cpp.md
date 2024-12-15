@@ -69,18 +69,42 @@ data:
     \ ps[(i + 1) % size(ps)]);\n   return res / 2;\n}  // 3b832b\n\nbool is_convex(vector<Point>&\
     \ ps) {\n   int n = (int)ps.size();\n   for(int i = 0; i < n; ++i) {\n      if(ccw(ps[i],\
     \ ps[(i + 1) % n], ps[(i + 2) % n]) == -1) return false;\n   }\n   return true;\n\
-    }  // 52fb34\n\ndouble diameter(const vector<Point> ps) {\n   int n = (int)ps.size();\n\
-    \   int si = 0, sj = 0;\n   for(int i = 1; i < n; i++) {\n      if(ps[i].Y > ps[si].Y)\
-    \ si = i;\n      if(ps[i].Y < ps[sj].Y) sj = i;\n   }\n\n   double res = 0;\n\
-    \   int i = si, j = sj;\n   do {\n      res = max(res, abs(ps[i] - ps[j]));\n\
-    \      if(cross(ps[(i + 1) % n] - ps[i], ps[(j + 1) % n] - ps[j]) < 0) i = (i\
-    \ + 1) % n;\n      else j = (j + 1) % n;\n   } while(i != si || j != sj);\n  \
-    \ return res;\n}  // ea6b63\n\n// 2: inside, 1: border, 0: outside\nint contains(const\
-    \ vector<Point>& ps, const Point& p) {\n   int n = ps.size();\n   bool in = false;\n\
-    \   for(int i = 0; i < n; i++) {\n      Point a = ps[i] - p, b = ps[(i + 1) %\
-    \ n] - p;\n      if(a.Y > b.Y) swap(a, b);\n      if(a.Y <= EPS && EPS < b.Y &&\
-    \ cross(a, b) < -EPS) in = !in;\n      if(abs(cross(a, b)) < EPS && dot(a, b)\
-    \ < EPS) return 1;\n   }\n   return in ? 2 : 0;\n}  // fd7e87\n#line 7 \"test/geometry/reflection.test.cpp\"\
+    }  // 52fb34\n\ntuple<double, int, int> diameter(const vector<Point> ps) {\n \
+    \  int n = (int)ps.size();\n   int si = 0, sj = 0;\n   for(int i = 1; i < n; i++)\
+    \ {\n      if(ps[i].Y > ps[si].Y) si = i;\n      if(ps[i].Y < ps[sj].Y) sj = i;\n\
+    \   }\n\n   double res = 0;\n   int i = si, j = sj;\n   int ri = i, rj = j;\n\
+    \   do {\n      if(chmax(res, abs(ps[i] - ps[j]))) {\n         ri = i;\n     \
+    \    rj = j;\n      }\n      if(cross(ps[(i + 1) % n] - ps[i], ps[(j + 1) % n]\
+    \ - ps[j]) < 0) i = (i + 1) % n;\n      else j = (j + 1) % n;\n   } while(i !=\
+    \ si || j != sj);\n   return {res, min(ri, rj), max(ri, rj)};\n}  // cae9ad\n\n\
+    // 2: inside, 1: border, 0: outside\nint contains(const vector<Point>& ps, const\
+    \ Point& p) {\n   int n = ps.size();\n   bool in = false;\n   for(int i = 0; i\
+    \ < n; i++) {\n      Point a = ps[i] - p, b = ps[(i + 1) % n] - p;\n      if(a.Y\
+    \ > b.Y) swap(a, b);\n      if(a.Y <= EPS && EPS < b.Y && cross(a, b) < -EPS)\
+    \ in = !in;\n      if(abs(cross(a, b)) < EPS && dot(a, b) < EPS) return 1;\n \
+    \  }\n   return in ? 2 : 0;\n}  // fd7e87\n\ntuple<double, int, int> closest_pair(vector<Point>\
+    \ ps) {\n   const double INF = 1e18;\n   int n = (int)ps.size();\n   if(n <= 1)\
+    \ return {INF, -1, -1};\n\n   using P = pair<Point, int>;\n   vector<P> V(n);\n\
+    \   for(int i = 0; i < n; i++) V[i] = {ps[i], i};\n   sort(begin(V), end(V), [](const\
+    \ P& a, const P& b) {\n      if(fabs(a.first.X - b.first.X) > EPS) return a.first.X\
+    \ < b.first.X;\n      else if(fabs(a.first.Y - b.first.Y) > EPS) return a.first.Y\
+    \ < b.first.Y;\n      return a.second < b.second;\n   });\n\n   auto rec = [&](auto&&\
+    \ self, auto it, int n) -> tuple<double, int, int> {\n      if(n <= 1) return\
+    \ {INF, -1, -1};\n      int m = n / 2;\n      double x = it[m].first.X;\n    \
+    \  auto [d1, a1, b1] = self(self, it, m);\n      auto [d2, a2, b2] = self(self,\
+    \ it + m, n - m);\n      double d;\n      int a, b;\n      if(d1 < d2) {\n   \
+    \      d = d1;\n         a = a1;\n         b = b1;\n      } else {\n         d\
+    \ = d2;\n         a = a2;\n         b = b2;\n      }\n\n      inplace_merge(it,\
+    \ it + m, it + n, [](const P& a, const P& b) { return a.first.Y < b.first.Y; });\n\
+    \n      vector<P> vec;\n      for(int i = 0; i < n; i++) {\n         if(fabs(it[i].first.X\
+    \ - x) >= d) continue;\n         for(int j = 0; j < size(vec); j++) {\n      \
+    \      double dx = fabs(it[i].first.X - vec[size(vec) - j - 1].first.X);\n   \
+    \         double dy = fabs(it[i].first.Y - vec[size(vec) - j - 1].first.Y);\n\
+    \            if(dy >= d) break;\n            if(chmin(d, sqrt(dx * dx + dy * dy)))\
+    \ {\n               a = it[i].second;\n               b = vec[size(vec) - j -\
+    \ 1].second;\n            }\n         }\n         vec.emplace_back(it[i]);\n \
+    \     }\n      return {d, a, b};\n   };\n   auto [d, a, b] = rec(rec, V.begin(),\
+    \ n);\n   return {d, min(a, b), max(a, b)};\n}  // 12a9dc\n#line 7 \"test/geometry/reflection.test.cpp\"\
     \n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n   int x0, y0, x1, y1;\n\
     \   cin >> x0 >> y0 >> x1 >> y1;\n   int N;\n   cin >> N;\n   cout << fixed <<\
     \ setprecision(10);\n   for(int i = 0; i < N; i++) {\n      int x, y;\n      cin\
@@ -102,7 +126,7 @@ data:
   isVerificationFile: true
   path: test/geometry/reflection.test.cpp
   requiredBy: []
-  timestamp: '2024-12-14 06:06:25+09:00'
+  timestamp: '2024-12-16 02:36:51+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/reflection.test.cpp

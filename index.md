@@ -307,6 +307,12 @@ data:
       path: test/geometry/ccw.test.cpp
       title: test/geometry/ccw.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/geometry/closest_pair.test.2.cpp
+      title: test/geometry/closest_pair.test.2.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometry/closest_pair.test.cpp
+      title: test/geometry/closest_pair.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/geometry/convex_hull.test.cpp
       title: test/geometry/convex_hull.test.cpp
     - icon: ':heavy_check_mark:'

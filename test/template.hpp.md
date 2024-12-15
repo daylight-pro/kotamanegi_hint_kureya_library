@@ -106,6 +106,12 @@ data:
     path: test/geometry/ccw.test.cpp
     title: test/geometry/ccw.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/geometry/closest_pair.test.2.cpp
+    title: test/geometry/closest_pair.test.2.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/closest_pair.test.cpp
+    title: test/geometry/closest_pair.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/geometry/convex_hull.test.cpp
     title: test/geometry/convex_hull.test.cpp
   - icon: ':heavy_check_mark:'
@@ -334,10 +340,12 @@ data:
   - test/geometry/polygon_point_containment.test.cpp
   - test/geometry/ccw.test.cpp
   - test/geometry/crosspoint.test.cpp
+  - test/geometry/closest_pair.test.2.cpp
   - test/geometry/convex_hull.test.cpp
   - test/geometry/projection.test.cpp
   - test/geometry/area.test.cpp
   - test/geometry/intersect.test.cpp
+  - test/geometry/closest_pair.test.cpp
   - test/geometry/base.test.cpp
   - test/geometry/diameter.test.cpp
   - test/geometry/parallel_orthogonal.test.cpp

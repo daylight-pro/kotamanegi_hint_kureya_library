@@ -17,13 +17,14 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_2_D
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_5_A
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_2_D
-  bundledCode: "#line 1 \"test/geometry/distance.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_2_D\"\
-    \n\n#line 1 \"test/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace std;\n\
-    using ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define all(a) begin(a),\
-    \ end(a)\nbool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_5_A
+  bundledCode: "#line 1 \"test/geometry/closest_pair.test.2.cpp\"\n#define PROBLEM\
+    \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_5_A\"\n\n#line\
+    \ 1 \"test/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace std;\nusing\
+    \ ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define all(a) begin(a), end(a)\n\
+    bool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
     \ a, auto b) { return a < b ? a = b, 1 : 0; }\n#line 1 \"src/geometry/base.hpp\"\
     \nusing Point = complex<double>;\nusing Line = vector<Point>;\n\n#define X real()\n\
     #define Y imag()\nconst double EPS = 1e-10;\n\ninline double dot(const Point&\
@@ -102,34 +103,32 @@ data:
     \               b = vec[size(vec) - j - 1].second;\n            }\n         }\n\
     \         vec.emplace_back(it[i]);\n      }\n      return {d, a, b};\n   };\n\
     \   auto [d, a, b] = rec(rec, V.begin(), n);\n   return {d, min(a, b), max(a,\
-    \ b)};\n}  // 12a9dc\n#line 6 \"test/geometry/distance.test.cpp\"\n\nint main()\
-    \ {\n   cin.tie(0)->sync_with_stdio(0);\n   int T;\n   cin >> T;\n   cout << fixed\
-    \ << setprecision(10);\n   while(T--) {\n      int x0, y0, x1, y1, x2, y2, x3,\
-    \ y3;\n      cin >> x0 >> y0 >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;\n      Point\
-    \ p0(x0, y0), p1(x1, y1), p2(x2, y2), p3(x3, y3);\n      cout << distanceSS({p0,\
-    \ p1}, {p2, p3}) << \"\\n\";\n   }\n   return 0;\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_2_D\"\
+    \ b)};\n}  // 12a9dc\n#line 6 \"test/geometry/closest_pair.test.2.cpp\"\n\nint\
+    \ main() {\n   cin.tie(0)->sync_with_stdio(0);\n   int n;\n   cin >> n;\n   vector<Point>\
+    \ ps(n);\n   for(int i = 0; i < n; i++) {\n      double x, y;\n      cin >> x\
+    \ >> y;\n      ps[i] = Point(x, y);\n   }\n   auto [d, i, j] = closest_pair(ps);\n\
+    \   cout << fixed << setprecision(10) << d << endl;\n   return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_5_A\"\
     \n\n#include \"test/template.hpp\"\n#include \"src/geometry/base.hpp\"\n#include\
     \ \"src/geometry/etc.hpp\"\n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
-    \   int T;\n   cin >> T;\n   cout << fixed << setprecision(10);\n   while(T--)\
-    \ {\n      int x0, y0, x1, y1, x2, y2, x3, y3;\n      cin >> x0 >> y0 >> x1 >>\
-    \ y1 >> x2 >> y2 >> x3 >> y3;\n      Point p0(x0, y0), p1(x1, y1), p2(x2, y2),\
-    \ p3(x3, y3);\n      cout << distanceSS({p0, p1}, {p2, p3}) << \"\\n\";\n   }\n\
-    \   return 0;\n}"
+    \   int n;\n   cin >> n;\n   vector<Point> ps(n);\n   for(int i = 0; i < n; i++)\
+    \ {\n      double x, y;\n      cin >> x >> y;\n      ps[i] = Point(x, y);\n  \
+    \ }\n   auto [d, i, j] = closest_pair(ps);\n   cout << fixed << setprecision(10)\
+    \ << d << endl;\n   return 0;\n}"
   dependsOn:
   - test/template.hpp
   - src/geometry/base.hpp
   - src/geometry/etc.hpp
   isVerificationFile: true
-  path: test/geometry/distance.test.cpp
+  path: test/geometry/closest_pair.test.2.cpp
   requiredBy: []
   timestamp: '2024-12-16 02:36:51+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/geometry/distance.test.cpp
+documentation_of: test/geometry/closest_pair.test.2.cpp
 layout: document
 redirect_from:
-- /verify/test/geometry/distance.test.cpp
-- /verify/test/geometry/distance.test.cpp.html
-title: test/geometry/distance.test.cpp
+- /verify/test/geometry/closest_pair.test.2.cpp
+- /verify/test/geometry/closest_pair.test.2.cpp.html
+title: test/geometry/closest_pair.test.2.cpp
 ---

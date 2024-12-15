@@ -1911,7 +1911,7 @@ vector<span class="token operator">&lt;</span>mm<span class="token operator">></
 
     <div class="filename">
         <h2 id="bi_connected_components.hpp">bi_connected_components.hpp</h2>
-        md5: 282b10
+        md5: 9883af
 
     </div>
     <div class="content content-hpp">
@@ -1940,8 +1940,6 @@ vector<span class="token operator">&lt;</span>mm<span class="token operator">></
          tree<span class="token punctuation">[</span>comp<span class="token punctuation">[</span>e<span class="token punctuation">.</span>second<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>comp<span class="token punctuation">[</span>e<span class="token punctuation">.</span>first<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token punctuation">}</span>
    <span class="token punctuation">}</span>
-   vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> <span class="token function">getTree</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> tree<span class="token punctuation">;</span> <span class="token punctuation">}</span>
-   vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> <span class="token function">getGroup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> group<span class="token punctuation">;</span> <span class="token punctuation">}</span>
 
    <span class="token keyword">explicit</span> <span class="token function">BiConnectedComponents</span><span class="token punctuation">(</span><span class="token keyword">const</span> vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span><span class="token operator">&amp;</span> g<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">LowLink</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">build</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
 
@@ -1961,7 +1959,7 @@ vector<span class="token operator">&lt;</span>mm<span class="token operator">></
 
     <div class="filename">
         <h2 id="low_link.hpp">low_link.hpp</h2>
-        md5: c81880
+        md5: 862a6c
 
     </div>
     <div class="content content-hpp">
@@ -2002,13 +2000,7 @@ vector<span class="token operator">&lt;</span>mm<span class="token operator">></
          <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>visited<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token function">dfs</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">;</span>
    <span class="token punctuation">}</span>
 
-   <span class="token keyword">public</span><span class="token operator">:</span>
    <span class="token function">LowLink</span><span class="token punctuation">(</span><span class="token keyword">const</span> vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span><span class="token operator">&amp;</span> g<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">build</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-
-   vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> <span class="token function">getArticulations</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> articulation<span class="token punctuation">;</span> <span class="token punctuation">}</span>
-   vector<span class="token operator">&lt;</span>pair<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">>></span><span class="token operator">&amp;</span> <span class="token function">getBridges</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> bridge<span class="token punctuation">;</span> <span class="token punctuation">}</span>
-   vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> <span class="token function">getOrd</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> ord<span class="token punctuation">;</span> <span class="token punctuation">}</span>
-   vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> <span class="token function">getLowlink</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> low<span class="token punctuation">;</span> <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 </div>
 

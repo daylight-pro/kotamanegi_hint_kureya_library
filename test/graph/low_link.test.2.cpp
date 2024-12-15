@@ -15,7 +15,7 @@ int main() {
       G[v].push_back(u);
    }
    LowLink lowlink(G);
-   auto bridge = lowlink.getBridges();
+   auto bridge = lowlink.bridge;
    for(auto&& [u, v] : bridge) {
       if(u > v) swap(u, v);
    }

@@ -35,11 +35,5 @@ struct LowLink {
          if(!visited[i]) dfs(i, -1, k);
    }
 
-   public:
    LowLink(const vector<vector<int>>& g) { build(g); }
-
-   vector<int>& getArticulations() { return articulation; }
-   vector<pair<int, int>>& getBridges() { return bridge; }
-   vector<int>& getOrd() { return ord; }
-   vector<int>& getLowlink() { return low; }
 };

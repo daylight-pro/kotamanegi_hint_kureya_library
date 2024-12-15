@@ -23,8 +23,6 @@ struct BiConnectedComponents : LowLink {
          tree[comp[e.second]].push_back(comp[e.first]);
       }
    }
-   vector<vector<int>> getTree() { return tree; }
-   vector<vector<int>> getGroup() { return group; }
 
    explicit BiConnectedComponents(const vector<vector<int>>& g) : LowLink(g) { build(g); }
 

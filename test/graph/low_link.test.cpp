@@ -15,7 +15,7 @@ int main() {
       G[v].push_back(u);
    }
    LowLink lowlink(G);
-   auto articulation = lowlink.getArticulations();
+   auto articulation = lowlink.articulation;
    sort(all(articulation));
    for(auto v : articulation) cout << v << '\n';
    return 0;

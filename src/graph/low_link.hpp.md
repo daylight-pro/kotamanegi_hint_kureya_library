@@ -31,11 +31,8 @@ data:
     \   }\n\n   void build(const vector<vector<int>>& g) {\n      int n = g.size();\n\
     \      this->g = g;\n      ord.assign(n, -1);\n      low.assign(n, -1);\n    \
     \  visited.assign(n, false);\n      int k = 0;\n      for(int i = 0; i < n; i++)\n\
-    \         if(!visited[i]) dfs(i, -1, k);\n   }\n\n   public:\n   LowLink(const\
-    \ vector<vector<int>>& g) { build(g); }\n\n   vector<int>& getArticulations()\
-    \ { return articulation; }\n   vector<pair<int, int>>& getBridges() { return bridge;\
-    \ }\n   vector<int>& getOrd() { return ord; }\n   vector<int>& getLowlink() {\
-    \ return low; }\n};\n"
+    \         if(!visited[i]) dfs(i, -1, k);\n   }\n\n   LowLink(const vector<vector<int>>&\
+    \ g) { build(g); }\n};\n"
   code: "struct LowLink {\n   vector<vector<int>> g;\n   vector<int> ord, low;\n \
     \  vector<int> articulation;\n   vector<bool> visited;\n   vector<pair<int, int>>\
     \ bridge;\n\n   void dfs(int cur, int pre, int& k) {\n      visited[cur] = true;\n\
@@ -49,16 +46,13 @@ data:
     \   }\n\n   void build(const vector<vector<int>>& g) {\n      int n = g.size();\n\
     \      this->g = g;\n      ord.assign(n, -1);\n      low.assign(n, -1);\n    \
     \  visited.assign(n, false);\n      int k = 0;\n      for(int i = 0; i < n; i++)\n\
-    \         if(!visited[i]) dfs(i, -1, k);\n   }\n\n   public:\n   LowLink(const\
-    \ vector<vector<int>>& g) { build(g); }\n\n   vector<int>& getArticulations()\
-    \ { return articulation; }\n   vector<pair<int, int>>& getBridges() { return bridge;\
-    \ }\n   vector<int>& getOrd() { return ord; }\n   vector<int>& getLowlink() {\
-    \ return low; }\n};"
+    \         if(!visited[i]) dfs(i, -1, k);\n   }\n\n   LowLink(const vector<vector<int>>&\
+    \ g) { build(g); }\n};"
   dependsOn: []
   isVerificationFile: false
   path: src/graph/low_link.hpp
   requiredBy: []
-  timestamp: '2024-12-15 04:32:57+09:00'
+  timestamp: '2024-12-15 21:25:51+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/low_link.test.cpp

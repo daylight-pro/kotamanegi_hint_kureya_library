@@ -19,10 +19,9 @@ data:
     \ i < size(comp); i++) {\n         if(comp[i] == -1) { dfs(i, -1, k); }\n    \
     \  }\n      group.resize(k);\n      for(int i = 0; i < size(g); i++) { group[comp[i]].push_back(i);\
     \ }\n      tree.resize(k);\n      for(auto& e : bridge) {\n         tree[comp[e.first]].push_back(comp[e.second]);\n\
-    \         tree[comp[e.second]].push_back(comp[e.first]);\n      }\n   }\n   vector<vector<int>>\
-    \ getTree() { return tree; }\n   vector<vector<int>> getGroup() { return group;\
-    \ }\n\n   explicit BiConnectedComponents(const vector<vector<int>>& g) : LowLink(g)\
-    \ { build(g); }\n\n   private:\n   vector<int> used;\n   vector<pair<int, int>>\
+    \         tree[comp[e.second]].push_back(comp[e.first]);\n      }\n   }\n\n  \
+    \ explicit BiConnectedComponents(const vector<vector<int>>& g) : LowLink(g) {\
+    \ build(g); }\n\n   private:\n   vector<int> used;\n   vector<pair<int, int>>\
     \ tmp;\n\n   void dfs(int cur, int pre, int& k) {\n      if(pre != -1 && ord[pre]\
     \ >= low[cur]) comp[cur] = comp[pre];\n      else comp[cur] = k++;\n      for(auto\
     \ to : g[cur]) {\n         if(comp[to] == -1) dfs(to, cur, k);\n      }\n   }\n\
@@ -35,10 +34,9 @@ data:
     \ == -1) { dfs(i, -1, k); }\n      }\n      group.resize(k);\n      for(int i\
     \ = 0; i < size(g); i++) { group[comp[i]].push_back(i); }\n      tree.resize(k);\n\
     \      for(auto& e : bridge) {\n         tree[comp[e.first]].push_back(comp[e.second]);\n\
-    \         tree[comp[e.second]].push_back(comp[e.first]);\n      }\n   }\n   vector<vector<int>>\
-    \ getTree() { return tree; }\n   vector<vector<int>> getGroup() { return group;\
-    \ }\n\n   explicit BiConnectedComponents(const vector<vector<int>>& g) : LowLink(g)\
-    \ { build(g); }\n\n   private:\n   vector<int> used;\n   vector<pair<int, int>>\
+    \         tree[comp[e.second]].push_back(comp[e.first]);\n      }\n   }\n\n  \
+    \ explicit BiConnectedComponents(const vector<vector<int>>& g) : LowLink(g) {\
+    \ build(g); }\n\n   private:\n   vector<int> used;\n   vector<pair<int, int>>\
     \ tmp;\n\n   void dfs(int cur, int pre, int& k) {\n      if(pre != -1 && ord[pre]\
     \ >= low[cur]) comp[cur] = comp[pre];\n      else comp[cur] = k++;\n      for(auto\
     \ to : g[cur]) {\n         if(comp[to] == -1) dfs(to, cur, k);\n      }\n   }\n\
@@ -47,7 +45,7 @@ data:
   isVerificationFile: false
   path: src/graph/bi_connected_components.hpp
   requiredBy: []
-  timestamp: '2024-12-15 04:29:06+09:00'
+  timestamp: '2024-12-15 21:25:51+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/bi_connected_components.test.cpp

@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data-structure/dsu.test.cpp
     title: test/data-structure/dsu.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/tree/offline_lca.test.cpp
+    title: test/graph/tree/offline_lca.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -62,6 +65,7 @@ data:
   verifiedWith:
   - test/data-structure/dsu.test.2.cpp
   - test/data-structure/dsu.test.cpp
+  - test/graph/tree/offline_lca.test.cpp
 documentation_of: src/data-structure/dsu.hpp
 layout: document
 redirect_from:

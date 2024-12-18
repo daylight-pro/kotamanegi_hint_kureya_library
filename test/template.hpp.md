@@ -205,6 +205,9 @@ data:
     path: test/graph/tree/hld.test.cpp
     title: test/graph/tree/hld.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/tree/offline_lca.test.cpp
+    title: test/graph/tree/offline_lca.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/tree/rerooting.test.cpp
     title: test/graph/tree/rerooting.test.cpp
   - icon: ':heavy_check_mark:'
@@ -402,6 +405,7 @@ data:
   - test/graph/tree/rerooting.test.cpp
   - test/graph/tree/hld.test.3.cpp
   - test/graph/tree/hld.test.cpp
+  - test/graph/tree/offline_lca.test.cpp
   - test/graph/tree/hld.test.2.cpp
   - test/graph/tree/cartesian_tree.test.cpp
   - test/graph/low_link.test.2.cpp

@@ -62,6 +62,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/data-structure/undo_dsu.hpp
       title: src/data-structure/undo_dsu.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/wavelet_matrix.hpp
+      title: src/data-structure/wavelet_matrix.hpp
   - name: src/extra
     pages:
     - icon: ':heavy_check_mark:'
@@ -298,6 +301,21 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/undo_dsu.test.cpp
       title: test/data-structure/undo_dsu.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/wavelet_matrix.test.2.cpp
+      title: test/data-structure/wavelet_matrix.test.2.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/wavelet_matrix.test.3.cpp
+      title: test/data-structure/wavelet_matrix.test.3.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/wavelet_matrix.test.4.cpp
+      title: test/data-structure/wavelet_matrix.test.4.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/wavelet_matrix.test.5.cpp
+      title: test/data-structure/wavelet_matrix.test.5.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/wavelet_matrix.test.cpp
+      title: test/data-structure/wavelet_matrix.test.cpp
   - name: test/geometry
     pages:
     - icon: ':heavy_check_mark:'

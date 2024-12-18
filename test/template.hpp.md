@@ -70,6 +70,9 @@ data:
     path: test/data-structure/range_set.test.cpp
     title: test/data-structure/range_set.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/range_tree.test.2.cpp
+    title: test/data-structure/range_tree.test.2.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/range_tree.test.cpp
     title: test/data-structure/range_tree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -308,6 +311,7 @@ data:
   - test/math/BinaryGCD.test.cpp
   - test/data-structure/undo_dsu.test.2.cpp
   - test/data-structure/sparse_table.test.cpp
+  - test/data-structure/range_tree.test.2.cpp
   - test/data-structure/treap.test.2.cpp
   - test/data-structure/segtree.test.cpp
   - test/data-structure/potential_dsu.test.3.cpp

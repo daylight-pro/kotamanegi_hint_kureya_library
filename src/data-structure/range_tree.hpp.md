@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/range_tree.test.2.cpp
+    title: test/data-structure/range_tree.test.2.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/range_tree.test.cpp
     title: test/data-structure/range_tree.test.cpp
   _isVerificationFailed: false
@@ -94,6 +97,7 @@ data:
   timestamp: '2024-12-11 23:14:51+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/data-structure/range_tree.test.2.cpp
   - test/data-structure/range_tree.test.cpp
 documentation_of: src/data-structure/range_tree.hpp
 layout: document

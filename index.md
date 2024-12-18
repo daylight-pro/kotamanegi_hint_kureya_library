@@ -269,6 +269,9 @@ data:
       path: test/data-structure/range_set.test.cpp
       title: test/data-structure/range_set.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/data-structure/range_tree.test.2.cpp
+      title: test/data-structure/range_tree.test.2.cpp
+    - icon: ':heavy_check_mark:'
       path: test/data-structure/range_tree.test.cpp
       title: test/data-structure/range_tree.test.cpp
     - icon: ':heavy_check_mark:'

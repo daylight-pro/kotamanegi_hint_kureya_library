@@ -37,6 +37,9 @@ data:
     path: test/data-structure/binary_trie.test.cpp
     title: test/data-structure/binary_trie.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/ch_segtree.test.cpp
+    title: test/data-structure/ch_segtree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/disjoint_sparse_table.test.2.cpp
     title: test/data-structure/disjoint_sparse_table.test.2.cpp
   - icon: ':heavy_check_mark:'
@@ -347,6 +350,7 @@ data:
   - test/data-structure/2dBIT.test.cpp
   - test/data-structure/lazy_segtree.test.2.cpp
   - test/data-structure/potential_dsu.test.2.cpp
+  - test/data-structure/ch_segtree.test.cpp
   - test/data-structure/FastSet.test.cpp
   - test/data-structure/binary_trie.test.cpp
   - test/data-structure/disjoint_sparse_table.test.cpp

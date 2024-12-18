@@ -33,6 +33,10 @@ data:
       path: src/data-structure/binary_trie.hpp
       title: src/data-structure/binary_trie.hpp
     - icon: ':heavy_check_mark:'
+      path: src/data-structure/ch_segtree.hpp
+      title: "\u30BB\u30B0\u6728\u3092\u914D\u5217\u306E\u5185\u5BB9\u3067\u521D\u671F\
+        \u5316\u3059\u308B"
+    - icon: ':heavy_check_mark:'
       path: src/data-structure/disjoint_sparse_table.hpp
       title: src/data-structure/disjoint_sparse_table.hpp
     - icon: ':heavy_check_mark:'
@@ -238,6 +242,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/binary_trie.test.cpp
       title: test/data-structure/binary_trie.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/ch_segtree.test.cpp
+      title: test/data-structure/ch_segtree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data-structure/disjoint_sparse_table.test.2.cpp
       title: test/data-structure/disjoint_sparse_table.test.2.cpp

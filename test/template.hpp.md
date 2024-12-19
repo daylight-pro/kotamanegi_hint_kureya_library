@@ -166,6 +166,12 @@ data:
     path: test/graph/bi_connected_components.test.cpp
     title: test/graph/bi_connected_components.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/eulerian_trail.test.directed.cpp
+    title: test/graph/eulerian_trail.test.directed.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/eulerian_trail.test.undirected.cpp
+    title: test/graph/eulerian_trail.test.undirected.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/low_link.test.2.cpp
     title: test/graph/low_link.test.2.cpp
   - icon: ':heavy_check_mark:'
@@ -396,10 +402,12 @@ data:
   - test/algorithm/doubling.test.3.cpp
   - test/graph/max_flow.test.cpp
   - test/graph/scc.test.2.cpp
+  - test/graph/eulerian_trail.test.undirected.cpp
   - test/graph/low_link.test.cpp
   - test/graph/min_cost_flow.test.cpp
   - test/graph/two_sat.test.cpp
   - test/graph/bi_connected_components.test.cpp
+  - test/graph/eulerian_trail.test.directed.cpp
   - test/graph/max_flow.test.2.cpp
   - test/graph/topological_sort.test.cpp
   - test/graph/tree/rerooting.test.cpp

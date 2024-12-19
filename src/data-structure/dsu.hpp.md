@@ -10,6 +10,12 @@ data:
     path: test/data-structure/dsu.test.cpp
     title: test/data-structure/dsu.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/eulerian_trail.test.directed.cpp
+    title: test/graph/eulerian_trail.test.directed.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/eulerian_trail.test.undirected.cpp
+    title: test/graph/eulerian_trail.test.undirected.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/tree/offline_lca.test.cpp
     title: test/graph/tree/offline_lca.test.cpp
   _isVerificationFailed: false
@@ -65,6 +71,8 @@ data:
   verifiedWith:
   - test/data-structure/dsu.test.2.cpp
   - test/data-structure/dsu.test.cpp
+  - test/graph/eulerian_trail.test.undirected.cpp
+  - test/graph/eulerian_trail.test.directed.cpp
   - test/graph/tree/offline_lca.test.cpp
 documentation_of: src/data-structure/dsu.hpp
 layout: document

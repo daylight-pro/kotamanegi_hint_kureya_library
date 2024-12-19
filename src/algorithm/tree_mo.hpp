@@ -49,7 +49,7 @@ template<class T> struct MoTree_edge {
       };
       mo.run(change, change, change, change, rem);
    }
-};
+};  // b505c7
 
 template<class T> struct MoTree_vertex {
    int n;
@@ -110,4 +110,4 @@ template<class T> struct MoTree_vertex {
       };
       mo.run(change, change, change, change, rem_add_lca);
    }
-};
+};  // da9ab0

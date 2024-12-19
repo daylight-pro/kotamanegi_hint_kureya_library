@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/algorithm/tree_mo.test.cpp
+    title: test/algorithm/tree_mo.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/tree/offline_lca.test.cpp
     title: test/graph/tree/offline_lca.test.cpp
   _isVerificationFailed: false
@@ -49,6 +52,7 @@ data:
   timestamp: '2024-12-18 23:28:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/algorithm/tree_mo.test.cpp
   - test/graph/tree/offline_lca.test.cpp
 documentation_of: src/graph/tree/offline_lca.hpp
 layout: document

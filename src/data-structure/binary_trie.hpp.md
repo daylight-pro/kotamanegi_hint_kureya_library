@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/algorithm/tree_mo.test.cpp
+    title: test/algorithm/tree_mo.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/binary_trie.test.2.cpp
     title: test/data-structure/binary_trie.test.2.cpp
   - icon: ':heavy_check_mark:'
@@ -97,6 +100,7 @@ data:
   - test/data-structure/binary_trie.test.3.cpp
   - test/data-structure/binary_trie.test.cpp
   - test/data-structure/binary_trie.test.2.cpp
+  - test/algorithm/tree_mo.test.cpp
 documentation_of: src/data-structure/binary_trie.hpp
 layout: document
 redirect_from:

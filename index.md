@@ -13,11 +13,23 @@ data:
   - name: src/algorithm
     pages:
     - icon: ':heavy_check_mark:'
+      path: src/algorithm/3d_mo.hpp
+      title: src/algorithm/3d_mo.hpp
+    - icon: ':heavy_check_mark:'
       path: src/algorithm/doubling.hpp
       title: src/algorithm/doubling.hpp
     - icon: ':heavy_check_mark:'
       path: src/algorithm/doubling_monoid.hpp
       title: src/algorithm/doubling_monoid.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/algorithm/mo.hpp
+      title: src/algorithm/mo.hpp
+    - icon: ':warning:'
+      path: src/algorithm/rollback_mo.hpp
+      title: src/algorithm/rollback_mo.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/algorithm/tree_mo.hpp
+      title: src/algorithm/tree_mo.hpp
   - name: src/data-structure
     pages:
     - icon: ':heavy_check_mark:'
@@ -220,6 +232,9 @@ data:
   - name: test/algorithm
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/algorithm/3d_mo.test.cpp
+      title: test/algorithm/3d_mo.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/algorithm/doubling.test.2.cpp
       title: test/algorithm/doubling.test.2.cpp
     - icon: ':heavy_check_mark:'
@@ -228,6 +243,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/algorithm/doubling.test.cpp
       title: test/algorithm/doubling.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/algorithm/mo.test.cpp
+      title: test/algorithm/mo.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/algorithm/rollback_mo.test.cpp
+      title: test/algorithm/rollback_mo.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/algorithm/tree_mo.test.cpp
+      title: test/algorithm/tree_mo.test.cpp
   - name: test/data-structure
     pages:
     - icon: ':heavy_check_mark:'

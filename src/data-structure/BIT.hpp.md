@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/algorithm/mo.test.cpp
+    title: test/algorithm/mo.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/BIT.test.cpp
     title: test/data-structure/BIT.test.cpp
   - icon: ':heavy_check_mark:'
@@ -46,6 +49,7 @@ data:
   - test/data-structure/range_tree.test.2.cpp
   - test/data-structure/range_tree.test.cpp
   - test/data-structure/BIT.test.cpp
+  - test/algorithm/mo.test.cpp
   - test/graph/tree/hld.test.3.cpp
   - test/graph/tree/hld.test.cpp
 documentation_of: src/data-structure/BIT.hpp

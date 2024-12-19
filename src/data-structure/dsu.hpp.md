@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/algorithm/tree_mo.test.cpp
+    title: test/algorithm/tree_mo.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/dsu.test.2.cpp
     title: test/data-structure/dsu.test.2.cpp
   - icon: ':heavy_check_mark:'
@@ -71,6 +74,7 @@ data:
   verifiedWith:
   - test/data-structure/dsu.test.2.cpp
   - test/data-structure/dsu.test.cpp
+  - test/algorithm/tree_mo.test.cpp
   - test/graph/eulerian_trail.test.undirected.cpp
   - test/graph/eulerian_trail.test.directed.cpp
   - test/graph/tree/offline_lca.test.cpp

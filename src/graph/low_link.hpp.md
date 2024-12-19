@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/graph/bi_connected_components.test.2.cpp
+    title: test/graph/bi_connected_components.test.2.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/bi_connected_components.test.cpp
     title: test/graph/bi_connected_components.test.cpp
   - icon: ':heavy_check_mark:'
@@ -57,6 +60,7 @@ data:
   verifiedWith:
   - test/graph/low_link.test.cpp
   - test/graph/bi_connected_components.test.cpp
+  - test/graph/bi_connected_components.test.2.cpp
   - test/graph/low_link.test.2.cpp
 documentation_of: src/graph/low_link.hpp
 layout: document

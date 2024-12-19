@@ -163,6 +163,9 @@ data:
     path: test/geometry/reflection.test.cpp
     title: test/geometry/reflection.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/bi_connected_components.test.2.cpp
+    title: test/graph/bi_connected_components.test.2.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/bi_connected_components.test.cpp
     title: test/graph/bi_connected_components.test.cpp
   - icon: ':heavy_check_mark:'
@@ -409,6 +412,7 @@ data:
   - test/graph/bi_connected_components.test.cpp
   - test/graph/eulerian_trail.test.directed.cpp
   - test/graph/max_flow.test.2.cpp
+  - test/graph/bi_connected_components.test.2.cpp
   - test/graph/topological_sort.test.cpp
   - test/graph/tree/rerooting.test.cpp
   - test/graph/tree/hld.test.3.cpp

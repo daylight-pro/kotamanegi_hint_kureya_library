@@ -379,6 +379,9 @@ data:
   - name: test/graph
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/graph/bi_connected_components.test.2.cpp
+      title: test/graph/bi_connected_components.test.2.cpp
+    - icon: ':heavy_check_mark:'
       path: test/graph/bi_connected_components.test.cpp
       title: test/graph/bi_connected_components.test.cpp
     - icon: ':heavy_check_mark:'

@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/graph/bi_connected_components.test.2.cpp
+    title: test/graph/bi_connected_components.test.2.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/bi_connected_components.test.cpp
     title: test/graph/bi_connected_components.test.cpp
   _isVerificationFailed: false
@@ -49,6 +52,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/bi_connected_components.test.cpp
+  - test/graph/bi_connected_components.test.2.cpp
 documentation_of: src/graph/bi_connected_components.hpp
 layout: document
 redirect_from:

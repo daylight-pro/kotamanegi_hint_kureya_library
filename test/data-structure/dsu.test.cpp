@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
 
 #include "test/template.hpp"
-#include "src/data-structure/dsu.hpp"
+#include "test/data-structure/dsu.hpp"
 
 int main() {
    cin.tie(0)->sync_with_stdio(0);

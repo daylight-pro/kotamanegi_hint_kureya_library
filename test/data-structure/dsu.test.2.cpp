@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A"
 
 #include "test/template.hpp"
-#include "src/data-structure/dsu.hpp"
+#include "test/data-structure/dsu.hpp"
 
 int main() {
    cin.tie(0)->sync_with_stdio(0);

@@ -1,14 +1,17 @@
 ll modpow(ll a, ll n, ll MOD) {
-   ll res = 1;
-   a %= MOD;
+   using T = __int128_t;
+   // using T = ll;
+   T res = 1;
+   T mul = a;
+   mul %= MOD;
    if(n < 0) {
       n = -n;
-      a = modinv(a, MOD);
+      mul = modinv(mul, MOD);
    }
    while(n > 0) {
-      if(n & 1) res = (res * a) % MOD;
-      a = (a * a) % MOD;
+      if(n & 1) res = (res * mul) % MOD;
+      mul = (mul * mul) % MOD;
       n >>= 1;
    }
-   return res;
+   return ll(res);
 }

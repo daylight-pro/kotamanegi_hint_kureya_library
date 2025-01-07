@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/static_range_inversions_query"
 
 #include "test/template.hpp"
-#include "src/data-structure/BIT.hpp"
+#include "test/data-structure/BIT.hpp"
 #include "src/algorithm/mo.hpp"
 
 int main() {

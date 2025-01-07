@@ -48,7 +48,7 @@ int main() {
 
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A"
 #include "test/template.hpp"
-#include "src/data-structure/BIT.hpp"
+#include "test/data-structure/BIT.hpp"
 #include "src/data-structure/range_tree.hpp"
 
 int main() { puts("Hello World"); }

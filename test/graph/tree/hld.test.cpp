@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/vertex_add_path_sum"
 
 #include "test/template.hpp"
-#include "src/data-structure/BIT.hpp"
+#include "test/data-structure/BIT.hpp"
 #include "src/graph/tree/hld.hpp"
 
 int main() {

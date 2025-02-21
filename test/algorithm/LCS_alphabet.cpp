@@ -1,3 +1,14 @@
+// https://www.acmicpc.net/problem/18440 AC確認済み
+
+/*
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+const ll INF = LLONG_MAX / 4;
+#define all(a) begin(a), end(a)
+bool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }
+bool chmax(auto& a, auto b) { return a < b ? a = b, 1 : 0; }
+
 vector<uint64_t> _lcs(const string &s, const string &t) {
    int n = s.size();
    int w = (n + 63) >> 6;
@@ -59,3 +70,18 @@ void lcs(string s, string t, string &result) {
    lcs(s.substr(0, max_idx), t.substr(0, l1), result);
    lcs(s.substr(max_idx), t.substr(l1), result);
 }
+
+int main() {
+   cin.tie(0);       
+   ios::sync_with_stdio(false);
+   string s, t;
+   cin >> s >> t;
+   string ans;
+   lcs(s, t, ans);
+   cout << ans.size() << endl;
+   cout << ans << endl;
+   return 0;
+}
+*/
+
+int main() {return 0;}

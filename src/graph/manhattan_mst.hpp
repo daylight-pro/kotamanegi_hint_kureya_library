@@ -1,7 +1,8 @@
+// 候補の辺を O(N) 本に減らす。MST時は追加でsort, UF等の必要あり。
 template<typename T>
-Edges<T> manhattan_mst(vector<T> xs, vector<T> ys) {
+vector<tuple<T, int, int>> manhattan_mst(vector<T> xs, vector<T> ys) {
    assert(xs.size() == ys.size());
-   Edges<T> ret;
+   vector<tuple<T, int, int>> ret;
    int n = (int) xs.size();
 
    vector<int> ord(n);
@@ -20,7 +21,7 @@ Edges<T> manhattan_mst(vector<T> xs, vector<T> ys) {
                   it != idx.end(); it = idx.erase(it)) {
                int j = it->second;
                if(xs[i] - xs[j] < ys[i] - ys[j]) break;
-               ret.emplace_back(i, j, abs(xs[i] - xs[j]) + abs(ys[i] - ys[j]));
+               ret.emplace_back(abs(xs[i] - xs[j]) + abs(ys[i] - ys[j]), i, j);
             }
             idx[-ys[i]] = i;
          }

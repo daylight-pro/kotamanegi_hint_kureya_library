@@ -87,4 +87,8 @@ int main() {
 }
 */
 
-int main() {return 0;}
+#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A"
+#include "test/template.hpp"
+#include "src/graph/manhattan_mst.hpp"
+
+int main() { puts("Hello World"); }

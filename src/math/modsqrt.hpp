@@ -1,3 +1,4 @@
+// depends on modpow
 // a is a quadratic residue modulo p?
 int Legendre(long long a, long long p) {
 

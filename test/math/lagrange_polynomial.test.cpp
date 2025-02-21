@@ -91,6 +91,6 @@ int main() {
 #include "test/template.hpp"
 #include "src/modint/modint.hpp"
 #include "src/math/combination.hpp"
-#include "src/graph/lagrange_polynomial.hpp"
+#include "src/math/lagrange_polynomial.hpp"
 
 int main() { puts("Hello World"); }

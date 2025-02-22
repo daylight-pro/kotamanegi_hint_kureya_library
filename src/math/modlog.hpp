@@ -12,10 +12,10 @@ long long modlog(long long a, long long b, int m) {
    }
    long long sqrtM = ri;
 
-   // {a^0, a^1, a^2, ..., a^sqrt(m)} 
+   // {a^0, a^1, a^2, ..., a^sqrt(m)}
    map<long long, long long> apow;
    long long r = a;
-   for(long long i = 1; i < sqrtM; ++ i) {
+   for(long long i = 1; i < sqrtM; ++i) {
       if(!apow.count(r)) apow[r] = i;
       (r *= a) %= m;
    }
@@ -23,9 +23,9 @@ long long modlog(long long a, long long b, int m) {
    // check each A^p
    long long A = modpow(modinv(a, m), sqrtM, m);
    r = b;
-   for (long long q = 0; q < sqrtM; ++q) {
-      if (r == 1 && q > 0) return q * sqrtM;
-      else if (apow.count(r)) return q * sqrtM + apow[r];
+   for(long long q = 0; q < sqrtM; ++q) {
+      if(r == 1 && q > 0) return q * sqrtM;
+      else if(apow.count(r)) return q * sqrtM + apow[r];
       (r *= A) %= m;
    }
 

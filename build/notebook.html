@@ -9,7 +9,8 @@
     <script>
         var MathJax = {
             tex: {
-                inlineMath: [['$', '$']]
+                inlineMath: [['$', '$']],
+                displayMath: [['$$','$$']]
             }
         };
     </script>
@@ -5119,16 +5120,17 @@ $$S = i + \frac{b}{2} - 1$$</p>
 <p>DAG 上の最小 path 被覆（全ての頂点を適当な path に属するようにして分割する時の必要な path の最小本数）は、 最大 antichain（頂点の集合であって、集合に属する任意の 2 頂点に関して、それらを結ぶような path が存在しない）の要素数と一致する</p>
 <p>ちなみに 2 部グラフ上の最大独立集合は「頂点数マイナス最大マッチング」なのでこれが関係する問題もある。</p>
 <h3>LP双対</h3>
-<p>強双対性 : $max{cx | x \geq 0, Ax \leq b } = min{yb | y \geq 0, yA \geq c}$</p>
+<p>強双対性 : $\max \lbrace cx | x \geq 0, Ax \leq b \rbrace = \min \lbrace yb | y \geq 0, yA \geq c \rbrace$</p>
 <h3>Tutte行列</h3>
 <p>完全マッチング存在条件</p>
-<p>$$
-A_{i, j} = \begin{cases}
-    x_{i, j} &amp; \text{if} (i, j) \in E ~ \text{and} ~ i &lt; j \
-    -x_{i, j} &amp; \text{if}  (i, j) \in E ~ \text{and} ~ i &gt; j \
+<p>\begin{eqnarray}
+A_{i, j} = 
+\begin{cases}
+    x_{i, j} &amp; \text{if} (i, j) \in E ~ \text{and} ~ i &lt; j \\
+    -x_{i, j} &amp; \text{if}  (i, j) \in E ~ \text{and} ~ i &gt; j \\
     0 &amp; \text{otherwise}
-  \end{cases}
-$$</p>
+\end{cases}
+\end{eqnarray}</p>
 <p>の行列式が多項式として0</p>
 <h3>ラグランジュの反転公式</h3>
 <ul>

@@ -82,6 +82,7 @@ int main() {
 */
 
 #include "test/template.hpp"
+#include "src/algorithm/rollback_mo.hpp"
 int main() {
    cin.tie(0)->sync_with_stdio(0);
    puts("Hello World");

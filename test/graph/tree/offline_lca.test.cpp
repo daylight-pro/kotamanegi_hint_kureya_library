@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/lca"
 #include "test/template.hpp"
-#include "src/data-structure/dsu.hpp"
+#include "test/data-structure/dsu.hpp"
 #include "src/graph/tree/offline_lca.hpp"
 
 int main() {

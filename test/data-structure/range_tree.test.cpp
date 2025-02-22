@@ -2,7 +2,7 @@
 
 #include "test/template.hpp"
 #include "src/data-structure/range_tree.hpp"
-#include "src/data-structure/BIT.hpp"
+#include "test/data-structure/BIT.hpp"
 
 struct M {
    using S = ll;

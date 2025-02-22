@@ -2,7 +2,7 @@
 
 #include "test/template.hpp"
 #include "src/graph/tree/hld.hpp"
-#include "src/data-structure/BIT.hpp"
+#include "test/data-structure/BIT.hpp"
 
 int main() {
    cin.tie(0)->sync_with_stdio(0);

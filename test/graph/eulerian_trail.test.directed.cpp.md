@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/data-structure/dsu.hpp
-    title: src/data-structure/dsu.hpp
-  - icon: ':heavy_check_mark:'
     path: src/graph/eulerian_trail.hpp
     title: src/graph/eulerian_trail.hpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/dsu.hpp
+    title: test/data-structure/dsu.hpp
   - icon: ':heavy_check_mark:'
     path: test/template.hpp
     title: test/template.hpp
@@ -25,7 +25,7 @@ data:
     \n#include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\nconst\
     \ ll INF = LLONG_MAX / 4;\n#define all(a) begin(a), end(a)\nbool chmin(auto& a,\
     \ auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto& a, auto b) { return\
-    \ a < b ? a = b, 1 : 0; }\n#line 1 \"src/data-structure/dsu.hpp\"\n// base: d569f4\n\
+    \ a < b ? a = b, 1 : 0; }\n#line 1 \"test/data-structure/dsu.hpp\"\n// base: d569f4\n\
     struct dsu {\n   private:\n   int _n;\n   vector<int> p;\n\n   public:\n   dsu()\
     \ : _n(0) {}\n   explicit dsu(int n) : _n(n), p(n, -1) {}\n\n   int merge(int\
     \ a, int b) {\n      // assert(0 <= a && a < _n);\n      // assert(0 <= b && b\
@@ -93,7 +93,7 @@ data:
     \        cout << \"\\n\";\n         for(int i = 0; i < M; i++) { cout << ans[0][i]\
     \ << \" \\n\"[i == M - 1]; }\n      }\n   }\n   return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/eulerian_trail_directed\"\
-    \n\n#include \"test/template.hpp\"\n#include \"src/data-structure/dsu.hpp\"\n\
+    \n\n#include \"test/template.hpp\"\n#include \"test/data-structure/dsu.hpp\"\n\
     #include \"src/graph/eulerian_trail.hpp\"\n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
     \   int T;\n   cin >> T;\n   while(T--) {\n      int N, M;\n      cin >> N >>\
     \ M;\n      EulerianTrail<true> et(N);\n      for(int i = 0; i < M; i++) {\n \
@@ -108,12 +108,12 @@ data:
     \ - 1]; }\n      }\n   }\n   return 0;\n}"
   dependsOn:
   - test/template.hpp
-  - src/data-structure/dsu.hpp
+  - test/data-structure/dsu.hpp
   - src/graph/eulerian_trail.hpp
   isVerificationFile: true
   path: test/graph/eulerian_trail.test.directed.cpp
   requiredBy: []
-  timestamp: '2024-12-19 04:39:12+09:00'
+  timestamp: '2025-01-07 15:52:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/eulerian_trail.test.directed.cpp

@@ -48,11 +48,11 @@ data:
     \ x = y * m - b;\n   ret += (n - (x + a - 1) / a) * y;\n   ret += floor_sum(y,\
     \ a, m, (a - x % a) % a);\n   return ret;\n}\n#line 1 \"src/math/min_of_mod_of_linear.hpp\"\
     \n// depends on floor_sum\nll min_of_mod_of_linear(ll n, ll m, ll a, ll b) {\n\
-    \    ll fsum = floor_sum(n, m, a, b);\n    ll le = -1, ri = m - 1;\n    while(ri\
-    \ - le > 1) {\n       ll mid = (le + ri) / 2;\n       if(floor_sum(n, m, a, b\
-    \ + (m - 1 - mid)) < fsum + n) ri = mid;\n       else le = mid;\n    }\n    return\
-    \ ri;\n }\n#line 53 \"test/math/min_of_mod_of_linear.test.cpp\"\nint main() {\
-    \ puts(\"Hello World\"); }\n"
+    \   ll fsum = floor_sum(n, m, a, b);\n   ll le = -1, ri = m - 1;\n   while(ri\
+    \ - le > 1) {\n      ll mid = (le + ri) / 2;\n      if(floor_sum(n, m, a, b +\
+    \ (m - 1 - mid)) < fsum + n) ri = mid;\n      else le = mid;\n   }\n   return\
+    \ ri;\n}\n#line 53 \"test/math/min_of_mod_of_linear.test.cpp\"\nint main() { puts(\"\
+    Hello World\"); }\n"
   code: "// AC\u78BA\u8A8D\u6E08\u307F https://judge.yosupo.jp/submission/268935\n\
     \n/*\n#include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\n\
     const ll INF = LLONG_MAX / 4;\n#define all(a) begin(a), end(a)\nbool chmin(auto&\
@@ -78,7 +78,7 @@ data:
   isVerificationFile: true
   path: test/math/min_of_mod_of_linear.test.cpp
   requiredBy: []
-  timestamp: '2025-02-23 00:00:41+09:00'
+  timestamp: '2025-02-22 15:22:54+00:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/min_of_mod_of_linear.test.cpp

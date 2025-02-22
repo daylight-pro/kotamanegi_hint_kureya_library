@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/data-structure/dsu.hpp
-    title: src/data-structure/dsu.hpp
-  - icon: ':heavy_check_mark:'
     path: src/graph/tree/offline_lca.hpp
     title: src/graph/tree/offline_lca.hpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/dsu.hpp
+    title: test/data-structure/dsu.hpp
   - icon: ':heavy_check_mark:'
     path: test/template.hpp
     title: test/template.hpp
@@ -25,7 +25,7 @@ data:
     \ <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\nconst ll INF =\
     \ LLONG_MAX / 4;\n#define all(a) begin(a), end(a)\nbool chmin(auto& a, auto b)\
     \ { return a > b ? a = b, 1 : 0; }\nbool chmax(auto& a, auto b) { return a < b\
-    \ ? a = b, 1 : 0; }\n#line 1 \"src/data-structure/dsu.hpp\"\n// base: d569f4\n\
+    \ ? a = b, 1 : 0; }\n#line 1 \"test/data-structure/dsu.hpp\"\n// base: d569f4\n\
     struct dsu {\n   private:\n   int _n;\n   vector<int> p;\n\n   public:\n   dsu()\
     \ : _n(0) {}\n   explicit dsu(int n) : _n(n), p(n, -1) {}\n\n   int merge(int\
     \ a, int b) {\n      // assert(0 <= a && a < _n);\n      // assert(0 <= b && b\
@@ -67,7 +67,7 @@ data:
     \ >> r; }\n   auto ans = offline_lca(g, qs);\n   for(auto x : ans) { cout << x\
     \ << '\\n'; }\n   return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n#include \"test/template.hpp\"\
-    \n#include \"src/data-structure/dsu.hpp\"\n#include \"src/graph/tree/offline_lca.hpp\"\
+    \n#include \"test/data-structure/dsu.hpp\"\n#include \"src/graph/tree/offline_lca.hpp\"\
     \n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n   int N, Q;\n   cin >>\
     \ N >> Q;\n   vector<vector<int>> g(N);\n   for(int i = 1; i < N; i++) {\n   \
     \   int p;\n      cin >> p;\n      g[p].push_back(i);\n      g[i].push_back(p);\n\
@@ -76,12 +76,12 @@ data:
     \ << '\\n'; }\n   return 0;\n}"
   dependsOn:
   - test/template.hpp
-  - src/data-structure/dsu.hpp
+  - test/data-structure/dsu.hpp
   - src/graph/tree/offline_lca.hpp
   isVerificationFile: true
   path: test/graph/tree/offline_lca.test.cpp
   requiredBy: []
-  timestamp: '2024-12-18 23:28:16+09:00'
+  timestamp: '2025-01-07 15:52:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/tree/offline_lca.test.cpp

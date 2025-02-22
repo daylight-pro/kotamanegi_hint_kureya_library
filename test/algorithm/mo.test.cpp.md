@@ -5,8 +5,8 @@ data:
     path: src/algorithm/mo.hpp
     title: src/algorithm/mo.hpp
   - icon: ':heavy_check_mark:'
-    path: src/data-structure/BIT.hpp
-    title: BIT (Fenwick Tree)
+    path: test/data-structure/BIT.hpp
+    title: test/data-structure/BIT.hpp
   - icon: ':heavy_check_mark:'
     path: test/template.hpp
     title: test/template.hpp
@@ -24,7 +24,7 @@ data:
     \n\n#line 1 \"test/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace std;\n\
     using ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define all(a) begin(a),\
     \ end(a)\nbool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
-    \ a, auto b) { return a < b ? a = b, 1 : 0; }\n#line 1 \"src/data-structure/BIT.hpp\"\
+    \ a, auto b) { return a < b ? a = b, 1 : 0; }\n#line 1 \"test/data-structure/BIT.hpp\"\
     \nstruct BIT {\n   vector<ll> a;\n   BIT(ll n) : a(n + 1) {}\n   void add(ll i,\
     \ ll x) {  // A[i] += x\n      i++;\n      while(i < size(a)) {\n         a[i]\
     \ += x;\n         i += i & -i;\n      }\n   }\n   ll sum(ll r) {\n      ll s =\
@@ -61,7 +61,7 @@ data:
     \ rem);\n   for(int i = 0; i < Q; i++) cout << ans[i] << '\\n';\n\n   return 0;\n\
     }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_inversions_query\"\
-    \n\n#include \"test/template.hpp\"\n#include \"src/data-structure/BIT.hpp\"\n\
+    \n\n#include \"test/template.hpp\"\n#include \"test/data-structure/BIT.hpp\"\n\
     #include \"src/algorithm/mo.hpp\"\n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
     \   int N, Q;\n   cin >> N >> Q;\n   vector<int> A(N);\n   for(auto& a : A) cin\
     \ >> a;\n   vector<int> inv(N, -1);\n   map<int, int> mp1;\n   for(int e : A)\
@@ -80,12 +80,12 @@ data:
     \ << ans[i] << '\\n';\n\n   return 0;\n}"
   dependsOn:
   - test/template.hpp
-  - src/data-structure/BIT.hpp
+  - test/data-structure/BIT.hpp
   - src/algorithm/mo.hpp
   isVerificationFile: true
   path: test/algorithm/mo.test.cpp
   requiredBy: []
-  timestamp: '2025-01-03 11:14:39+09:00'
+  timestamp: '2025-02-23 00:18:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/algorithm/mo.test.cpp

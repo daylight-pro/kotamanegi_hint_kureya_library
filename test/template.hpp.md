@@ -37,9 +37,6 @@ data:
     path: test/data-structure/2dBIT.test.cpp
     title: test/data-structure/2dBIT.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/BIT.test.cpp
-    title: test/data-structure/BIT.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/data-structure/FastSet.test.cpp
     title: test/data-structure/FastSet.test.cpp
   - icon: ':heavy_check_mark:'
@@ -60,12 +57,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data-structure/disjoint_sparse_table.test.cpp
     title: test/data-structure/disjoint_sparse_table.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/dsu.test.2.cpp
-    title: test/data-structure/dsu.test.2.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/dsu.test.cpp
-    title: test/data-structure/dsu.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/data-structure/lazy_segtree.test.2.cpp
     title: test/data-structure/lazy_segtree.test.2.cpp
@@ -365,11 +356,9 @@ data:
   - test/data-structure/binary_trie.test.2.cpp
   - test/data-structure/lazy_segtree.test.2.cpp
   - test/data-structure/wavelet_matrix.test.2.cpp
-  - test/data-structure/dsu.test.2.cpp
   - test/data-structure/wavelet_matrix.test.4.cpp
   - test/data-structure/treap.test.2.cpp
   - test/data-structure/disjoint_sparse_table.test.2.cpp
-  - test/data-structure/BIT.test.cpp
   - test/data-structure/wavelet_matrix.test.5.cpp
   - test/data-structure/undo_dsu.test.cpp
   - test/data-structure/wavelet_matrix.test.cpp
@@ -382,7 +371,6 @@ data:
   - test/data-structure/range_set.test.cpp
   - test/data-structure/segtree.test.3.cpp
   - test/data-structure/binary_trie.test.3.cpp
-  - test/data-structure/dsu.test.cpp
   - test/data-structure/FastSet.test.cpp
   - test/data-structure/potential_dsu.test.3.cpp
   - test/data-structure/disjoint_sparse_table.test.cpp

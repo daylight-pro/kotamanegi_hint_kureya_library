@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/data-structure/BIT.hpp
-    title: BIT (Fenwick Tree)
-  - icon: ':heavy_check_mark:'
     path: src/data-structure/range_tree.hpp
     title: src/data-structure/range_tree.hpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/BIT.hpp
+    title: test/data-structure/BIT.hpp
   - icon: ':heavy_check_mark:'
     path: test/template.hpp
     title: test/template.hpp
@@ -40,7 +40,7 @@ data:
     \ 1 \"test/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace std;\nusing\
     \ ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define all(a) begin(a), end(a)\n\
     bool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
-    \ a, auto b) { return a < b ? a = b, 1 : 0; }\n#line 1 \"src/data-structure/BIT.hpp\"\
+    \ a, auto b) { return a < b ? a = b, 1 : 0; }\n#line 1 \"test/data-structure/BIT.hpp\"\
     \nstruct BIT {\n   vector<ll> a;\n   BIT(ll n) : a(n + 1) {}\n   void add(ll i,\
     \ ll x) {  // A[i] += x\n      i++;\n      while(i < size(a)) {\n         a[i]\
     \ += x;\n         i += i & -i;\n      }\n   }\n   ll sum(ll r) {\n      ll s =\
@@ -102,16 +102,16 @@ data:
     \ y, 1);\n   while(Q--) {\n      int l, r;\n      cin >> l >> r;\n      l--;\n\
     \      cout << r - l - rt.prod(l, l, r, r) << '\\n';\n   }\n}\n*/\n\n#define PROBLEM\
     \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\n#include\
-    \ \"test/template.hpp\"\n#include \"src/data-structure/BIT.hpp\"\n#include \"\
+    \ \"test/template.hpp\"\n#include \"test/data-structure/BIT.hpp\"\n#include \"\
     src/data-structure/range_tree.hpp\"\n\nint main() { puts(\"Hello World\"); }\n"
   dependsOn:
   - test/template.hpp
-  - src/data-structure/BIT.hpp
+  - test/data-structure/BIT.hpp
   - src/data-structure/range_tree.hpp
   isVerificationFile: true
   path: test/data-structure/range_tree.test.2.cpp
   requiredBy: []
-  timestamp: '2025-01-03 11:14:39+09:00'
+  timestamp: '2025-02-23 00:18:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/range_tree.test.2.cpp

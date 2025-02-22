@@ -81,7 +81,7 @@ data:
     \ fac, finv, inv;\n   Combination(ll n, ll mod) : C_MOD(mod) {\n      n = max(n,\
     \ 2LL);\n      fac.resize(n, 0);\n      finv.resize(n, 0);\n      inv.resize(n,\
     \ 0);\n      fac[0] = fac[1] = finv[0] = finv[1] = inv[1] = 1;\n      for(int\
-    \ i = 2; i < n; i ++) {\n         fac[i] = fac[i - 1] * i % mod;\n         inv[i]\
+    \ i = 2; i < n; i++) {\n         fac[i] = fac[i - 1] * i % mod;\n         inv[i]\
     \ = mod - inv[mod % i] * (mod / i) % mod;\n         finv[i] = finv[i - 1] * inv[i]\
     \ % mod;\n      }\n   }\n   ll com(ll n, ll k) {\n      if(n < k || n < 0 || k\
     \ < 0) return 0;\n      return fac[n] * (finv[k] * finv[n - k] % C_MOD) % C_MOD;\n\
@@ -89,10 +89,10 @@ data:
     \ T lagrange_polynomial(const vector<T>& y, ll t, ll mod = 1000000007) {\n   int\
     \ n = y.size() - 1;\n   if(t <= n) return y[t];\n   T ret(0);\n   Combination\
     \ comb(n + 1, mod);\n   vector<T> dp(n + 1, 1), pd(n + 1, 1);\n   for(int i =\
-    \ 0; i < n; i ++) dp[i + 1] = dp[i] * (t - i);\n   for(int i = n; i > 0; i --)\
-    \ pd[i - 1] = pd[i] * (t - i);\n   for(int i = 0; i <= n; i ++) {\n      T tmp\
-    \ = y[i] * dp[i] * pd[i] * comb.finv[i] * comb.finv[n - i];\n      ret -= ((n\
-    \ - i) & 1 ? tmp : T(0) - tmp);\n   }\n   return ret;\n}\n#line 95 \"test/math/lagrange_polynomial.test.cpp\"\
+    \ 0; i < n; i++) dp[i + 1] = dp[i] * (t - i);\n   for(int i = n; i > 0; i--) pd[i\
+    \ - 1] = pd[i] * (t - i);\n   for(int i = 0; i <= n; i++) {\n      T tmp = y[i]\
+    \ * dp[i] * pd[i] * comb.finv[i] * comb.finv[n - i];\n      ret -= ((n - i) &\
+    \ 1 ? tmp : T(0) - tmp);\n   }\n   return ret;\n}\n#line 95 \"test/math/lagrange_polynomial.test.cpp\"\
     \n\nint main() { puts(\"Hello World\"); }\n"
   code: "// AC\u78BA\u8A8D\u6E08\u307F https://atcoder.jp/contests/arc033/submissions/62970727\n\
     \n/*\n#include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\n\
@@ -140,7 +140,7 @@ data:
   isVerificationFile: true
   path: test/math/lagrange_polynomial.test.cpp
   requiredBy: []
-  timestamp: '2025-02-23 00:00:41+09:00'
+  timestamp: '2025-02-22 15:22:54+00:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/lagrange_polynomial.test.cpp

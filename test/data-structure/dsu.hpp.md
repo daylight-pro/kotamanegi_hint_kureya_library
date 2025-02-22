@@ -7,12 +7,6 @@ data:
     path: test/algorithm/tree_mo.test.cpp
     title: test/algorithm/tree_mo.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/dsu.test.2.cpp
-    title: test/data-structure/dsu.test.2.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/dsu.test.cpp
-    title: test/data-structure/dsu.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/graph/eulerian_trail.test.directed.cpp
     title: test/graph/eulerian_trail.test.directed.cpp
   - icon: ':heavy_check_mark:'
@@ -26,7 +20,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/data-structure/dsu.hpp\"\n// base: d569f4\nstruct dsu\
+  bundledCode: "#line 1 \"test/data-structure/dsu.hpp\"\n// base: d569f4\nstruct dsu\
     \ {\n   private:\n   int _n;\n   vector<int> p;\n\n   public:\n   dsu() : _n(0)\
     \ {}\n   explicit dsu(int n) : _n(n), p(n, -1) {}\n\n   int merge(int a, int b)\
     \ {\n      // assert(0 <= a && a < _n);\n      // assert(0 <= b && b < _n);\n\
@@ -67,21 +61,19 @@ data:
     \         result.end());\n      return result;\n   }  // bf3a1e\n};"
   dependsOn: []
   isVerificationFile: false
-  path: src/data-structure/dsu.hpp
+  path: test/data-structure/dsu.hpp
   requiredBy: []
-  timestamp: '2024-12-12 18:01:06+09:00'
+  timestamp: '2025-01-07 15:52:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/data-structure/dsu.test.2.cpp
-  - test/data-structure/dsu.test.cpp
   - test/algorithm/tree_mo.test.cpp
   - test/graph/eulerian_trail.test.undirected.cpp
   - test/graph/eulerian_trail.test.directed.cpp
   - test/graph/tree/offline_lca.test.cpp
-documentation_of: src/data-structure/dsu.hpp
+documentation_of: test/data-structure/dsu.hpp
 layout: document
 redirect_from:
-- /library/src/data-structure/dsu.hpp
-- /library/src/data-structure/dsu.hpp.html
-title: src/data-structure/dsu.hpp
+- /library/test/data-structure/dsu.hpp
+- /library/test/data-structure/dsu.hpp.html
+title: test/data-structure/dsu.hpp
 ---

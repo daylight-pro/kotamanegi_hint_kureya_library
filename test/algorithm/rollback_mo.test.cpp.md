@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: src/algorithm/rollback_mo.hpp
+    title: src/algorithm/rollback_mo.hpp
+  - icon: ':heavy_check_mark:'
     path: test/template.hpp
     title: test/template.hpp
   _extendedRequiredBy: []
@@ -45,7 +48,26 @@ data:
     \ namespace std;\nusing ll = long long;\nconst ll INF = LLONG_MAX / 4;\n#define\
     \ all(a) begin(a), end(a)\nbool chmin(auto& a, auto b) { return a > b ? a = b,\
     \ 1 : 0; }\nbool chmax(auto& a, auto b) { return a < b ? a = b, 1 : 0; }\n#line\
-    \ 85 \"test/algorithm/rollback_mo.test.cpp\"\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
+    \ 1 \"src/algorithm/rollback_mo.hpp\"\nstruct Mo_rollback {\n   int width;\n \
+    \  vector<int> left, right, order;\n   Mo_rollback(int N, int Q) : order(Q) {\n\
+    \      width = sqrt(N);\n      iota(all(order), 0);\n   }\n\n   void insert(int\
+    \ l, int r) {\n      left.emplace_back(l);\n      right.emplace_back(r);\n   }\n\
+    \n   void run(const auto& add_left,\n            const auto& add_right,\n    \
+    \        const auto& rem,\n            const auto& reset,\n            const auto&\
+    \ snapshot,\n            const auto& rollback) {\n      sort(begin(order), end(order),\
+    \ [&](int a, int b) {\n         int ablock = left[a] / width, bblock = left[b]\
+    \ / width;\n         if(ablock != bblock) return ablock < bblock;\n         return\
+    \ right[a] < right[b];\n      });\n      reset();\n      snapshot();\n      for(auto\
+    \ idx : order) {\n         if(right[idx] - left[idx] < width) {\n            for(int\
+    \ i = left[idx]; i < right[idx]; i++) add_right(i);\n            rem(idx);\n \
+    \           rollback();\n         }\n      }\n      int nr = 0, last_block = -1;\n\
+    \      for(auto idx : order) {\n         if(right[idx] - left[idx] < width) continue;\n\
+    \         int block = left[idx] / width;\n         if(block != last_block) {\n\
+    \            reset();\n            nr = (block + 1) * width;\n            last_block\
+    \ = block;\n         }\n         while(nr < right[idx]) add_right(nr++);\n   \
+    \      snapshot();\n         for(int j = (block + 1) * width - 1; j >= left[idx];\
+    \ j--) add_left(j);\n         rem(idx);\n         rollback();\n      }\n   }\n\
+    };\n#line 86 \"test/algorithm/rollback_mo.test.cpp\"\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
     \   puts(\"Hello World\");\n   return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
     \n\n/*\n\u590F\u5408\u5BBF Day1 A\nhttps://www.acmicpc.net/source/87508962\n\n\
@@ -73,14 +95,15 @@ data:
     \    int l, r;\n      cin >> l >> r;\n      l--;\n      mo.insert(l, r);\n   }\n\
     \   mo.run(add_left, add_right, rem, reset, snapshot, rollback);\n   for(auto&\
     \ a : ans) cout << inv[a] << '\\n';\n   return 0;\n}\n*/\n\n#include \"test/template.hpp\"\
-    \nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n   puts(\"Hello World\");\n\
-    \   return 0;\n}"
+    \n#include \"src/algorithm/rollback_mo.hpp\"\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
+    \   puts(\"Hello World\");\n   return 0;\n}"
   dependsOn:
   - test/template.hpp
+  - src/algorithm/rollback_mo.hpp
   isVerificationFile: true
   path: test/algorithm/rollback_mo.test.cpp
   requiredBy: []
-  timestamp: '2024-12-16 16:28:56+09:00'
+  timestamp: '2025-01-07 15:52:42+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/algorithm/rollback_mo.test.cpp

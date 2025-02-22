@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/data-structure/BIT.hpp
-    title: BIT (Fenwick Tree)
-  - icon: ':heavy_check_mark:'
     path: src/data-structure/range_tree.hpp
     title: src/data-structure/range_tree.hpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/BIT.hpp
+    title: test/data-structure/BIT.hpp
   - icon: ':heavy_check_mark:'
     path: test/template.hpp
     title: test/template.hpp
@@ -62,7 +62,7 @@ data:
     \u30A8\u30EA\u3092\u53D7\u3051\u4ED8\u3051\u308B\u6E96\u5099\u3092\u3059\u308B\
     \nrt.apply(x, y, a): \u5EA7\u6A19 (x, y) \u306B a \u3092\u9069\u7528\nrt.prod(x1,\
     \ y1, x2, y2): \u5EA7\u6A19 x \\in [x1, x2), y \\in [y1, y2) \u306E\u9818\u57DF\
-    \u306B\u30AF\u30A8\u30EA\u3092\u884C\u3046\n*/\n#line 1 \"src/data-structure/BIT.hpp\"\
+    \u306B\u30AF\u30A8\u30EA\u3092\u884C\u3046\n*/\n#line 1 \"test/data-structure/BIT.hpp\"\
     \nstruct BIT {\n   vector<ll> a;\n   BIT(ll n) : a(n + 1) {}\n   void add(ll i,\
     \ ll x) {  // A[i] += x\n      i++;\n      while(i < size(a)) {\n         a[i]\
     \ += x;\n         i += i & -i;\n      }\n   }\n   ll sum(ll r) {\n      ll s =\
@@ -85,8 +85,8 @@ data:
     \ }\n   }\n\n   return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_rectangle_sum\"\
     \n\n#include \"test/template.hpp\"\n#include \"src/data-structure/range_tree.hpp\"\
-    \n#include \"src/data-structure/BIT.hpp\"\n\nstruct M {\n   using S = ll;\n  \
-    \ using D = BIT;\n   static ll op(ll a, ll b) { return a + b; }\n   static ll\
+    \n#include \"test/data-structure/BIT.hpp\"\n\nstruct M {\n   using S = ll;\n \
+    \  using D = BIT;\n   static ll op(ll a, ll b) { return a + b; }\n   static ll\
     \ e() { return 0; }\n   static BIT init(int n) { return BIT(n); }\n   static void\
     \ apply(BIT& bit, int k, const ll& v) { bit.add(k, v); }\n   static ll prod(BIT&\
     \ bit, int l, int r) { return bit.sum(l, r); }\n};\n\nint main() {\n   cin.tie(0)->sync_with_stdio(false);\n\
@@ -102,11 +102,11 @@ data:
   dependsOn:
   - test/template.hpp
   - src/data-structure/range_tree.hpp
-  - src/data-structure/BIT.hpp
+  - test/data-structure/BIT.hpp
   isVerificationFile: true
   path: test/data-structure/range_tree.test.cpp
   requiredBy: []
-  timestamp: '2025-01-03 11:14:39+09:00'
+  timestamp: '2025-02-23 00:18:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/range_tree.test.cpp

@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/data-structure/BIT.hpp
-    title: BIT (Fenwick Tree)
-  - icon: ':heavy_check_mark:'
     path: src/graph/tree/hld.hpp
     title: src/graph/tree/hld.hpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/BIT.hpp
+    title: test/data-structure/BIT.hpp
   - icon: ':heavy_check_mark:'
     path: test/template.hpp
     title: test/template.hpp
@@ -57,7 +57,7 @@ data:
     \ ret.push_back(back.front());\n         back.pop_front();\n      }\n      return\
     \ ret;\n   }\n\n   HLDcomposition(int node_size)\n       : V(node_size), G(V),\
     \ stsize(V, 0), parent(V, -1), pathtop(V, -1), in(V, -1), out(V, -1) {}\n};\n\
-    #line 1 \"src/data-structure/BIT.hpp\"\nstruct BIT {\n   vector<ll> a;\n   BIT(ll\
+    #line 1 \"test/data-structure/BIT.hpp\"\nstruct BIT {\n   vector<ll> a;\n   BIT(ll\
     \ n) : a(n + 1) {}\n   void add(ll i, ll x) {  // A[i] += x\n      i++;\n    \
     \  while(i < size(a)) {\n         a[i] += x;\n         i += i & -i;\n      }\n\
     \   }\n   ll sum(ll r) {\n      ll s = 0;\n      while(r) {\n         s += a[r];\n\
@@ -74,7 +74,7 @@ data:
     \         cout << bit.sum(l, r) << '\\n';\n      }\n   }\n   return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_add_subtree_sum\"\
     \n\n#include \"test/template.hpp\"\n#include \"src/graph/tree/hld.hpp\"\n#include\
-    \ \"src/data-structure/BIT.hpp\"\n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
+    \ \"test/data-structure/BIT.hpp\"\n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
     \n   int N, Q;\n   cin >> N >> Q;\n\n   vector<int> A(N);\n   for(int i = 0; i\
     \ < N; i++) cin >> A[i];\n\n   HLDcomposition hld(N);\n   for(int i = 1; i < N;\
     \ i++) {\n      int p;\n      cin >> p;\n      hld.add_edge(p, i);\n   }\n   hld.build();\n\
@@ -86,11 +86,11 @@ data:
   dependsOn:
   - test/template.hpp
   - src/graph/tree/hld.hpp
-  - src/data-structure/BIT.hpp
+  - test/data-structure/BIT.hpp
   isVerificationFile: true
   path: test/graph/tree/hld.test.3.cpp
   requiredBy: []
-  timestamp: '2025-01-03 11:14:39+09:00'
+  timestamp: '2025-02-23 00:18:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/tree/hld.test.3.cpp

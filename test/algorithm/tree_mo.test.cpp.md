@@ -11,11 +11,11 @@ data:
     path: src/data-structure/binary_trie.hpp
     title: src/data-structure/binary_trie.hpp
   - icon: ':heavy_check_mark:'
-    path: src/data-structure/dsu.hpp
-    title: src/data-structure/dsu.hpp
-  - icon: ':heavy_check_mark:'
     path: src/graph/tree/offline_lca.hpp
     title: src/graph/tree/offline_lca.hpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/dsu.hpp
+    title: test/data-structure/dsu.hpp
   - icon: ':heavy_check_mark:'
     path: test/template.hpp
     title: test/template.hpp
@@ -84,7 +84,7 @@ data:
     \            contain[id] = true;\n         }\n      };\n      auto rem_add_lca\
     \ = [&](int i) {\n         add(b[lcas[i]]);\n         rem(i);\n         del(b[lcas[i]]);\n\
     \      };\n      mo.run(change, change, change, change, rem_add_lca);\n   }\n\
-    };  // da9ab0\n#line 1 \"src/data-structure/dsu.hpp\"\n// base: d569f4\nstruct\
+    };  // da9ab0\n#line 1 \"test/data-structure/dsu.hpp\"\n// base: d569f4\nstruct\
     \ dsu {\n   private:\n   int _n;\n   vector<int> p;\n\n   public:\n   dsu() :\
     \ _n(0) {}\n   explicit dsu(int n) : _n(n), p(n, -1) {}\n\n   int merge(int a,\
     \ int b) {\n      // assert(0 <= a && a < _n);\n      // assert(0 <= b && b <\
@@ -178,7 +178,7 @@ data:
     \ \"\\n\";\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/0489\"\n\n#include\
     \ \"test/template.hpp\"\n#include \"src/algorithm/mo.hpp\"\n#include \"src/algorithm/tree_mo.hpp\"\
-    \n#include \"src/data-structure/dsu.hpp\"\n#include \"src/graph/tree/offline_lca.hpp\"\
+    \n#include \"test/data-structure/dsu.hpp\"\n#include \"src/graph/tree/offline_lca.hpp\"\
     \n#include \"src/data-structure/binary_trie.hpp\"\n\nint main() {\n   int N, M;\n\
     \   cin >> N >> M;\n   vector<ll> B(N);\n   for(auto& b : B) cin >> b;\n   ll\
     \ base = *min_element(all(B));\n   vector<vector<int>> G(N);\n   for(int i = 0;\
@@ -205,13 +205,13 @@ data:
   - test/template.hpp
   - src/algorithm/mo.hpp
   - src/algorithm/tree_mo.hpp
-  - src/data-structure/dsu.hpp
+  - test/data-structure/dsu.hpp
   - src/graph/tree/offline_lca.hpp
   - src/data-structure/binary_trie.hpp
   isVerificationFile: true
   path: test/algorithm/tree_mo.test.cpp
   requiredBy: []
-  timestamp: '2024-12-19 17:08:19+09:00'
+  timestamp: '2025-01-07 15:52:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/algorithm/tree_mo.test.cpp

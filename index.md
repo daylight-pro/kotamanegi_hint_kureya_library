@@ -27,7 +27,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/algorithm/mo.hpp
       title: src/algorithm/mo.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/algorithm/rollback_mo.hpp
       title: src/algorithm/rollback_mo.hpp
     - icon: ':heavy_check_mark:'
@@ -42,9 +42,6 @@ data:
       path: src/data-structure/64tree.hpp
       title: src/data-structure/64tree.hpp
     - icon: ':heavy_check_mark:'
-      path: src/data-structure/BIT.hpp
-      title: BIT (Fenwick Tree)
-    - icon: ':heavy_check_mark:'
       path: src/data-structure/FastSet.hpp
       title: "\u9AD8\u901F bitset (64 \u5206\u6728)"
     - icon: ':heavy_check_mark:'
@@ -57,9 +54,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/data-structure/disjoint_sparse_table.hpp
       title: src/data-structure/disjoint_sparse_table.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/data-structure/dsu.hpp
-      title: src/data-structure/dsu.hpp
     - icon: ':heavy_check_mark:'
       path: src/data-structure/lazy_segtree.hpp
       title: src/data-structure/lazy_segtree.hpp
@@ -251,6 +245,14 @@ data:
     - icon: ':warning:'
       path: src/template/template.hpp
       title: src/template/template.hpp
+  - name: test/data-structure
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/BIT.hpp
+      title: test/data-structure/BIT.hpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/dsu.hpp
+      title: test/data-structure/dsu.hpp
   - name: test
     pages:
     - icon: ':heavy_check_mark:'
@@ -297,9 +299,6 @@ data:
       path: test/data-structure/2dBIT.test.cpp
       title: test/data-structure/2dBIT.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/data-structure/BIT.test.cpp
-      title: test/data-structure/BIT.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/data-structure/FastSet.test.cpp
       title: test/data-structure/FastSet.test.cpp
     - icon: ':heavy_check_mark:'
@@ -320,12 +319,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/disjoint_sparse_table.test.cpp
       title: test/data-structure/disjoint_sparse_table.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/dsu.test.2.cpp
-      title: test/data-structure/dsu.test.2.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/dsu.test.cpp
-      title: test/data-structure/dsu.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data-structure/lazy_segtree.test.2.cpp
       title: test/data-structure/lazy_segtree.test.2.cpp

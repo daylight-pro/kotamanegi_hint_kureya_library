@@ -4,6 +4,7 @@ struct mm {
    mm(ll x_ = 0) : x(x_ % mod) {
       if(x < 0) x += mod;
    }
+   friend mm operator-(mm a) { return -a.x; }
    friend mm operator+(mm a, mm b) { return a.x + b.x; }
    friend mm operator-(mm a, mm b) { return a.x - b.x; }
    friend mm operator*(mm a, mm b) { return a.x * b.x; }

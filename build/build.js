@@ -111,7 +111,8 @@ fs.writeFileSync("build/notebook.html", `<!DOCTYPE html>
     <script>
         var MathJax = {
             tex: {
-                inlineMath: [['$', '$']]
+                inlineMath: [['$', '$']],
+                displayMath: [['$$','$$']]
             }
         };
     </script>

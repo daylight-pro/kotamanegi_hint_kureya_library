@@ -32,9 +32,9 @@ data:
   timestamp: '2024-12-13 18:20:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/math/crt.test.cpp
   - test/math/rho.test.cpp
   - test/math/primality.test.cpp
+  - test/math/crt.test.cpp
 documentation_of: src/math/modinv.hpp
 layout: document
 redirect_from:

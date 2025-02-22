@@ -97,9 +97,9 @@ data:
   timestamp: '2024-12-10 18:11:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/data-structure/binary_trie.test.3.cpp
-  - test/data-structure/binary_trie.test.cpp
   - test/data-structure/binary_trie.test.2.cpp
+  - test/data-structure/binary_trie.test.cpp
+  - test/data-structure/binary_trie.test.3.cpp
   - test/algorithm/tree_mo.test.cpp
 documentation_of: src/data-structure/binary_trie.hpp
 layout: document

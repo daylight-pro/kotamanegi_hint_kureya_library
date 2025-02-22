@@ -27,26 +27,27 @@ data:
     bool chmin(auto& a, auto b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto&\
     \ a, auto b) { return a < b ? a = b, 1 : 0; }\n#line 1 \"src/modint/modint.hpp\"\
     \nconst ll mod = 998244353;\nstruct mm {\n   ll x;\n   mm(ll x_ = 0) : x(x_ %\
-    \ mod) {\n      if(x < 0) x += mod;\n   }\n   friend mm operator+(mm a, mm b)\
-    \ { return a.x + b.x; }\n   friend mm operator-(mm a, mm b) { return a.x - b.x;\
-    \ }\n   friend mm operator*(mm a, mm b) { return a.x * b.x; }\n   friend mm operator/(mm\
-    \ a, mm b) { return a * b.inv(); }\n   // 4 \u884C\u30B3\u30D4\u30DA  Alt + Shift\
-    \ + \u30AF\u30EA\u30C3\u30AF\u3067\u8907\u6570\u30AB\u30FC\u30BD\u30EB\n   friend\
-    \ mm& operator+=(mm& a, mm b) { return a = a.x + b.x; }\n   friend mm& operator-=(mm&\
-    \ a, mm b) { return a = a.x - b.x; }\n   friend mm& operator*=(mm& a, mm b) {\
-    \ return a = a.x * b.x; }\n   friend mm& operator/=(mm& a, mm b) { return a =\
-    \ a * b.inv(); }\n   mm inv() const { return pow(mod - 2); }\n   mm pow(ll b)\
-    \ const {\n      mm a = *this, c = 1;\n      while(b) {\n         if(b & 1) c\
-    \ *= a;\n         a *= a;\n         b >>= 1;\n      }\n      return c;\n   }\n\
-    };\n#line 1 \"src/data-structure/segtree.hpp\"\n// base: bafcf8\nunsigned int\
-    \ bit_ceil(unsigned int n) {\n   unsigned int x = 1;\n   while(x < (unsigned int)(n))\
-    \ x *= 2;\n   return x;\n}\nint countr_zero(unsigned int n) { return __builtin_ctz(n);\
-    \ }\nconstexpr int countr_zero_constexpr(unsigned int n) {\n   int x = 0;\n  \
-    \ while(!(n & (1 << x))) x++;\n   return x;\n}\ntemplate<class S, S (*op)(S, S),\
-    \ S (*e)()> struct segtree {\n   public:\n   segtree() : segtree(0) {}\n   explicit\
-    \ segtree(int n) : segtree(vector<S>(n, e())) {}\n   explicit segtree(const vector<S>&\
-    \ v) : _n(int(v.size())) {\n      size = (int)bit_ceil((unsigned int)(_n));\n\
-    \      log = countr_zero((unsigned int)size);\n      d = vector<S>(2 * size, e());\n\
+    \ mod) {\n      if(x < 0) x += mod;\n   }\n   friend mm operator-(mm a) { return\
+    \ -a.x; }\n   friend mm operator+(mm a, mm b) { return a.x + b.x; }\n   friend\
+    \ mm operator-(mm a, mm b) { return a.x - b.x; }\n   friend mm operator*(mm a,\
+    \ mm b) { return a.x * b.x; }\n   friend mm operator/(mm a, mm b) { return a *\
+    \ b.inv(); }\n   // 4 \u884C\u30B3\u30D4\u30DA  Alt + Shift + \u30AF\u30EA\u30C3\
+    \u30AF\u3067\u8907\u6570\u30AB\u30FC\u30BD\u30EB\n   friend mm& operator+=(mm&\
+    \ a, mm b) { return a = a.x + b.x; }\n   friend mm& operator-=(mm& a, mm b) {\
+    \ return a = a.x - b.x; }\n   friend mm& operator*=(mm& a, mm b) { return a =\
+    \ a.x * b.x; }\n   friend mm& operator/=(mm& a, mm b) { return a = a * b.inv();\
+    \ }\n   mm inv() const { return pow(mod - 2); }\n   mm pow(ll b) const {\n   \
+    \   mm a = *this, c = 1;\n      while(b) {\n         if(b & 1) c *= a;\n     \
+    \    a *= a;\n         b >>= 1;\n      }\n      return c;\n   }\n};\n#line 1 \"\
+    src/data-structure/segtree.hpp\"\n// base: bafcf8\nunsigned int bit_ceil(unsigned\
+    \ int n) {\n   unsigned int x = 1;\n   while(x < (unsigned int)(n)) x *= 2;\n\
+    \   return x;\n}\nint countr_zero(unsigned int n) { return __builtin_ctz(n); }\n\
+    constexpr int countr_zero_constexpr(unsigned int n) {\n   int x = 0;\n   while(!(n\
+    \ & (1 << x))) x++;\n   return x;\n}\ntemplate<class S, S (*op)(S, S), S (*e)()>\
+    \ struct segtree {\n   public:\n   segtree() : segtree(0) {}\n   explicit segtree(int\
+    \ n) : segtree(vector<S>(n, e())) {}\n   explicit segtree(const vector<S>& v)\
+    \ : _n(int(v.size())) {\n      size = (int)bit_ceil((unsigned int)(_n));\n   \
+    \   log = countr_zero((unsigned int)size);\n      d = vector<S>(2 * size, e());\n\
     \      for(int i = 0; i < _n; i++) d[size + i] = v[i];\n      for(int i = size\
     \ - 1; i >= 1; i--) { update(i); }\n   }\n\n   void set(int p, S x) {\n      //\
     \ assert(0 <= p && p < _n);\n      p += size;\n      d[p] = x;\n      for(int\
@@ -103,7 +104,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/segtree.test.2.cpp
   requiredBy: []
-  timestamp: '2024-12-10 19:12:43+09:00'
+  timestamp: '2025-02-23 00:00:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/segtree.test.2.cpp

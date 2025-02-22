@@ -54,8 +54,8 @@ data:
   timestamp: '2024-12-10 18:11:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/string/SuffixArray.test.cpp
   - test/string/LCP.test.cpp
+  - test/string/SuffixArray.test.cpp
 documentation_of: src/string/SuffixArray.hpp
 layout: document
 title: Suffix Array

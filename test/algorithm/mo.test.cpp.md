@@ -85,7 +85,7 @@ data:
   isVerificationFile: true
   path: test/algorithm/mo.test.cpp
   requiredBy: []
-  timestamp: '2024-12-16 16:28:56+09:00'
+  timestamp: '2025-01-03 11:14:39+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/algorithm/mo.test.cpp

@@ -13,6 +13,9 @@ data:
     path: test/algorithm/3d_mo.test.cpp
     title: test/algorithm/3d_mo.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/algorithm/LCS_alphabet.test.cpp
+    title: test/algorithm/LCS_alphabet.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/algorithm/doubling.test.2.cpp
     title: test/algorithm/doubling.test.2.cpp
   - icon: ':heavy_check_mark:'
@@ -193,6 +196,9 @@ data:
     path: test/graph/low_link.test.cpp
     title: test/graph/low_link.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/manhattan_mst.test.cpp
+    title: test/graph/manhattan_mst.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/max_flow.test.2.cpp
     title: test/graph/max_flow.test.2.cpp
   - icon: ':heavy_check_mark:'
@@ -216,6 +222,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/tree/cartesian_tree.test.cpp
     title: test/graph/tree/cartesian_tree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/tree/dominator_tree.test.cpp
+    title: test/graph/tree/dominator_tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/graph/tree/hld.test.2.cpp
     title: test/graph/tree/hld.test.2.cpp
@@ -252,6 +261,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/math/floor_sum.test.cpp
     title: test/math/floor_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/fwt.test.cpp
+    title: test/math/fwt.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/lagrange_polynomial.test.cpp
+    title: test/math/lagrange_polynomial.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/min_of_mod_of_linear.test.cpp
+    title: test/math/min_of_mod_of_linear.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/primality.test.cpp
     title: test/math/primality.test.cpp
@@ -343,102 +361,108 @@ data:
   verifiedWith:
   - test/modint/modint.test.cpp
   - test/modint/BarrettReduction.test.cpp
-  - test/math/ExtGCD.test.cpp
+  - test/data-structure/range_tree.test.cpp
+  - test/data-structure/binary_trie.test.2.cpp
+  - test/data-structure/lazy_segtree.test.2.cpp
+  - test/data-structure/wavelet_matrix.test.2.cpp
+  - test/data-structure/dsu.test.2.cpp
+  - test/data-structure/wavelet_matrix.test.4.cpp
+  - test/data-structure/treap.test.2.cpp
+  - test/data-structure/disjoint_sparse_table.test.2.cpp
+  - test/data-structure/BIT.test.cpp
+  - test/data-structure/wavelet_matrix.test.5.cpp
+  - test/data-structure/undo_dsu.test.cpp
+  - test/data-structure/wavelet_matrix.test.cpp
+  - test/data-structure/treap.test.cpp
+  - test/data-structure/2dBIT.test.cpp
+  - test/data-structure/binary_trie.test.cpp
+  - test/data-structure/wavelet_matrix.test.3.cpp
+  - test/data-structure/range_set.test.2.cpp
+  - test/data-structure/potential_dsu.test.2.cpp
+  - test/data-structure/range_set.test.cpp
+  - test/data-structure/segtree.test.3.cpp
+  - test/data-structure/binary_trie.test.3.cpp
+  - test/data-structure/dsu.test.cpp
+  - test/data-structure/FastSet.test.cpp
+  - test/data-structure/potential_dsu.test.3.cpp
+  - test/data-structure/disjoint_sparse_table.test.cpp
+  - test/data-structure/ch_segtree.test.cpp
+  - test/data-structure/lazy_segtree.test.cpp
+  - test/data-structure/segtree.test.2.cpp
+  - test/data-structure/potential_dsu.test.cpp
+  - test/data-structure/segtree.test.cpp
+  - test/data-structure/range_tree.test.2.cpp
+  - test/data-structure/sparse_table.test.cpp
+  - test/data-structure/undo_dsu.test.2.cpp
+  - test/algorithm/rollback_mo.test.cpp
+  - test/algorithm/tree_mo.test.cpp
+  - test/algorithm/doubling.test.2.cpp
+  - test/algorithm/LCS_alphabet.test.cpp
+  - test/algorithm/3d_mo.test.cpp
+  - test/algorithm/doubling.test.3.cpp
+  - test/algorithm/mo.test.cpp
+  - test/algorithm/doubling.test.cpp
+  - test/string/aho_corasick.test.3.cpp
+  - test/string/LCP.test.cpp
+  - test/string/SuffixArray.test.cpp
+  - test/string/RollingHash.test.cpp
+  - test/string/Zalgorithm.test.cpp
+  - test/string/sa_is.test.cpp
+  - test/string/aho_corasick.test.2.cpp
+  - test/string/aho_corasick.test.cpp
+  - test/string/Manacher.test.cpp
+  - test/string/KMP.test.cpp
+  - test/math/min_of_mod_of_linear.test.cpp
+  - test/math/lagrange_polynomial.test.cpp
+  - test/math/BinaryGCD.test.cpp
+  - test/math/rho.test.cpp
+  - test/math/primality.test.cpp
+  - test/math/eratos.test.cpp
+  - test/math/fwt.test.cpp
   - test/math/crt.test.cpp
   - test/math/factorize.test.cpp
-  - test/math/rho.test.cpp
-  - test/math/eratos.test.cpp
-  - test/math/primality.test.cpp
   - test/math/floor_sum.test.cpp
-  - test/math/BinaryGCD.test.cpp
-  - test/data-structure/undo_dsu.test.2.cpp
-  - test/data-structure/sparse_table.test.cpp
-  - test/data-structure/range_tree.test.2.cpp
-  - test/data-structure/treap.test.2.cpp
-  - test/data-structure/segtree.test.cpp
-  - test/data-structure/potential_dsu.test.3.cpp
-  - test/data-structure/segtree.test.3.cpp
-  - test/data-structure/wavelet_matrix.test.5.cpp
-  - test/data-structure/wavelet_matrix.test.4.cpp
-  - test/data-structure/dsu.test.2.cpp
-  - test/data-structure/wavelet_matrix.test.3.cpp
-  - test/data-structure/potential_dsu.test.cpp
-  - test/data-structure/wavelet_matrix.test.2.cpp
-  - test/data-structure/range_set.test.cpp
-  - test/data-structure/dsu.test.cpp
-  - test/data-structure/range_tree.test.cpp
-  - test/data-structure/disjoint_sparse_table.test.2.cpp
-  - test/data-structure/treap.test.cpp
-  - test/data-structure/range_set.test.2.cpp
-  - test/data-structure/binary_trie.test.3.cpp
-  - test/data-structure/2dBIT.test.cpp
-  - test/data-structure/lazy_segtree.test.2.cpp
-  - test/data-structure/potential_dsu.test.2.cpp
-  - test/data-structure/ch_segtree.test.cpp
-  - test/data-structure/FastSet.test.cpp
-  - test/data-structure/binary_trie.test.cpp
-  - test/data-structure/disjoint_sparse_table.test.cpp
-  - test/data-structure/wavelet_matrix.test.cpp
-  - test/data-structure/segtree.test.2.cpp
-  - test/data-structure/lazy_segtree.test.cpp
-  - test/data-structure/BIT.test.cpp
-  - test/data-structure/undo_dsu.test.cpp
-  - test/data-structure/binary_trie.test.2.cpp
-  - test/template.test.cpp
-  - test/FPS/FFT.test.cpp
-  - test/FPS/FFT_fast.test.cpp
-  - test/geometry/is_convex.test.cpp
-  - test/geometry/reflection.test.cpp
-  - test/geometry/polygon_point_containment.test.cpp
-  - test/geometry/ccw.test.cpp
-  - test/geometry/crosspoint.test.cpp
+  - test/math/ExtGCD.test.cpp
   - test/geometry/closest_pair.test.2.cpp
-  - test/geometry/convex_hull.test.cpp
-  - test/geometry/projection.test.cpp
-  - test/geometry/area.test.cpp
-  - test/geometry/intersect.test.cpp
-  - test/geometry/closest_pair.test.cpp
-  - test/geometry/base.test.cpp
-  - test/geometry/diameter.test.cpp
-  - test/geometry/parallel_orthogonal.test.cpp
   - test/geometry/distance.test.cpp
-  - test/string/aho_corasick.test.2.cpp
-  - test/string/aho_corasick.test.3.cpp
-  - test/string/RollingHash.test.cpp
-  - test/string/SuffixArray.test.cpp
-  - test/string/Zalgorithm.test.cpp
-  - test/string/Manacher.test.cpp
-  - test/string/sa_is.test.cpp
-  - test/string/KMP.test.cpp
-  - test/string/aho_corasick.test.cpp
-  - test/string/LCP.test.cpp
-  - test/algorithm/doubling.test.2.cpp
-  - test/algorithm/3d_mo.test.cpp
-  - test/algorithm/rollback_mo.test.cpp
-  - test/algorithm/doubling.test.cpp
-  - test/algorithm/mo.test.cpp
-  - test/algorithm/doubling.test.3.cpp
-  - test/algorithm/tree_mo.test.cpp
-  - test/graph/max_flow.test.cpp
-  - test/graph/scc.test.2.cpp
-  - test/graph/eulerian_trail.test.undirected.cpp
-  - test/graph/low_link.test.cpp
-  - test/graph/min_cost_flow.test.cpp
-  - test/graph/two_sat.test.cpp
-  - test/graph/bi_connected_components.test.cpp
-  - test/graph/eulerian_trail.test.directed.cpp
-  - test/graph/max_flow.test.2.cpp
-  - test/graph/bi_connected_components.test.2.cpp
-  - test/graph/topological_sort.test.cpp
-  - test/graph/tree/rerooting.test.cpp
-  - test/graph/tree/hld.test.3.cpp
-  - test/graph/tree/hld.test.cpp
-  - test/graph/tree/offline_lca.test.cpp
-  - test/graph/tree/hld.test.2.cpp
-  - test/graph/tree/cartesian_tree.test.cpp
+  - test/geometry/ccw.test.cpp
+  - test/geometry/convex_hull.test.cpp
+  - test/geometry/parallel_orthogonal.test.cpp
+  - test/geometry/reflection.test.cpp
+  - test/geometry/diameter.test.cpp
+  - test/geometry/crosspoint.test.cpp
+  - test/geometry/intersect.test.cpp
+  - test/geometry/area.test.cpp
+  - test/geometry/closest_pair.test.cpp
+  - test/geometry/polygon_point_containment.test.cpp
+  - test/geometry/base.test.cpp
+  - test/geometry/projection.test.cpp
+  - test/geometry/is_convex.test.cpp
+  - test/template.test.cpp
+  - test/FPS/FFT_fast.test.cpp
+  - test/FPS/FFT.test.cpp
   - test/graph/low_link.test.2.cpp
+  - test/graph/topological_sort.test.cpp
+  - test/graph/two_sat.test.cpp
+  - test/graph/low_link.test.cpp
+  - test/graph/eulerian_trail.test.undirected.cpp
+  - test/graph/min_cost_flow.test.cpp
+  - test/graph/manhattan_mst.test.cpp
+  - test/graph/max_flow.test.cpp
   - test/graph/max_flow.test.3.cpp
+  - test/graph/eulerian_trail.test.directed.cpp
   - test/graph/scc.test.cpp
+  - test/graph/bi_connected_components.test.2.cpp
+  - test/graph/max_flow.test.2.cpp
+  - test/graph/tree/dominator_tree.test.cpp
+  - test/graph/tree/hld.test.2.cpp
+  - test/graph/tree/rerooting.test.cpp
+  - test/graph/tree/offline_lca.test.cpp
+  - test/graph/tree/hld.test.3.cpp
+  - test/graph/tree/cartesian_tree.test.cpp
+  - test/graph/tree/hld.test.cpp
+  - test/graph/bi_connected_components.test.cpp
+  - test/graph/scc.test.2.cpp
 documentation_of: test/template.hpp
 layout: document
 redirect_from:

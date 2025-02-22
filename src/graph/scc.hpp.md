@@ -65,9 +65,9 @@ data:
   timestamp: '2024-12-10 18:11:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/graph/scc.test.2.cpp
   - test/graph/two_sat.test.cpp
   - test/graph/scc.test.cpp
+  - test/graph/scc.test.2.cpp
 documentation_of: src/graph/scc.hpp
 layout: document
 redirect_from:

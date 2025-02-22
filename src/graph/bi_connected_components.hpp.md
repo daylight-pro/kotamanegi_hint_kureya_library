@@ -51,8 +51,8 @@ data:
   timestamp: '2024-12-15 21:25:51+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/graph/bi_connected_components.test.cpp
   - test/graph/bi_connected_components.test.2.cpp
+  - test/graph/bi_connected_components.test.cpp
 documentation_of: src/graph/bi_connected_components.hpp
 layout: document
 redirect_from:

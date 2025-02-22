@@ -200,19 +200,19 @@ data:
   timestamp: '2024-12-16 02:36:51+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/geometry/is_convex.test.cpp
-  - test/geometry/reflection.test.cpp
-  - test/geometry/polygon_point_containment.test.cpp
-  - test/geometry/ccw.test.cpp
-  - test/geometry/crosspoint.test.cpp
   - test/geometry/closest_pair.test.2.cpp
-  - test/geometry/projection.test.cpp
-  - test/geometry/area.test.cpp
-  - test/geometry/intersect.test.cpp
-  - test/geometry/closest_pair.test.cpp
-  - test/geometry/diameter.test.cpp
-  - test/geometry/parallel_orthogonal.test.cpp
   - test/geometry/distance.test.cpp
+  - test/geometry/ccw.test.cpp
+  - test/geometry/parallel_orthogonal.test.cpp
+  - test/geometry/reflection.test.cpp
+  - test/geometry/diameter.test.cpp
+  - test/geometry/crosspoint.test.cpp
+  - test/geometry/intersect.test.cpp
+  - test/geometry/area.test.cpp
+  - test/geometry/closest_pair.test.cpp
+  - test/geometry/polygon_point_containment.test.cpp
+  - test/geometry/projection.test.cpp
+  - test/geometry/is_convex.test.cpp
 documentation_of: src/geometry/etc.hpp
 layout: document
 redirect_from:

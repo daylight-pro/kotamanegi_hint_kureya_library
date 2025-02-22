@@ -120,8 +120,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/max_flow.test.cpp
-  - test/graph/max_flow.test.2.cpp
   - test/graph/max_flow.test.3.cpp
+  - test/graph/max_flow.test.2.cpp
 documentation_of: src/graph/max_flow.hpp
 layout: document
 redirect_from:

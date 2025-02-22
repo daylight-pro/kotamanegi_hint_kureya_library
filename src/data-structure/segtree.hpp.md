@@ -100,9 +100,9 @@ data:
   timestamp: '2024-12-06 14:52:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/data-structure/segtree.test.cpp
   - test/data-structure/segtree.test.3.cpp
   - test/data-structure/segtree.test.2.cpp
+  - test/data-structure/segtree.test.cpp
   - test/graph/tree/hld.test.2.cpp
 documentation_of: src/data-structure/segtree.hpp
 layout: document

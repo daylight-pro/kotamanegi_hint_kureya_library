@@ -58,10 +58,10 @@ data:
   timestamp: '2024-12-15 21:25:51+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/graph/low_link.test.cpp
-  - test/graph/bi_connected_components.test.cpp
-  - test/graph/bi_connected_components.test.2.cpp
   - test/graph/low_link.test.2.cpp
+  - test/graph/low_link.test.cpp
+  - test/graph/bi_connected_components.test.2.cpp
+  - test/graph/bi_connected_components.test.cpp
 documentation_of: src/graph/low_link.hpp
 layout: document
 redirect_from:

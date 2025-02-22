@@ -98,20 +98,21 @@ data:
     \ d;\n\n   void update(int k) { d[k] = op(d[2 * k], d[2 * k + 1]); }\n};\n#line\
     \ 1 \"src/modint/modint.hpp\"\nconst ll mod = 998244353;\nstruct mm {\n   ll x;\n\
     \   mm(ll x_ = 0) : x(x_ % mod) {\n      if(x < 0) x += mod;\n   }\n   friend\
-    \ mm operator+(mm a, mm b) { return a.x + b.x; }\n   friend mm operator-(mm a,\
-    \ mm b) { return a.x - b.x; }\n   friend mm operator*(mm a, mm b) { return a.x\
-    \ * b.x; }\n   friend mm operator/(mm a, mm b) { return a * b.inv(); }\n   //\
-    \ 4 \u884C\u30B3\u30D4\u30DA  Alt + Shift + \u30AF\u30EA\u30C3\u30AF\u3067\u8907\
-    \u6570\u30AB\u30FC\u30BD\u30EB\n   friend mm& operator+=(mm& a, mm b) { return\
-    \ a = a.x + b.x; }\n   friend mm& operator-=(mm& a, mm b) { return a = a.x - b.x;\
-    \ }\n   friend mm& operator*=(mm& a, mm b) { return a = a.x * b.x; }\n   friend\
-    \ mm& operator/=(mm& a, mm b) { return a = a * b.inv(); }\n   mm inv() const {\
-    \ return pow(mod - 2); }\n   mm pow(ll b) const {\n      mm a = *this, c = 1;\n\
-    \      while(b) {\n         if(b & 1) c *= a;\n         a *= a;\n         b >>=\
-    \ 1;\n      }\n      return c;\n   }\n};\n#line 7 \"test/graph/tree/hld.test.2.cpp\"\
-    \n\nusing P = pair<mm, mm>;\nP op(P a, P b) { return {a.first * b.first, a.second\
-    \ * b.first + b.second}; }\nP op2(P a, P b) { return {a.first * b.first, a.first\
-    \ * b.second + a.second}; }\n\nP e() { return {1, 0}; }\n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
+    \ mm operator-(mm a) { return -a.x; }\n   friend mm operator+(mm a, mm b) { return\
+    \ a.x + b.x; }\n   friend mm operator-(mm a, mm b) { return a.x - b.x; }\n   friend\
+    \ mm operator*(mm a, mm b) { return a.x * b.x; }\n   friend mm operator/(mm a,\
+    \ mm b) { return a * b.inv(); }\n   // 4 \u884C\u30B3\u30D4\u30DA  Alt + Shift\
+    \ + \u30AF\u30EA\u30C3\u30AF\u3067\u8907\u6570\u30AB\u30FC\u30BD\u30EB\n   friend\
+    \ mm& operator+=(mm& a, mm b) { return a = a.x + b.x; }\n   friend mm& operator-=(mm&\
+    \ a, mm b) { return a = a.x - b.x; }\n   friend mm& operator*=(mm& a, mm b) {\
+    \ return a = a.x * b.x; }\n   friend mm& operator/=(mm& a, mm b) { return a =\
+    \ a * b.inv(); }\n   mm inv() const { return pow(mod - 2); }\n   mm pow(ll b)\
+    \ const {\n      mm a = *this, c = 1;\n      while(b) {\n         if(b & 1) c\
+    \ *= a;\n         a *= a;\n         b >>= 1;\n      }\n      return c;\n   }\n\
+    };\n#line 7 \"test/graph/tree/hld.test.2.cpp\"\n\nusing P = pair<mm, mm>;\nP op(P\
+    \ a, P b) { return {a.first * b.first, a.second * b.first + b.second}; }\nP op2(P\
+    \ a, P b) { return {a.first * b.first, a.first * b.second + a.second}; }\n\nP\
+    \ e() { return {1, 0}; }\n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
     \   int N, Q;\n   cin >> N >> Q;\n   HLDcomposition hld(N);\n   vector<int> A(N),\
     \ B(N);\n   for(int i = 0; i < N; i++) { cin >> A[i] >> B[i]; }\n   for(int i\
     \ = 0; i < N - 1; i++) {\n      int u, v;\n      cin >> u >> v;\n      hld.add_edge(u,\
@@ -156,7 +157,7 @@ data:
   isVerificationFile: true
   path: test/graph/tree/hld.test.2.cpp
   requiredBy: []
-  timestamp: '2024-12-10 19:12:43+09:00'
+  timestamp: '2025-02-23 00:00:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/tree/hld.test.2.cpp

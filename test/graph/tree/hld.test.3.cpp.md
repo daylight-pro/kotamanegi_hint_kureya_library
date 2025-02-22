@@ -90,7 +90,7 @@ data:
   isVerificationFile: true
   path: test/graph/tree/hld.test.3.cpp
   requiredBy: []
-  timestamp: '2024-12-10 18:11:50+09:00'
+  timestamp: '2025-01-03 11:14:39+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/tree/hld.test.3.cpp

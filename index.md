@@ -16,6 +16,9 @@ data:
       path: src/algorithm/3d_mo.hpp
       title: src/algorithm/3d_mo.hpp
     - icon: ':heavy_check_mark:'
+      path: src/algorithm/LCS_alphabet.hpp
+      title: src/algorithm/LCS_alphabet.hpp
+    - icon: ':heavy_check_mark:'
       path: src/algorithm/doubling.hpp
       title: src/algorithm/doubling.hpp
     - icon: ':heavy_check_mark:'
@@ -35,6 +38,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/data-structure/2dBIT.hpp
       title: src/data-structure/2dBIT.hpp
+    - icon: ':warning:'
+      path: src/data-structure/64tree.hpp
+      title: src/data-structure/64tree.hpp
     - icon: ':heavy_check_mark:'
       path: src/data-structure/BIT.hpp
       title: BIT (Fenwick Tree)
@@ -69,6 +75,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/data-structure/segtree.hpp
       title: src/data-structure/segtree.hpp
+    - icon: ':warning:'
+      path: src/data-structure/slope_trick.hpp
+      title: src/data-structure/slope_trick.hpp
     - icon: ':heavy_check_mark:'
       path: src/data-structure/sparse_table.hpp
       title: src/data-structure/sparse_table.hpp
@@ -110,6 +119,9 @@ data:
       path: src/graph/low_link.hpp
       title: src/graph/low_link.hpp
     - icon: ':heavy_check_mark:'
+      path: src/graph/manhattan_mst.hpp
+      title: src/graph/manhattan_mst.hpp
+    - icon: ':heavy_check_mark:'
       path: src/graph/max_flow.hpp
       title: src/graph/max_flow.hpp
     - icon: ':heavy_check_mark:'
@@ -130,6 +142,9 @@ data:
       path: src/graph/tree/cartesian_tree.hpp
       title: src/graph/tree/cartesian_tree.hpp
     - icon: ':heavy_check_mark:'
+      path: src/graph/tree/dominator_tree.hpp
+      title: src/graph/tree/dominator_tree.hpp
+    - icon: ':heavy_check_mark:'
       path: src/graph/tree/hld.hpp
       title: src/graph/tree/hld.hpp
     - icon: ':heavy_check_mark:'
@@ -148,6 +163,9 @@ data:
       title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5\
         \ (Extended Euclidean algorithm)"
     - icon: ':heavy_check_mark:'
+      path: src/math/combination.hpp
+      title: src/math/combination.hpp
+    - icon: ':heavy_check_mark:'
       path: src/math/crt.hpp
       title: src/math/crt.hpp
     - icon: ':heavy_check_mark:'
@@ -160,11 +178,26 @@ data:
       path: src/math/floor_sum.hpp
       title: src/math/floor_sum.hpp
     - icon: ':heavy_check_mark:'
+      path: src/math/fwt.hpp
+      title: src/math/fwt.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/math/lagrange_polynomial.hpp
+      title: src/math/lagrange_polynomial.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/math/min_of_mod_of_linear.hpp
+      title: src/math/min_of_mod_of_linear.hpp
+    - icon: ':heavy_check_mark:'
       path: src/math/modinv.hpp
       title: src/math/modinv.hpp
+    - icon: ':warning:'
+      path: src/math/modlog.hpp
+      title: src/math/modlog.hpp
     - icon: ':heavy_check_mark:'
       path: src/math/modpow.hpp
       title: src/math/modpow.hpp
+    - icon: ':warning:'
+      path: src/math/modsqrt.hpp
+      title: src/math/modsqrt.hpp
     - icon: ':heavy_check_mark:'
       path: src/math/primality.hpp
       title: src/math/primality.hpp
@@ -176,6 +209,9 @@ data:
     - icon: ':warning:'
       path: src/memo/ext.cpp
       title: src/memo/ext.cpp
+    - icon: ':warning:'
+      path: src/memo/random.hpp
+      title: src/memo/random.hpp
   - name: src/modint
     pages:
     - icon: ':heavy_check_mark:'
@@ -234,6 +270,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/algorithm/3d_mo.test.cpp
       title: test/algorithm/3d_mo.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/algorithm/LCS_alphabet.test.cpp
+      title: test/algorithm/LCS_alphabet.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/algorithm/doubling.test.2.cpp
       title: test/algorithm/doubling.test.2.cpp
@@ -421,6 +460,9 @@ data:
       path: test/graph/low_link.test.cpp
       title: test/graph/low_link.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/graph/manhattan_mst.test.cpp
+      title: test/graph/manhattan_mst.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/graph/max_flow.test.2.cpp
       title: test/graph/max_flow.test.2.cpp
     - icon: ':heavy_check_mark:'
@@ -449,6 +491,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/tree/cartesian_tree.test.cpp
       title: test/graph/tree/cartesian_tree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/tree/dominator_tree.test.cpp
+      title: test/graph/tree/dominator_tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/graph/tree/hld.test.2.cpp
       title: test/graph/tree/hld.test.2.cpp
@@ -484,6 +529,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/floor_sum.test.cpp
       title: test/math/floor_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/fwt.test.cpp
+      title: test/math/fwt.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/lagrange_polynomial.test.cpp
+      title: test/math/lagrange_polynomial.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/min_of_mod_of_linear.test.cpp
+      title: test/math/min_of_mod_of_linear.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/math/primality.test.cpp
       title: test/math/primality.test.cpp

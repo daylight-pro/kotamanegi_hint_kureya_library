@@ -56,8 +56,8 @@ data:
   timestamp: '2024-12-12 18:01:06+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/data-structure/undo_dsu.test.2.cpp
   - test/data-structure/undo_dsu.test.cpp
+  - test/data-structure/undo_dsu.test.2.cpp
 documentation_of: src/data-structure/undo_dsu.hpp
 layout: document
 redirect_from:

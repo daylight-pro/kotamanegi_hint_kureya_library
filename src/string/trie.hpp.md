@@ -68,8 +68,8 @@ data:
   timestamp: '2024-12-09 18:01:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/string/aho_corasick.test.2.cpp
   - test/string/aho_corasick.test.3.cpp
+  - test/string/aho_corasick.test.2.cpp
   - test/string/aho_corasick.test.cpp
 documentation_of: src/string/trie.hpp
 layout: document

@@ -38,17 +38,17 @@ data:
     \ += x;\n         i += i & -i;\n      }\n   }\n   ll sum(ll r) {\n      ll s =\
     \ 0;\n      while(r) {\n         s += a[r];\n         r -= r & -r;\n      }\n\
     \      return s;\n   }\n   ll sum(ll l, ll r) {  // sum of A[l, r)\n      return\
-    \ sum(r) - sum(l);\n   }\n};\n"
+    \ sum(r) - sum(l);\n   }\n};"
   dependsOn: []
   isVerificationFile: false
   path: src/data-structure/BIT.hpp
   requiredBy: []
-  timestamp: '2024-12-10 18:11:50+09:00'
+  timestamp: '2025-01-03 11:14:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/data-structure/range_tree.test.2.cpp
   - test/data-structure/range_tree.test.cpp
   - test/data-structure/BIT.test.cpp
+  - test/data-structure/range_tree.test.2.cpp
   - test/algorithm/mo.test.cpp
   - test/graph/tree/hld.test.3.cpp
   - test/graph/tree/hld.test.cpp

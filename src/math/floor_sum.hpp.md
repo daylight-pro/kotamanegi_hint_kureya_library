@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/math/floor_sum.test.cpp
     title: test/math/floor_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/min_of_mod_of_linear.test.cpp
+    title: test/math/min_of_mod_of_linear.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -29,6 +32,7 @@ data:
   timestamp: '2024-12-05 15:57:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/math/min_of_mod_of_linear.test.cpp
   - test/math/floor_sum.test.cpp
 documentation_of: src/math/floor_sum.hpp
 layout: document

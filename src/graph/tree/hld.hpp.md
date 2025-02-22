@@ -89,9 +89,9 @@ data:
   timestamp: '2024-12-07 04:40:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/graph/tree/hld.test.2.cpp
   - test/graph/tree/hld.test.3.cpp
   - test/graph/tree/hld.test.cpp
-  - test/graph/tree/hld.test.2.cpp
 documentation_of: src/graph/tree/hld.hpp
 layout: document
 redirect_from:

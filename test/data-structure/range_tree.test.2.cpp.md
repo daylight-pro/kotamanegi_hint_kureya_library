@@ -111,7 +111,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/range_tree.test.2.cpp
   requiredBy: []
-  timestamp: '2024-12-18 15:23:01+09:00'
+  timestamp: '2025-01-03 11:14:39+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/range_tree.test.2.cpp

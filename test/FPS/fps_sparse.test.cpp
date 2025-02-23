@@ -74,5 +74,5 @@ int main() {
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A"
 #include "test/template.hpp"
 #include "src/modint/modint.hpp"
-#include "src/FPS/fps_inv_sparse.hpp"
+#include "src/FPS/fps_sparse.hpp"
 int main() { puts("Hello World"); }

@@ -1,4 +1,4 @@
-// AC確認済み https://judge.yosupo.jp/submission/269281
+// AC確認済み https://atcoder.jp/contests/abc305/submissions/63090763
 
 /*
 #include <bits/stdc++.h>
@@ -72,10 +72,35 @@ vector<mm> conv(vector<mm> a, vector<mm> b) {
    a.resize(s);
    return a;
 }
-
-// Bostan-Mori
-// find [x^N] P(x)/Q(x), O(K log K log N)
-// deg(Q(x)) = K, deg(P(x)) < K, Q[0] = 1
+vector<mm> BerlekampMassey(const vector<mm> &s) {
+   const int N = (int)s.size();
+   vector<mm> b, c;
+   b.reserve(N + 1);
+   c.reserve(N + 1);
+   b.push_back(mm(1));
+   c.push_back(mm(1));
+   mm y = mm(1);
+   for (int ed = 1; ed <= N; ed++) {
+      int l = int(c.size()), m = int(b.size());
+      mm x = 0;
+      for (int i = 0; i < l; i++) x += c[i] * s[ed - l + i];
+      b.emplace_back(mm(0));
+      m ++;
+      if (x.x == 0) continue;
+      mm freq = x / y;
+      if (l < m) {
+         auto tmp = c;
+         c.insert(begin(c), m - l, mm(0));
+         for (int i = 0; i < m; i++) c[m - 1 - i] -= freq * b[m - 1 - i];
+         b = tmp;
+         y = x;
+      } else {
+         for (int i = 0; i < m; i++) c[l - 1 - i] -= freq * b[m - 1 - i];
+      }
+   }
+   reverse(begin(c), end(c));
+   return c;
+}
 mm BostanMori(vector<mm> P, vector<mm> Q, ll N) {
    const int d = Q.size();
    for (; N; N >>= 1) {
@@ -92,20 +117,72 @@ mm BostanMori(vector<mm> P, vector<mm> Q, ll N) {
 }
 
 int main() {
-   ll d, k; cin >> d >> k;
-   vector<mm> a(d), c(d + 1);
-   for(int i = 0; i < d; i ++) {
-      ll x; cin >> x;
-      a[i] = x;
+   ll n, m;
+   cin >> n >> m;
+   string s;
+   vector<ll> str(64, 7);
+   for (ll i = 0; i < m; i++) {
+      cin >> s;
+      ll l = s.size();
+      ll bit = 0;
+      for (ll j = 0; j < l; j++) {
+         if (s[j] == 'b') {
+            bit += (1 << j);
+         }
+      }
+      str[bit] = min(str[bit], l);
    }
-   c[0] = 1;
-   for(int i = 1; i <= d; i ++) {
-      ll x; cin >> x;
-      c[i] = -x;
+
+   auto is_ok = [&](ll len, ll bit) -> bool {
+      for (ll l = 1; l <= len; l++) {
+         ll mask = (1 << l) - 1;
+         for (ll i = 0; i + l <= len; i++) {
+            if (str[(bit >> i) & mask] <= l) return false;
+         }
+      }
+      return true;
+   };
+
+   if (n <= 5) {
+      ll ans = 0;
+      for (ll bit = 0; bit < (1 << n); bit++) {
+         if (is_ok(n, bit)) ans++;
+      }
+      cout << ans << "\n";
+      return 0;
    }
-   a = conv(a, c);
-   a.resize(d);
-   cout << BostanMori(a, c, k).x << endl;
+
+   vector<mm> v(240, 0);
+   vector<mm> dp(32, 0);
+   for (ll i = 0; i < 4; i++) {
+      ll num = 1 << i;
+      for (ll bit = 0; bit < num; bit++) {
+         if (is_ok(i, bit)) v[i] += 1;
+      }
+   }
+   for (ll bit = 0; bit < 32; bit++) {
+      if (is_ok(5, bit)) {
+         dp[bit] += 1;
+         v[4] += 1;
+      }
+   }
+   for (ll i = 5; i < 240; i++) {
+      vector<mm> nx(32, 0);
+      for (ll bit = 0; bit < 32; bit++) {
+         for (ll j = 0; j < 2; j++) {
+            if (is_ok(6, (j << 5) | bit)) {
+               nx[(bit >> 1) | (j << 4)] += dp[bit];
+               v[i] += dp[bit];
+            }
+         }
+      }
+      swap(nx, dp);
+   }
+   vector<mm> a = BerlekampMassey(v);
+   vector<mm> b = conv(v, a);
+   b.resize(a.size() - 1);
+
+   cout << BostanMori(b, a, n - 1).x << "\n";
    return 0;
 }
 */
@@ -114,5 +191,6 @@ int main() {
 #include "test/template.hpp"
 #include "src/modint/modint.hpp"
 #include "src/FPS/FFT.hpp"
+#include "src/FPS/barlekamp_massey.hpp"
 #include "src/FPS/bostan_mori.hpp"
 int main() { puts("Hello World"); }

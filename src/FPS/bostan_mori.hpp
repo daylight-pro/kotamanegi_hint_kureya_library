@@ -1,6 +1,6 @@
 // find [x^N] P(x)/Q(x), O(K log K log N)
 // deg(Q(x)) = K, deg(P(x)) < K, Q[0] = 1
-template <typename T> T BostanMori(std::vector<T> P, std::vector<T> Q, ll N) {
+mm BostanMori(vector<mm> P, vector<mm> Q, ll N) {
    const int d = Q.size();
    for (; N; N >>= 1) {
       auto Q_neg = Q;

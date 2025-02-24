@@ -99,41 +99,40 @@ data:
     \ V) {\n      mt = mt19937_64(chrono::steady_clock::now().time_since_epoch().count());\n\
     \      rand = uniform_int_distribution<uint64_t>(1, 1e18);\n      for(auto v :\
     \ V) { push_back(v); }\n   }\n\n   size_t size() { return size_t(get_cnt(root));\
-    \ }\n   // f63788 (Common)\n\n   void insert(int ind, S x) { root = insert(root,\
-    \ ind, new_node(x, rand(mt))); }\n   // dc467c (UnOrdered)\n\n   void push_back(S\
-    \ x) { root = insert(root, int(size()), new_node(x, rand(mt))); }\n   // 7fa616\
-    \ (Unordered)\n\n   void ordered_insert(S x) {\n      int ind = lower_search(root,\
-    \ x);\n      insert(ind, x);\n   }  // 539d77 (Ordered)\n\n   // Count elements\
-    \ in [lower, upper)\n   int value_range_cnt(S lower, S upper) {\n      int L =\
-    \ lower_search(root, lower);\n      int R = lower_search(root, upper);\n     \
-    \ return R - L;\n   }  // 2d4406 (Ordered)\n\n   // Sum of elements in [lower,\
-    \ upper)\n   S value_range_prod(S lower, S upper) {\n      int L = lower_search(root,\
-    \ lower);\n      int R = lower_search(root, upper);\n      if(L == R) return e();\n\
-    \      return query(L, R);\n   }  // 27b9d4 (Ordered)\n\n   // erase element x\
-    \ cnt times (cnt = -1 -> erase all x)\n   int erase_value(S x, int cnt = -1) {\n\
-    \      int L = lower_search(root, x);\n      int R = upper_search(root, x);\n\
-    \      if(cnt != -1) chmin(R, L + cnt);\n      root = erase_range(root, L, R);\n\
-    \      return R - L;\n   }  // 5c60fd (Ordered)\n\n   int lower_search(S x) {\
-    \ return lower_search(root, x); }\n   // 9731cc (Ordered)\n\n   int upper_search(S\
-    \ x) { return upper_search(root, x); }\n   // ac5aa0 (Ordered)\n\n   void apply(int\
-    \ l, int r, F f) { root = apply(root, l, r, f); }\n   // 905a19 (Unordered)\n\n\
-    \   void erase(int ind) { root = _erase(root, ind); }\n   // ff257f (Common)\n\
-    \n   void erase(int l, int r) {\n      auto [tt, t3] = split(root, r);\n     \
-    \ auto [t1, t2] = split(tt, l);\n      root = merge(t1, t3);\n   }\n   // f9ff4a\
-    \ (Common)\n\n   // l .. r-1 -> r-1 .. l\n   void reverse(int l, int r) { root\
-    \ = reverse(root, l, r); }\n   // 40df7d (Unordered)\n\n   // l .. m-1, m .. r-1\
-    \ -> m .. r-1, l .. m-1\n   void rotate(int l, int m, int r) { root = rotate(root,\
-    \ l, m, r); }\n   // e21b85 (Unordered)\n\n   void set(int k, S v) { root = set(root,\
-    \ k, v); }\n   // 4ae943 (Unordered)\n\n   // min k \\in [l,r) such that op(tr[k],\
-    \ x) != x\n   int find(int l, int r, S x, bool left = true) {\n      auto [t1,\
-    \ tt] = split(root, l);\n      auto [t2, t3] = split(tt, r - l);\n      int ret\
-    \ = _find(t2, x, l, left);\n      if(ret == -1) ret = r;\n      root = merge(merge(t1,\
-    \ t2), t3);\n      return ret;\n   }  // 4f1699 (Common)\n\n   S prod(int l, int\
-    \ r) {\n      if(l == r) return S(0);\n      auto [t, rt] = query(root, l, r);\n\
-    \      root = rt;\n      return t;\n   }  // c46ac4 (Common)\n\n   S operator[](int\
-    \ ind) {\n      auto [tt, t3] = split(root, ind + 1);\n      auto [t1, t2] = split(tt,\
-    \ ind);\n      S ret = acc[t2];\n      root = merge(merge(t1, t2), t3);\n    \
-    \  return ret;\n   }  // d2546e (Common)\n};\n#line 5 \"test/data-structure/treap.test.cpp\"\
+    \ }  // f63788 (Common)\n\n   void insert(int ind, S x) { root = insert(root,\
+    \ ind, new_node(x, rand(mt))); }  // dc467c (UnOrdered)\n\n   void push_back(S\
+    \ x) { root = insert(root, int(size()), new_node(x, rand(mt))); }  // 7fa616 (Unordered)\n\
+    \n   void ordered_insert(S x) {\n      int ind = lower_search(root, x);\n    \
+    \  insert(ind, x);\n   }  // 539d77 (Ordered)\n\n   // Count elements in [lower,\
+    \ upper)\n   int value_range_cnt(S lower, S upper) {\n      int L = lower_search(root,\
+    \ lower);\n      int R = lower_search(root, upper);\n      return R - L;\n   }\
+    \  // 2d4406 (Ordered)\n\n   // Sum of elements in [lower, upper)\n   S value_range_prod(S\
+    \ lower, S upper) {\n      int L = lower_search(root, lower);\n      int R = lower_search(root,\
+    \ upper);\n      if(L == R) return e();\n      return query(L, R);\n   }  // 27b9d4\
+    \ (Ordered)\n\n   // erase element x cnt times (cnt = -1 -> erase all x)\n   int\
+    \ erase_value(S x, int cnt = -1) {\n      int L = lower_search(root, x);\n   \
+    \   int R = upper_search(root, x);\n      if(cnt != -1) chmin(R, L + cnt);\n \
+    \     root = erase_range(root, L, R);\n      return R - L;\n   }  // 5c60fd (Ordered)\n\
+    \n   int lower_search(S x) { return lower_search(root, x); }  // 9731cc (Ordered)\n\
+    \n   int upper_search(S x) { return upper_search(root, x); }  // ac5aa0 (Ordered)\n\
+    \n   void apply(int l, int r, F f) { root = apply(root, l, r, f); }  // 905a19\
+    \ (Unordered)\n\n   void erase(int ind) { root = _erase(root, ind); }\n   // ff257f\
+    \ (Common)\n\n   void erase(int l, int r) {\n      auto [tt, t3] = split(root,\
+    \ r);\n      auto [t1, t2] = split(tt, l);\n      root = merge(t1, t3);\n   }\
+    \  // f9ff4a (Common)\n\n   // l .. r-1 -> r-1 .. l\n   void reverse(int l, int\
+    \ r) { root = reverse(root, l, r); }  // 40df7d (Unordered)\n\n   // l .. m-1,\
+    \ m .. r-1 -> m .. r-1, l .. m-1\n   void rotate(int l, int m, int r) { root =\
+    \ rotate(root, l, m, r); }  // e21b85 (Unordered)\n\n   void set(int k, S v) {\
+    \ root = set(root, k, v); }  // 4ae943 (Unordered)\n\n   // min k \\in [l,r) such\
+    \ that op(tr[k], x) != x\n   int find(int l, int r, S x, bool left = true) {\n\
+    \      auto [t1, tt] = split(root, l);\n      auto [t2, t3] = split(tt, r - l);\n\
+    \      int ret = _find(t2, x, l, left);\n      if(ret == -1) ret = r;\n      root\
+    \ = merge(merge(t1, t2), t3);\n      return ret;\n   }  // 4f1699 (Common)\n\n\
+    \   S prod(int l, int r) {\n      if(l == r) return S(0);\n      auto [t, rt]\
+    \ = query(root, l, r);\n      root = rt;\n      return t;\n   }  // c46ac4 (Common)\n\
+    \n   S operator[](int ind) {\n      auto [tt, t3] = split(root, ind + 1);\n  \
+    \    auto [t1, t2] = split(tt, ind);\n      S ret = acc[t2];\n      root = merge(merge(t1,\
+    \ t2), t3);\n      return ret;\n   }  // d2546e (Common)\n};\n#line 5 \"test/data-structure/treap.test.cpp\"\
     \n\nconst ll mod = 998244353;\nstruct mm {\n   ll x;\n   mm(ll x_ = 0) : x(x_\
     \ % mod) {\n      if(x < 0) x += mod;\n   }\n   friend mm operator+(mm a, mm b)\
     \ { return a.x + b.x; }\n   friend mm operator-(mm a, mm b) { return a.x - b.x;\
@@ -198,7 +197,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/treap.test.cpp
   requiredBy: []
-  timestamp: '2024-12-13 03:24:48+09:00'
+  timestamp: '2025-02-25 04:14:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/treap.test.cpp

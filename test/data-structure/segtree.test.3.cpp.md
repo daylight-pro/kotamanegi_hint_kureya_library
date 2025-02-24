@@ -33,33 +33,30 @@ data:
     \ int)(_n));\n      log = countr_zero((unsigned int)size);\n      d = vector<S>(2\
     \ * size, e());\n      for(int i = 0; i < _n; i++) d[size + i] = v[i];\n     \
     \ for(int i = size - 1; i >= 1; i--) { update(i); }\n   }\n\n   void set(int p,\
-    \ S x) {\n      // assert(0 <= p && p < _n);\n      p += size;\n      d[p] = x;\n\
-    \      for(int i = 1; i <= log; i++) update(p >> i);\n   }\n\n   S get(int p)\
-    \ const {\n      // assert(0 <= p && p < _n);\n      return d[p + size];\n   }\n\
-    \n   S prod(int l, int r) const {\n      // assert(0 <= l && l <= r && r <= _n);\n\
-    \      S sml = e(), smr = e();\n      l += size;\n      r += size;\n\n      while(l\
-    \ < r) {\n         if(l & 1) sml = op(sml, d[l++]);\n         if(r & 1) smr =\
-    \ op(d[--r], smr);\n         l >>= 1;\n         r >>= 1;\n      }\n      return\
-    \ op(sml, smr);\n   }\n\n   S all_prod() const { return d[1]; }\n\n   template<class\
-    \ F> int max_right(int l, F f) {\n      // assert(0 <= l && l <= _n);\n      //\
-    \ assert(f(e()));\n      if(l == _n) return _n;\n      l += size;\n      S sm\
-    \ = e();\n      do {\n         while(l % 2 == 0) l >>= 1;\n         if(!f(op(sm,\
-    \ d[l]))) {\n            while(l < size) {\n               l = (2 * l);\n    \
-    \           if(f(op(sm, d[l]))) {\n                  sm = op(sm, d[l]);\n    \
-    \              l++;\n               }\n            }\n            return l - size;\n\
-    \         }\n         sm = op(sm, d[l]);\n         l++;\n      } while((l & -l)\
-    \ != l);\n      return _n;\n   }  // faa03f\n\n   template<class F> int min_left(int\
-    \ r, F f) {\n      // assert(0 <= r && r <= _n);\n      // assert(f(e()));\n \
-    \     if(r == 0) return 0;\n      r += size;\n      S sm = e();\n      do {\n\
-    \         r--;\n         while(r > 1 && (r % 2)) r >>= 1;\n         if(!f(op(d[r],\
-    \ sm))) {\n            while(r < size) {\n               r = (2 * r + 1);\n  \
-    \             if(f(op(d[r], sm))) {\n                  sm = op(d[r], sm);\n  \
-    \                r--;\n               }\n            }\n            return r +\
-    \ 1 - size;\n         }\n         sm = op(d[r], sm);\n      } while((r & -r) !=\
-    \ r);\n      return 0;\n   }  // efa466\n\n   private:\n   int _n, size, log;\n\
-    \   vector<S> d;\n\n   void update(int k) { d[k] = op(d[2 * k], d[2 * k + 1]);\
-    \ }\n};\n#line 5 \"test/data-structure/segtree.test.3.cpp\"\n\nll op(ll a, ll\
-    \ b) { return min(a, b); }\nll e() { return 1e9 + 100; }\n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
+    \ S x) {\n      p += size;\n      d[p] = x;\n      for(int i = 1; i <= log; i++)\
+    \ update(p >> i);\n   }\n\n   S get(int p) const { return d[p + size]; }\n\n \
+    \  S prod(int l, int r) const {\n      S sml = e(), smr = e();\n      l += size;\n\
+    \      r += size;\n\n      while(l < r) {\n         if(l & 1) sml = op(sml, d[l++]);\n\
+    \         if(r & 1) smr = op(d[--r], smr);\n         l >>= 1;\n         r >>=\
+    \ 1;\n      }\n      return op(sml, smr);\n   }\n\n   S all_prod() const { return\
+    \ d[1]; }\n\n   template<class F> int max_right(int l, F f) {\n      if(l == _n)\
+    \ return _n;\n      l += size;\n      S sm = e();\n      do {\n         while(l\
+    \ % 2 == 0) l >>= 1;\n         if(!f(op(sm, d[l]))) {\n            while(l < size)\
+    \ {\n               l = (2 * l);\n               if(f(op(sm, d[l]))) {\n     \
+    \             sm = op(sm, d[l]);\n                  l++;\n               }\n \
+    \           }\n            return l - size;\n         }\n         sm = op(sm,\
+    \ d[l]);\n         l++;\n      } while((l & -l) != l);\n      return _n;\n   }\
+    \  // faa03f\n\n   template<class F> int min_left(int r, F f) {\n      if(r ==\
+    \ 0) return 0;\n      r += size;\n      S sm = e();\n      do {\n         r--;\n\
+    \         while(r > 1 && (r % 2)) r >>= 1;\n         if(!f(op(d[r], sm))) {\n\
+    \            while(r < size) {\n               r = (2 * r + 1);\n            \
+    \   if(f(op(d[r], sm))) {\n                  sm = op(d[r], sm);\n            \
+    \      r--;\n               }\n            }\n            return r + 1 - size;\n\
+    \         }\n         sm = op(d[r], sm);\n      } while((r & -r) != r);\n    \
+    \  return 0;\n   }  // efa466\n\n   private:\n   int _n, size, log;\n   vector<S>\
+    \ d;\n\n   void update(int k) { d[k] = op(d[2 * k], d[2 * k + 1]); }\n};\n#line\
+    \ 5 \"test/data-structure/segtree.test.3.cpp\"\n\nll op(ll a, ll b) { return min(a,\
+    \ b); }\nll e() { return 1e9 + 100; }\n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n\
     \   vector<ll> A{3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5};\n   segtree<ll, op, e> seg(A);\n\
     \   assert(seg.prod(0, 11) == 1);\n   assert(seg.min_left(11, [](ll x) { return\
     \ x >= 2; }) == 4);\n   assert(seg.max_right(0, [](ll x) { return x > 0; }) ==\
@@ -84,7 +81,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/segtree.test.3.cpp
   requiredBy: []
-  timestamp: '2024-12-10 18:11:50+09:00'
+  timestamp: '2025-02-25 04:14:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/segtree.test.3.cpp

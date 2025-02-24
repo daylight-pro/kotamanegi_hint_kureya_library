@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/eulerian_trail_directed"
 
 #include "test/template.hpp"
-#include "src/data-structure/dsu.hpp"
+#include "test/data-structure/dsu.hpp"
 #include "src/graph/eulerian_trail.hpp"
 
 int main() {

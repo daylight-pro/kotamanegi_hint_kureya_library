@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/algorithm/tree_mo.test.cpp
-    title: test/algorithm/tree_mo.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"test/graph/tree/offline_lca.hpp\"\nvector<int> offline_lca(const\
@@ -47,9 +44,8 @@ data:
   path: test/graph/tree/offline_lca.hpp
   requiredBy: []
   timestamp: '2025-02-24 19:11:27+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/algorithm/tree_mo.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: test/graph/tree/offline_lca.hpp
 layout: document
 redirect_from:

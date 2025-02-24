@@ -4,9 +4,6 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/algorithm/tree_mo.test.cpp
-    title: test/algorithm/tree_mo.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/graph/eulerian_trail.test.directed.cpp
     title: test/graph/eulerian_trail.test.directed.cpp
   - icon: ':heavy_check_mark:'
@@ -63,7 +60,6 @@ data:
   timestamp: '2025-01-07 15:52:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/algorithm/tree_mo.test.cpp
   - test/graph/eulerian_trail.test.undirected.cpp
   - test/graph/eulerian_trail.test.directed.cpp
 documentation_of: test/data-structure/dsu.hpp

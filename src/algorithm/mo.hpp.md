@@ -6,9 +6,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/algorithm/mo.test.cpp
     title: test/algorithm/mo.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/algorithm/tree_mo.test.cpp
-    title: test/algorithm/tree_mo.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -49,7 +46,6 @@ data:
   timestamp: '2024-12-16 16:28:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/algorithm/tree_mo.test.cpp
   - test/algorithm/mo.test.cpp
 documentation_of: src/algorithm/mo.hpp
 layout: document

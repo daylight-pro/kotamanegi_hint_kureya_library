@@ -8,9 +8,6 @@ data:
       title: "FFT (\u9AD8\u901F\u30D5\u30FC\u30EA\u30A8\u5909\u63DB / \u7573\u307F\
         \u8FBC\u307F)"
     - icon: ':heavy_check_mark:'
-      path: src/FPS/FFT_fast.hpp
-      title: FFT (bit reversal ver.)
-    - icon: ':heavy_check_mark:'
       path: src/FPS/barlekamp_massey.hpp
       title: src/FPS/barlekamp_massey.hpp
     - icon: ':heavy_check_mark:'
@@ -45,17 +42,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/algorithm/rollback_mo.hpp
       title: src/algorithm/rollback_mo.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/algorithm/tree_mo.hpp
-      title: src/algorithm/tree_mo.hpp
   - name: src/data-structure
     pages:
-    - icon: ':heavy_check_mark:'
-      path: src/data-structure/2dBIT.hpp
-      title: src/data-structure/2dBIT.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/data-structure/FastSet.hpp
-      title: "\u9AD8\u901F bitset (64 \u5206\u6728)"
+    - icon: ':warning:'
+      path: src/data-structure/2d_segtree.cpp
+      title: src/data-structure/2d_segtree.cpp
     - icon: ':heavy_check_mark:'
       path: src/data-structure/beats_example.cpp
       title: src/data-structure/beats_example.cpp
@@ -74,6 +65,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/data-structure/li_chao.hpp
       title: src/data-structure/li_chao.hpp
+    - icon: ':warning:'
+      path: src/data-structure/persistent-array.cpp
+      title: src/data-structure/persistent-array.cpp
+    - icon: ':warning:'
+      path: src/data-structure/persistent-segtree.cpp
+      title: src/data-structure/persistent-segtree.cpp
+    - icon: ':warning:'
+      path: src/data-structure/persistent-uf.cpp
+      title: src/data-structure/persistent-uf.cpp
     - icon: ':heavy_check_mark:'
       path: src/data-structure/potential_dsu.hpp
       title: src/data-structure/potential_dsu.hpp
@@ -87,9 +87,6 @@ data:
       path: src/data-structure/segtree.hpp
       title: src/data-structure/segtree.hpp
     - icon: ':heavy_check_mark:'
-      path: src/data-structure/sparse_table.hpp
-      title: src/data-structure/sparse_table.hpp
-    - icon: ':heavy_check_mark:'
       path: src/data-structure/treap.hpp
       title: src/data-structure/treap.hpp
     - icon: ':heavy_check_mark:'
@@ -100,7 +97,7 @@ data:
       title: src/data-structure/wavelet_matrix.hpp
   - name: src/extra
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: src/extra/modint_fast.hpp
       title: "32 bit \u3067\u52A0\u6E1B\u7B97\u3092\u3061\u3083\u3093\u3068\u66F8\u3044\
         \u305F Modint"
@@ -257,7 +254,7 @@ data:
       title: test/data-structure/dsu.hpp
   - name: test/graph/tree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: test/graph/tree/offline_lca.hpp
       title: test/graph/tree/offline_lca.hpp
   - name: test/math
@@ -276,9 +273,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/FPS/FFT.test.cpp
       title: test/FPS/FFT.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/FPS/FFT_fast.test.cpp
-      title: test/FPS/FFT_fast.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/FPS/barlekamp_massey.test.cpp
       title: test/FPS/barlekamp_massey.test.cpp
@@ -314,17 +308,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/algorithm/rollback_mo.test.cpp
       title: test/algorithm/rollback_mo.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/algorithm/tree_mo.test.cpp
-      title: test/algorithm/tree_mo.test.cpp
   - name: test/data-structure
     pages:
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/2dBIT.test.cpp
-      title: test/data-structure/2dBIT.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/FastSet.test.cpp
-      title: test/data-structure/FastSet.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data-structure/beats.test.cpp
       title: test/data-structure/beats.test.cpp
@@ -385,9 +370,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/segtree.test.cpp
       title: test/data-structure/segtree.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/sparse_table.test.cpp
-      title: test/data-structure/sparse_table.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data-structure/treap.test.2.cpp
       title: test/data-structure/treap.test.2.cpp

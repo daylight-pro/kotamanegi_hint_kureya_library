@@ -7,9 +7,6 @@ data:
     path: test/FPS/FFT.test.cpp
     title: test/FPS/FFT.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/FPS/FFT_fast.test.cpp
-    title: test/FPS/FFT_fast.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/FPS/barlekamp_massey.test.cpp
     title: test/FPS/barlekamp_massey.test.cpp
   - icon: ':heavy_check_mark:'
@@ -42,15 +39,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/algorithm/rollback_mo.test.cpp
     title: test/algorithm/rollback_mo.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/algorithm/tree_mo.test.cpp
-    title: test/algorithm/tree_mo.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/2dBIT.test.cpp
-    title: test/data-structure/2dBIT.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/FastSet.test.cpp
-    title: test/data-structure/FastSet.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/data-structure/beats.test.cpp
     title: test/data-structure/beats.test.cpp
@@ -111,9 +99,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data-structure/segtree.test.cpp
     title: test/data-structure/segtree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/sparse_table.test.cpp
-    title: test/data-structure/sparse_table.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/data-structure/treap.test.2.cpp
     title: test/data-structure/treap.test.2.cpp
@@ -367,7 +352,6 @@ data:
   - test/data-structure/undo_dsu.test.cpp
   - test/data-structure/wavelet_matrix.test.cpp
   - test/data-structure/treap.test.cpp
-  - test/data-structure/2dBIT.test.cpp
   - test/data-structure/binary_trie.test.cpp
   - test/data-structure/wavelet_matrix.test.3.cpp
   - test/data-structure/range_set.test.2.cpp
@@ -376,7 +360,6 @@ data:
   - test/data-structure/segtree.test.3.cpp
   - test/data-structure/binary_trie.test.3.cpp
   - test/data-structure/beats.test.cpp
-  - test/data-structure/FastSet.test.cpp
   - test/data-structure/potential_dsu.test.3.cpp
   - test/data-structure/cht_slope_monotone.test.cpp
   - test/data-structure/disjoint_sparse_table.test.cpp
@@ -385,11 +368,9 @@ data:
   - test/data-structure/potential_dsu.test.cpp
   - test/data-structure/segtree.test.cpp
   - test/data-structure/range_tree.test.2.cpp
-  - test/data-structure/sparse_table.test.cpp
   - test/data-structure/undo_dsu.test.2.cpp
   - test/algorithm/larsch.test.cpp
   - test/algorithm/rollback_mo.test.cpp
-  - test/algorithm/tree_mo.test.cpp
   - test/algorithm/min_plus_conv.test.cpp
   - test/algorithm/3d_mo.test.cpp
   - test/algorithm/min_plus_concave.test.cpp
@@ -430,7 +411,6 @@ data:
   - test/geometry/is_convex.test.cpp
   - test/template.test.cpp
   - test/FPS/barlekamp_massey.test.cpp
-  - test/FPS/FFT_fast.test.cpp
   - test/FPS/relaxed_conv.test.cpp
   - test/FPS/fps.test.cpp
   - test/FPS/fps_sparse.test.cpp

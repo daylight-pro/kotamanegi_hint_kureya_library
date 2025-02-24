@@ -7,7 +7,7 @@ code {
 }
 
 nav#toc {
-    break-after: column;
+    break-after: auto;
 }
 
 @media print {

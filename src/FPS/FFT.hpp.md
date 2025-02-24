@@ -13,6 +13,9 @@ data:
     path: test/FPS/bostan_mori.test.cpp
     title: test/FPS/bostan_mori.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/FPS/fps.test.cpp
+    title: test/FPS/fps.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/FPS/relaxed_conv.test.cpp
     title: test/FPS/relaxed_conv.test.cpp
   _isVerificationFailed: false
@@ -56,6 +59,7 @@ data:
   verifiedWith:
   - test/FPS/barlekamp_massey.test.cpp
   - test/FPS/relaxed_conv.test.cpp
+  - test/FPS/fps.test.cpp
   - test/FPS/FFT.test.cpp
   - test/FPS/bostan_mori.test.cpp
 documentation_of: src/FPS/FFT.hpp

@@ -13,8 +13,8 @@ data:
     path: test/FPS/bostan_mori.test.cpp
     title: test/FPS/bostan_mori.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/FPS/fps_sparse.test.2.cpp
-    title: test/FPS/fps_sparse.test.2.cpp
+    path: test/FPS/fps.test.cpp
+    title: test/FPS/fps.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/FPS/fps_sparse.test.cpp
     title: test/FPS/fps_sparse.test.cpp
@@ -84,8 +84,8 @@ data:
   - test/data-structure/segtree.test.2.cpp
   - test/math/lagrange_polynomial.test.cpp
   - test/FPS/barlekamp_massey.test.cpp
-  - test/FPS/fps_sparse.test.2.cpp
   - test/FPS/relaxed_conv.test.cpp
+  - test/FPS/fps.test.cpp
   - test/FPS/fps_sparse.test.cpp
   - test/FPS/FFT.test.cpp
   - test/FPS/bostan_mori.test.cpp

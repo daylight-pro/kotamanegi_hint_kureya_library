@@ -7,6 +7,9 @@ data:
     path: test/algorithm/larsch.test.cpp
     title: test/algorithm/larsch.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/algorithm/min_plus_concave.test.cpp
+    title: test/algorithm/min_plus_concave.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/algorithm/min_plus_conv.test.cpp
     title: test/algorithm/min_plus_conv.test.cpp
   _isVerificationFailed: false
@@ -56,6 +59,7 @@ data:
   verifiedWith:
   - test/algorithm/larsch.test.cpp
   - test/algorithm/min_plus_conv.test.cpp
+  - test/algorithm/min_plus_concave.test.cpp
 documentation_of: src/algorithm/min_plus_conv.hpp
 layout: document
 redirect_from:

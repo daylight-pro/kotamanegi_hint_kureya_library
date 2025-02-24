@@ -16,8 +16,8 @@ data:
     path: test/FPS/bostan_mori.test.cpp
     title: test/FPS/bostan_mori.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/FPS/fps_sparse.test.2.cpp
-    title: test/FPS/fps_sparse.test.2.cpp
+    path: test/FPS/fps.test.cpp
+    title: test/FPS/fps.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/FPS/fps_sparse.test.cpp
     title: test/FPS/fps_sparse.test.cpp
@@ -30,6 +30,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/algorithm/larsch.test.cpp
     title: test/algorithm/larsch.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/algorithm/min_plus_concave.test.cpp
+    title: test/algorithm/min_plus_concave.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/algorithm/min_plus_conv.test.cpp
     title: test/algorithm/min_plus_conv.test.cpp
@@ -389,6 +392,7 @@ data:
   - test/algorithm/tree_mo.test.cpp
   - test/algorithm/min_plus_conv.test.cpp
   - test/algorithm/3d_mo.test.cpp
+  - test/algorithm/min_plus_concave.test.cpp
   - test/algorithm/mo.test.cpp
   - test/string/aho_corasick.test.3.cpp
   - test/string/LCP.test.cpp
@@ -427,8 +431,8 @@ data:
   - test/template.test.cpp
   - test/FPS/barlekamp_massey.test.cpp
   - test/FPS/FFT_fast.test.cpp
-  - test/FPS/fps_sparse.test.2.cpp
   - test/FPS/relaxed_conv.test.cpp
+  - test/FPS/fps.test.cpp
   - test/FPS/fps_sparse.test.cpp
   - test/FPS/FFT.test.cpp
   - test/FPS/bostan_mori.test.cpp

@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/factorize"
 #include "test/template.hpp"
 #include "src/math/modinv.hpp"
-#include "src/math/modpow.hpp"
+#include "test/math/modpow.hpp"
 #include "src/math/primality.hpp"
 #include "src/math/rho.hpp"
 

@@ -2,7 +2,7 @@
 
 #include "test/template.hpp"
 #include "src/math/modinv.hpp"
-#include "src/math/modpow.hpp"
+#include "test/math/modpow.hpp"
 #include "src/math/primality.hpp"
 
 int main() {

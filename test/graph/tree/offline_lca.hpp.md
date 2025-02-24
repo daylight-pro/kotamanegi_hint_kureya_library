@@ -6,15 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/algorithm/tree_mo.test.cpp
     title: test/algorithm/tree_mo.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/graph/tree/offline_lca.test.cpp
-    title: test/graph/tree/offline_lca.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/graph/tree/offline_lca.hpp\"\nvector<int> offline_lca(const\
+  bundledCode: "#line 1 \"test/graph/tree/offline_lca.hpp\"\nvector<int> offline_lca(const\
     \ vector<vector<int>>& g, const vector<pair<int, int>>& qs, int root = 0) {\n\
     \   int N = size(g);\n   int Q = size(qs);\n   dsu d(N);\n   vector<int> mark(N),\
     \ ptr(N), ans(Q, -1);\n   stack<int> st;\n   st.push(root);\n   for(auto& [l,\
@@ -47,17 +44,16 @@ data:
     \     }\n         st.pop();\n      }\n   }\n   return ans;\n};"
   dependsOn: []
   isVerificationFile: false
-  path: src/graph/tree/offline_lca.hpp
+  path: test/graph/tree/offline_lca.hpp
   requiredBy: []
-  timestamp: '2024-12-18 23:28:16+09:00'
+  timestamp: '2025-02-24 19:11:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/algorithm/tree_mo.test.cpp
-  - test/graph/tree/offline_lca.test.cpp
-documentation_of: src/graph/tree/offline_lca.hpp
+documentation_of: test/graph/tree/offline_lca.hpp
 layout: document
 redirect_from:
-- /library/src/graph/tree/offline_lca.hpp
-- /library/src/graph/tree/offline_lca.hpp.html
-title: src/graph/tree/offline_lca.hpp
+- /library/test/graph/tree/offline_lca.hpp
+- /library/test/graph/tree/offline_lca.hpp.html
+title: test/graph/tree/offline_lca.hpp
 ---

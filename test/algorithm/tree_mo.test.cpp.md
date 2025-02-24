@@ -11,11 +11,11 @@ data:
     path: src/data-structure/binary_trie.hpp
     title: src/data-structure/binary_trie.hpp
   - icon: ':heavy_check_mark:'
-    path: src/graph/tree/offline_lca.hpp
-    title: src/graph/tree/offline_lca.hpp
-  - icon: ':heavy_check_mark:'
     path: test/data-structure/dsu.hpp
     title: test/data-structure/dsu.hpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/tree/offline_lca.hpp
+    title: test/graph/tree/offline_lca.hpp
   - icon: ':heavy_check_mark:'
     path: test/template.hpp
     title: test/template.hpp
@@ -103,10 +103,10 @@ data:
     \ i++) result[i].reserve(group_size[i]);\n      for(int i = 0; i < _n; i++) result[leader_buf[i]].push_back(i);\n\
     \      result.erase(remove_if(result.begin(), result.end(), [&](const vector<int>&\
     \ v) { return v.empty(); }),\n                   result.end());\n      return\
-    \ result;\n   }  // bf3a1e\n};\n#line 1 \"src/graph/tree/offline_lca.hpp\"\nvector<int>\
-    \ offline_lca(const vector<vector<int>>& g, const vector<pair<int, int>>& qs,\
-    \ int root = 0) {\n   int N = size(g);\n   int Q = size(qs);\n   dsu d(N);\n \
-    \  vector<int> mark(N), ptr(N), ans(Q, -1);\n   stack<int> st;\n   st.push(root);\n\
+    \ result;\n   }  // bf3a1e\n};\n#line 1 \"test/graph/tree/offline_lca.hpp\"\n\
+    vector<int> offline_lca(const vector<vector<int>>& g, const vector<pair<int, int>>&\
+    \ qs, int root = 0) {\n   int N = size(g);\n   int Q = size(qs);\n   dsu d(N);\n\
+    \   vector<int> mark(N), ptr(N), ans(Q, -1);\n   stack<int> st;\n   st.push(root);\n\
     \   for(auto& [l, r] : qs) {\n      mark[l]++;\n      mark[r]++;\n   }\n\n   vector<vector<pair<int,\
     \ int>>> q(N);\n   for(int i = 0; i < N; i++) {\n      q[i].reserve(mark[i]);\n\
     \      mark[i] = -1;\n      ptr[i] = size(g[i]);\n   }\n   for(int i = 0; i <\
@@ -178,7 +178,7 @@ data:
     \ \"\\n\";\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/0489\"\n\n#include\
     \ \"test/template.hpp\"\n#include \"src/algorithm/mo.hpp\"\n#include \"src/algorithm/tree_mo.hpp\"\
-    \n#include \"test/data-structure/dsu.hpp\"\n#include \"src/graph/tree/offline_lca.hpp\"\
+    \n#include \"test/data-structure/dsu.hpp\"\n#include \"test/graph/tree/offline_lca.hpp\"\
     \n#include \"src/data-structure/binary_trie.hpp\"\n\nint main() {\n   int N, M;\n\
     \   cin >> N >> M;\n   vector<ll> B(N);\n   for(auto& b : B) cin >> b;\n   ll\
     \ base = *min_element(all(B));\n   vector<vector<int>> G(N);\n   for(int i = 0;\
@@ -206,12 +206,12 @@ data:
   - src/algorithm/mo.hpp
   - src/algorithm/tree_mo.hpp
   - test/data-structure/dsu.hpp
-  - src/graph/tree/offline_lca.hpp
+  - test/graph/tree/offline_lca.hpp
   - src/data-structure/binary_trie.hpp
   isVerificationFile: true
   path: test/algorithm/tree_mo.test.cpp
   requiredBy: []
-  timestamp: '2025-01-07 15:52:09+09:00'
+  timestamp: '2025-02-24 19:11:27+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/algorithm/tree_mo.test.cpp

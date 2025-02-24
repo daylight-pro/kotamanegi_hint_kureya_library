@@ -13,18 +13,6 @@ data:
     path: test/algorithm/3d_mo.test.cpp
     title: test/algorithm/3d_mo.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/algorithm/LCS_alphabet.test.cpp
-    title: test/algorithm/LCS_alphabet.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/algorithm/doubling.test.2.cpp
-    title: test/algorithm/doubling.test.2.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/algorithm/doubling.test.3.cpp
-    title: test/algorithm/doubling.test.3.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/algorithm/doubling.test.cpp
-    title: test/algorithm/doubling.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/algorithm/mo.test.cpp
     title: test/algorithm/mo.test.cpp
   - icon: ':heavy_check_mark:'
@@ -208,9 +196,6 @@ data:
     path: test/graph/scc.test.cpp
     title: test/graph/scc.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/graph/topological_sort.test.cpp
-    title: test/graph/topological_sort.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/graph/tree/cartesian_tree.test.cpp
     title: test/graph/tree/cartesian_tree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -226,9 +211,6 @@ data:
     path: test/graph/tree/hld.test.cpp
     title: test/graph/tree/hld.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/graph/tree/offline_lca.test.cpp
-    title: test/graph/tree/offline_lca.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/graph/tree/rerooting.test.cpp
     title: test/graph/tree/rerooting.test.cpp
   - icon: ':heavy_check_mark:'
@@ -243,9 +225,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/math/crt.test.cpp
     title: test/math/crt.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/math/eratos.test.cpp
-    title: test/math/eratos.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/factorize.test.cpp
     title: test/math/factorize.test.cpp
@@ -384,12 +363,8 @@ data:
   - test/data-structure/undo_dsu.test.2.cpp
   - test/algorithm/rollback_mo.test.cpp
   - test/algorithm/tree_mo.test.cpp
-  - test/algorithm/doubling.test.2.cpp
-  - test/algorithm/LCS_alphabet.test.cpp
   - test/algorithm/3d_mo.test.cpp
-  - test/algorithm/doubling.test.3.cpp
   - test/algorithm/mo.test.cpp
-  - test/algorithm/doubling.test.cpp
   - test/string/aho_corasick.test.3.cpp
   - test/string/LCP.test.cpp
   - test/string/SuffixArray.test.cpp
@@ -405,7 +380,6 @@ data:
   - test/math/BinaryGCD.test.cpp
   - test/math/rho.test.cpp
   - test/math/primality.test.cpp
-  - test/math/eratos.test.cpp
   - test/math/fwt.test.cpp
   - test/math/crt.test.cpp
   - test/math/factorize.test.cpp
@@ -430,7 +404,6 @@ data:
   - test/FPS/FFT_fast.test.cpp
   - test/FPS/FFT.test.cpp
   - test/graph/low_link.test.2.cpp
-  - test/graph/topological_sort.test.cpp
   - test/graph/two_sat.test.cpp
   - test/graph/low_link.test.cpp
   - test/graph/eulerian_trail.test.undirected.cpp
@@ -445,7 +418,6 @@ data:
   - test/graph/tree/dominator_tree.test.cpp
   - test/graph/tree/hld.test.2.cpp
   - test/graph/tree/rerooting.test.cpp
-  - test/graph/tree/offline_lca.test.cpp
   - test/graph/tree/hld.test.3.cpp
   - test/graph/tree/cartesian_tree.test.cpp
   - test/graph/tree/hld.test.cpp

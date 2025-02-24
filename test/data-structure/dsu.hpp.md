@@ -12,9 +12,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/eulerian_trail.test.undirected.cpp
     title: test/graph/eulerian_trail.test.undirected.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/graph/tree/offline_lca.test.cpp
-    title: test/graph/tree/offline_lca.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -69,7 +66,6 @@ data:
   - test/algorithm/tree_mo.test.cpp
   - test/graph/eulerian_trail.test.undirected.cpp
   - test/graph/eulerian_trail.test.directed.cpp
-  - test/graph/tree/offline_lca.test.cpp
 documentation_of: test/data-structure/dsu.hpp
 layout: document
 redirect_from:

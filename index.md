@@ -16,15 +16,6 @@ data:
       path: src/algorithm/3d_mo.hpp
       title: src/algorithm/3d_mo.hpp
     - icon: ':heavy_check_mark:'
-      path: src/algorithm/LCS_alphabet.hpp
-      title: src/algorithm/LCS_alphabet.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/algorithm/doubling.hpp
-      title: src/algorithm/doubling.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/algorithm/doubling_monoid.hpp
-      title: src/algorithm/doubling_monoid.hpp
-    - icon: ':heavy_check_mark:'
       path: src/algorithm/mo.hpp
       title: src/algorithm/mo.hpp
     - icon: ':heavy_check_mark:'
@@ -38,9 +29,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/data-structure/2dBIT.hpp
       title: src/data-structure/2dBIT.hpp
-    - icon: ':warning:'
-      path: src/data-structure/64tree.hpp
-      title: src/data-structure/64tree.hpp
     - icon: ':heavy_check_mark:'
       path: src/data-structure/FastSet.hpp
       title: "\u9AD8\u901F bitset (64 \u5206\u6728)"
@@ -124,9 +112,6 @@ data:
       path: src/graph/scc.hpp
       title: src/graph/scc.hpp
     - icon: ':heavy_check_mark:'
-      path: src/graph/topological_sort.hpp
-      title: src/graph/topological_sort.hpp
-    - icon: ':heavy_check_mark:'
       path: src/graph/two_sat.hpp
       title: src/graph/two_sat.hpp
   - name: src/graph/tree
@@ -140,9 +125,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/graph/tree/hld.hpp
       title: src/graph/tree/hld.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/graph/tree/offline_lca.hpp
-      title: src/graph/tree/offline_lca.hpp
     - icon: ':heavy_check_mark:'
       path: src/graph/tree/rerooting.hpp
       title: src/graph/tree/rerooting.hpp
@@ -161,9 +143,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/math/crt.hpp
       title: src/math/crt.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/math/eratos.hpp
-      title: src/math/eratos.hpp
     - icon: ':heavy_check_mark:'
       path: src/math/factorize.hpp
       title: src/math/factorize.hpp
@@ -255,6 +234,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/dsu.hpp
       title: test/data-structure/dsu.hpp
+  - name: test/graph/tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/graph/tree/offline_lca.hpp
+      title: test/graph/tree/offline_lca.hpp
   - name: test
     pages:
     - icon: ':heavy_check_mark:'
@@ -274,18 +258,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/algorithm/3d_mo.test.cpp
       title: test/algorithm/3d_mo.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/algorithm/LCS_alphabet.test.cpp
-      title: test/algorithm/LCS_alphabet.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/algorithm/doubling.test.2.cpp
-      title: test/algorithm/doubling.test.2.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/algorithm/doubling.test.3.cpp
-      title: test/algorithm/doubling.test.3.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/algorithm/doubling.test.cpp
-      title: test/algorithm/doubling.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/algorithm/mo.test.cpp
       title: test/algorithm/mo.test.cpp
@@ -476,9 +448,6 @@ data:
       path: test/graph/scc.test.cpp
       title: test/graph/scc.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/graph/topological_sort.test.cpp
-      title: test/graph/topological_sort.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/graph/two_sat.test.cpp
       title: test/graph/two_sat.test.cpp
   - name: test/graph/tree
@@ -499,9 +468,6 @@ data:
       path: test/graph/tree/hld.test.cpp
       title: test/graph/tree/hld.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/graph/tree/offline_lca.test.cpp
-      title: test/graph/tree/offline_lca.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/graph/tree/rerooting.test.cpp
       title: test/graph/tree/rerooting.test.cpp
   - name: test/math
@@ -515,9 +481,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/crt.test.cpp
       title: test/math/crt.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/math/eratos.test.cpp
-      title: test/math/eratos.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/math/factorize.test.cpp
       title: test/math/factorize.test.cpp

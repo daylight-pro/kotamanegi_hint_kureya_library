@@ -5,9 +5,6 @@ template<class Cap> struct mf_graph {
    mf_graph(int n) : _n(n), g(n) {}
 
    int add_edge(int from, int to, Cap cap) {
-      // assert(0 <= from && from < _n);
-      // assert(0 <= to && to < _n);
-      // assert(0 <= cap);
       int m = size(pos);
       pos.push_back({from, size(g[from])});
       int from_id = size(g[from]);
@@ -19,10 +16,6 @@ template<class Cap> struct mf_graph {
    }
 
    Cap flow(int s, int t, Cap flow_limit = numeric_limits<Cap>::max()) {
-      // assert(0 <= s && s < _n);
-      // assert(0 <= t && t < _n);
-      // assert(s != t);
-
       vector<int> level(_n), iter(_n);
       queue<int> que;
       auto bfs = [&]() {
@@ -97,7 +90,6 @@ template<class Cap> struct mf_graph {
 
    edge get_edge(int i) {
       int m = size(pos);
-      // assert(0 <= i && i < m);
       auto _e = g[pos[i].first][pos[i].second];
       auto _re = g[_e.to][_e.rev];
       return edge{pos[i].first, _e.to, _e.cap + _re.cap, _re.cap};
@@ -112,8 +104,6 @@ template<class Cap> struct mf_graph {
 
    void change_edge(int i, Cap new_cap, Cap new_flow) {
       int m = size(pos);
-      // assert(0 <= i && i < m);
-      // assert(0 <= new_flow && new_flow <= new_cap);
       auto& _e = g[pos[i].first][pos[i].second];
       auto& _re = g[_e.to][_e.rev];
       _e.cap = new_cap - new_flow;

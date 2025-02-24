@@ -1,4 +1,3 @@
-
 struct DominatorTree {
    public:
    DominatorTree(vector<vector<int>>& g_, int root = 0) : g(g_) {

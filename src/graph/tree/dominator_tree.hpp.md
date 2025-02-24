@@ -11,7 +11,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/graph/tree/dominator_tree.hpp\"\n\nstruct DominatorTree\
+  bundledCode: "#line 1 \"src/graph/tree/dominator_tree.hpp\"\nstruct DominatorTree\
     \ {\n   public:\n   DominatorTree(vector<vector<int>>& g_, int root = 0) : g(g_)\
     \ {\n      const int N = (int)g.size();\n      rg = vector<vector<int>>(N);\n\
     \      par.assign(N, 0);\n      idom.assign(N, -1);\n      semi.assign(N, -1);\n\
@@ -40,7 +40,7 @@ data:
     \      semi[idx] = (int)ord.size();\n      ord.emplace_back(idx);\n      for(auto&\
     \ to : g[idx]) {\n         if(~semi[to]) continue;\n         dfs(to);\n      \
     \   par[to] = idx;\n      }\n   }\n};\n"
-  code: "\nstruct DominatorTree {\n   public:\n   DominatorTree(vector<vector<int>>&\
+  code: "struct DominatorTree {\n   public:\n   DominatorTree(vector<vector<int>>&\
     \ g_, int root = 0) : g(g_) {\n      const int N = (int)g.size();\n      rg =\
     \ vector<vector<int>>(N);\n      par.assign(N, 0);\n      idom.assign(N, -1);\n\
     \      semi.assign(N, -1);\n      ord.reserve(N);\n      UnionFind uf(semi);\n\
@@ -72,7 +72,7 @@ data:
   isVerificationFile: false
   path: src/graph/tree/dominator_tree.hpp
   requiredBy: []
-  timestamp: '2025-02-22 15:22:54+00:00'
+  timestamp: '2025-02-25 03:49:40+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/tree/dominator_tree.test.cpp

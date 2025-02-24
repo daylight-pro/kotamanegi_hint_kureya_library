@@ -128,16 +128,15 @@ data:
     \   upper = abs(upper);\n   auto dp = [&](ll x) -> T {\n      auto g = [&](int\
     \ from, int to) -> T { return f(from, to) + x; };\n      T cost = monge_shortest_path<T>(N,\
     \ g)[N];\n      return cost - T{1} * D * x;\n   };\n   auto [_, res] = golden_section_search<T,\
-    \ false>(dp, -upper, upper);\n   return res;\n}\n\nvector<ll> enumerate_monge_d_edge_shortest_path(int\
-    \ N,\n                                                const function<ll(int, int)>&\
-    \ f,\n                                                ll unreached = (1LL << 62)\
-    \ - 1) {\n   using T = __int128_t;\n   T INF = (T{1} << (sizeof(T) * 8 - 2)) -\
-    \ 1;\n   vector<ll> ans(N + 1, unreached);\n   vector<T> dp(N + 1, INF);\n   dp[0]\
-    \ = 0;\n   for(int d = 1; d <= N; d++) {\n      vector<int> midx =\n         \
-    \ monotone_minima<T>(N + 1, N + 1, [&](int j, int i) -> T { return i < j ? dp[i]\
-    \ + f(i, j) : INF; });\n      for(int i = N; i >= d; i--) dp[i] = dp[midx[i]]\
-    \ + f(midx[i], i);\n      ans[d] = dp[N];\n   }\n   return ans;\n}\n#line 167\
-    \ \"test/algorithm/larsch.test.cpp\"\n\nint main() { puts(\"Hello World\"); }\n"
+    \ false>(dp, -upper, upper);\n   return res;\n}\n\nvector<ll> enumerate_monge_d(int\
+    \ N, const function<ll(int, int)>& f, ll unreached = (1LL << 62) - 1) {\n   using\
+    \ T = __int128_t;\n   T INF = (T{1} << (sizeof(T) * 8 - 2)) - 1;\n   vector<ll>\
+    \ ans(N + 1, unreached);\n   vector<T> dp(N + 1, INF);\n   dp[0] = 0;\n   for(int\
+    \ d = 1; d <= N; d++) {\n      vector<int> midx =\n          monotone_minima<T>(N\
+    \ + 1, N + 1, [&](int j, int i) -> T { return i < j ? dp[i] + f(i, j) : INF; });\n\
+    \      for(int i = N; i >= d; i--) dp[i] = dp[midx[i]] + f(midx[i], i);\n    \
+    \  ans[d] = dp[N];\n   }\n   return ans;\n}\n#line 167 \"test/algorithm/larsch.test.cpp\"\
+    \n\nint main() { puts(\"Hello World\"); }\n"
   code: "// AC\u78BA\u8A8D\u6E08\u307F https://yukicoder.me/submissions/1045895\n\n\
     /*\n#include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\nconst\
     \ ll INF = LLONG_MAX / 4;\n#define all(a) begin(a), end(a)\nbool chmin(auto& a,\
@@ -212,7 +211,7 @@ data:
   isVerificationFile: true
   path: test/algorithm/larsch.test.cpp
   requiredBy: []
-  timestamp: '2025-02-24 11:27:56+00:00'
+  timestamp: '2025-02-25 03:49:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/algorithm/larsch.test.cpp

@@ -76,11 +76,7 @@ data:
     template<typename T> void fwt(vector<T>& f) {\n   int n = f.size();\n   for(int\
     \ i = 1; i < n; i <<= 1) {\n      for(int j = 0; j < n; j++) {\n         if((j\
     \ & i) == 0) {\n            T x = f[j], y = f[j | i];\n            f[j] = x +\
-    \ y, f[j | i] = x - y;\n         }\n      }\n   }\n}\ntemplate<typename T> void\
-    \ ifwt(vector<T>& f) {\n   int n = f.size();\n   for(int i = 1; i < n; i <<= 1)\
-    \ {\n      for(int j = 0; j < n; j++) {\n         if((j & i) == 0) {\n       \
-    \     T x = f[j], y = f[j | i];\n            f[j] = (x + y) / 2, f[j | i] = (x\
-    \ - y) / 2;\n         }\n      }\n   }\n}\n#line 131 \"test/math/fwt.test.cpp\"\
+    \ y, f[j | i] = x - y;\n         }\n      }\n   }\n}\n#line 131 \"test/math/fwt.test.cpp\"\
     \n\nint main() { puts(\"Hello World\"); }\n"
   code: "// AC\u78BA\u8A8D\u6E08\u307F https://codeforces.com/contest/1906/submission/306277658\n\
     \n/*\n#include <bits/stdc++.h>\nusing namespace std;\n#define all(v) (v).begin(),(v).end()\n\
@@ -141,7 +137,7 @@ data:
   isVerificationFile: true
   path: test/math/fwt.test.cpp
   requiredBy: []
-  timestamp: '2025-02-22 15:22:54+00:00'
+  timestamp: '2025-02-25 03:49:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/fwt.test.cpp

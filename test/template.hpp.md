@@ -28,6 +28,12 @@ data:
     path: test/algorithm/3d_mo.test.cpp
     title: test/algorithm/3d_mo.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/algorithm/larsch.test.cpp
+    title: test/algorithm/larsch.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/algorithm/min_plus_conv.test.cpp
+    title: test/algorithm/min_plus_conv.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/algorithm/mo.test.cpp
     title: test/algorithm/mo.test.cpp
   - icon: ':heavy_check_mark:'
@@ -381,8 +387,10 @@ data:
   - test/data-structure/range_tree.test.2.cpp
   - test/data-structure/sparse_table.test.cpp
   - test/data-structure/undo_dsu.test.2.cpp
+  - test/algorithm/larsch.test.cpp
   - test/algorithm/rollback_mo.test.cpp
   - test/algorithm/tree_mo.test.cpp
+  - test/algorithm/min_plus_conv.test.cpp
   - test/algorithm/3d_mo.test.cpp
   - test/algorithm/mo.test.cpp
   - test/string/aho_corasick.test.3.cpp

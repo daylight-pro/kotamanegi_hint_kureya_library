@@ -28,6 +28,12 @@ data:
       path: src/algorithm/3d_mo.hpp
       title: src/algorithm/3d_mo.hpp
     - icon: ':heavy_check_mark:'
+      path: src/algorithm/larsch.hpp
+      title: src/algorithm/larsch.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/algorithm/min_plus_conv.hpp
+      title: src/algorithm/min_plus_conv.hpp
+    - icon: ':heavy_check_mark:'
       path: src/algorithm/mo.hpp
       title: src/algorithm/mo.hpp
     - icon: ':heavy_check_mark:'
@@ -291,6 +297,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/algorithm/3d_mo.test.cpp
       title: test/algorithm/3d_mo.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/algorithm/larsch.test.cpp
+      title: test/algorithm/larsch.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/algorithm/min_plus_conv.test.cpp
+      title: test/algorithm/min_plus_conv.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/algorithm/mo.test.cpp
       title: test/algorithm/mo.test.cpp

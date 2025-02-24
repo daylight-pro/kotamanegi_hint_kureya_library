@@ -1,4 +1,4 @@
-// base: 918715
+// base: aa9fd6
 unsigned int bit_ceil(unsigned int n) {
    unsigned int x = 1;
    while(x < (unsigned int)(n)) x *= 2;
@@ -24,7 +24,6 @@ struct lazy_segtree {
       for(int i = size - 1; i >= 1; i--) { update(i); }
    }
    void set(int p, S x) {
-      // assert(0 <= p && p < _n);
       p += size;
       for(int i = log; i >= 1; i--) push(p >> i);
       d[p] = x;
@@ -32,14 +31,12 @@ struct lazy_segtree {
    }
 
    S get(int p) {
-      // assert(0 <= p && p < _n);
       p += size;
       for(int i = log; i >= 1; i--) push(p >> i);
       return d[p];
    }
 
    S prod(int l, int r) {
-      // assert(0 <= l && l <= r && r <= _n);
       if(l == r) return e();
 
       l += size;
@@ -62,7 +59,6 @@ struct lazy_segtree {
    }
 
    void apply(int l, int r, F f) {
-      assert(0 <= l && l <= r && r <= _n);
       if(l == r) return;
 
       l += size;
@@ -92,8 +88,6 @@ struct lazy_segtree {
    }
 
    template<class G> int max_right(int l, G g) {
-      // assert(0 <= l && l <= _n);
-      // assert(g(e()));
       if(l == _n) return _n;
       l += size;
       for(int i = log; i >= 1; i--) push(l >> i);
@@ -118,8 +112,6 @@ struct lazy_segtree {
    }  // d93691
 
    template<class G> int min_left(int r, G g) {
-      // assert(0 <= r && r <= _n);
-      // assert(g(e()));
       if(r == 0) return 0;
       r += size;
       for(int i = log; i >= 1; i--) push((r - 1) >> i);

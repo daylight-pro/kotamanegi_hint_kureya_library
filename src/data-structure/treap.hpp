@@ -193,14 +193,11 @@ struct Treap {
       for(auto v : V) { push_back(v); }
    }
 
-   size_t size() { return size_t(get_cnt(root)); }
-   // f63788 (Common)
+   size_t size() { return size_t(get_cnt(root)); }  // f63788 (Common)
 
-   void insert(int ind, S x) { root = insert(root, ind, new_node(x, rand(mt))); }
-   // dc467c (UnOrdered)
+   void insert(int ind, S x) { root = insert(root, ind, new_node(x, rand(mt))); }  // dc467c (UnOrdered)
 
-   void push_back(S x) { root = insert(root, int(size()), new_node(x, rand(mt))); }
-   // 7fa616 (Unordered)
+   void push_back(S x) { root = insert(root, int(size()), new_node(x, rand(mt))); }  // 7fa616 (Unordered)
 
    void ordered_insert(S x) {
       int ind = lower_search(root, x);
@@ -231,14 +228,11 @@ struct Treap {
       return R - L;
    }  // 5c60fd (Ordered)
 
-   int lower_search(S x) { return lower_search(root, x); }
-   // 9731cc (Ordered)
+   int lower_search(S x) { return lower_search(root, x); }  // 9731cc (Ordered)
 
-   int upper_search(S x) { return upper_search(root, x); }
-   // ac5aa0 (Ordered)
+   int upper_search(S x) { return upper_search(root, x); }  // ac5aa0 (Ordered)
 
-   void apply(int l, int r, F f) { root = apply(root, l, r, f); }
-   // 905a19 (Unordered)
+   void apply(int l, int r, F f) { root = apply(root, l, r, f); }  // 905a19 (Unordered)
 
    void erase(int ind) { root = _erase(root, ind); }
    // ff257f (Common)
@@ -247,19 +241,15 @@ struct Treap {
       auto [tt, t3] = split(root, r);
       auto [t1, t2] = split(tt, l);
       root = merge(t1, t3);
-   }
-   // f9ff4a (Common)
+   }  // f9ff4a (Common)
 
    // l .. r-1 -> r-1 .. l
-   void reverse(int l, int r) { root = reverse(root, l, r); }
-   // 40df7d (Unordered)
+   void reverse(int l, int r) { root = reverse(root, l, r); }  // 40df7d (Unordered)
 
    // l .. m-1, m .. r-1 -> m .. r-1, l .. m-1
-   void rotate(int l, int m, int r) { root = rotate(root, l, m, r); }
-   // e21b85 (Unordered)
+   void rotate(int l, int m, int r) { root = rotate(root, l, m, r); }  // e21b85 (Unordered)
 
-   void set(int k, S v) { root = set(root, k, v); }
-   // 4ae943 (Unordered)
+   void set(int k, S v) { root = set(root, k, v); }  // 4ae943 (Unordered)
 
    // min k \in [l,r) such that op(tr[k], x) != x
    int find(int l, int r, S x, bool left = true) {

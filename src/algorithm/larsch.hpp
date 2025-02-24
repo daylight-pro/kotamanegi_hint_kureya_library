@@ -56,9 +56,7 @@ ll monge_d_edge_shortest_path(int N, int D, ll upper, const function<ll(int, int
    return res;
 }
 
-vector<ll> enumerate_monge_d_edge_shortest_path(int N,
-                                                const function<ll(int, int)>& f,
-                                                ll unreached = (1LL << 62) - 1) {
+vector<ll> enumerate_monge_d(int N, const function<ll(int, int)>& f, ll unreached = (1LL << 62) - 1) {
    using T = __int128_t;
    T INF = (T{1} << (sizeof(T) * 8 - 2)) - 1;
    vector<ll> ans(N + 1, unreached);

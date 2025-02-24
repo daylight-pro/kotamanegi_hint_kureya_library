@@ -5,8 +5,6 @@ template<class Cap, class Cost> struct mcf_graph {
    mcf_graph(int n) : _n(n), g(n) {}
 
    int add_edge(int from, int to, Cap cap, Cost cost) {
-      // assert(0 <= from && from < _n);
-      // assert(0 <= to && to < _n);
       int m = size(pos);
       pos.push_back({from, size(g[from])});
       int from_id = size(g[from]);
@@ -21,9 +19,6 @@ template<class Cap, class Cost> struct mcf_graph {
       return slope(s, t, flow_limit).back();
    }
    vector<pair<Cap, Cost>> slope(int s, int t, Cap flow_limit = numeric_limits<Cap>::max()) {
-      // assert(0 <= s && s < _n);
-      // assert(0 <= t && t < _n);
-      // assert(s != t);
       vector<Cost> dual(_n, 0), dist(_n);
       vector<int> pv(_n), pe(_n);
       vector<bool> vis(_n);
@@ -92,7 +87,6 @@ template<class Cap, class Cost> struct mcf_graph {
 
    edge get_edge(int i) {
       int m = size(pos);
-      // assert(0 <= i && i < m);
       auto _e = g[pos[i].first][pos[i].second];
       auto _re = g[_e.to][_e.rev];
       return edge({pos[i].first, _e.to, _e.cap + _re.cap, _re.cap});
@@ -107,9 +101,6 @@ template<class Cap, class Cost> struct mcf_graph {
 
    void change_edge(int i, Cap new_cap, Cap new_flow) {
       int m = size(pos);
-      // assert(0 <= i && i < m);
-      // assert(0 <= new_flow && new_flow <= new_cap);
-
       auto& _e = g[pos[i].first][pos[i].second];
       auto& _re = g[_e.to][_e.rev];
       _e.cap = new_cap - new_flow;

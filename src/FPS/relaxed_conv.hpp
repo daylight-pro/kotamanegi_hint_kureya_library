@@ -35,14 +35,15 @@ template<typename T> class RelaxedConvolution {
       dfs1(mid, len);
       dfs2(mid, len);
    }
-public:
+
+   public:
    RelaxedConvolution(int n) {
       N = 1, pos = 0;
       while(N < n) N *= 2;
       f.resize(N);
       g.resize(N);
       buf.resize(N);
-      event.resize(N+1);
+      event.resize(N + 1);
       dfs(N);
    }
    T get(T x, T y) {
@@ -52,7 +53,7 @@ public:
          vector<T> B({g.begin() + gl, g.begin() + gr});
          auto ret = conv(A, B);
          int sz = ret.size();
-         for(int i = 0; i < sz; i ++) {
+         for(int i = 0; i < sz; i++) {
             if(i + fl + gl >= N) break;
             buf[i + fl + gl] += ret[i];
          }

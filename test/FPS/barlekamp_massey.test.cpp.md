@@ -128,25 +128,25 @@ data:
     \   fft(b);\n   mm inv = mm(n).inv();\n   for(int i = 0; i < n; i++) a[i] *= b[i]\
     \ * inv;\n   reverse(1 + all(a));\n   fft(a);\n   a.resize(s);\n   return a;\n\
     }\n#line 1 \"src/FPS/barlekamp_massey.hpp\"\nvector<mm> BerlekampMassey(const\
-    \ vector<mm> &s) {\n   const int N = (int)s.size();\n   vector<mm> b, c;\n   b.reserve(N\
+    \ vector<mm>& s) {\n   const int N = (int)s.size();\n   vector<mm> b, c;\n   b.reserve(N\
     \ + 1);\n   c.reserve(N + 1);\n   b.push_back(mm(1));\n   c.push_back(mm(1));\n\
-    \   mm y = mm(1);\n   for (int ed = 1; ed <= N; ed++) {\n      int l = int(c.size()),\
-    \ m = int(b.size());\n      mm x = 0;\n      for (int i = 0; i < l; i++) x +=\
-    \ c[i] * s[ed - l + i];\n      b.emplace_back(mm(0));\n      m ++;\n      if (x.x\
-    \ == 0) continue;\n      mm freq = x / y;\n      if (l < m) {\n         auto tmp\
-    \ = c;\n         c.insert(begin(c), m - l, mm(0));\n         for (int i = 0; i\
-    \ < m; i++) c[m - 1 - i] -= freq * b[m - 1 - i];\n         b = tmp;\n        \
-    \ y = x;\n      } else {\n         for (int i = 0; i < m; i++) c[l - 1 - i] -=\
-    \ freq * b[m - 1 - i];\n      }\n   }\n   reverse(begin(c), end(c));\n   return\
-    \ c;\n}\n#line 1 \"src/FPS/bostan_mori.hpp\"\n// find [x^N] P(x)/Q(x), O(K log\
-    \ K log N)\n// deg(Q(x)) = K, deg(P(x)) < K, Q[0] = 1\nmm BostanMori(vector<mm>\
-    \ P, vector<mm> Q, ll N) {\n   const int d = Q.size();\n   for (; N; N >>= 1)\
-    \ {\n      auto Q_neg = Q;\n      for (size_t i = 1; i < Q.size(); i += 2) Q_neg[i]\
-    \ *= -1;\n      P = conv(P, Q_neg);\n      Q = conv(Q, Q_neg);\n      for (size_t\
-    \ i = N & 1; i < P.size(); i += 2) P[i >> 1] = P[i];\n      for (size_t i = 0;\
-    \ i < Q.size(); i += 2) Q[i >> 1] = Q[i];\n      P.resize(d - 1);\n      Q.resize(d);\n\
-    \   }\n   return P[0];\n}\n#line 196 \"test/FPS/barlekamp_massey.test.cpp\"\n\
-    int main() { puts(\"Hello World\"); }\n"
+    \   mm y = mm(1);\n   for(int ed = 1; ed <= N; ed++) {\n      int l = int(c.size()),\
+    \ m = int(b.size());\n      mm x = 0;\n      for(int i = 0; i < l; i++) x += c[i]\
+    \ * s[ed - l + i];\n      b.emplace_back(mm(0));\n      m++;\n      if(x.x ==\
+    \ 0) continue;\n      mm freq = x / y;\n      if(l < m) {\n         auto tmp =\
+    \ c;\n         c.insert(begin(c), m - l, mm(0));\n         for(int i = 0; i <\
+    \ m; i++) c[m - 1 - i] -= freq * b[m - 1 - i];\n         b = tmp;\n         y\
+    \ = x;\n      } else {\n         for(int i = 0; i < m; i++) c[l - 1 - i] -= freq\
+    \ * b[m - 1 - i];\n      }\n   }\n   reverse(begin(c), end(c));\n   return c;\n\
+    }\n#line 1 \"src/FPS/bostan_mori.hpp\"\n// find [x^N] P(x)/Q(x), O(K log K log\
+    \ N)\n// deg(Q(x)) = K, deg(P(x)) < K, Q[0] = 1\nmm BostanMori(vector<mm> P, vector<mm>\
+    \ Q, ll N) {\n   const int d = Q.size();\n   for(; N; N >>= 1) {\n      auto Q_neg\
+    \ = Q;\n      for(size_t i = 1; i < Q.size(); i += 2) Q_neg[i] *= -1;\n      P\
+    \ = conv(P, Q_neg);\n      Q = conv(Q, Q_neg);\n      for(size_t i = N & 1; i\
+    \ < P.size(); i += 2) P[i >> 1] = P[i];\n      for(size_t i = 0; i < Q.size();\
+    \ i += 2) Q[i >> 1] = Q[i];\n      P.resize(d - 1);\n      Q.resize(d);\n   }\n\
+    \   return P[0];\n}\n#line 196 \"test/FPS/barlekamp_massey.test.cpp\"\nint main()\
+    \ { puts(\"Hello World\"); }\n"
   code: "// AC\u78BA\u8A8D\u6E08\u307F https://atcoder.jp/contests/abc305/submissions/63090763\n\
     \n/*\n#include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\n\
     const ll INF = LLONG_MAX / 4;\n#define all(a) begin(a), end(a)\nbool chmin(auto&\
@@ -227,7 +227,7 @@ data:
   isVerificationFile: true
   path: test/FPS/barlekamp_massey.test.cpp
   requiredBy: []
-  timestamp: '2025-02-23 17:34:55+09:00'
+  timestamp: '2025-02-24 10:33:49+00:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/FPS/barlekamp_massey.test.cpp

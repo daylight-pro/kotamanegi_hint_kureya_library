@@ -100,10 +100,10 @@ data:
     \ * inv;\n   reverse(1 + all(a));\n   fft(a);\n   a.resize(s);\n   return a;\n\
     }\n#line 1 \"src/FPS/bostan_mori.hpp\"\n// find [x^N] P(x)/Q(x), O(K log K log\
     \ N)\n// deg(Q(x)) = K, deg(P(x)) < K, Q[0] = 1\nmm BostanMori(vector<mm> P, vector<mm>\
-    \ Q, ll N) {\n   const int d = Q.size();\n   for (; N; N >>= 1) {\n      auto\
-    \ Q_neg = Q;\n      for (size_t i = 1; i < Q.size(); i += 2) Q_neg[i] *= -1;\n\
-    \      P = conv(P, Q_neg);\n      Q = conv(Q, Q_neg);\n      for (size_t i = N\
-    \ & 1; i < P.size(); i += 2) P[i >> 1] = P[i];\n      for (size_t i = 0; i < Q.size();\
+    \ Q, ll N) {\n   const int d = Q.size();\n   for(; N; N >>= 1) {\n      auto Q_neg\
+    \ = Q;\n      for(size_t i = 1; i < Q.size(); i += 2) Q_neg[i] *= -1;\n      P\
+    \ = conv(P, Q_neg);\n      Q = conv(Q, Q_neg);\n      for(size_t i = N & 1; i\
+    \ < P.size(); i += 2) P[i >> 1] = P[i];\n      for(size_t i = 0; i < Q.size();\
     \ i += 2) Q[i >> 1] = Q[i];\n      P.resize(d - 1);\n      Q.resize(d);\n   }\n\
     \   return P[0];\n}\n#line 118 \"test/FPS/bostan_mori.test.cpp\"\nint main() {\
     \ puts(\"Hello World\"); }\n"
@@ -160,7 +160,7 @@ data:
   isVerificationFile: true
   path: test/FPS/bostan_mori.test.cpp
   requiredBy: []
-  timestamp: '2025-02-23 17:34:55+09:00'
+  timestamp: '2025-02-24 10:33:49+00:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/FPS/bostan_mori.test.cpp

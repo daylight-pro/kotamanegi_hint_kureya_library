@@ -34,9 +34,6 @@ data:
     path: test/graph/tree/hld.test.2.cpp
     title: test/graph/tree/hld.test.2.cpp
   - icon: ':heavy_check_mark:'
-    path: test/graph/tree/rerooting.test.cpp
-    title: test/graph/tree/rerooting.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/math/lagrange_polynomial.test.cpp
     title: test/math/lagrange_polynomial.test.cpp
   - icon: ':heavy_check_mark:'
@@ -93,7 +90,6 @@ data:
   - test/FPS/FFT.test.cpp
   - test/FPS/bostan_mori.test.cpp
   - test/graph/tree/hld.test.2.cpp
-  - test/graph/tree/rerooting.test.cpp
 documentation_of: src/modint/modint.hpp
 layout: document
 title: Modint

@@ -66,20 +66,20 @@ data:
     \ }\n   mm inv() const { return pow(mod - 2); }\n   mm pow(ll b) const {\n   \
     \   mm a = *this, c = 1;\n      while(b) {\n         if(b & 1) c *= a;\n     \
     \    a *= a;\n         b >>= 1;\n      }\n      return c;\n   }\n};\n#line 1 \"\
-    src/FPS/fps_sparse.hpp\"\nvector<mm> fps_inv_sparse(const vector<pair<int, mm>>\
-    \ &dat, int n = -1) {\n   // assert(dat[0].first == 0 and dat[0].second.x != 0);\n\
+    src/FPS/fps_sparse.hpp\"\nvector<mm> fps_inv_sparse(const vector<pair<int, mm>>&\
+    \ dat, int n = -1) {\n   // assert(dat[0].first == 0 and dat[0].second.x != 0);\n\
     \   if(n == -1) n = dat.back().first + 1;\n   vector<mm> g(n);\n   mm g0 = dat[0].second.inv();\n\
-    \   g[0] = g0;\n   for(int i = 1; i < n; i ++) {\n      mm rhs = 0;\n      for(auto&&\
+    \   g[0] = g0;\n   for(int i = 1; i < n; i++) {\n      mm rhs = 0;\n      for(auto&&\
     \ [k, fk] : dat) {\n         if(k > i) break;\n         rhs -= fk * g[i - k];\n\
     \      }\n      g[i] = rhs * g0;\n   }\n   return g;\n}\n\nvector<mm> fps_exp_sparse(vector<mm>&\
-    \ f) {\n   if ((int)f.size() == 0) return {mm(1)};\n   // assert(f[0].x == 0);\n\
+    \ f) {\n   if((int)f.size() == 0) return {mm(1)};\n   // assert(f[0].x == 0);\n\
     \   int N = f.size();\n   vector<pair<int, mm>> dat;\n   for(int i = 1; i < N;\
-    \ i ++) if (f[i].x) dat.emplace_back(i - 1, mm(i) * f[i]);\n   vector<mm> F(N);\n\
-    \   F[0] = 1;\n   for(int n = 1; n < N; n ++) {\n      mm rhs = 0;\n      for\
-    \ (auto&& [k, fk]: dat) {\n         if (k > n - 1) break;\n         rhs += fk\
-    \ * F[n - 1 - k];\n      }\n      F[n] = rhs * mm(n).inv();\n   }\n   return F;\n\
-    }\n#line 78 \"test/FPS/fps_sparse.test.cpp\"\nint main() { puts(\"Hello World\"\
-    ); }\n"
+    \ i++)\n      if(f[i].x) dat.emplace_back(i - 1, mm(i) * f[i]);\n   vector<mm>\
+    \ F(N);\n   F[0] = 1;\n   for(int n = 1; n < N; n++) {\n      mm rhs = 0;\n  \
+    \    for(auto&& [k, fk] : dat) {\n         if(k > n - 1) break;\n         rhs\
+    \ += fk * F[n - 1 - k];\n      }\n      F[n] = rhs * mm(n).inv();\n   }\n   return\
+    \ F;\n}\n#line 78 \"test/FPS/fps_sparse.test.cpp\"\nint main() { puts(\"Hello\
+    \ World\"); }\n"
   code: "// AC\u78BA\u8A8D\u6E08\u307F https://judge.yosupo.jp/submission/269321\n\
     \n/*\n#include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\n\
     const ll INF = LLONG_MAX / 4;\n#define all(a) begin(a), end(a)\nbool chmin(auto&\
@@ -117,7 +117,7 @@ data:
   isVerificationFile: true
   path: test/FPS/fps_sparse.test.cpp
   requiredBy: []
-  timestamp: '2025-02-24 05:53:01+09:00'
+  timestamp: '2025-02-24 10:33:49+00:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/FPS/fps_sparse.test.cpp

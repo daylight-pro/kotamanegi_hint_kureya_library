@@ -127,15 +127,15 @@ data:
     \ {\n      if(len == 1) {\n         event[0].push_back({0, 1, 0, 1});\n      \
     \   return;\n      }\n      int mid = len / 2;\n      event[len].push_back({mid,\
     \ len, mid, len});\n      dfs(mid);\n      dfs1(mid, len);\n      dfs2(mid, len);\n\
-    \   }\npublic:\n   RelaxedConvolution(int n) {\n      N = 1, pos = 0;\n      while(N\
-    \ < n) N *= 2;\n      f.resize(N);\n      g.resize(N);\n      buf.resize(N);\n\
-    \      event.resize(N+1);\n      dfs(N);\n   }\n   T get(T x, T y) {\n      f[pos]\
-    \ = x, g[pos] = y;\n      for(auto [fl, fr, gl, gr] : event[pos]) {\n        \
-    \ vector<T> A({f.begin() + fl, f.begin() + fr});\n         vector<T> B({g.begin()\
+    \   }\n\n   public:\n   RelaxedConvolution(int n) {\n      N = 1, pos = 0;\n \
+    \     while(N < n) N *= 2;\n      f.resize(N);\n      g.resize(N);\n      buf.resize(N);\n\
+    \      event.resize(N + 1);\n      dfs(N);\n   }\n   T get(T x, T y) {\n     \
+    \ f[pos] = x, g[pos] = y;\n      for(auto [fl, fr, gl, gr] : event[pos]) {\n \
+    \        vector<T> A({f.begin() + fl, f.begin() + fr});\n         vector<T> B({g.begin()\
     \ + gl, g.begin() + gr});\n         auto ret = conv(A, B);\n         int sz =\
-    \ ret.size();\n         for(int i = 0; i < sz; i ++) {\n            if(i + fl\
-    \ + gl >= N) break;\n            buf[i + fl + gl] += ret[i];\n         }\n   \
-    \   }\n      return buf[pos++];\n   }\n};\n#line 166 \"test/FPS/relaxed_conv.test.cpp\"\
+    \ ret.size();\n         for(int i = 0; i < sz; i++) {\n            if(i + fl +\
+    \ gl >= N) break;\n            buf[i + fl + gl] += ret[i];\n         }\n     \
+    \ }\n      return buf[pos++];\n   }\n};\n#line 166 \"test/FPS/relaxed_conv.test.cpp\"\
     \nint main() { puts(\"Hello World\"); }\n"
   code: "// AC\u78BA\u8A8D\u6E08\u307F https://atcoder.jp/contests/abc315/submissions/63095397\n\
     \n/*\n#include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\n\
@@ -205,7 +205,7 @@ data:
   isVerificationFile: true
   path: test/FPS/relaxed_conv.test.cpp
   requiredBy: []
-  timestamp: '2025-02-23 20:16:46+09:00'
+  timestamp: '2025-02-24 10:33:49+00:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/FPS/relaxed_conv.test.cpp

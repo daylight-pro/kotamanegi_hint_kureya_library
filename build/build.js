@@ -1,6 +1,6 @@
 const title = "ICPC Notebook";  // タイトル (先頭に表示)
 const teamname = "kotamanegi_hint_kureya/Osaka University";   // チーム名 + 大学名 (各ページ左上に表示)
-const fontsize = "7.4pt";       // フォントサイズ
+const fontsize = "7.0pt";       // フォントサイズ
 const orientation = "portrait";     // portrait (縦長) / landscape (横長)
 const num_columns = 2;          // 何段組みか
 const break_after_toc = "column"; // toc の後に : page (改ページする) / column (改段する) / auto (強制しない)

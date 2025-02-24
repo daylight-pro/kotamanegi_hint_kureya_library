@@ -23,19 +23,14 @@ template<class S, S (*op)(S, S), S (*e)()> struct segtree {
    }
 
    void set(int p, S x) {
-      // assert(0 <= p && p < _n);
       p += size;
       d[p] = x;
       for(int i = 1; i <= log; i++) update(p >> i);
    }
 
-   S get(int p) const {
-      // assert(0 <= p && p < _n);
-      return d[p + size];
-   }
+   S get(int p) const { return d[p + size]; }
 
    S prod(int l, int r) const {
-      // assert(0 <= l && l <= r && r <= _n);
       S sml = e(), smr = e();
       l += size;
       r += size;
@@ -52,8 +47,6 @@ template<class S, S (*op)(S, S), S (*e)()> struct segtree {
    S all_prod() const { return d[1]; }
 
    template<class F> int max_right(int l, F f) {
-      // assert(0 <= l && l <= _n);
-      // assert(f(e()));
       if(l == _n) return _n;
       l += size;
       S sm = e();
@@ -76,8 +69,6 @@ template<class S, S (*op)(S, S), S (*e)()> struct segtree {
    }  // faa03f
 
    template<class F> int min_left(int r, F f) {
-      // assert(0 <= r && r <= _n);
-      // assert(f(e()));
       if(r == 0) return 0;
       r += size;
       S sm = e();

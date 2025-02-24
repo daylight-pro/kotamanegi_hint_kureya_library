@@ -4,7 +4,7 @@
 #include "src/algorithm/mo.hpp"
 #include "src/algorithm/tree_mo.hpp"
 #include "test/data-structure/dsu.hpp"
-#include "src/graph/tree/offline_lca.hpp"
+#include "test/graph/tree/offline_lca.hpp"
 #include "src/data-structure/binary_trie.hpp"
 
 int main() {

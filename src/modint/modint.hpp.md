@@ -7,6 +7,21 @@ data:
     path: test/FPS/FFT.test.cpp
     title: test/FPS/FFT.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/FPS/barlekamp_massey.test.cpp
+    title: test/FPS/barlekamp_massey.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/FPS/bostan_mori.test.cpp
+    title: test/FPS/bostan_mori.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/FPS/fps_sparse.test.2.cpp
+    title: test/FPS/fps_sparse.test.2.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/FPS/fps_sparse.test.cpp
+    title: test/FPS/fps_sparse.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/FPS/relaxed_conv.test.cpp
+    title: test/FPS/relaxed_conv.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/lazy_segtree.test.cpp
     title: test/data-structure/lazy_segtree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -71,7 +86,12 @@ data:
   - test/data-structure/lazy_segtree.test.cpp
   - test/data-structure/segtree.test.2.cpp
   - test/math/lagrange_polynomial.test.cpp
+  - test/FPS/barlekamp_massey.test.cpp
+  - test/FPS/fps_sparse.test.2.cpp
+  - test/FPS/relaxed_conv.test.cpp
+  - test/FPS/fps_sparse.test.cpp
   - test/FPS/FFT.test.cpp
+  - test/FPS/bostan_mori.test.cpp
   - test/graph/tree/hld.test.2.cpp
   - test/graph/tree/rerooting.test.cpp
 documentation_of: src/modint/modint.hpp

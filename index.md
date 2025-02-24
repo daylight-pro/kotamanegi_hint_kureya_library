@@ -10,6 +10,18 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/FPS/FFT_fast.hpp
       title: FFT (bit reversal ver.)
+    - icon: ':heavy_check_mark:'
+      path: src/FPS/barlekamp_massey.hpp
+      title: src/FPS/barlekamp_massey.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/FPS/bostan_mori.hpp
+      title: src/FPS/bostan_mori.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/FPS/fps_sparse.hpp
+      title: src/FPS/fps_sparse.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/FPS/relaxed_conv.hpp
+      title: src/FPS/relaxed_conv.hpp
   - name: src/algorithm
     pages:
     - icon: ':heavy_check_mark:'
@@ -39,11 +51,17 @@ data:
       path: src/data-structure/binary_trie.hpp
       title: src/data-structure/binary_trie.hpp
     - icon: ':heavy_check_mark:'
+      path: src/data-structure/cht_slope_monotone.hpp
+      title: src/data-structure/cht_slope_monotone.hpp
+    - icon: ':heavy_check_mark:'
       path: src/data-structure/disjoint_sparse_table.hpp
       title: src/data-structure/disjoint_sparse_table.hpp
     - icon: ':heavy_check_mark:'
       path: src/data-structure/lazy_segtree.hpp
       title: src/data-structure/lazy_segtree.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/li_chao.hpp
+      title: src/data-structure/li_chao.hpp
     - icon: ':heavy_check_mark:'
       path: src/data-structure/potential_dsu.hpp
       title: src/data-structure/potential_dsu.hpp
@@ -173,6 +191,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/math/primality.hpp
       title: src/math/primality.hpp
+    - icon: ':warning:'
+      path: src/math/primitive-root.hpp
+      title: src/math/primitive-root.hpp
     - icon: ':heavy_check_mark:'
       path: src/math/rho.hpp
       title: src/math/rho.hpp
@@ -253,6 +274,21 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/FPS/FFT_fast.test.cpp
       title: test/FPS/FFT_fast.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/FPS/barlekamp_massey.test.cpp
+      title: test/FPS/barlekamp_massey.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/FPS/bostan_mori.test.cpp
+      title: test/FPS/bostan_mori.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/FPS/fps_sparse.test.2.cpp
+      title: test/FPS/fps_sparse.test.2.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/FPS/fps_sparse.test.cpp
+      title: test/FPS/fps_sparse.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/FPS/relaxed_conv.test.cpp
+      title: test/FPS/relaxed_conv.test.cpp
   - name: test/algorithm
     pages:
     - icon: ':heavy_check_mark:'
@@ -288,6 +324,9 @@ data:
       path: test/data-structure/binary_trie.test.cpp
       title: test/data-structure/binary_trie.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/data-structure/cht_slope_monotone.test.cpp
+      title: test/data-structure/cht_slope_monotone.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/data-structure/disjoint_sparse_table.test.2.cpp
       title: test/data-structure/disjoint_sparse_table.test.2.cpp
     - icon: ':heavy_check_mark:'
@@ -299,6 +338,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/lazy_segtree.test.cpp
       title: test/data-structure/lazy_segtree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/li_chao.test.cpp
+      title: test/data-structure/li_chao.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data-structure/potential_dsu.test.2.cpp
       title: test/data-structure/potential_dsu.test.2.cpp

@@ -6,6 +6,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/FPS/FFT.test.cpp
     title: test/FPS/FFT.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/FPS/barlekamp_massey.test.cpp
+    title: test/FPS/barlekamp_massey.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/FPS/bostan_mori.test.cpp
+    title: test/FPS/bostan_mori.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/FPS/relaxed_conv.test.cpp
+    title: test/FPS/relaxed_conv.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -45,7 +54,10 @@ data:
   timestamp: '2024-12-10 18:11:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/FPS/barlekamp_massey.test.cpp
+  - test/FPS/relaxed_conv.test.cpp
   - test/FPS/FFT.test.cpp
+  - test/FPS/bostan_mori.test.cpp
 documentation_of: src/FPS/FFT.hpp
 layout: document
 title: "FFT (\u9AD8\u901F\u30D5\u30FC\u30EA\u30A8\u5909\u63DB / \u7573\u307F\u8FBC\

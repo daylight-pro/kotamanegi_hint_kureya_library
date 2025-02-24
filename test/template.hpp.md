@@ -250,9 +250,6 @@ data:
     path: test/math/crt.test.cpp
     title: test/math/crt.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/math/factorize.test.cpp
-    title: test/math/factorize.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/math/floor_sum.test.cpp
     title: test/math/floor_sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -410,7 +407,6 @@ data:
   - test/math/primality.test.cpp
   - test/math/fwt.test.cpp
   - test/math/crt.test.cpp
-  - test/math/factorize.test.cpp
   - test/math/floor_sum.test.cpp
   - test/math/ExtGCD.test.cpp
   - test/geometry/closest_pair.test.2.cpp

@@ -51,18 +51,18 @@ data:
     \ F& f) {\n   vector<pair<int, T>> dp(h, pair(-1, T()));\n   auto rec = [&](auto&&\
     \ rec, int u, int d, int l, int r) {\n      if(u > d) return;\n      int mid =\
     \ (u + d) >> 1;\n      auto& [idx, mi] = dp[mid];\n      idx = l, mi = f(mid,\
-    \ l);\n      for(int i = l + 1; i <= r; i ++) if(chmin(mi, f(mid, i))) idx = i;\n\
-    \      rec(rec, u, mid - 1, l, idx);\n      rec(rec, mid + 1, d, idx, r);\n  \
-    \ };\n   rec(rec, 0, h - 1, 0, w - 1);\n   vector<int> ret;\n   for(auto [idx,\
-    \ val] : dp) ret.push_back(idx);\n   return ret;\n}\n\ntemplate <typename T> //\
-    \ B is convex. if both A and B are convex, do greedy. \nvector<T> minplus_conv(vector<T>&\
-    \ A, vector<T>& B) {\n   int n = A.size(), m = B.size();\n   if (n == 0 && m ==\
+    \ l);\n      for(int i = l + 1; i <= r; i++)\n         if(chmin(mi, f(mid, i)))\
+    \ idx = i;\n      rec(rec, u, mid - 1, l, idx);\n      rec(rec, mid + 1, d, idx,\
+    \ r);\n   };\n   rec(rec, 0, h - 1, 0, w - 1);\n   vector<int> ret;\n   for(auto\
+    \ [idx, val] : dp) ret.push_back(idx);\n   return ret;\n}\n\ntemplate<typename\
+    \ T>  // B is convex. if both A and B are convex, do greedy.\nvector<T> minplus_conv(vector<T>&\
+    \ A, vector<T>& B) {\n   int n = A.size(), m = B.size();\n   if(n == 0 && m ==\
     \ 0) return {};\n   vector<T> C(n + m - 1);\n\n   const ll inf = INF;\n   auto\
     \ select = [&](int i, int j) -> T {\n      if(i < j) return inf;\n      if(i -\
     \ j >= m) return inf;\n      return A[j] + B[i - j];\n   };\n   vector<int> J\
-    \ = monotone_minima<T>(n + m - 1, n, select); \n   for(int i = 0; i < n + m -\
-    \ 1; i ++) {\n      T x = A[J[i]], y = B[i - J[i]];\n      if (x < inf && y <\
-    \ inf) C[i] = x + y;\n   }\n   return C;\n}\n#line 66 \"test/algorithm/min_plus_conv.test.cpp\"\
+    \ = monotone_minima<T>(n + m - 1, n, select);\n   for(int i = 0; i < n + m - 1;\
+    \ i++) {\n      T x = A[J[i]], y = B[i - J[i]];\n      if(x < inf && y < inf)\
+    \ C[i] = x + y;\n   }\n   return C;\n}\n#line 66 \"test/algorithm/min_plus_conv.test.cpp\"\
     \nint main() { puts(\"Hello World\"); }\n"
   code: "// AC\u78BA\u8A8D\u6E08\u307F https://judge.yosupo.jp/submission/269550\n\
     \n/*\n#include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\n\
@@ -97,7 +97,7 @@ data:
   isVerificationFile: true
   path: test/algorithm/min_plus_conv.test.cpp
   requiredBy: []
-  timestamp: '2025-02-24 19:58:55+09:00'
+  timestamp: '2025-02-24 11:27:56+00:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/algorithm/min_plus_conv.test.cpp

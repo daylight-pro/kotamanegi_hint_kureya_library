@@ -53,7 +53,7 @@ F id() { return F(); }
 
 S mapping(F f, S x) {
    if(x.sz == 0) return e();
-   else if(x.lo == x.hi or f.lb == f.ub or f.lb >= x.hi or f.ub < x.lo) {
+   else if(x.lo == x.hi or f.lb == f.ub or f.lb >= x.hi or f.ub <= x.lo) {
       return S(min(max(x.lo, f.lb), f.ub) + f.bias, x.sz);
    } else if(x.lo2 == x.hi) {
       x.lo = x.hi2 = max(x.lo, f.lb) + f.bias;

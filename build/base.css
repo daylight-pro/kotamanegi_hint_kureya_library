@@ -33,6 +33,10 @@ h6 {
     break-after: avoid;
 }
 
+h2 {
+    font-size: 8pt;
+}
+
 a {
     color: currentColor;
 }
@@ -125,7 +129,9 @@ table {
     border-top: 1px solid lightgray;
     border-left: 1px solid lightgray;
 }
-td, th {
+
+td,
+th {
     border-bottom: 1px solid lightgray;
     border-right: 1px solid lightgray;
     padding: 4px;
@@ -138,11 +144,13 @@ td, th {
 .token.number,
 .token.constant,
 .token.selector .token.attribute {
-	color: #001575;
+    color: #001575;
 }
+
 .content {
     break-before: avoid;
 }
+
 .content-md {
     font-family: 'Roboto', 'M PLUS 1p';
 }

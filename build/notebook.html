@@ -101,7 +101,6 @@
     <li><a href="#cartesian_tree.hpp">cartesian_tree.hpp</a></li>
     <li><a href="#dominator_tree.hpp">dominator_tree.hpp</a></li>
     <li><a href="#hld.hpp">hld.hpp</a></li>
-    <li><a href="#rerooting.hpp">rerooting.hpp</a></li>
     </ol>
     <li><a class="section" href="#flow">flow</a></li>
     <ol>
@@ -136,10 +135,8 @@
     <li><a href="#Primes.md">Primes.md</a></li>
     <li><a href="#bigint.md">bigint.md</a></li>
     <li><a href="#ext.cpp">ext.cpp</a></li>
-    <li><a href="#priority_queue.md">priority_queue.md</a></li>
     <li><a href="#random.hpp">random.hpp</a></li>
     <li><a href="#set_compare.md">set_compare.md</a></li>
-    <li><a href="#ポリアの定理.md">ポリアの定理.md</a></li>
     <li><a href="#数式.md">数式.md</a></li>
     <li><a href="#牛ゲー.md">牛ゲー.md</a></li>
     </ol>
@@ -3527,97 +3524,6 @@ vector<span class="token operator">&lt;</span>mm<span class="token operator">></
 <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 </div>
 
-    <div class="filename">
-        <h2 id="rerooting.hpp">rerooting.hpp</h2>
-        md5: 3bb537
-
-    </div>
-    <div class="content content-hpp">
-    <pre><code><span class="token comment">// base: b7fc0f</span>
-<span class="token keyword">template</span><span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token class-name">M</span><span class="token punctuation">,</span> <span class="token keyword">bool</span> calc_contribution <span class="token operator">=</span> <span class="token boolean">false</span><span class="token operator">></span> <span class="token keyword">struct</span> <span class="token class-name">Rerooting</span> <span class="token punctuation">{</span>
-   <span class="token keyword">using</span> S <span class="token operator">=</span> <span class="token keyword">typename</span> <span class="token class-name">M</span><span class="token double-colon punctuation">::</span>S<span class="token punctuation">;</span>
-   <span class="token keyword">using</span> C <span class="token operator">=</span> <span class="token keyword">typename</span> <span class="token class-name">M</span><span class="token double-colon punctuation">::</span>C<span class="token punctuation">;</span>
-   vector<span class="token operator">&lt;</span>S<span class="token operator">></span> dp<span class="token punctuation">,</span> memo<span class="token punctuation">;</span>
-   vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span>pair<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> C<span class="token operator">>></span><span class="token operator">></span> g<span class="token punctuation">;</span>
-   map<span class="token operator">&lt;</span>ll<span class="token punctuation">,</span> S<span class="token operator">></span> hash<span class="token punctuation">;</span>
-   <span class="token keyword">int</span> N<span class="token punctuation">;</span>
-
-   <span class="token function">Rerooting</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">N</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">g</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-   <span class="token keyword">void</span> <span class="token function">add_edge</span><span class="token punctuation">(</span><span class="token keyword">int</span> f<span class="token punctuation">,</span> <span class="token keyword">int</span> t<span class="token punctuation">,</span> <span class="token keyword">const</span> C<span class="token operator">&amp;</span> c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      g<span class="token punctuation">[</span>f<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      g<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
-
-   vector<span class="token operator">&lt;</span>S<span class="token operator">></span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      memo<span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span>N<span class="token punctuation">,</span> <span class="token class-name">M</span><span class="token double-colon punctuation">::</span><span class="token function">e</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      dp<span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span>N<span class="token punctuation">,</span> <span class="token class-name">M</span><span class="token double-colon punctuation">::</span><span class="token function">e</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token function">reroot</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token class-name">M</span><span class="token double-colon punctuation">::</span><span class="token function">e</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">return</span> dp<span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
-
-   <span class="token keyword">private</span><span class="token operator">:</span>
-   <span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> cur<span class="token punctuation">,</span> <span class="token keyword">int</span> pre <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">bool</span> is_leaf <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> <span class="token punctuation">[</span>to<span class="token punctuation">,</span> c<span class="token punctuation">]</span> <span class="token operator">:</span> g<span class="token punctuation">[</span>cur<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-         <span class="token keyword">if</span><span class="token punctuation">(</span>to <span class="token operator">==</span> pre<span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
-         is_leaf <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-         <span class="token function">dfs</span><span class="token punctuation">(</span>to<span class="token punctuation">,</span> cur<span class="token punctuation">)</span><span class="token punctuation">;</span>
-         memo<span class="token punctuation">[</span>cur<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token class-name">M</span><span class="token double-colon punctuation">::</span><span class="token function">merge</span><span class="token punctuation">(</span>memo<span class="token punctuation">[</span>cur<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token class-name">M</span><span class="token double-colon punctuation">::</span><span class="token function">apply</span><span class="token punctuation">(</span>memo<span class="token punctuation">[</span>to<span class="token punctuation">]</span><span class="token punctuation">,</span> to<span class="token punctuation">,</span> cur<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-      <span class="token keyword">if</span><span class="token punctuation">(</span>is_leaf<span class="token punctuation">)</span> <span class="token punctuation">{</span> memo<span class="token punctuation">[</span>cur<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token class-name">M</span><span class="token double-colon punctuation">::</span><span class="token function">leaf</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-   <span class="token punctuation">}</span>
-
-   <span class="token keyword">void</span> <span class="token function">reroot</span><span class="token punctuation">(</span><span class="token keyword">int</span> cur<span class="token punctuation">,</span> <span class="token keyword">const</span> S val<span class="token punctuation">,</span> <span class="token keyword">int</span> pre <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      vector<span class="token operator">&lt;</span>S<span class="token operator">></span> ds<span class="token punctuation">;</span>
-      ds<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">if</span><span class="token punctuation">(</span>calc_contribution<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-         <span class="token keyword">if</span><span class="token punctuation">(</span>pre <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> hash<span class="token punctuation">[</span>cur <span class="token operator">*</span> N <span class="token operator">+</span> pre<span class="token punctuation">]</span> <span class="token operator">=</span> val<span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> <span class="token punctuation">[</span>to<span class="token punctuation">,</span> c<span class="token punctuation">]</span> <span class="token operator">:</span> g<span class="token punctuation">[</span>cur<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-         <span class="token keyword">if</span><span class="token punctuation">(</span>to <span class="token operator">==</span> pre<span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
-         ds<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token class-name">M</span><span class="token double-colon punctuation">::</span><span class="token function">apply</span><span class="token punctuation">(</span>memo<span class="token punctuation">[</span>to<span class="token punctuation">]</span><span class="token punctuation">,</span> to<span class="token punctuation">,</span> cur<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-         <span class="token keyword">if</span><span class="token punctuation">(</span>calc_contribution<span class="token punctuation">)</span> <span class="token punctuation">{</span> hash<span class="token punctuation">[</span>cur <span class="token operator">*</span> N <span class="token operator">+</span> to<span class="token punctuation">]</span> <span class="token operator">=</span> ds<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span>
-      <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token function">size</span><span class="token punctuation">(</span>ds<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      vector<span class="token operator">&lt;</span>S<span class="token operator">></span> <span class="token function">l</span><span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token class-name">M</span><span class="token double-colon punctuation">::</span><span class="token function">e</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">r</span><span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token class-name">M</span><span class="token double-colon punctuation">::</span><span class="token function">e</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> l<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token class-name">M</span><span class="token double-colon punctuation">::</span><span class="token function">merge</span><span class="token punctuation">(</span>l<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> ds<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> r<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token class-name">M</span><span class="token double-colon punctuation">::</span><span class="token function">merge</span><span class="token punctuation">(</span>ds<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> r<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      dp<span class="token punctuation">[</span>cur<span class="token punctuation">]</span> <span class="token operator">=</span> r<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-      <span class="token keyword">int</span> ind <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> <span class="token punctuation">[</span>to<span class="token punctuation">,</span> c<span class="token punctuation">]</span> <span class="token operator">:</span> g<span class="token punctuation">[</span>cur<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-         <span class="token keyword">if</span><span class="token punctuation">(</span>to <span class="token operator">==</span> pre<span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
-         S sub <span class="token operator">=</span> <span class="token class-name">M</span><span class="token double-colon punctuation">::</span><span class="token function">merge</span><span class="token punctuation">(</span>l<span class="token punctuation">[</span>ind<span class="token punctuation">]</span><span class="token punctuation">,</span> r<span class="token punctuation">[</span>ind <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-         <span class="token function">reroot</span><span class="token punctuation">(</span>to<span class="token punctuation">,</span> <span class="token class-name">M</span><span class="token double-colon punctuation">::</span><span class="token function">apply</span><span class="token punctuation">(</span>sub<span class="token punctuation">,</span> cur<span class="token punctuation">,</span> to<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">,</span> cur<span class="token punctuation">)</span><span class="token punctuation">;</span>
-         ind<span class="token operator">++</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-   <span class="token punctuation">}</span>
-
-   <span class="token keyword">public</span><span class="token operator">:</span>
-   S <span class="token function">get_contribution</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">,</span> <span class="token keyword">int</span> c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">if</span><span class="token punctuation">(</span>hash<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span>p <span class="token operator">*</span> N <span class="token operator">+</span> c<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> hash<span class="token punctuation">[</span>p <span class="token operator">*</span> N <span class="token operator">+</span> c<span class="token punctuation">]</span><span class="token punctuation">;</span>
-      <span class="token keyword">return</span> <span class="token class-name">M</span><span class="token double-colon punctuation">::</span><span class="token function">e</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>  <span class="token comment">// e6000f</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token comment">/*
-
-struct M {
-   using S = pair&lt;mm, int>; // DPの型
-   using C = pair&lt;mm, mm>;  // 辺コストの型
-   static S merge(S a, S b) { return {a.first + b.first, a.second + b.second}; } // DPのマージ
-   static S apply(S a, int from, int to, C b) {  // DPの親への寄与
-      return {(a.first + A[from]) * b.first + b.second * (a.second + 1), a.second + 1};
-   }
-   static S e() { return {0, 0}; } // 単位元
-   static S leaf() { return {0, 0}; } // 葉の値
-};
-
-Rerooting&lt;M> reroot;
-*/</span></code></pre>
-</div>
-
     <h2 class="section" id="flow">flow</h2>
 
     <div class="filename">
@@ -3631,22 +3537,6 @@ Rerooting&lt;M> reroot;
 </tr>
 </thead>
 <tbody><tr>
-<td>$x$ が $0$ のとき $z$ 失う</td>
-<td>$(x, T, z)$</td>
-</tr>
-<tr>
-<td>$x$ が $0$ のとき $z$ 得る</td>
-<td>無条件で $z$ 得る; $(S, x, z)$</td>
-</tr>
-<tr>
-<td>$x$ が $1$ のとき $z$ 失う</td>
-<td>$(S, x, z)$</td>
-</tr>
-<tr>
-<td>$x$ が $1$ のとき $z$ 得る</td>
-<td>無条件で $z$ 得る; $(x, T, z)$</td>
-</tr>
-<tr>
 <td>$x, y, \dots$ がすべて $0$ のとき $z$ 得る</td>
 <td>無条件で $z$ 得る; $(S, w, z), (w, x, \infty), (w, y, \infty)$</td>
 </tr>
@@ -4795,65 +4685,6 @@ x.assign(&quot;123&quot;);
 </div>
 
     <div class="filename">
-        <h2 id="priority_queue.md">priority_queue.md</h2>
-    </div>
-    <div class="content content-md"><table>
-<thead>
-<tr>
-<th></th>
-<th>push</th>
-<th>pop</th>
-<th>modify</th>
-<th>erase</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>std::priority_queue</td>
-<td>最悪$\Theta(n)$,償却$\Theta(\log(n))$</td>
-<td>最悪$\Theta(\log(n))$</td>
-<td>最悪$\Theta(n\log(n))$</td>
-<td>$\Theta(n \log(n))$</td>
-</tr>
-<tr>
-<td>pairing_heap_tag</td>
-<td>$O(1)$</td>
-<td>最悪$\Theta(n)$, 償却$\Theta(\log n)$</td>
-<td>最悪$\Theta(n)$, 償却$\Theta(\log(n))$</td>
-<td>最悪$\Theta(n)$, 償却$O(\log(n))$</td>
-</tr>
-<tr>
-<td>binary_heap_tag</td>
-<td>最悪$\Theta(n)$, 償却$O(\log(n))$</td>
-<td>最悪$\Theta(n)$, 償却$O(\log(n))$</td>
-<td>$\Theta(n)$</td>
-<td>$\Theta(n)$</td>
-</tr>
-<tr>
-<td>binomial_heap_tag</td>
-<td>最悪$\Theta(n)$, 償却$O(\log(n))$</td>
-<td>$\Theta(\log (n))$</td>
-<td>$\Theta(\log(n)) $</td>
-<td>$\Theta(\log(n))$</td>
-</tr>
-<tr>
-<td>rc_binomial_heap_tag</td>
-<td>$O(1)$</td>
-<td>$\Theta(\log(n))$</td>
-<td>$\Theta(\log(n))$</td>
-<td>$\Theta(\log(n))$</td>
-</tr>
-<tr>
-<td>thin_heap_tag</td>
-<td>$O(1)$</td>
-<td>最悪$\Theta(n)$, 償却$O(\log(n))$</td>
-<td>最悪$\Theta(\log(n))$,償却$O(1)$ or 償却$\Theta(\log n)$</td>
-<td>最悪$\Theta(n)$, 償却$O(\log(n))$</td>
-</tr>
-</tbody></table>
-<p>joinは基本的にeraseの最悪計算量に一致.pairing_heap_tagのみ高速で$O(1)$</p>
-</div>
-
-    <div class="filename">
         <h2 id="random.hpp">random.hpp</h2>
         md5: b4f59b
 
@@ -4875,13 +4706,6 @@ x.assign(&quot;123&quot;);
     <div class="content content-md"><pre><code class="language-cpp">   auto comp = [&amp;](const int a, const int b) {return a &gt; b;};
    set&lt;int, decltype(comp)&gt; st{comp};
 </code></pre>
-</div>
-
-    <div class="filename">
-        <h2 id="ポリアの定理.md">ポリアの定理.md</h2>
-    </div>
-    <div class="content content-md"><img style="width:300px;" src="polya.png" alt="ポリヤの定理1">
-<img style="width:300px;" src="polya2.png" alt="ポリヤの定理2">
 </div>
 
     <div class="filename">
@@ -4953,9 +4777,6 @@ $$</p>
 <p>$$\sum_k \left(\binom{c+d-a-b}{c-a-k(t-s+2)} - \binom{c+d-a-b}{c-b-k(t-s+2)+t+1}\right)$$</p>
 <h3>フック長の公式</h3>
 <p>$$d_\lambda = \frac{n!}{\prod h_{\lambda}(i,j)}$$</p>
-<h3>Polyaの定理</h3>
-<p>$$ \frac{1}{|G|} \sum_{g \in G} \prod_{i=1}^{n} (t_1^i + \dots + t_m^i)^{\lambda_i(g)} $$</p>
-<p>それぞれの置換の前後で不動になる彩色の場合の数を数えて、平均を取ればよい。</p>
 <h3>other</h3>
 <ul>
 <li>異なる自然数に分割する方法の個数と奇数に分割する方法の個数が等しい</li>

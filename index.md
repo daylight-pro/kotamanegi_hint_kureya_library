@@ -197,6 +197,9 @@ data:
   - name: src/memo
     pages:
     - icon: ':warning:'
+      path: "src/memo/BIT\u4E8C\u5206\u63A2\u7D22.cpp"
+      title: "src/memo/BIT\u4E8C\u5206\u63A2\u7D22.cpp"
+    - icon: ':warning:'
       path: src/memo/ext.cpp
       title: src/memo/ext.cpp
     - icon: ':warning:'

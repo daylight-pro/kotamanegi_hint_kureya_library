@@ -132,6 +132,7 @@
     </ol>
     <li><a class="section" href="#memo">memo</a></li>
     <ol>
+    <li><a href="#BIT二分探索.cpp">BIT二分探索.cpp</a></li>
     <li><a href="#Primes.md">Primes.md</a></li>
     <li><a href="#bigint.md">bigint.md</a></li>
     <li><a href="#ext.cpp">ext.cpp</a></li>
@@ -4417,6 +4418,26 @@ tuple<span class="token operator">&lt;</span><span class="token keyword">double<
 </div>
 
     <h2 class="section" id="memo">memo</h2>
+
+    <div class="filename">
+        <h2 id="BIT二分探索.cpp">BIT二分探索.cpp</h2>
+        md5: 694e3b
+
+    </div>
+    <div class="content content-cpp">
+    <pre><code><span class="token comment">// minimize i s.t. sum(i) >= w</span>
+<span class="token keyword">int</span> <span class="token function">lower_bound</span><span class="token punctuation">(</span>ll w<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>w <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> N <span class="token operator">=</span> <span class="token function">si</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token function">__lg</span><span class="token punctuation">(</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span> k<span class="token punctuation">;</span> k <span class="token operator">>>=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">+</span> k <span class="token operator">&lt;=</span> N <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">&amp;&amp;</span> a<span class="token punctuation">[</span>x <span class="token operator">+</span> k<span class="token punctuation">]</span> <span class="token operator">&lt;</span> w<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        w <span class="token operator">-=</span> a<span class="token punctuation">[</span>x <span class="token operator">+</span> k<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        x <span class="token operator">+=</span> k<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> x<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+</div>
 
     <div class="filename">
         <h2 id="Primes.md">Primes.md</h2>

@@ -65,15 +65,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/data-structure/li_chao.hpp
       title: src/data-structure/li_chao.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/persistent-array.hpp
+      title: src/data-structure/persistent-array.hpp
     - icon: ':warning:'
-      path: src/data-structure/persistent-array.cpp
-      title: src/data-structure/persistent-array.cpp
-    - icon: ':warning:'
-      path: src/data-structure/persistent-segtree.cpp
-      title: src/data-structure/persistent-segtree.cpp
-    - icon: ':warning:'
-      path: src/data-structure/persistent-uf.cpp
-      title: src/data-structure/persistent-uf.cpp
+      path: src/data-structure/persistent-segtree.hpp
+      title: src/data-structure/persistent-segtree.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/persistent-uf.hpp
+      title: src/data-structure/persistent-uf.hpp
     - icon: ':heavy_check_mark:'
       path: src/data-structure/potential_dsu.hpp
       title: src/data-structure/potential_dsu.hpp
@@ -343,6 +343,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/li_chao.test.cpp
       title: test/data-structure/li_chao.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/persistent_uf.test.cpp
+      title: test/data-structure/persistent_uf.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data-structure/potential_dsu.test.2.cpp
       title: test/data-structure/potential_dsu.test.2.cpp

@@ -70,6 +70,9 @@ data:
     path: test/data-structure/li_chao.test.cpp
     title: test/data-structure/li_chao.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/persistent_uf.test.cpp
+    title: test/data-structure/persistent_uf.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/potential_dsu.test.2.cpp
     title: test/data-structure/potential_dsu.test.2.cpp
   - icon: ':heavy_check_mark:'
@@ -343,6 +346,7 @@ data:
   - test/data-structure/range_tree.test.cpp
   - test/data-structure/binary_trie.test.2.cpp
   - test/data-structure/lazy_segtree.test.2.cpp
+  - test/data-structure/persistent_uf.test.cpp
   - test/data-structure/wavelet_matrix.test.2.cpp
   - test/data-structure/wavelet_matrix.test.4.cpp
   - test/data-structure/treap.test.2.cpp

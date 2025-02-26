@@ -2,13 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/persistent_uf.test.cpp
+    title: test/data-structure/persistent_uf.test.cpp
   _isVerificationFailed: false
-  _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _pathExtension: hpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/data-structure/persistent-uf.cpp\"\nstruct PersistentUnionFind\
+  bundledCode: "#line 1 \"src/data-structure/persistent-uf.hpp\"\nstruct PersistentUnionFind\
     \ {\n   PersistentArray<int, 3> data;\n\n   PersistentUnionFind() {}\n\n   PersistentUnionFind(int\
     \ sz) { data.build(vector<int>(sz, -1)); }\n\n   int find(int k) {\n      int\
     \ p = data.get(k);\n      return p >= 0 ? find(p) : k;\n   }\n\n   int size(int\
@@ -31,15 +34,16 @@ data:
     \         *b = y;\n      }\n      return true;\n   }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: src/data-structure/persistent-uf.cpp
+  path: src/data-structure/persistent-uf.hpp
   requiredBy: []
-  timestamp: '2025-02-25 03:16:20+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
-documentation_of: src/data-structure/persistent-uf.cpp
+  timestamp: '2025-02-26 00:49:56+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/data-structure/persistent_uf.test.cpp
+documentation_of: src/data-structure/persistent-uf.hpp
 layout: document
 redirect_from:
-- /library/src/data-structure/persistent-uf.cpp
-- /library/src/data-structure/persistent-uf.cpp.html
-title: src/data-structure/persistent-uf.cpp
+- /library/src/data-structure/persistent-uf.hpp
+- /library/src/data-structure/persistent-uf.hpp.html
+title: src/data-structure/persistent-uf.hpp
 ---

@@ -2,13 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/persistent_uf.test.cpp
+    title: test/data-structure/persistent_uf.test.cpp
   _isVerificationFailed: false
-  _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _pathExtension: hpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/data-structure/persistent-array.cpp\"\ntemplate<typename\
+  bundledCode: "#line 1 \"src/data-structure/persistent-array.hpp\"\ntemplate<typename\
     \ T, int LOG> struct PersistentArray {\n   struct Node {\n      T data;\n    \
     \  Node* child[1 << LOG] = {};\n      Node() {}\n      Node(const T& data) : data(data)\
     \ {}\n   };\n\n   Node* root;\n   PersistentArray() : root(nullptr) {}\n\n   T\
@@ -45,15 +48,16 @@ data:
     \ i); }\n   }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: src/data-structure/persistent-array.cpp
+  path: src/data-structure/persistent-array.hpp
   requiredBy: []
-  timestamp: '2025-02-25 03:16:20+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
-documentation_of: src/data-structure/persistent-array.cpp
+  timestamp: '2025-02-26 00:49:56+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/data-structure/persistent_uf.test.cpp
+documentation_of: src/data-structure/persistent-array.hpp
 layout: document
 redirect_from:
-- /library/src/data-structure/persistent-array.cpp
-- /library/src/data-structure/persistent-array.cpp.html
-title: src/data-structure/persistent-array.cpp
+- /library/src/data-structure/persistent-array.hpp
+- /library/src/data-structure/persistent-array.hpp.html
+title: src/data-structure/persistent-array.hpp
 ---

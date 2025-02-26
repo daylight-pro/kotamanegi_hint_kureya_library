@@ -4,11 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: cpp
+  _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/data-structure/persistent-segtree.cpp\"\ntemplate<typename\
+  bundledCode: "#line 1 \"src/data-structure/persistent-segtree.hpp\"\ntemplate<typename\
     \ Monoid> struct PersistentSegmentTree {\n   using F = function<Monoid(Monoid,\
     \ Monoid)>;\n\n   struct Node {\n      Monoid data;\n      Node *l, *r;\n\n  \
     \    Node(const Monoid& data) : data(data), l(nullptr), r(nullptr) {}\n   };\n\
@@ -49,15 +49,15 @@ data:
     \ t, int a, int b) { return query(a, b, t, 0, sz); }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: src/data-structure/persistent-segtree.cpp
+  path: src/data-structure/persistent-segtree.hpp
   requiredBy: []
-  timestamp: '2025-02-25 03:16:20+09:00'
+  timestamp: '2025-02-26 00:49:56+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: src/data-structure/persistent-segtree.cpp
+documentation_of: src/data-structure/persistent-segtree.hpp
 layout: document
 redirect_from:
-- /library/src/data-structure/persistent-segtree.cpp
-- /library/src/data-structure/persistent-segtree.cpp.html
-title: src/data-structure/persistent-segtree.cpp
+- /library/src/data-structure/persistent-segtree.hpp
+- /library/src/data-structure/persistent-segtree.hpp.html
+title: src/data-structure/persistent-segtree.hpp
 ---

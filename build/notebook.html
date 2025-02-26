@@ -41,9 +41,9 @@
     <li><a href="#disjoint_sparse_table.hpp">disjoint_sparse_table.hpp</a></li>
     <li><a href="#lazy_segtree.hpp">lazy_segtree.hpp</a></li>
     <li><a href="#li_chao.hpp">li_chao.hpp</a></li>
-    <li><a href="#persistent-array.cpp">persistent-array.cpp</a></li>
-    <li><a href="#persistent-segtree.cpp">persistent-segtree.cpp</a></li>
-    <li><a href="#persistent-uf.cpp">persistent-uf.cpp</a></li>
+    <li><a href="#persistent-array.hpp">persistent-array.hpp</a></li>
+    <li><a href="#persistent-segtree.hpp">persistent-segtree.hpp</a></li>
+    <li><a href="#persistent-uf.hpp">persistent-uf.hpp</a></li>
     <li><a href="#potential_dsu.hpp">potential_dsu.hpp</a></li>
     <li><a href="#range_set.hpp">range_set.hpp</a></li>
     <li><a href="#range_tree.hpp">range_tree.hpp</a></li>
@@ -789,11 +789,11 @@ S <span class="token function">mapping</span><span class="token punctuation">(</
 </div>
 
     <div class="filename">
-        <h2 id="persistent-array.cpp">persistent-array.cpp</h2>
+        <h2 id="persistent-array.hpp">persistent-array.hpp</h2>
         md5: bb60a8
 
     </div>
-    <div class="content content-cpp">
+    <div class="content content-hpp">
     <pre><code><span class="token keyword">template</span><span class="token operator">&lt;</span><span class="token keyword">typename</span> <span class="token class-name">T</span><span class="token punctuation">,</span> <span class="token keyword">int</span> LOG<span class="token operator">></span> <span class="token keyword">struct</span> <span class="token class-name">PersistentArray</span> <span class="token punctuation">{</span>
    <span class="token keyword">struct</span> <span class="token class-name">Node</span> <span class="token punctuation">{</span>
       T data<span class="token punctuation">;</span>
@@ -845,11 +845,11 @@ S <span class="token function">mapping</span><span class="token punctuation">(</
 </div>
 
     <div class="filename">
-        <h2 id="persistent-segtree.cpp">persistent-segtree.cpp</h2>
+        <h2 id="persistent-segtree.hpp">persistent-segtree.hpp</h2>
         md5: b2594f
 
     </div>
-    <div class="content content-cpp">
+    <div class="content content-hpp">
     <pre><code><span class="token keyword">template</span><span class="token operator">&lt;</span><span class="token keyword">typename</span> <span class="token class-name">Monoid</span><span class="token operator">></span> <span class="token keyword">struct</span> <span class="token class-name">PersistentSegmentTree</span> <span class="token punctuation">{</span>
    <span class="token keyword">using</span> F <span class="token operator">=</span> function<span class="token operator">&lt;</span><span class="token function">Monoid</span><span class="token punctuation">(</span>Monoid<span class="token punctuation">,</span> Monoid<span class="token punctuation">)</span><span class="token operator">></span><span class="token punctuation">;</span>
 
@@ -902,11 +902,11 @@ S <span class="token function">mapping</span><span class="token punctuation">(</
 </div>
 
     <div class="filename">
-        <h2 id="persistent-uf.cpp">persistent-uf.cpp</h2>
+        <h2 id="persistent-uf.hpp">persistent-uf.hpp</h2>
         md5: 8d972c
 
     </div>
-    <div class="content content-cpp">
+    <div class="content content-hpp">
     <pre><code><span class="token keyword">struct</span> <span class="token class-name">PersistentUnionFind</span> <span class="token punctuation">{</span>
    PersistentArray<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token operator">></span> data<span class="token punctuation">;</span>
 
